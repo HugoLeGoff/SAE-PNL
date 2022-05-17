@@ -33,4 +33,37 @@ public class NidGCI {
 		throw new UnsupportedOperationException();
 	}
 
+	public int getIdNid() {
+		return idNid;
+	}
+
+	public Collection<ObsGCI> getLesObservations() {
+		return lesObservations;
+	}
+
+	public int getNbEnvol() {
+		return nbEnvol;
+	}
+
+	public String getNomPlage() {
+		return nomPlage;
+	}
+
+	public void setIdNid(int idNid) {
+		this.idNid = idNid;
+	}
+
+	public void setLesObservations(Collection<ObsGCI> lesObservations) {
+		this.lesObservations = lesObservations;
+	}
+
+	public void setNbEnvol(int nbEnvol) {
+		this.nbEnvol = nbEnvol;
+	}
+
+	public void setNomPlage(String nomPlage) {
+		this.nomPlage = nomPlage;
+	}
+	
+
 }

@@ -1,5 +1,8 @@
 package donnee;
 import java.util.*;
+
+import javafx.scene.input.GestureEvent;
+
 import java.sql.Time;
 
 public class ObsBatracien extends Observation {
@@ -25,5 +28,47 @@ public class ObsBatracien extends Observation {
 		// TODO - implement ObsBatracien.ObsBatracien
 		throw new UnsupportedOperationException();
 	}
+
+	public EspeceBatracien getEspece() {
+		return espece;
+	}
+
+	public int getNombreAdultes() {
+		return nombreAdultes;
+	}
+
+	public int getNombreAmplexus() {
+		return nombreAmplexus;
+	}
+
+	public int getNombrePonte() {
+		return nombrePonte;
+	}
+
+	public int getNombreTetard() {
+		return nombreTetard;
+	}
+
+	public void setEspece(EspeceBatracien espece) {
+		this.espece = espece;
+	}
+
+	public void setNombreAdultes(int nombreAdultes) {
+		this.nombreAdultes = nombreAdultes;
+	}
+
+	public void setNombreAmplexus(int nombreAmplexus) {
+		this.nombreAmplexus = nombreAmplexus;
+	}
+
+	public void setNombrePonte(int nombrePonte) {
+		this.nombrePonte = nombrePonte;
+	}
+
+	public void setNombreTetard(int nombreTetard) {
+		this.nombreTetard = nombreTetard;
+	}
+
+	
 
 }

@@ -46,4 +46,43 @@ public abstract class Observation {
 		throw new UnsupportedOperationException();
 	}
 
+	public java.sql.Date getDateObs() {
+		return dateObs;
+	}
+
+	public java.sql.Time getHeureObs() {
+		return heureObs;
+	}
+
+	public int getIdObs() {
+		return idObs;
+	}
+
+	public Collection<Observateur> getLesObservateurs() {
+		return LesObservateurs;
+	}
+
+	public Lieu getLieuObs() {
+		return LieuObs;
+	}
+
+	public void setDateObs(java.sql.Date dateObs) {
+		this.dateObs = dateObs;
+	}
+
+	public void setHeureObs(java.sql.Time heureObs) {
+		this.heureObs = heureObs;
+	}
+	public void setIdObs(int idObs) {
+		this.idObs = idObs;
+	}
+
+	public void setLesObservateurs(Collection<Observateur> lesObservateurs) {
+		LesObservateurs = lesObservateurs;
+	}
+
+	public void setLieuObs(Lieu lieuObs) {
+		LieuObs = lieuObs;
+	}
+
 }

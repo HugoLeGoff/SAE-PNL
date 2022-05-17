@@ -1,5 +1,8 @@
 package donnee;
 import java.util.*;
+
+import javafx.scene.input.GestureEvent;
+
 import java.sql.Time;
 
 public class ObsChouette extends Observation {
@@ -19,6 +22,14 @@ public class ObsChouette extends Observation {
 		super( id, date, heure, lieu, observateurs);
 		// TODO - implement ObsChouette.ObsChouette
 		throw new UnsupportedOperationException();
+	}
+
+	public TypeObservation getTypeObs() {
+		return typeObs;
+	}
+
+	public void setTypeObs(TypeObservation typeObs) {
+		this.typeObs = typeObs;
 	}
 
 }

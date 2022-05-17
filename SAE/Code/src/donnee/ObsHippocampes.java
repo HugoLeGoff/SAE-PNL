@@ -22,7 +22,7 @@ public class ObsHippocampes extends Observation {
 	 * @param IEspece
 	 * @param leSexe
 	 */
-	public ObsHippocampes(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, double laTaille, Peche leTypePeche, EspeceHippocampes IEspece, Sexe leSexe) {
+	public ObsHippocampes(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, double laTaille, Peche leTypePeche, EspeceHippocampes IEspece, Sexe leSexe, boolean estGestant) {
 		super(id, date, heure, lieu, observateurs);
 		// TODO - implement ObsHippocampes.ObsHippocampes
 		throw new UnsupportedOperationException();
@@ -31,5 +31,23 @@ public class ObsHippocampes extends Observation {
 	public EspeceHippocampes getEspece() {
 		return espece;
 	}
+
+	public Peche getTypePeche() {
+		return typePeche;
+	}
+
+	public double getTaille() {
+		return taille;
+	}
+
+	public Sexe getSexe() {
+		return sexe;
+	}
+
+	public boolean getEstGestant() {
+		return estGestant;
+	}
+
+
 
 }

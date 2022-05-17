@@ -16,4 +16,17 @@ public class Observateur {
 		throw new UnsupportedOperationException();
 	}
 
+	public int getIdObservateur() {
+		return idObservateur;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	
 }

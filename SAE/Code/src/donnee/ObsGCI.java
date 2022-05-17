@@ -23,4 +23,22 @@ public class ObsGCI extends Observation {
 		throw new UnsupportedOperationException();
 	}
 
+
+	public ContenuNid getNatureObs() {
+		return natureObs;
+	}
+
+	public int getNombre() {
+		return nombre;
+	}
+
+	public void setNatureObs(ContenuNid natureObs) {
+		this.natureObs = natureObs;
+	}
+
+	public void setNombre(int nombre) {
+		this.nombre = nombre;
+	}
+	
+
 }

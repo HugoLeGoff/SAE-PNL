@@ -28,4 +28,8 @@ public class ObsHippocampes extends Observation {
 		throw new UnsupportedOperationException();
 	}
 
+	public EspeceHippocampes getEspece() {
+		return espece;
+	}
+
 }

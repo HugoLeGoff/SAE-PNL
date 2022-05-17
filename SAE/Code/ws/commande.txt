@@ -1,0 +1,9 @@
+javac -d ../class ../src/A
+
+cd  ws
+
+
+
+java Start TestTicketMachine
+
+javadoc -charset UTF8 -private -author -d ../javaDoc ../src/Rationnel.java

@@ -16,7 +16,8 @@ public class NidGCI {
 	 */
 	public NidGCI(int id, String plage) {
 		if(id > 0 && plage != null){
-			this.idNid;
+			this.idNid = id;
+			this.nomPlage = plage;
 		}
 		
 	

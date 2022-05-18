@@ -61,12 +61,16 @@ public class Observateur {
 
 	/**
 	 * Définit le nom de Observateur.
-	 * @param nom 
+	 * @param nom nom à définir
 	 */
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
 
+	/**
+	 * Définit le prénom de Observateur.
+	 * @param prenom prénom à définir
+	 */
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}

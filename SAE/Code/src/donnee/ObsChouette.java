@@ -1,9 +1,6 @@
 package donnee;
 import java.util.*;
-<<<<<<< HEAD
 
-=======
->>>>>>> 4d4ce6e61d6f5a529436cd5b14509a76014ec51c
 import java.sql.Time;
 
 public class ObsChouette extends Observation {
@@ -21,21 +18,13 @@ public class ObsChouette extends Observation {
 	 */
 	public ObsChouette(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, TypeObservation type) {
 
+		super(id, date, heure, lieu, observateurs);
+		
 		if( type != null){
 			this.typeObs = type;
 		}
 		else{
 			System.err.println("Le type d'observation n'est pas valide");
-		}
-		if(id != 0 && date != null && heure != null && lieu != null && observateurs != null){
-			super.setId(id);
-			super.setDate(date);
-			super.setHeure(heure);
-			super.setLieu(lieu);
-			super.setObservateurs(observateurs);
-		}
-		else{
-			System.err.println("L'id, la date, l'heure, le lieu ou la liste d'observateurs ne doivent pas être null");
 		}
 
 		throw new UnsupportedOperationException();

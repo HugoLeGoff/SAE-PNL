@@ -19,8 +19,7 @@ public abstract class Observation {
 	 * @param observateurs
 	 */
 	public Observation(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
-		// TODO - implement Observation.Observation
-		throw new UnsupportedOperationException();
+		
 	}
 
 	/**

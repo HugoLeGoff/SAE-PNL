@@ -59,6 +59,6 @@ public class Observateur {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	
+
 	
 }

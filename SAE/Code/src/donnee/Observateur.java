@@ -18,7 +18,7 @@ public class Observateur {
 			this.prenom = lePrenom;
 		}
 		else{
-			System.err.out("Error");
+			System.err.println("Error");
 		}
 	}
 

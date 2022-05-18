@@ -11,7 +11,7 @@ public class ObsHippocampes extends Observation {
 	private boolean estGestant;
 
 	/**
-	 * 
+	 * Constructeur de ObsHippocampes.
 	 * @param id
 	 * @param date
 	 * @param heure
@@ -34,22 +34,42 @@ public class ObsHippocampes extends Observation {
 		throw new UnsupportedOperationException();
 	}
 
+	/**
+	 * Renvoie l'espece de ObsHippocampe.
+	 * @return l'espece de ObsHippocampe
+	 */
 	public EspeceHippocampes getEspece() {
 		return this.espece;
 	}
 
+	/**
+	 * Renvoie le typePeche de ObsHippocampe.
+	 * @return le typePeche de ObsHippocampe
+	 */
 	public Peche getTypePeche() {
 		return this.typePeche;
 	}
 
+	/**
+	 * Renvoie la taille de ObsHippocampe.
+	 * @return la taille de ObsHippocampe
+	 */
 	public double getTaille() {
 		return this.taille;
 	}
 
+	/**
+	 * Renvoie le sexe de ObsHippocampe.
+	 * @return le sexe de ObsHippocampe
+	 */
 	public Sexe getSexe() {
 		return this.sexe;
 	}
 
+	/**
+	 * Renvoie le booleen estGestant de ObsHippocampe.
+	 * @return le booleen estGestant de ObsHippocampe
+	 */
 	public boolean getEstGestant() {
 		return this.estGestant;
 	}

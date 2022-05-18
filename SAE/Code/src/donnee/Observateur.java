@@ -48,5 +48,17 @@ public class Observateur {
 		return this.prenom;
 	}
 
+	public void setIdObservateur(int idObservateur) {
+		this.idObservateur = idObservateur;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+	
 	
 }

@@ -10,7 +10,7 @@ public class Chouette {
 
 	/**
 	 * Constructeur de la classe chouette
-	 * @param id Numero d'identification d ela chouette
+	 * @param id Numero d'identification de la chouette
 	 * @param leSexe Sexe de la chouette
 	 * @param IEspece Espece de chouette
 	 */
@@ -27,37 +27,93 @@ public class Chouette {
 	}
 
 
+	/**
+	 * retourne l'espece de la chouetee
+	 * @return l'espece de la chouette
+	 */
 	public EspeceChouette getEspece() {
 		return this.espece;
 	}
 
+
+	/**
+	 * retourne l'id de la chouette
+	 * @return l'id de la chouette
+	 */
 	public String getIdChouette() {
 		return idChouette;
 	}
 
+	/**
+	 * retourne la liste des observations de la chouette
+	 * @return la liste des observations de la chouette
+	 */
 	public Collection<ObsChouette> getLesObservations() {
 		return lesObservations;
 	}
 
+	/**
+	 * retourne le sexe de la chouette
+	 * @return le sexe de la chouette
+	 */
 	public Sexe getSexe() {
+
 		return sexe;
 	}
 
+	/**
+	 * redéfinit l'espce de la chouette
+	 */
 	public void setEspece(EspeceChouette espece) {
-		this.espece = espece;
+
+		if(espece != null){
+			this.espece = espece;
+		}
+		else{
+			System.err.println("L'espèce ne doit pas être null");
+		}
 	}
 
+	/**
+	 * redéfinit l'id de la chouette
+	 */
 	public void setIdChouette(String idChouette) {
-		this.idChouette = idChouette;
+	
+		if(idChouette != null){
+			this.idChouette = idChouette;
+		}
+		else{
+			System.err.println("L'id ne doit pas être null");
+		}
 	}
 
+	/**
+	 * redéfinit la liste des observations de la chouette
+	 */
 	public void setLesObservations(Collection<ObsChouette> lesObservations) {
-		this.lesObservations = lesObservations;
+	
+		if(lesObservations != null){
+			this.lesObservations = lesObservations;
+		}
+		else{
+			System.err.println("La liste des observations ne doit pas être null");
+		}
 	}
 
+	/**
+	 * redéfinit le sexe de la chouette
+	 */
 	public void setSexe(Sexe sexe) {
-		this.sexe = sexe;
+		
+		if(sexe != null){
+			this.sexe = sexe;
+		}
+		else{
+			System.err.println("Le sexe ne doit pas être null");
+		}
 	}
+
+
 	
 	
 

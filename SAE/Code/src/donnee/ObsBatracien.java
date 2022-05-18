@@ -31,7 +31,7 @@ public class ObsBatracien extends Observation {
 
 	/**
 	 * Renvoie l'espece de ObsBatracien.
-	 * @return
+	 * @return espece de ObsBatracien
 	 */
 	public EspeceBatracien getEspece() {
 		return this.espece;
@@ -39,7 +39,7 @@ public class ObsBatracien extends Observation {
 
 	/**
 	 * Renvoie le nombreAdultes de ObsBatracien.
-	 * @return
+	 * @return nombreAdultes de ObsBatracien
 	 */
 	public int getNombreAdultes() {
 		return this.nombreAdultes;
@@ -47,7 +47,7 @@ public class ObsBatracien extends Observation {
 
 	/**
 	 * Renvoie le nombreAmplexus de ObsBatracien.
-	 * @return
+	 * @return nombreAmplexus de ObsBatracien
 	 */
 	public int getNombreAmplexus() {
 		return this.nombreAmplexus;
@@ -55,7 +55,7 @@ public class ObsBatracien extends Observation {
 
 	/**
 	 * Renvoie le nombrePonte de ObsBatracien.
-	 * @return
+	 * @return nombrePonte de ObsBatracien
 	 */
 	public int getNombrePonte() {
 		return this.nombrePonte;
@@ -63,7 +63,7 @@ public class ObsBatracien extends Observation {
 
 	/**
 	 * Renvoie le nombreTetard de ObsBatracien.
-	 * @return
+	 * @return nombreTetard de ObsBatracien
 	 */
 	public int getNombreTetard() {
 		return nombreTetard;

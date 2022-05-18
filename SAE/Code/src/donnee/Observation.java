@@ -1,5 +1,6 @@
 package donnee;
 import java.util.*;
+import java.util.Date;
 import java.sql.*;
 
 public abstract class Observation {
@@ -18,10 +19,10 @@ public abstract class Observation {
 	 * @param lieu
 	 * @param observateurs
 	 */
-	public Observation(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
+	public Observation(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
 		if(id > 0 && date != null && heure != null && lieu != null && observateurs != null){
 			this.idObs = id;
-			this.dateObs = date;
+			this.dateObs = (java.sql.Date) date;
 			this.heureObs = heure;
 			this.lieuObs = lieu;
 			this.lesObservateurs = observateurs;

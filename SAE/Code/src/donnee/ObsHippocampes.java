@@ -11,7 +11,7 @@ public class ObsHippocampes extends Observation {
 	private boolean estGestant;
 
 	/**
-	 * 
+	 * Constructeur de ObsHippocampes.
 	 * @param id
 	 * @param date
 	 * @param heure
@@ -24,30 +24,53 @@ public class ObsHippocampes extends Observation {
 	 */
 	public ObsHippocampes(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, double laTaille, Peche leTypePeche, EspeceHippocampes IEspece, Sexe leSexe, boolean estGestant) {
 		super(id, date, heure, lieu, observateurs);
-		// TODO - implement ObsHippocampes.ObsHippocampes
+		if(laTaille>0 && leTypePeche !=null && IEspece!=null && leSexe!=null){
+			this.taille = laTaille;
+			this.typePeche = leTypePeche;
+			this.espece = IEspece;
+			this.sexe = leSexe;
+			this.estGestant = estGestant;
+		}
 		throw new UnsupportedOperationException();
 	}
 
+	/**
+	 * Renvoie l'espece de ObsHippocampe.
+	 * @return l'espece de ObsHippocampe
+	 */
 	public EspeceHippocampes getEspece() {
-		return espece;
+		return this.espece;
 	}
 
+	/**
+	 * Renvoie le typePeche de ObsHippocampe.
+	 * @return le typePeche de ObsHippocampe
+	 */
 	public Peche getTypePeche() {
-		return typePeche;
+		return this.typePeche;
 	}
 
+	/**
+	 * Renvoie la taille de ObsHippocampe.
+	 * @return la taille de ObsHippocampe
+	 */
 	public double getTaille() {
-		return taille;
+		return this.taille;
 	}
 
+	/**
+	 * Renvoie le sexe de ObsHippocampe.
+	 * @return le sexe de ObsHippocampe
+	 */
 	public Sexe getSexe() {
-		return sexe;
+		return this.sexe;
 	}
 
+	/**
+	 * Renvoie le booleen estGestant de ObsHippocampe.
+	 * @return le booleen estGestant de ObsHippocampe
+	 */
 	public boolean getEstGestant() {
-		return estGestant;
+		return this.estGestant;
 	}
-//coucou
-
-
 }

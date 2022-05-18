@@ -12,20 +12,40 @@ public class Observateur {
 	 * @param lePrenom
 	 */
 	public Observateur(int id, String leNom, String lePrenom) {
-		// TODO - implement Observateur.Observateur
-		throw new UnsupportedOperationException();
+		if(id > 0 && leNom != null && lePrenom != null){
+			this.idObservateur = id;
+			this.nom = leNom;
+			this.prenom = lePrenom;
+		}
+		else{
+			System.err.println("Error");
+		}
 	}
 
+
+	/**
+	 * 
+	 * @return
+	 */
 	public int getIdObservateur() {
-		return idObservateur;
+		return this.idObservateur;
 	}
 
+
+	/**
+	 * 
+	 * @return
+	 */
 	public String getNom() {
-		return nom;
+		return this.nom;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getPrenom() {
-		return prenom;
+		return this.prenom;
 	}
 
 	public void setIdObservateur(int idObservateur) {

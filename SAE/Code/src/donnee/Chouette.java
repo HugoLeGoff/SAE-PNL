@@ -32,7 +32,7 @@ public class Chouette {
 	 * @return l'espece de la chouette
 	 */
 	public EspeceChouette getEspece() {
-		return espece;
+		return this.espece;
 	}
 
 

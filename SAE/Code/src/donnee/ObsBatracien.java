@@ -74,7 +74,11 @@ public class ObsBatracien extends Observation {
 	 * @param espece espece de ObsBatracien à définir
 	 */
 	public void setEspece(EspeceBatracien espece) {
-		this.espece = espece;
+		if(espece!=null){
+			this.espece = espece;
+		}else{
+			System.err.println("setEspece : espece ne peut pas être null");
+		}
 	}
 
 	/**
@@ -82,7 +86,11 @@ public class ObsBatracien extends Observation {
 	 * @param nombreAdultes nombreAdultes de ObsBatracien à définir
 	 */
 	public void setNombreAdultes(int nombreAdultes) {
-		this.nombreAdultes = nombreAdultes;
+		if(nombreAdultes>=0){
+			this.nombreAdultes = nombreAdultes;
+		}else{
+			System.err.println("setNombreAdultes : nombreAdultes ne peut pas être inférieur à 0");
+		}
 	}
 
 	/**

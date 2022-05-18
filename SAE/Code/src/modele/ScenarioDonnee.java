@@ -7,8 +7,9 @@ import java.sql.Date;
 
 public class ScenarioDonnee {
     public static void main(String[] args){
-        long dt = 31556926000; 
-        java.sql.Date d = new java.sql.Date(dt);
+         
+        java.sql.Date d = new java.sql.Date(0);
+        d = d.valueOf("2015-05-03");
         java.sql.Time t = new Time(3000);
         Lieu l = new Lieu(50, 50);
         Observateur obsBen1 = new Observateur(1, "Hugo", "Le Goff");
@@ -43,6 +44,10 @@ public class ScenarioDonnee {
         System.out.println("*** Test cas normaux de ObsChouettes");
 
         ObsChouette chouette = new ObsChouette(5, d, t, l, obs, type);
+        System.out.println(chouette.getDateObs());
+        System.out.println(chouette.getDateObs());
+        System.out.println(chouette.getDateObs());
+        System.out.println(chouette.getDateObs());
         System.out.println(chouette.getDateObs());
 
 

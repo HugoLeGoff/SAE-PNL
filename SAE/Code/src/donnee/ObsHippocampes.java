@@ -30,8 +30,9 @@ public class ObsHippocampes extends Observation {
 			this.espece = IEspece;
 			this.sexe = leSexe;
 			this.estGestant = estGestant;
+		}else{
+			System.err.println("ObsHippocampes : la Taille est inférieure à 0 et/ou leTypePeche est null et/ou leSexe est null");
 		}
-		throw new UnsupportedOperationException();
 	}
 
 	/**

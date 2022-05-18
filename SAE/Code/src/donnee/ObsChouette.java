@@ -1,8 +1,6 @@
 package donnee;
 import java.util.*;
 
-import javafx.scene.input.GestureEvent;
-
 import java.sql.Time;
 
 public class ObsChouette extends Observation {
@@ -10,26 +8,57 @@ public class ObsChouette extends Observation {
 	private TypeObservation typeObs;
 
 	/**
-	 * 
-	 * @param id
-	 * @param date
-	 * @param heure
-	 * @param lieu
-	 * @param observateurs
-	 * @param type
+	 * Constructeur de la classe ObsChouette
+	 * @param id Numero d'identification de la chouette
+	 * @param date Date de l'observation 
+	 * @param heure Heure de l'observation
+	 * @param lieu Lieu de l'observation
+	 * @param observateurs Liste des observateurs
+	 * @param type Type d'observation
 	 */
 	public ObsChouette(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, TypeObservation type) {
-		super( id, date, heure, lieu, observateurs);
-		// TODO - implement ObsChouette.ObsChouette
+
+		if( type != null){
+			this.typeObs = type;
+		}
+		else{
+			System.err.println("Le type d'observation n'est pas valide");
+		}
+		if(id != 0 && date != null && heure != null && lieu != null && observateurs != null){
+			super.setId(id);
+			super.setDate(date);
+			super.setHeure(heure);
+			super.setLieu(lieu);
+			super.setObservateurs(observateurs);
+		}
+		else{
+			System.err.println("L'id, la date, l'heure, le lieu ou la liste d'observateurs ne doivent pas être null");
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
+	/**
+	 * retourne le type d'observation
+	 * @return le type d'observation
+	 */
 	public TypeObservation getTypeObs() {
 		return typeObs;
 	}
 
+	/**
+	 * définit le type d'observation
+	 * @param typeObs le type d'observation
+	 */
 	public void setTypeObs(TypeObservation typeObs) {
-		this.typeObs = typeObs;
+	
+		if(typeObs != null){
+			this.typeObs = typeObs;
+		}
+		else{
+			System.out.println("Type d'observation ne doit pas être null");
+		}
+			
 	}
 
 }

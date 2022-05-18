@@ -7,17 +7,33 @@ public class ObsLoutre extends Observation {
 	private IndiceLoutre indice;
 
 	/**
-	 * 
-	 * @param id
-	 * @param date
-	 * @param heure
-	 * @param lieu
-	 * @param observateurs
+	 * Constructeur de la classe ObsLoutre
+	 * @param id Numero d'identification de la loutre
+	 * @param date Date de l'observation
+	 * @param heure Heure de l'observation
+	 * @param lieu Lieu de l'observation
+	 * @param observateurs Liste des observateurs
 	 */
 	public ObsLoutre(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
 		super( id, date, heure, lieu, observateurs);
 		// TODO - implement ObsLoutre.ObsLoutre
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * retourne l'indice de la loutre
+	 * @return l'indice de la loutre
+	 */
+	public IndiceLoutre getIndice() {
+		return indice;
+	}
+
+	/**
+	 * définit l'indice de la loutre
+	 * @param indice l'indice de la loutre
+	 */
+	public void setIndice(IndiceLoutre indice) {
+		this.indice = indice;
 	}
 
 }

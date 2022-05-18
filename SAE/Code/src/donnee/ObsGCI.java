@@ -17,8 +17,9 @@ public class ObsGCI extends Observation {
 	 * @param nature Observation de la nature
 	 * @param leNombre Nombre d'oiseaux observés
 	 */
-	public ObsGCI(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, ContenuNid nature, int leNombre) {
 
+	public ObsGCI(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, ContenuNid nature, int leNombre) {
+		
 		super( id, date, heure, lieu, observateurs);
 		
 		if(nature != null && leNombre > 0){
@@ -65,5 +66,8 @@ public class ObsGCI extends Observation {
 		this.nombre = nombre;
 	}
 	
+	public EspeceObservee especeObs(){
+		return EspeceObservee.GCI;
+	}
 
 }

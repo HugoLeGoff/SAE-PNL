@@ -22,7 +22,7 @@ public class ObsHippocampes extends Observation {
 	 * @param IEspece
 	 * @param leSexe
 	 */
-	public ObsHippocampes(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, double laTaille, Peche leTypePeche, EspeceHippocampes IEspece, Sexe leSexe, boolean estGestant) {
+	public ObsHippocampes(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, double laTaille, Peche leTypePeche, EspeceHippocampes IEspece, Sexe leSexe, boolean estGestant) {
 		super(id, date, heure, lieu, observateurs);
 		if(laTaille>0 && leTypePeche !=null && IEspece!=null && leSexe!=null){
 			this.taille = laTaille;
@@ -73,5 +73,9 @@ public class ObsHippocampes extends Observation {
 	 */
 	public boolean getEstGestant() {
 		return this.estGestant;
+	}
+
+	public EspeceObservee especeObs(){
+		return EspeceObservee.HIPPOCAMPE;
 	}
 }

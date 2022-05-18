@@ -75,7 +75,7 @@ public class ObsHippocampes extends Observation {
 		return this.estGestant;
 	}
 
-<<<<<<< HEAD
+
 	/**
 	 * Définit l'espece de ObsHippocampe.
 	 * @param espece espece à définir
@@ -130,9 +130,10 @@ public class ObsHippocampes extends Observation {
 	 */
 	public void setEstGestant(boolean estGestant){
 		this.estGestant = estGestant;
-=======
+	}
+	
 	public EspeceObservee especeObs(){
 		return EspeceObservee.HIPPOCAMPE;
->>>>>>> eef79c1f2a9feb40e42f7cab1719d046012faf45
+
 	}
 }

@@ -14,12 +14,9 @@ public class ObsLoutre extends Observation {
 	 * @param lieu Lieu de l'observation
 	 * @param observateurs Liste des observateurs
 	 */
-<<<<<<< HEAD
-	public ObsLoutre(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
-=======
-	public ObsLoutre(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, IndiceLoutre indice) {
 
->>>>>>> c6054ab877b4164d039a3d80d4ea65087e986cba
+	public ObsLoutre(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
+
 		super( id, date, heure, lieu, observateurs);
 
 		if(indice != null){

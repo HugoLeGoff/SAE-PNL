@@ -10,28 +10,42 @@ public class Lieu {
 	 * @param y Coordonnees de y en Lambert 93
 	 */
 	public Lieu(double x, double y) {
-		// TODO - implement Lieu.Lieu
 		if(x > 0 && y>0){
 			this.xCoord = x;
 			this.yCoord = y;
 		}
 		else{
-			System.err.println("Les coordonnées de x ou y ne sont pas valides");
+			System.err.println("Lieu : Les coordonnées de x ou y ne sont pas valides");
 		}
 	}
 	
+	/**
+	 * Renvoie les coordonnees de x en Lambert 93 de Lieu.
+	 * @return coordonnees de x en Lambert 93 de Lieu
+	 */
 	public double getxCoord() {
-		return xCoord;
+		return this.xCoord;
 	}
-
+	/**
+	 * Renvoie les coordonnees de y en Lambert 93 de Lieu.
+	 * @return coordonnees de y en Lambert 93 de Lieu
+	 */
 	public double getyCoord() {
-		return yCoord;
+		return this.yCoord;
 	}
 
+	/**
+	 * Définit les coordonnees de x en Lambert 93 de Lieu.
+	 * @param xCoord coordonnees de x en Lambert 93 de Lieu
+	 */
 	public void setxCoord(double xCoord) {
 		this.xCoord = xCoord;
 	}
 
+	/**
+	 * Définit les coordonnees de y en Lambert 93 de Lieu.
+	 * @param yCoord coordonnees de y en Lambert 93 de Lieu
+	 */
 	public void setyCoord(double yCoord) {
 		this.yCoord = yCoord;
 	}

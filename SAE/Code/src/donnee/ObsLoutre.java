@@ -14,9 +14,21 @@ public class ObsLoutre extends Observation {
 	 * @param lieu Lieu de l'observation
 	 * @param observateurs Liste des observateurs
 	 */
+<<<<<<< HEAD
 	public ObsLoutre(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
+=======
+	public ObsLoutre(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, IndiceLoutre indice) {
+
+>>>>>>> c6054ab877b4164d039a3d80d4ea65087e986cba
 		super( id, date, heure, lieu, observateurs);
-		// TODO - implement ObsLoutre.ObsLoutre
+
+		if(indice != null){
+			this.indice = indice;
+		}
+		else{
+			System.err.println("ObsLoutre : L'indice n'est pas valide");
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -33,7 +45,14 @@ public class ObsLoutre extends Observation {
 	 * @param indice l'indice de la loutre
 	 */
 	public void setIndice(IndiceLoutre indice) {
-		this.indice = indice;
+		
+		if(indice != null){
+			this.indice = indice;
+		}
+		else{
+			System.out.println("setIndice : indice ne doit pas être null");
+		}
+			
 	}
 
 	public EspeceObservee especeObs(){

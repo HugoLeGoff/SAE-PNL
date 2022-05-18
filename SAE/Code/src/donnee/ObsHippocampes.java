@@ -24,30 +24,33 @@ public class ObsHippocampes extends Observation {
 	 */
 	public ObsHippocampes(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, double laTaille, Peche leTypePeche, EspeceHippocampes IEspece, Sexe leSexe, boolean estGestant) {
 		super(id, date, heure, lieu, observateurs);
-		// TODO - implement ObsHippocampes.ObsHippocampes
+		if(laTaille>0 && leTypePeche !=null && IEspece!=null && leSexe!=null){
+			this.taille = laTaille;
+			this.typePeche = leTypePeche;
+			this.espece = IEspece;
+			this.sexe = leSexe;
+			this.estGestant = estGestant;
+		}
 		throw new UnsupportedOperationException();
 	}
 
 	public EspeceHippocampes getEspece() {
-		return espece;
+		return this.espece;
 	}
 
 	public Peche getTypePeche() {
-		return typePeche;
+		return this.typePeche;
 	}
 
 	public double getTaille() {
-		return taille;
+		return this.taille;
 	}
 
 	public Sexe getSexe() {
-		return sexe;
+		return this.sexe;
 	}
 
 	public boolean getEstGestant() {
-		return estGestant;
+		return this.estGestant;
 	}
-//coucou
-
-
 }

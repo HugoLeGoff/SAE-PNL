@@ -165,5 +165,15 @@ public class Chouette implements IObs<ObsChouette> {
 		return false;
 	}
 
+	/**
+	 * retourne le nombre d'observations de la chouette
+	 * @return le nombre d'observations de la chouette
+	 */
+	public int nbObs(){
+
+		return lesObservations.size();
+	};
+
+
 
 }

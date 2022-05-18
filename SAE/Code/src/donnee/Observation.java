@@ -34,7 +34,12 @@ public abstract class Observation {
 	 * @param o
 	 */
 	public void ajouteObservateur(Observateur o) {
-	
+		if(o != null){
+			lesObservateurs.add(o);
+		}
+		else{
+			System.err.println("L'observateur ne doit pas être null");
+		}
 	}
 
 	/**
@@ -42,8 +47,13 @@ public abstract class Observation {
 	 * @param idObservateur
 	 */
 	public void retireObservateur(int idObservateur) {
-		// TODO - implement Observation.retireObservateur
-		throw new UnsupportedOperationException();
+
+		if(lesObservateurs != null && idObservateur >= 0){
+			lesObservateurs.remove(idObs);
+		}
+		else{
+			System.err.println("La liste des observateurs ne doit pas être null et l'id doit être supérieur ou égal à 0");
+		}
 	}
 
 	public abstract EspeceObservee especeObs();

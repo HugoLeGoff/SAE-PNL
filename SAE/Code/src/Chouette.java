@@ -24,11 +24,8 @@ public class Chouette implements IObs<ObsChouette> {
 		}
 		else{
 			System.err.println("L'id ou le sexe ou l'espèce ne sont pas valides");
-		}
-
-		
+		}		
 	}
-
 
 	/**
 	 * retourne l'espece de la chouetee

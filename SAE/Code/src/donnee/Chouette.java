@@ -9,7 +9,7 @@ public class Chouette {
 	private String idChouette;
 
 	/**
-	 * Constructeur de la classe chouette
+	 * Constructeur de la classe chouett
 	 * @param id Numero d'identification d ela chouette
 	 * @param leSexe Sexe de la chouette
 	 * @param IEspece Espece de chouette

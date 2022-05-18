@@ -14,7 +14,8 @@ public class ObsLoutre extends Observation {
 	 * @param lieu Lieu de l'observation
 	 * @param observateurs Liste des observateurs
 	 */
-	public ObsLoutre(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, IndiceLoutre indice) {
+
+	public ObsLoutre(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
 
 		super( id, date, heure, lieu, observateurs);
 
@@ -49,6 +50,10 @@ public class ObsLoutre extends Observation {
 			System.out.println("setIndice : indice ne doit pas être null");
 		}
 			
+	}
+
+	public EspeceObservee especeObs(){
+		return EspeceObservee.LOUTRE;
 	}
 
 }

@@ -28,7 +28,7 @@ public class Chouette {
 
 
 	public EspeceChouette getEspece() {
-		return espece;
+		return this.espece;
 	}
 
 	public String getIdChouette() {

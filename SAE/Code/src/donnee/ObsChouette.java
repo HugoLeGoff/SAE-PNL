@@ -16,7 +16,7 @@ public class ObsChouette extends Observation {
 	 * @param observateurs Liste des observateurs
 	 * @param type Type d'observation
 	 */
-	public ObsChouette(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, TypeObservation type) {
+	public ObsChouette(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, TypeObservation type) {
 
 		super(id, date, heure, lieu, observateurs);
 		
@@ -51,6 +51,10 @@ public class ObsChouette extends Observation {
 			System.out.println("Type d'observation ne doit pas être null");
 		}
 			
+	}
+
+	public EspeceObservee especeObs(){
+		return EspeceObservee.CHOUETTE;
 	}
 
 }

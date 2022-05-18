@@ -1,11 +1,11 @@
 package donnee;
 import java.util.*;
-import java.sql.Time;
+import java.sql.*;
 
 public abstract class Observation {
 
-	protected Lieu LieuObs;
-	protected Collection<Observateur> LesObservateurs;
+	protected Lieu lieuObs;
+	protected Collection<Observateur> lesObservateurs;
 	protected int idObs;
 	protected java.sql.Date dateObs;
 	protected java.sql.Time heureObs;
@@ -18,8 +18,14 @@ public abstract class Observation {
 	 * @param lieu
 	 * @param observateurs
 	 */
-	public Observation(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
-		
+	public Observation(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
+		if(id > 0 && date != null && heure != null && lieu != null && observateurs != null){
+			this.idObs = id;
+			this.dateObs = date;
+			this.heureObs = heure;
+			this.lieuObs = lieu;
+			this.lesObservateurs = observateurs;
+		}
 	}
 
 	/**
@@ -40,10 +46,9 @@ public abstract class Observation {
 		throw new UnsupportedOperationException();
 	}
 
-	public EspeceObservee especeObs() {
-		// TODO - implement Observation.especeObs
-		throw new UnsupportedOperationException();
-	}
+	public abstract EspeceObservee especeObs();
+
+	
 
 	public java.sql.Date getDateObs() {
 		return dateObs;
@@ -58,11 +63,11 @@ public abstract class Observation {
 	}
 
 	public Collection<Observateur> getLesObservateurs() {
-		return LesObservateurs;
+		return lesObservateurs;
 	}
 
 	public Lieu getLieuObs() {
-		return LieuObs;
+		return lieuObs;
 	}
 
 	public void setDateObs(java.sql.Date dateObs) {
@@ -77,11 +82,11 @@ public abstract class Observation {
 	}
 
 	public void setLesObservateurs(Collection<Observateur> lesObservateurs) {
-		LesObservateurs = lesObservateurs;
+		lesObservateurs = lesObservateurs;
 	}
 
 	public void setLieuObs(Lieu lieuObs) {
-		LieuObs = lieuObs;
+		lieuObs = lieuObs;
 	}
 
 }

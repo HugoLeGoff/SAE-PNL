@@ -20,7 +20,7 @@ public class ObsBatracien extends Observation {
 	 * @param resObs
 	 * @param lEspece
 	 */
-	public ObsBatracien(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, int[] resObs, EspeceBatracien lEspece) {
+	public ObsBatracien(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, int[] resObs, EspeceBatracien lEspece) {
 		super( id, date, heure, lieu, observateurs);
 		if(resObs!=null && lEspece!=null){
 
@@ -107,6 +107,10 @@ public class ObsBatracien extends Observation {
 	 */
 	public void setNombreTetard(int nombreTetard) {
 		this.nombreTetard = nombreTetard;
+	}
+
+	public EspeceObservee especeObs(){
+		return EspeceObservee.BATRACIEN;
 	}
 
 	

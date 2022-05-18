@@ -17,7 +17,7 @@ public class ObsGCI extends Observation {
 	 * @param nature
 	 * @param leNombre
 	 */
-	public ObsGCI(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, ContenuNid nature, int leNombre) {
+	public ObsGCI(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, ContenuNid nature, int leNombre) {
 		super( id, date, heure, lieu, observateurs);
 		// TODO - implement ObsGCI.ObsGCI
 		throw new UnsupportedOperationException();
@@ -40,5 +40,8 @@ public class ObsGCI extends Observation {
 		this.nombre = nombre;
 	}
 	
+	public EspeceObservee especeObs(){
+		return EspeceObservee.GCI;
+	}
 
 }

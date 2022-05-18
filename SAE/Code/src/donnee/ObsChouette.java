@@ -8,7 +8,7 @@ public class ObsChouette extends Observation {
 	private TypeObservation typeObs;
 
 	/**
-	 * Constructeur de la classe ObsChouette
+	 * Constructeur de la classe ObsChouette.
 	 * @param id Numero d'identification de la chouette
 	 * @param date Date de l'observation 
 	 * @param heure Heure de l'observation
@@ -24,22 +24,20 @@ public class ObsChouette extends Observation {
 			this.typeObs = type;
 		}
 		else{
-			System.err.println("Le type d'observation n'est pas valide");
+			System.err.println("ObsChouette : Le type d'observation n'est pas valide");
 		}
-
-		throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * retourne le type d'observation
+	 * Retourne le type d'observation.
 	 * @return le type d'observation
 	 */
 	public TypeObservation getTypeObs() {
-		return typeObs;
+		return this.typeObs;
 	}
-
+	
 	/**
-	 * définit le type d'observation
+	 * Définit le type d'observation.
 	 * @param typeObs le type d'observation
 	 */
 	public void setTypeObs(TypeObservation typeObs) {
@@ -48,7 +46,7 @@ public class ObsChouette extends Observation {
 			this.typeObs = typeObs;
 		}
 		else{
-			System.out.println("Type d'observation ne doit pas être null");
+			System.out.println("setTypeObs : typeObs ne doit pas être null");
 		}
 			
 	}

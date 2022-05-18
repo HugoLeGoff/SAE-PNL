@@ -19,7 +19,7 @@ public abstract class Observation {
 	 * @param lieu
 	 * @param observateurs
 	 */
-	public Observation(int id, Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
+	public Observation(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
 		if(id > 0 && date != null && heure != null && lieu != null && observateurs != null){
 			this.idObs = id;
 			this.dateObs = (java.sql.Date) date;
@@ -34,8 +34,7 @@ public abstract class Observation {
 	 * @param o
 	 */
 	public void ajouteObservateur(Observateur o) {
-		// TODO - implement Observation.ajouteObservateur
-		throw new UnsupportedOperationException();
+	
 	}
 
 	/**

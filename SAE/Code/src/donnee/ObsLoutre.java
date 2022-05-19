@@ -52,6 +52,10 @@ public class ObsLoutre extends Observation {
 			
 	}
 
+	/**
+	 * retourne l'espece observée
+	 * @return l'espece observée
+	 */
 	public EspeceObservee especeObs(){
 		return EspeceObservee.LOUTRE;
 	}

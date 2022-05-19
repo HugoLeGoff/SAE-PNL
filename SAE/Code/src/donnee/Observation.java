@@ -162,7 +162,6 @@ public abstract class Observation {
 	 * modifie le lieu de l'observation
 	 * @param lieuObs la nouvelle lieu de l'observation
 	 */
-	 */
 	public void setLieuObs(Lieu lieuObs) {
 		
 		if(lieuObs != null){

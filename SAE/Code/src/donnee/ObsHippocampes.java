@@ -12,15 +12,15 @@ public class ObsHippocampes extends Observation {
 
 	/**
 	 * Constructeur de ObsHippocampes.
-	 * @param id
-	 * @param date
-	 * @param heure
-	 * @param lieu
-	 * @param observateurs
-	 * @param laTaille
-	 * @param leTypePeche
-	 * @param IEspece
-	 * @param leSexe
+	 * @param id numéro d'identification de la chouette
+	 * @param date Date de l'observation 
+	 * @param heure Heure de l'observation
+	 * @param lieu Lieu de l'observation
+	 * @param observateurs Liste des observateurs
+	 * @param laTaille Taille de l'individu
+	 * @param leTypePeche Type de peche
+	 * @param IEspece Espece observée
+	 * @param leSexe Sexe de l'individu
 	 */
 	public ObsHippocampes(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, double laTaille, Peche leTypePeche, EspeceHippocampes IEspece, Sexe leSexe, boolean estGestant) {
 		super(id, date, heure, lieu, observateurs);

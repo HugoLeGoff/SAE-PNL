@@ -4,9 +4,21 @@ import java.sql.Time;
 
 public class NidGCI implements IObs<ObsGCI>{
 
+	/**
+	 * collection lesObservations
+	 */
 	private Collection<ObsGCI> lesObservations;
+	/**
+	 * id de NidGCI
+	 */
 	private int idNid;
+	/**
+	 * nbEnvol de NidGCI
+	 */
 	private int nbEnvol;
+	/**
+	 * nomPlage de NidGCI
+	 */
 	private String nomPlage;
 
 	/**
@@ -34,13 +46,11 @@ public class NidGCI implements IObs<ObsGCI>{
 	}
 	
 	public Date dateDebutObs() {
-		// TODO - implement NidGCI.dateDebutObs
-		throw new UnsupportedOperationException();
+		return ((Observation) lesObservations.toArray()[0]).getDateObs();
 	}
 
 	public Date dateFinObs() {
-		// TODO - implement NidGCI.dateFinObs
-		throw new UnsupportedOperationException();
+		return ((Observation) lesObservations.toArray()[lesObservations.size()]).getDateObs();
 	}
 
 	/**

@@ -1,8 +1,23 @@
 package donnee;
+
+/**
+ * crée un observateur
+ */
 public class Observateur {
 
+	/**
+	 * identifiant de l'observateur
+	 */
 	private int idObservateur;
+
+	/**
+	 * nom de l'observateur
+	 */
 	private String nom;
+
+	/**
+	 * prenom de l'observateur
+	 */
 	private String prenom;
 
 	/**

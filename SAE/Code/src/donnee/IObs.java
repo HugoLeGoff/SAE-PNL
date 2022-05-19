@@ -2,6 +2,9 @@ package donnee;
 import java.util.*;
 import java.sql.Time;
 
+/**
+ * interface d'une observation
+ */
 public interface IObs <T>{
 
 	/**

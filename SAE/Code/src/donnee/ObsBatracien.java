@@ -12,13 +12,13 @@ public class ObsBatracien extends Observation {
 
 	/**
 	 * Constructeur de ObsBatracien.
-	 * @param id
-	 * @param date
-	 * @param heure
-	 * @param lieu
-	 * @param observateurs
-	 * @param resObs
-	 * @param lEspece
+	 * @param id numéro d'identification du batracien
+	 * @param date Date de l'observation
+	 * @param heure Heure de l'observation
+	 * @param lieu Lieu de l'observation
+	 * @param observateurs Liste des observateurs
+	 * @param resObs Resultat de l'observation
+	 * @param lEspece Espece observée
 	 */
 	public ObsBatracien(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, int[] resObs, EspeceBatracien lEspece) {
 		super( id, date, heure, lieu, observateurs);
@@ -117,6 +117,10 @@ public class ObsBatracien extends Observation {
 		this.nombreTetard = nombreTetard;
 	}
 
+	/**
+	 * retourne l'espece observée
+	 * @return l'espece observée
+	 */
 	public EspeceObservee especeObs(){
 		return EspeceObservee.BATRACIEN;
 	}

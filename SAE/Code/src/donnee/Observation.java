@@ -12,7 +12,7 @@ public abstract class Observation {
 	protected java.sql.Time heureObs;
 
 	/**
-	 * 
+	 * Constructeur de Observation.
 	 * @param id
 	 * @param date
 	 * @param heure
@@ -30,21 +30,21 @@ public abstract class Observation {
 	}
 
 	/**
-	 * 
-	 * @param o
+	 * Ajoute un observateur dans la collection observateurs.
+	 * @param o observateur à ajouter
 	 */
 	public void ajouteObservateur(Observateur o) {
 		if(o != null){
 			lesObservateurs.add(o);
 		}
 		else{
-			System.err.println("L'observateur ne doit pas être null");
+			System.err.println("ajouteObservateur : L'observateur ne doit pas être null");
 		}
 	}
 
 	/**
-	 * 
-	 * @param idObservateur
+	 * Retire un observateur dans la collection observateurs.
+	 * @param idObservateur id de l'observateur à enlever
 	 */
 	public void retireObservateur(int idObservateur) {
 
@@ -52,51 +52,90 @@ public abstract class Observation {
 			lesObservateurs.remove(idObs);
 		}
 		else{
-			System.err.println("La liste des observateurs ne doit pas être null et l'id doit être supérieur ou égal à 0");
+			System.err.println("retireObservateur : La liste des observateurs ne doit pas être null et l'id doit être supérieur ou égal à 0");
 		}
 	}
 
 	public abstract EspeceObservee especeObs();
 
-	
-
+	/**
+	 * Renvoie la dateObs de Observation.
+	 * @return dateObs de Observation
+	 */
 	public java.sql.Date getDateObs() {
 		return dateObs;
 	}
 
+	/**
+	 * Renvoie l'heure de Observation.
+	 * @return heure de Observation
+	 */
 	public java.sql.Time getHeureObs() {
 		return heureObs;
 	}
 
+	/**
+	 * Renvoie l'idObs de Observation.
+	 * @return idObs de Observation
+	 */
 	public int getIdObs() {
 		return idObs;
 	}
 
+	/**
+	 * Renvoie les Observateurs de la collection lesObservateurs.
+	 * @return les Observateurs de la collection lesObservateurs
+	 */
 	public Collection<Observateur> getLesObservateurs() {
 		return lesObservateurs;
 	}
 
+	/**
+	 * Renvoie le lieu de Observation.
+	 * @return lieu de Observation
+	 */
 	public Lieu getLieuObs() {
 		return lieuObs;
 	}
 
+	/**
+	 * Définit la dateObs de Observation.
+	 * @param dateObs dateObs à définir
+	 */
 	public void setDateObs(java.sql.Date dateObs) {
 		this.dateObs = dateObs;
 	}
 
+	/**
+	 * Définit l'heureObs de Observation.
+	 * @param heureObs heureObs à définir
+	 */
 	public void setHeureObs(java.sql.Time heureObs) {
 		this.heureObs = heureObs;
 	}
+
+	/**
+	 * Définit l'idObs de Observation.
+	 * @param idObs idObs à définir
+	 */
 	public void setIdObs(int idObs) {
 		this.idObs = idObs;
 	}
 
+	/**
+	 * Définit les Observateurs dans la collection lesObservateurs.
+	 * @param lesObservateurs lesObservateurs à définir dans la collection
+	 */
 	public void setLesObservateurs(Collection<Observateur> lesObservateurs) {
-		lesObservateurs = lesObservateurs;
+		this.lesObservateurs = lesObservateurs;
 	}
 
+	/**
+	 * Définit le lieu de Observation.
+	 * @param lieuObs lieu à définir
+	 */
 	public void setLieuObs(Lieu lieuObs) {
-		lieuObs = lieuObs;
+		this.lieuObs = lieuObs;
 	}
 
 }

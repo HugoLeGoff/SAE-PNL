@@ -1,4 +1,5 @@
 package donnee;
+
 public class Lieu {
 
 	private double xCoord;

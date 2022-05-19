@@ -3,12 +3,34 @@ import java.util.*;
 import java.util.Date;
 import java.sql.*;
 
+/**
+ * crée une observation
+ */
 public abstract class Observation {
 
+	/**
+	 * lieu de l'observation
+	 */
 	protected Lieu lieuObs;
+
+	/**
+	 * la liste des observateurs
+	 */
 	protected Collection<Observateur> lesObservateurs;
+
+	/**
+	 * identifiatn de l'observation
+	 */
 	protected int idObs;
+	
+	/**
+	 * date de l'observation
+	 */
 	protected java.sql.Date dateObs;
+
+	/**
+	 * heure de l'observation
+	 */
 	protected java.sql.Time heureObs;
 
 	/**

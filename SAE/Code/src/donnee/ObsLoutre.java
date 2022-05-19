@@ -30,7 +30,7 @@ public class ObsLoutre extends Observation {
 	}
 
 	/**
-	 * retourne l'indice de la loutre
+	 * Retourne l'indice de la loutre.
 	 * @return l'indice de la loutre
 	 */
 	public IndiceLoutre getIndice() {

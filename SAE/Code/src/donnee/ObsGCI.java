@@ -2,9 +2,19 @@ package donnee;
 import java.util.*;
 import java.sql.Time;
 
+/**
+ * crée un observation de GCI
+ */
 public class ObsGCI extends Observation {
 
+	/**
+	 * nature de l'observation
+	 */
 	private ContenuNid natureObs;
+
+	/**
+	 * nombre d'oiseaux observés
+	 */
 	private int nombre;
 
 	/**

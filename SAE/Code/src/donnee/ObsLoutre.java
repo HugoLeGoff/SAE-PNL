@@ -24,15 +24,7 @@ public class ObsLoutre extends Observation {
 	public ObsLoutre(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
 
 		super( id, date, heure, lieu, observateurs);
-
-		if(indice != null){
-			this.indice = indice;
-		}
-		else{
-			System.err.println("ObsLoutre : L'indice n'est pas valide");
-		}
-
-		throw new UnsupportedOperationException();
+	
 	}
 
 	/**

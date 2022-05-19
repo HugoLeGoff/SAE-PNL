@@ -2,8 +2,14 @@ package donnee;
 import java.util.*;
 import java.sql.Time;
 
+/**
+ * crée une observation de loutres
+ */
 public class ObsLoutre extends Observation {
 
+	/**
+	 * indice de la loutre
+	 */
 	private IndiceLoutre indice;
 
 	/**

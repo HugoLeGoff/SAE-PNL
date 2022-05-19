@@ -12,14 +12,26 @@ public class Observateur {
 	 * @param lePrenom lePrenom de Observateur
 	 */
 	public Observateur(int id, String leNom, String lePrenom) {
-		if(id > 0 && leNom != null && lePrenom != null){
-			this.idObservateur = id;
-			this.nom = leNom;
-			this.prenom = lePrenom;
+		try{
+			if(id<0){
+				throw new IllegalArgumentException("L'identifiant est incorrect");
+			}else{
+				this.idObservateur = id;
+			}
+			if(leNom==null){
+				throw new IllegalArgumentException("Le nom entré est null");
+			}else{
+				this.nom = leNom;
+			}
+			if(lePrenom==null){
+				throw new IllegalArgumentException("Le prenom entré est null");
+			}else{
+				this.prenom = lePrenom;
+			}
+		}catch(IllegalArgumentException i){
+			i.printStackTrace();
 		}
-		else{
-			System.err.println("Observateur : id ne peut pas être inférieur ou égal à 0 et/ou leNom ne doit pas être null et/ou lePrnom ne doit pas être null");
-		}
+		
 	}
 
 

@@ -29,11 +29,6 @@ public class ObsGCI extends Observation {
 			i.printStackTrace();
 		}
 		
-		else{
-			System.err.println("ObsGCI : La nature de l'observation n'est pas valide");
-		}
-
-		throw new UnsupportedOperationException();
 	}
 
 

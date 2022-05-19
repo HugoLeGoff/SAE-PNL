@@ -106,16 +106,18 @@ public class NidGCI implements IObs<ObsGCI>{
 	/**
 	 * retire une observation de la liste des observations de la chouette
 	 * @param idObs l'id de l'observation à retirer
+	 * @return true si l'obs à bien été retirer
 	 */
 	public boolean retireObs(int idObs){
-
+		boolean retirer = false;
 		if(lesObservations != null){
 			lesObservations.remove(idObs);
+			retirer = true;
 		}
 		else{
 			System.err.println("La liste des observations ne doit pas être null");
 		}
-		return false;
+		return retirer;
 	}
 
 	/**

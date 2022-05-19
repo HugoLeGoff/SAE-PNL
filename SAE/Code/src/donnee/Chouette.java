@@ -1,6 +1,5 @@
+package donnee;
 import java.util.*;
-// saluc
-import donnee.*;
 
 public class Chouette implements IObs<ObsChouette> {
 

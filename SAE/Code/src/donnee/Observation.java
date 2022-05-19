@@ -33,7 +33,6 @@ public abstract class Observation {
 	 * ajoute un observateur a la liste des observateurs
 	 * @param o Observateur a ajouter
 	 */
-	 */
 	public void ajouteObservateur(Observateur o) {
 		if(o != null){
 			lesObservateurs.add(o);
@@ -62,8 +61,6 @@ public abstract class Observation {
 	 * @return l'espece observee
 	 */
 	public abstract EspeceObservee especeObs();
-
-	
 
 	/**
 	 * retourne la date de l'observation

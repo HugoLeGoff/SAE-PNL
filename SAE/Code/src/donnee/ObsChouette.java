@@ -25,13 +25,19 @@ public class ObsChouette extends Observation {
 	public ObsChouette(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, TypeObservation type) {
 
 		super(id, date, heure, lieu, observateurs);
+		try{
+
+			if(type==null){
+				throw new IllegalArgumentException("Le type ne parametre est null");
+			}else{
+				this.typeObs=type;
+			}
+
+		}catch(IllegalArgumentException i){
+			i.printStackTrace();
+		}
 		
-		if( type != null){
-			this.typeObs = type;
-		}
-		else{
-			System.err.println("ObsChouette : Le type d'observation n'est pas valide");
-		}
+		
 	}
 
 	/**

@@ -1,4 +1,7 @@
 package donnee;
+/**
+ * Enumeration des Peche.
+ */
 public enum Peche {
 	CASIER_CREVETTES,
 	CASIER_MORGATES,

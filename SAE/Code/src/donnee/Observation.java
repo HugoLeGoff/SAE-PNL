@@ -20,13 +20,37 @@ public abstract class Observation {
 	 * @param observateurs Liste des observateurs
 	 */
 	public Observation(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
-		if(id > 0 && date != null && heure != null && lieu != null && observateurs != null){
-			this.idObs = id;
-			this.dateObs = (java.sql.Date) date;
-			this.heureObs = heure;
-			this.lieuObs = lieu;
-			this.lesObservateurs = observateurs;
+		try{
+
+			if(id<0){
+				throw new IllegalArgumentException("L'identifiant est incorrect");
+			}else{
+				this.idObs = id;
+			}
+			if(date==null){
+				throw new IllegalArgumentException("La date entrée est null");
+			}else{
+				this.dateObs = (java.sql.Date) date;
+			}
+			if(heure==null){
+				throw new IllegalArgumentException("L'heure entrée est null");
+			}else{
+				this.heureObs = heure;
+			}
+			if(lieu==null){
+				throw new IllegalArgumentException("Le lieu est null");
+			}else{
+				this.lieuObs = lieu;
+			}
+			if(observateurs==null){
+				throw new IllegalArgumentException("observateurs est null");
+			}else{
+				this.lesObservateurs = observateurs;
+			}
+		}catch(IllegalArgumentException i){
+			i.printStackTrace();
 		}
+		
 	}
 
 	/**

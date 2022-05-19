@@ -21,16 +21,14 @@ public class ObsGCI extends Observation {
 	public ObsGCI(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, ContenuNid nature, int leNombre) {
 		
 		super( id, date, heure, lieu, observateurs);
-		
-		if(nature != null && leNombre > 0){
+		try{
 			this.natureObs = nature;
 			this.nombre = leNombre;
-		}
-		else{
-			System.err.println("ObsGCI : La nature de l'observation n'est pas valide");
-		}
 
-		throw new UnsupportedOperationException();
+		}catch(IllegalArgumentException i ){
+			i.printStackTrace();
+		}
+		
 	}
 
 

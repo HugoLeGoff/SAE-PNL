@@ -1,6 +1,5 @@
 package donnee;
 import java.util.*;
-import java.util.Date;
 import java.sql.*;
 
 public abstract class Observation {
@@ -12,14 +11,23 @@ public abstract class Observation {
 	protected java.sql.Time heureObs;
 
 	/**
+<<<<<<< HEAD
 	 * Constructeur de Observation.
 	 * @param id
 	 * @param date
 	 * @param heure
 	 * @param lieu
 	 * @param observateurs
+=======
+	 * Constructeur de la classe observation
+	 * @param id Identifiant de l'observation
+	 * @param date Date de l'observation 
+	 * @param heure Heure de l'observation 
+	 * @param lieu Lieu de l'observation
+	 * @param observateurs Liste des observateurs
+>>>>>>> 74030a4383c8ad499afcd6b098b28411d2d9086b
 	 */
-	public Observation(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
+	public Observation(int id, java.sql.Date date, java.sql.Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
 		if(id > 0 && date != null && heure != null && lieu != null && observateurs != null){
 			this.idObs = id;
 			this.dateObs = (java.sql.Date) date;

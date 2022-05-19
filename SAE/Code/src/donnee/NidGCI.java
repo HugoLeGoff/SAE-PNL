@@ -4,9 +4,21 @@ import java.sql.Time;
 
 public class NidGCI implements IObs<ObsGCI>{
 
+	/**
+	 * collection lesObservations
+	 */
 	private Collection<ObsGCI> lesObservations;
+	/**
+	 * id de NidGCI
+	 */
 	private int idNid;
+	/**
+	 * nbEnvol de NidGCI
+	 */
 	private int nbEnvol;
+	/**
+	 * nomPlage de NidGCI
+	 */
 	private String nomPlage;
 
 	/**

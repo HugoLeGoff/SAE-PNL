@@ -53,10 +53,11 @@ public class Observateur {
 	 * @param idObservateur id à définir
 	 */
 	public void setIdObservateur(int idObservateur) {
-		if(idObservateur>0){
-			
+		if(idObservateur > 0){
+			this.idObservateur = idObservateur;
+		}else {
+			System.err.println("Observateur : idObservateur ne peut pas être inférieur ou égal à 0");
 		}
-		this.idObservateur = idObservateur;
 	}
 
 	/**
@@ -64,7 +65,11 @@ public class Observateur {
 	 * @param nom nom à définir
 	 */
 	public void setNom(String nom) {
-		this.nom = nom;
+		if(nom != null){
+			this.nom = nom;
+		} else {
+			System.err.println("setNom : nom ne doit pas être null");
+		}
 	}
 
 	/**
@@ -72,7 +77,11 @@ public class Observateur {
 	 * @param prenom prénom à définir
 	 */
 	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+		if(prenom != null){
+			this.prenom = prenom;
+		} else {
+			System.err.println("setPrenom : prenom ne doit pas être null");
+		}
 	}
 
 	

@@ -7,7 +7,7 @@ public class ObsLoutre extends Observation {
 	private IndiceLoutre indice;
 
 	/**
-	 * Constructeur de la classe ObsLoutre
+	 * Constructeur de la classe ObsLoutre.
 	 * @param id Numero d'identification de la loutre
 	 * @param date Date de l'observation
 	 * @param heure Heure de l'observation
@@ -20,7 +20,7 @@ public class ObsLoutre extends Observation {
 		super( id, date, heure, lieu, observateurs);
 
 		if(indice != null){
-			this.indice = indice;
+			this.indice = ;
 		}
 		else{
 			System.err.println("ObsLoutre : L'indice n'est pas valide");

@@ -22,8 +22,19 @@ public class ObsGCI extends Observation {
 		
 		super( id, date, heure, lieu, observateurs);
 		try{
-			this.natureObs = nature;
-			this.nombre = leNombre;
+			if(nature == null ){
+				throw new IllegalArgumentException("La valeur en parametre pour nature est null");
+			}else{
+				this.natureObs = nature;
+			}
+
+			if(leNombre<0){
+				throw new IllegalArgumentException("La valeur en parametre pour le nombre est inferieur à 0 ");
+			}else{
+				this.nombre = leNombre;
+			}
+			
+			
 
 		}catch(IllegalArgumentException i ){
 			i.printStackTrace();

@@ -15,15 +15,30 @@ public class NidGCI implements IObs<ObsGCI>{
 	 * @param plage
 	 */
 	public NidGCI(int id, String plage) {
-		if(id > 0 && plage != null){
-			this.idNid = id;
-			this.nomPlage = plage;
-			
+		try{
+			if(id >= 0){
+				throw new IllegalArgumentException("L'identifiant est incorrect ");
+			}else{
+				this.idNid = id;
+			}
+
+			if(plage==null){
+				throw new IllegalArgumentException("La valeur en plage est null");
+			}else{
+				this.nomPlage = plage;
+			}
+		}catch(IllegalArgumentException i){
+			i.printStackTrace();
 		}
+		
 		
 	
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public Date dateDebutObs() {
 		// TODO - implement NidGCI.dateDebutObs
 		throw new UnsupportedOperationException();

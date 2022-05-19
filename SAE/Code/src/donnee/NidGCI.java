@@ -15,46 +15,27 @@ public class NidGCI implements IObs<ObsGCI>{
 	 * @param plage nom de la plage
 	 */
 	public NidGCI(int id, String plage) {
-		try{
-			if(id >= 0){
-				throw new IllegalArgumentException("L'identifiant est incorrect ");
-			}else{
-				this.idNid = id;
-			}
-
-			if(plage==null){
-				throw new IllegalArgumentException("La valeur en plage est null");
-			}else{
-				this.nomPlage = plage;
-			}
-		}catch(IllegalArgumentException i){
-			i.printStackTrace();
+		if(id > 0 && plage != null){
+			this.idNid = id;
+			this.nomPlage = plage;
+			
 		}
-		
 		
 	
 	}
-
-	/**
-	 * Renvoie la date de début de l'observaion du nid
-	 * @return la date de début de l'observaion du nid
-	 */
+	
 	public Date dateDebutObs() {
 		// TODO - implement NidGCI.dateDebutObs
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * Renvoie la date de fin de l'observaion du nid
-	 * @return la date de fin de l'observaion du nid
-	 */
 	public Date dateFinObs() {
 		// TODO - implement NidGCI.dateFinObs
 		throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * renvoie l'identifiant du nid
+	 * Renvoie l'identifiant du nid
 	 * @return l'identifiant du nid
 	 */
 	public int getIdNid() {
@@ -62,57 +43,41 @@ public class NidGCI implements IObs<ObsGCI>{
 	}
 
 	/**
-	 * renvoie la liste des observations du nid
-	 * @return la liste des observations du nid
+	 * Renvoie la liste des observations pour cette objet
+	 * @return liste des observations
 	 */
 	public Collection<ObsGCI> getLesObservations() {
 		return lesObservations;
 	}
 
 	/**
-	 * renvoie le nombre d'envol du nid
-	 * @return le nombre d'envol du nid
+	 * Renvoie le nombre d'envol
+	 * @return le nombre d'envol
 	 */
 	public int getNbEnvol() {
 		return nbEnvol;
 	}
 
 	/**
-	 * renvoie le nom de la plage du nid
-	 * @return le nom de la plage du nid
+	 * Renvoie le nom de la plage
+	 * @return le nom de la plage
 	 */
 	public String getNomPlage() {
 		return nomPlage;
 	}
 
-	/**
-	 * définit l'identifiant du nid
-	 * @param idNid identifiant du nid
-	 */
 	public void setIdNid(int idNid) {
 		this.idNid = idNid;
 	}
 
-	/**
-	 * définit la liste des observations du nid
-	 * @param lesObservations liste des observations du nid
-	 */
 	public void setLesObservations(Collection<ObsGCI> lesObservations) {
 		this.lesObservations = lesObservations;
 	}
 
-	/**
-	 * définit le nombre d'envol du nid
-	 * @param nbEnvol nombre d'envol du nid
-	 */
 	public void setNbEnvol(int nbEnvol) {
 		this.nbEnvol = nbEnvol;
 	}
 
-	/**
-	 * définit le nom de la plage du nid
-	 * @param nomPlage nom de la plage du nid
-	 */
 	public void setNomPlage(String nomPlage) {
 		this.nomPlage = nomPlage;
 	}

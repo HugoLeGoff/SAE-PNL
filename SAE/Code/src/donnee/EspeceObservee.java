@@ -8,5 +8,4 @@ public enum EspeceObservee {
 	CHOUETTE,
 	GCI,
 	HIPPOCAMPE
-
 }

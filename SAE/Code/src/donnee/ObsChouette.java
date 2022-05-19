@@ -51,6 +51,10 @@ public class ObsChouette extends Observation {
 			
 	}
 
+	/**
+	 * renvoie l'espece observée
+	 * @return l'espece observée
+	 */
 	public EspeceObservee especeObs(){
 		return EspeceObservee.CHOUETTE;
 	}

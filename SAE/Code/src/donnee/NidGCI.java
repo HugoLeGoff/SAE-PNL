@@ -11,8 +11,8 @@ public class NidGCI implements IObs<ObsGCI>{
 
 	/**
 	 * Constructeur de la classe NidGCI
-	 * @param id identifiant du nid
-	 * @param plage nom de la plage
+	 * @param id
+	 * @param plage
 	 */
 	public NidGCI(int id, String plage) {
 		if(id > 0 && plage != null){
@@ -23,7 +23,7 @@ public class NidGCI implements IObs<ObsGCI>{
 		
 	
 	}
-	
+
 	public Date dateDebutObs() {
 		// TODO - implement NidGCI.dateDebutObs
 		throw new UnsupportedOperationException();
@@ -34,55 +34,30 @@ public class NidGCI implements IObs<ObsGCI>{
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * Renvoie l'identifiant du nid
-	 * @return l'identifiant du nid
-	 */
 	public int getIdNid() {
 		return idNid;
 	}
 
-	/**
-	 * Renvoie la liste des observations pour cette objet
-	 * @return liste des observations
-	 */
 	public Collection<ObsGCI> getLesObservations() {
 		return lesObservations;
 	}
 
-	/**
-	 * Renvoie le nombre d'envol
-	 * @return le nombre d'envol
-	 */
 	public int getNbEnvol() {
 		return nbEnvol;
 	}
 
-	/**
-	 * Renvoie le nom de la plage
-	 * @return le nom de la plage
-	 */
 	public String getNomPlage() {
 		return nomPlage;
 	}
 
-	/**
-	 * Défini l'identifiant du nid
-	 * @param idNid l'identifiant du nid
-	 */
 	public void setIdNid(int idNid) {
 		this.idNid = idNid;
 	}
 
-	/**
-	 * Défini les observations du nid
-	 * @param lesObservationsles observations du nid
-	 */
 	public void setLesObservations(Collection<ObsGCI> lesObservations) {
 		this.lesObservations = lesObservations;
 	}
 
-	
 	public void setNbEnvol(int nbEnvol) {
 		this.nbEnvol = nbEnvol;
 	}
@@ -131,18 +106,16 @@ public class NidGCI implements IObs<ObsGCI>{
 	/**
 	 * retire une observation de la liste des observations de la chouette
 	 * @param idObs l'id de l'observation à retirer
-	 * @return true si l'obs à bien été retirer
 	 */
 	public boolean retireObs(int idObs){
-		boolean retirer = false;
+
 		if(lesObservations != null){
 			lesObservations.remove(idObs);
-			retirer = true;
 		}
 		else{
 			System.err.println("La liste des observations ne doit pas être null");
 		}
-		return retirer;
+		return false;
 	}
 
 	/**

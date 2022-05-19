@@ -44,9 +44,35 @@ public class ObsHippocampes extends Observation {
 	 * @param IEspece Espece observée
 	 * @param leSexe Sexe de l'individu
 	 */
-	public ObsHippocampes(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, double laTaille, Peche leTypePeche, EspeceHippocampes IEspece, Sexe leSexe, boolean estGestant) {
+	public ObsHippocampes(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, double laTaille, Peche leTypePeche, EspeceHippocampes lEspece, Sexe leSexe, boolean estGestant) {
 		super(id, date, heure, lieu, observateurs);
-		if(laTaille>0 && leTypePeche !=null && IEspece!=null && leSexe!=null){
+		try{
+			if(laTaille<0){
+				throw new IllegalArgumentException("La taille est <0");
+			}else{
+				this.taille = laTaille;
+			}
+			if(leTypePeche==null){
+				throw new IllegalArgumentException("Le type de peche est null");
+			}else{
+				this.typePeche = leTypePeche;
+			}
+			if(lEspece==null){
+				throw new IllegalArgumentException("L'espece indiquée est null");
+			}else{
+				this.espece = lEspece;
+			}
+			if(leSexe==null){
+				this.sexe=Sexe.INCONNU;
+			}else{
+				this.sexe=leSexe;
+			}
+			this.estGestant = estGestant;
+
+		}catch(IllegalArgumentException i){
+			i.printStackTrace();
+		}
+		if(laTaille>0 && leTypePeche !=null && lEspece!=null && leSexe!=null){
 			this.taille = laTaille;
 			this.typePeche = leTypePeche;
 			this.espece = IEspece;

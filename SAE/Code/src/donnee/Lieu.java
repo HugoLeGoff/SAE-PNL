@@ -6,20 +6,11 @@ package donnee;
 public class Lieu {
 
 	/**
-<<<<<<< HEAD
 	 * Coordonnées x en Lambert 93 de Lieu.
 	 */
 	private double xCoord;
 	/**
 	 * Coordonnées y en Lambert 93 de Lieu.
-=======
-	 * Coordonnees de x en Lambert 93
-	 */
-	private double xCoord;
-
-	/**
-	 * Coordonnees de y en Lambert 93
->>>>>>> 60ab18c505e7410240c11bd9f231812a9ce9492d
 	 */
 	private double yCoord;
 

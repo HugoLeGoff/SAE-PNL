@@ -22,11 +22,25 @@ public class ObsBatracien extends Observation {
 	 */
 	public ObsBatracien(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, int[] resObs, EspeceBatracien lEspece) {
 		super( id, date, heure, lieu, observateurs);
-		if(resObs!=null && lEspece!=null){
+		try{
+			if(resObs==null){
+				throw new IllegalArgumentException("Le resultat est null");
+			}else{
+				this.nombreAdultes=resObs[0];
+				this.nombreAmplexus=resObs[1];
+				this.nombreTetard=resObs[2];
+				this.nombrePonte=resObs[3];
+			}
 
-		}else{
-			System.err.println("ObsBatracien : resBos est null et/ou lEspece est null");
+			if(lEspece==null){
+				throw new IllegalArgumentException("L'espece indiquée est null");
+			}else{
+				this.espece=lEspece;
+			}
+		}catch(IllegalArgumentException i){
+			i.printStackTrace();
 		}
+
 	}
 
 	/**

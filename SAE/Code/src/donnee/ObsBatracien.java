@@ -80,7 +80,7 @@ public class ObsBatracien extends Observation {
 	 * @return nombreTetard de ObsBatracien
 	 */
 	public int getNombreTetard() {
-		return nombreTetard;
+		return this.nombreTetard;
 	}
 
 	/**

@@ -17,10 +17,13 @@ public class ScenarioDonnee {
         ArrayList<Observateur> listeObs = new ArrayList<Observateur>();
         listeObs.add(obsBen1);
         listeObs.add(obsBen2);
+
+        int[] bat = new int[]{1,2,3,4};
         
 
         testObsChouette(d, t, l, listeObs, TypeObservation.VISUELLE);
         testObsGCI(d, t, l, listeObs, ContenuNid.POUSSIN, 5);
+        testObsBatracien(d, t, l, listeObs, bat, EspeceBatracien.PELODYTE);
 
 
 
@@ -38,50 +41,91 @@ public class ScenarioDonnee {
         
     }
 
-    public static void testObsBatracien(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, TypeObservation type){
-        /*System.out.println("*** Test cas normaux de ObsBatraciens");
+    public static void testObsBatracien(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, int[] tab, EspeceBatracien espece){
+        System.out.println("*** Test cas normaux de Obsbatracien");
 
-        ObsChouette chouette = new ObsChouette(5, d, t, l, obs, type);
+        try{
+            ObsBatracien batracien = new ObsBatracien(5, d, t, l, obs, tab, espece);
+        }
+        catch(Exception e){
+            e.printStackTrace(); 
+        }
+
+        ObsBatracien batracien = new ObsBatracien(5, d, t, l, obs, tab, espece);
         
-        System.out.print (chouette.getDateObs());
-        if(chouette.getDateObs().equals(d)){
+        System.out.print (batracien.getDateObs());
+        if(batracien.getDateObs().equals(d)){
             System.out.println ("\t: OK");
         }
         else{
             System.out.println("\t: OK");
         }
 
-        System.out.print(chouette.getHeureObs());
-        if(chouette.getHeureObs().equals(t)){
+        System.out.print(batracien.getHeureObs());
+        if(batracien.getHeureObs().equals(t)){
             System.out.println ("\t: OK");
         }
         else{
             System.out.print("\t: OK");
         }
 
-        System.out.print(chouette.getLieuObs());
-        if(chouette.getLieuObs().equals(t)){
+        System.out.print(batracien.getLieuObs());
+        if(batracien.getLieuObs().equals(t)){
             System.out.println ("\t: OK");
         }
         else{
             System.out.println("\t: OK");
         }
 
-        System.out.print(chouette.getLesObservateurs());
-        if(chouette.getLesObservateurs().equals(t)){
+        System.out.print(batracien.getLesObservateurs());
+        if(batracien.getLesObservateurs().equals(t)){
             System.out.println ("\t: OK");
         }
         else{
             System.out.println("\t: OK");
         }
 
-        System.out.print(chouette.getTypeObs());
-        if(chouette.getTypeObs().equals(t)){
+        System.out.print(batracien.getNombreAdultes());
+        if(batracien.getNombreAdultes() == tab[0]){
             System.out.println ("\t: OK");
         }
         else{
             System.out.println("\t: OK");
-        }*/
+        }
+
+        System.out.print(batracien.getNombreAmplexus());
+        if(batracien.getNombreAmplexus()== tab[1]){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: OK");
+        }
+
+        System.out.print(batracien.getNombrePonte());
+        if(batracien.getNombrePonte()== tab[2]){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: OK");
+        }
+
+        System.out.print(batracien.getNombreTetard());
+        if(batracien.getNombreTetard()== tab[3]){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: OK");
+        }
+
+        System.out.print(batracien.getEspece());
+        if(batracien.getEspece().equals(t)){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: OK");
+        }
+
+
     }
 
     public static void testObsChouette(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, TypeObservation type){
@@ -113,7 +157,7 @@ public class ScenarioDonnee {
         }
 
         System.out.print(chouette.getLieuObs());
-        if(chouette.getLieuObs().equals(t)){
+        if(chouette.getLieuObs().equals(l)){
             System.out.println ("\t: OK");
         }
         else{
@@ -121,7 +165,7 @@ public class ScenarioDonnee {
         }
 
         System.out.print(chouette.getLesObservateurs());
-        if(chouette.getLesObservateurs().equals(t)){
+        if(chouette.getLesObservateurs().equals(obs)){
             System.out.println ("\t: OK");
         }
         else{
@@ -129,7 +173,7 @@ public class ScenarioDonnee {
         }
 
         System.out.print(chouette.getTypeObs());
-        if(chouette.getTypeObs().equals(t)){
+        if(chouette.getTypeObs().equals(type)){
             System.out.println ("\t: OK");
         }
         else{

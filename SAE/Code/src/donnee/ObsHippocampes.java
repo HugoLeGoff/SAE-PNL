@@ -2,12 +2,34 @@ package donnee;
 import java.util.*;
 import java.sql.Time;
 
+/**
+ * crée une observation d'hippocampes
+ */
 public class ObsHippocampes extends Observation {
 
+	/**
+	 * type de pêches
+	 */
 	private Peche typePeche;
+
+	/**
+	 * espece de l'hippocampes
+	 */
 	private EspeceHippocampes espece;
+
+	/**
+	 * sexe de l'hippocampe
+	 */
 	private Sexe sexe;
+
+	/**
+	 * taille de l'hippocampe
+	 */
 	private double taille;
+
+	/**
+	 * définit si l'hippocampe est gestant
+	 */
 	private boolean estGestant;
 
 	/**

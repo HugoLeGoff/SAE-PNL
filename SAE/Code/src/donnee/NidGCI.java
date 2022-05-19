@@ -17,11 +17,8 @@ public class NidGCI implements IObs<ObsGCI>{
 	public NidGCI(int id, String plage) {
 		if(id > 0 && plage != null){
 			this.idNid = id;
-			this.nomPlage = plage;
-			
-		}
-		
-	
+			this.nomPlage = plage;	
+		}	
 	}
 	
 	public Date dateDebutObs() {
@@ -71,7 +68,11 @@ public class NidGCI implements IObs<ObsGCI>{
 	 * @param idNid nouvel identifiant du nid
 	 */
 	public void setIdNid(int idNid) {
-		this.idNid = idNid;
+		if(idNid > 0){
+			this.idNid = idNid;
+		} else {
+			System.err.println("setIdNid : idNid doit être supérieur à 0");
+		}
 	}
 
 	/**
@@ -79,7 +80,11 @@ public class NidGCI implements IObs<ObsGCI>{
 	 * @param lesObservations les observation
 	 */
 	public void setLesObservations(Collection<ObsGCI> lesObservations) {
-		this.lesObservations = lesObservations;
+		if(lesObservations != null){
+			this.lesObservations = lesObservations;
+		} else {
+			System.err.println("setLesObservations : lesObservations doit être supérieur à 0");
+		}
 	}
 
 	/**
@@ -87,7 +92,11 @@ public class NidGCI implements IObs<ObsGCI>{
 	 * @param nbEnvol nombre d'envol
 	 */
 	public void setNbEnvol(int nbEnvol) {
-		this.nbEnvol = nbEnvol;
+		if(nbEnvol >= 0){
+			this.nbEnvol = nbEnvol;
+		} else {
+			System.err.println("setIdNid : idNid ne doit pas être inférieur à 0");
+		}
 	}
 
 	/**
@@ -95,7 +104,11 @@ public class NidGCI implements IObs<ObsGCI>{
 	 * @param nomPlage nom de la plage
 	 */
 	public void setNomPlage(String nomPlage) {
-		this.nomPlage = nomPlage;
+		if(nomPlage != null){
+			this.nomPlage = nomPlage;
+		} else {
+			System.err.println("setNomPlage : nomPlage doit être supérieur à 0");
+		}
 	}
 
 
@@ -104,7 +117,6 @@ public class NidGCI implements IObs<ObsGCI>{
 	 * @param obs l'observation à ajouter
 	 */
 	public void ajouteUneObs(ObsGCI obs) {
-
 		if(obs != null){
 			this.lesObservations.add(obs);
 		}

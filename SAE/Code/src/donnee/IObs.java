@@ -5,30 +5,30 @@ import java.sql.Time;
 public interface IObs <T>{
 
 	/**
-	 * Ajoute une observation à la liste des observations de la chouette.
+	 * ajoute une observation à la liste des observations de la chouette
 	 * @param obs l'observation à ajouter
 	 */
 	void ajouteUneObs(T obs);
 
 	/**
-	 * Ajoute une liste d'observations à la liste des observations de la chouette.
+	 * ajoute une liste d'observations à la liste des observations de la chouette
 	 * @param obs la liste d'observations à ajouter
 	 */
 	void ajoutePlsObs(ArrayList<T> obs);
 
 	/**
-	 * Vide la liste des observations de la chouette.
+	 * vide la liste des observations de la chouette
 	 */
 	void videObs();
 
 	/**
-	 * Retire une observation de la liste des observations de la chouette.
+	 * retire une observation de la liste des observations de la chouette
 	 * @param idObs l'id de l'observation à retirer
 	 */
 	boolean retireObs(int idObs);
 
 	/**
-	 * Retourne le nombre d'observations de la chouette.
+	 * retourne le nombre d'observations de la chouette
 	 * @return true si l'obs à bien été retirer
 	 */
 	int nbObs();

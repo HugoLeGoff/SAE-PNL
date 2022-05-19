@@ -95,7 +95,7 @@ public abstract class Observation {
 	public void retireObservateur(int idObservateur) {
 
 		if(lesObservateurs != null && idObservateur >= 0){
-			lesObservateurs.remove(idObservateur);
+			lesObservateurs.remove(idObservateur); 
 		}
 		else{
 			System.err.println("La liste des observateurs ne doit pas être null et l'id doit être supérieur ou égal à 0");

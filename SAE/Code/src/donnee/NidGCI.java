@@ -24,6 +24,10 @@ public class NidGCI implements IObs<ObsGCI>{
 	
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public Date dateDebutObs() {
 		// TODO - implement NidGCI.dateDebutObs
 		throw new UnsupportedOperationException();

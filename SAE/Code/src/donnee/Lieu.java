@@ -19,7 +19,7 @@ public class Lieu {
 			}
 
 			if(y<0){
-				throw new IllegalArgumentException("Les coordonnées y sont <0")
+				throw new IllegalArgumentException("Les coordonnées y sont <0");
 			}else{
 				this.yCoord = y;
 			}

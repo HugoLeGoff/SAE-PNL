@@ -1,11 +1,29 @@
 package donnee;
 import java.util.*;
 
+/**
+ * crée une chouette
+ */
 public class Chouette implements IObs<ObsChouette> {
 
+	/**
+	 * la liste des observateurs
+	 */
 	private Collection<ObsChouette> lesObservations;
+
+	/**
+	 * sexe de la chouette
+	 */
 	private Sexe sexe;
+
+	/**
+	 * espece de la chouette
+	 */
 	private EspeceChouette espece;
+
+	/**
+	 * identifiant de la chouette
+	 */
 	private String idChouette;
 
 	/**

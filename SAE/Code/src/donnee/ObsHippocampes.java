@@ -132,6 +132,10 @@ public class ObsHippocampes extends Observation {
 		this.estGestant = estGestant;
 	}
 	
+	/**
+	 * Renvoie hippocampe
+	 * @return EspeceObservee.HIPPOCAMPE
+	 */
 	public EspeceObservee especeObs(){
 		return EspeceObservee.HIPPOCAMPE;
 

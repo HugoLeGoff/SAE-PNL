@@ -3,8 +3,14 @@ import java.util.*;
 
 import java.sql.Time;
 
+/**
+ * crée une observation de chouette
+ */
 public class ObsChouette extends Observation {
 
+	/**
+	 * type de l'observation
+	 */
 	private TypeObservation typeObs;
 
 	/**
@@ -58,5 +64,4 @@ public class ObsChouette extends Observation {
 	public EspeceObservee especeObs(){
 		return EspeceObservee.CHOUETTE;
 	}
-
 }

@@ -2,12 +2,34 @@ package donnee;
 import java.util.*;
 import java.sql.Time;
 
+/**
+ * crée une observation de batracien
+ */
 public class ObsBatracien extends Observation {
 
+	/**
+	 * espece du batracien
+	 */
 	EspeceBatracien espece;
+
+	/**
+	 * nombre d'adultes
+	 */
 	private int nombreAdultes;
+
+	/**
+	 * nombre d'amplexus
+	 */
 	private int nombreAmplexus;
+
+	/**
+	 * nombre de tétards
+	 */
 	private int nombreTetard;
+
+	/**
+	 * nombre de pontes
+	 */
 	private int nombrePonte;
 
 	/**

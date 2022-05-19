@@ -1,8 +1,18 @@
 package donnee;
 
+/**
+ * crée un lieu
+ */
 public class Lieu {
 
+	/**
+	 * Coordonnees de x en Lambert 93
+	 */
 	private double xCoord;
+
+	/**
+	 * Coordonnees de y en Lambert 93
+	 */
 	private double yCoord;
 
 	/**

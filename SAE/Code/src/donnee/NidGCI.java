@@ -66,18 +66,34 @@ public class NidGCI implements IObs<ObsGCI>{
 		return nomPlage;
 	}
 
+	/**
+	 * Définir l'identifiant du nid
+	 * @param idNid nouvel identifiant du nid
+	 */
 	public void setIdNid(int idNid) {
 		this.idNid = idNid;
 	}
 
+	/**
+	 * Définir la collection d'observation de GCI
+	 * @param lesObservations les observation
+	 */
 	public void setLesObservations(Collection<ObsGCI> lesObservations) {
 		this.lesObservations = lesObservations;
 	}
 
+	/**
+	 * Défini le nombre d'envol des occupant du nid
+	 * @param nbEnvol nombre d'envol
+	 */
 	public void setNbEnvol(int nbEnvol) {
 		this.nbEnvol = nbEnvol;
 	}
 
+	/**
+	 * Défini le nom de la plage ou se trouve le nid
+	 * @param nomPlage nom de la plage
+	 */
 	public void setNomPlage(String nomPlage) {
 		this.nomPlage = nomPlage;
 	}

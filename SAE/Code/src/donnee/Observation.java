@@ -11,12 +11,12 @@ public abstract class Observation {
 	protected java.sql.Time heureObs;
 
 	/**
-	 * 
-	 * @param id
-	 * @param date
-	 * @param heure
-	 * @param lieu
-	 * @param observateurs
+	 * Constructeur de la classe observation
+	 * @param id Identifiant de l'observation
+	 * @param date Date de l'observation 
+	 * @param heure Heure de l'observation 
+	 * @param lieu Lieu de l'observation
+	 * @param observateurs Liste des observateurs
 	 */
 	public Observation(int id, java.sql.Date date, java.sql.Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
 		if(id > 0 && date != null && heure != null && lieu != null && observateurs != null){

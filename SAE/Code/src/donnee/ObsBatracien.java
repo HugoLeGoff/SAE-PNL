@@ -98,7 +98,11 @@ public class ObsBatracien extends Observation {
 	 * @param nombreAmplexus nombreAmplexus de ObsBatracien à définir
 	 */
 	public void setNombreAmplexus(int nombreAmplexus) {
-		this.nombreAmplexus = nombreAmplexus;
+		if(nombreAmplexus >= 0){
+			this.nombreAmplexus = nombreAmplexus;
+		} else {
+			System.err.println("setNombreAmplexus : nombreAmplexus ne peut pas être inférieur à 0");
+		}
 	}
 
 	/**
@@ -106,7 +110,11 @@ public class ObsBatracien extends Observation {
 	 * @param nombrePonte nombrePonte de ObsBatracien à définir
 	 */
 	public void setNombrePonte(int nombrePonte) {
-		this.nombrePonte = nombrePonte;
+		if(nombrePonte >= 0){
+			this.nombrePonte = nombrePonte;
+		} else {
+			System.err.println("setNombrePonte : nombrePonte ne peut pas être inférieur à 0");
+		}
 	}
 
 	/**
@@ -114,7 +122,11 @@ public class ObsBatracien extends Observation {
 	 * @param nombreTetard nombreTetard de ObsBatracien à définir
 	 */
 	public void setNombreTetard(int nombreTetard) {
-		this.nombreTetard = nombreTetard;
+		if(nombreTetard >= 0){
+			this.nombreTetard = nombreTetard;
+		} else {
+			System.err.println("setNombreTetard : nombreTetard ne peut pas être inférieur à 0");
+		}
 	}
 
 	public EspeceObservee especeObs(){

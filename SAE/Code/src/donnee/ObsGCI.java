@@ -8,7 +8,7 @@ public class ObsGCI extends Observation {
 	private int nombre;
 
 	/**
-	 * Constructeur de la classe ObsGCI
+	 * Constructeur de la classe ObsGCI.
 	 * @param id Numero d'identification de la loutre
 	 * @param date Date de l'observation
 	 * @param heure Heure de l'observation
@@ -44,7 +44,7 @@ public class ObsGCI extends Observation {
 
 
 	/**
-	 * retourne la nature de l'observation
+	 * Retourne la nature de l'observation.
 	 * @return la nature de l'observation
 	 */
 	public ContenuNid getNatureObs() {
@@ -52,29 +52,32 @@ public class ObsGCI extends Observation {
 	}
 
 	/**
-	 * retorune le nombre d'oiseaux observés
-	 * @return
+	 * Retourne le nombre d'oiseaux observés.
+	 * @return le nombre d'oiseaux observés
 	 */
 	public int getNombre() {
 		return nombre;
 	}
 
 	/**
-	 * définit la nature de l'observation
-	 * @param natureObs la nature de l'observation
+	 * Définit la nature de l'observation.
+	 * @param natureObs la nature de l'observation à définir
 	 */
 	public void setNatureObs(ContenuNid natureObs) {
 		this.natureObs = natureObs;
 	}
 
 	/**
-	 * définit le nombre d'oiseaux observés
-	 * @param nombre le nombre d'oiseaux observés
+	 * Définit le nombre d'oiseaux observés.
+	 * @param nombre le nombre d'oiseaux observés à définir
 	 */
 	public void setNombre(int nombre) {
 		this.nombre = nombre;
 	}
 	
+	/**
+	 * Renvoie l'espece observée.
+	 */
 	public EspeceObservee especeObs(){
 		return EspeceObservee.GCI;
 	}

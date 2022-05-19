@@ -1,4 +1,5 @@
 package donnee;
+
 public class Lieu {
 
 	private double xCoord;
@@ -39,7 +40,12 @@ public class Lieu {
 	 * @param xCoord coordonnees de x en Lambert 93 de Lieu
 	 */
 	public void setxCoord(double xCoord) {
-		this.xCoord = xCoord;
+		if(xCoord > 0){
+			this.xCoord = xCoord;
+		}
+		else{
+			System.err.println("Lieu : Les coordonnées de x ne sont pas valides");
+		}
 	}
 
 	/**
@@ -47,7 +53,12 @@ public class Lieu {
 	 * @param yCoord coordonnees de y en Lambert 93 de Lieu
 	 */
 	public void setyCoord(double yCoord) {
-		this.yCoord = yCoord;
+		if(yCoord > 0){
+			this.yCoord = yCoord;
+		}
+		else{
+			System.err.println("Lieu : Les coordonnées de y ne sont pas valides");
+		}
 	}
 
 }

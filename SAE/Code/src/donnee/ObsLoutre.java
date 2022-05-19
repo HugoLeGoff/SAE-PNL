@@ -20,7 +20,7 @@ public class ObsLoutre extends Observation {
 		super( id, date, heure, lieu, observateurs);
 
 		if(indice != null){
-			
+			this.indice = indice;
 		}
 		else{
 			System.err.println("ObsLoutre : L'indice n'est pas valide");
@@ -30,7 +30,7 @@ public class ObsLoutre extends Observation {
 	}
 
 	/**
-	 * retourne l'indice de la loutre
+	 * Retourne l'indice de la loutre.
 	 * @return l'indice de la loutre
 	 */
 	public IndiceLoutre getIndice() {

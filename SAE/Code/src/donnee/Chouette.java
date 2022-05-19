@@ -15,15 +15,28 @@ public class Chouette implements IObs<ObsChouette> {
 	 * @param IEspece Espece de chouette
 	 */
 	public Chouette(String id, Sexe leSexe, EspeceChouette IEspece) {
+		try{
+			if(id==null){
+				throw new IllegalArgumentException("L'identifiant est null");
+			}else{
+				this.idChouette = id;
+			}
 
-		if(id != null && leSexe != null && IEspece != null){
-			this.idChouette = id;
-			this.sexe = leSexe;
-			this.espece = IEspece;
+			if(leSexe==null){
+				this.sexe=Sexe.INCONNU;
+			}else{
+				this.sexe=leSexe;
+			}
+
+			if(IEspece==null){
+				throw new IllegalArgumentException("L'espece indiquée est null");
+			}else{
+				this.espece = IEspece;
+			}
+		}catch(IllegalArgumentException i){
+			i.printStackTrace();
 		}
-		else{
-			System.err.println("L'id ou le sexe ou l'espèce ne sont pas valides");
-		}		
+		
 	}
 
 	/**
@@ -152,16 +165,18 @@ public class Chouette implements IObs<ObsChouette> {
 	/**
 	 * retire une observation de la liste des observations de la chouette
 	 * @param idObs l'id de l'observation à retirer
+	 * @return true si l'obs à bien été retirer
 	 */
 	public boolean retireObs(int idObs){
-
+		boolean retirer = false;
 		if(lesObservations != null){
 			lesObservations.remove(idObs);
+			retirer = true;
 		}
 		else{
 			System.err.println("La liste des observations ne doit pas être null");
 		}
-		return false;
+		return retirer;
 	}
 
 	/**

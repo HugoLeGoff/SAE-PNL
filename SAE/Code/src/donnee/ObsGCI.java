@@ -9,7 +9,7 @@ public class ObsGCI extends Observation {
 
 	/**
 	 * Constructeur de la classe ObsGCI.
-	 * @param id Numero d'identification de la loutre
+	 * @param id Numero d'identification du nid
 	 * @param date Date de l'observation
 	 * @param heure Heure de l'observation
 	 * @param lieu Lieu de l'observation

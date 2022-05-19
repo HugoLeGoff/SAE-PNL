@@ -11,19 +11,16 @@ public class NidGCI implements IObs<ObsGCI>{
 
 	/**
 	 * Constructeur de la classe NidGCI
-	 * @param id
-	 * @param plage
+	 * @param id identifiant du nid
+	 * @param plage nom de la plage
 	 */
 	public NidGCI(int id, String plage) {
 		if(id > 0 && plage != null){
 			this.idNid = id;
-			this.nomPlage = plage;
-			
-		}
-		
-	
+			this.nomPlage = plage;	
+		}	
 	}
-
+	
 	public Date dateDebutObs() {
 		// TODO - implement NidGCI.dateDebutObs
 		throw new UnsupportedOperationException();
@@ -34,36 +31,84 @@ public class NidGCI implements IObs<ObsGCI>{
 		throw new UnsupportedOperationException();
 	}
 
+	/**
+	 * Renvoie l'identifiant du nid
+	 * @return l'identifiant du nid
+	 */
 	public int getIdNid() {
 		return idNid;
 	}
 
+	/**
+	 * Renvoie la liste des observations pour cette objet
+	 * @return liste des observations
+	 */
 	public Collection<ObsGCI> getLesObservations() {
 		return lesObservations;
 	}
 
+	/**
+	 * Renvoie le nombre d'envol
+	 * @return le nombre d'envol
+	 */
 	public int getNbEnvol() {
 		return nbEnvol;
 	}
 
+	/**
+	 * Renvoie le nom de la plage
+	 * @return le nom de la plage
+	 */
 	public String getNomPlage() {
 		return nomPlage;
 	}
 
+	/**
+	 * Définir l'identifiant du nid
+	 * @param idNid nouvel identifiant du nid
+	 */
 	public void setIdNid(int idNid) {
-		this.idNid = idNid;
+		if(idNid > 0){
+			this.idNid = idNid;
+		} else {
+			System.err.println("setIdNid : idNid doit être supérieur à 0");
+		}
 	}
 
+	/**
+	 * Définir la collection d'observation de GCI
+	 * @param lesObservations les observation
+	 */
 	public void setLesObservations(Collection<ObsGCI> lesObservations) {
-		this.lesObservations = lesObservations;
+		if(lesObservations != null){
+			this.lesObservations = lesObservations;
+		} else {
+			System.err.println("setLesObservations : lesObservations doit être supérieur à 0");
+		}
 	}
 
+	/**
+	 * Défini le nombre d'envol des occupant du nid
+	 * @param nbEnvol nombre d'envol
+	 */
 	public void setNbEnvol(int nbEnvol) {
-		this.nbEnvol = nbEnvol;
+		if(nbEnvol >= 0){
+			this.nbEnvol = nbEnvol;
+		} else {
+			System.err.println("setIdNid : idNid ne doit pas être inférieur à 0");
+		}
 	}
 
+	/**
+	 * Défini le nom de la plage ou se trouve le nid
+	 * @param nomPlage nom de la plage
+	 */
 	public void setNomPlage(String nomPlage) {
-		this.nomPlage = nomPlage;
+		if(nomPlage != null){
+			this.nomPlage = nomPlage;
+		} else {
+			System.err.println("setNomPlage : nomPlage doit être supérieur à 0");
+		}
 	}
 
 
@@ -72,7 +117,6 @@ public class NidGCI implements IObs<ObsGCI>{
 	 * @param obs l'observation à ajouter
 	 */
 	public void ajouteUneObs(ObsGCI obs) {
-
 		if(obs != null){
 			this.lesObservations.add(obs);
 		}
@@ -106,16 +150,18 @@ public class NidGCI implements IObs<ObsGCI>{
 	/**
 	 * retire une observation de la liste des observations de la chouette
 	 * @param idObs l'id de l'observation à retirer
+	 * @return true si l'obs à bien été retirer
 	 */
 	public boolean retireObs(int idObs){
-
+		boolean retirer = false;
 		if(lesObservations != null){
 			lesObservations.remove(idObs);
+			retirer = true;
 		}
 		else{
 			System.err.println("La liste des observations ne doit pas être null");
 		}
-		return false;
+		return retirer;
 	}
 
 	/**

@@ -11,13 +11,22 @@ public class Lieu {
 	 * @param y Coordonnees de y en Lambert 93
 	 */
 	public Lieu(double x, double y) {
-		if(x > 0 && y>0){
-			this.xCoord = x;
-			this.yCoord = y;
+		try{
+			if(x<0){
+				throw new IllegalArgumentException("Les coordonnées x sont <0");
+			}else{
+				this.xCoord = x;
+			}
+
+			if(y<0){
+				throw new IllegalArgumentException("Les coordonnées y sont <0")
+			}else{
+				this.yCoord = y;
+			}
+		}catch(IllegalArgumentException i){
+			i.printStackTrace();
 		}
-		else{
-			System.err.println("Lieu : Les coordonnées de x ou y ne sont pas valides");
-		}
+		
 	}
 	
 	/**

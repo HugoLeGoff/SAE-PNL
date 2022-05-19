@@ -1,5 +1,6 @@
 package donnee;
 import java.util.*;
+import java.util.Date;
 import java.sql.*;
 
 public abstract class Observation {
@@ -11,23 +12,14 @@ public abstract class Observation {
 	protected java.sql.Time heureObs;
 
 	/**
-<<<<<<< HEAD
-	 * Constructeur de Observation.
-	 * @param id
-	 * @param date
-	 * @param heure
-	 * @param lieu
-	 * @param observateurs
-=======
 	 * Constructeur de la classe observation
 	 * @param id Identifiant de l'observation
 	 * @param date Date de l'observation 
 	 * @param heure Heure de l'observation 
 	 * @param lieu Lieu de l'observation
 	 * @param observateurs Liste des observateurs
->>>>>>> 74030a4383c8ad499afcd6b098b28411d2d9086b
 	 */
-	public Observation(int id, java.sql.Date date, java.sql.Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
+	public Observation(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
 		if(id > 0 && date != null && heure != null && lieu != null && observateurs != null){
 			this.idObs = id;
 			this.dateObs = (java.sql.Date) date;
@@ -38,21 +30,21 @@ public abstract class Observation {
 	}
 
 	/**
-	 * Ajoute un observateur dans la collection observateurs.
-	 * @param o observateur à ajouter
+	 * ajoute un observateur a la liste des observateurs
+	 * @param o Observateur a ajouter
 	 */
 	public void ajouteObservateur(Observateur o) {
 		if(o != null){
 			lesObservateurs.add(o);
 		}
 		else{
-			System.err.println("ajouteObservateur : L'observateur ne doit pas être null");
+			System.err.println("L'observateur ne doit pas être null");
 		}
 	}
 
 	/**
-	 * Retire un observateur dans la collection observateurs.
-	 * @param idObservateur id de l'observateur à enlever
+	 * retire un observateur de la liste des observateurs
+	 * @param idObservateur Identifiant de l'observateur a retirer
 	 */
 	public void retireObservateur(int idObservateur) {
 
@@ -60,90 +52,125 @@ public abstract class Observation {
 			lesObservateurs.remove(idObs);
 		}
 		else{
-			System.err.println("retireObservateur : La liste des observateurs ne doit pas être null et l'id doit être supérieur ou égal à 0");
+			System.err.println("La liste des observateurs ne doit pas être null et l'id doit être supérieur ou égal à 0");
 		}
 	}
 
+	/**
+	 * retorune l'espece observee
+	 * @return l'espece observee
+	 */
 	public abstract EspeceObservee especeObs();
 
 	/**
-	 * Renvoie la dateObs de Observation.
-	 * @return dateObs de Observation
+	 * retourne la date de l'observation
+	 * @return la date de l'observation
 	 */
 	public java.sql.Date getDateObs() {
 		return dateObs;
 	}
 
 	/**
-	 * Renvoie l'heure de Observation.
-	 * @return heure de Observation
+	 * retourne l'heure de l'observation
+	 * @return l'heure de l'observation
 	 */
 	public java.sql.Time getHeureObs() {
 		return heureObs;
 	}
 
 	/**
-	 * Renvoie l'idObs de Observation.
-	 * @return idObs de Observation
+	 * retourne l'id de l'observation
+	 * @return l'id de l'observation
 	 */
 	public int getIdObs() {
 		return idObs;
 	}
 
 	/**
-	 * Renvoie les Observateurs de la collection lesObservateurs.
-	 * @return les Observateurs de la collection lesObservateurs
+	 * retourne les observateurs
+	 * @return les observateurs
 	 */
 	public Collection<Observateur> getLesObservateurs() {
 		return lesObservateurs;
 	}
 
 	/**
-	 * Renvoie le lieu de Observation.
-	 * @return lieu de Observation
+	 * retourne le lieu de l'observation
+	 * @return le lieu de l'observation
 	 */
 	public Lieu getLieuObs() {
 		return lieuObs;
 	}
 
 	/**
-	 * Définit la dateObs de Observation.
-	 * @param dateObs dateObs à définir
+	 * modifie la date de l'observation
+	 * @param dateObs la nouvelle date de l'observation
 	 */
 	public void setDateObs(java.sql.Date dateObs) {
-		this.dateObs = dateObs;
+		
+		if(dateObs != null){
+			this.dateObs = dateObs;
+		}
+		else{
+			System.err.println("La date ne doit pas être null");
+		}
 	}
 
 	/**
-	 * Définit l'heureObs de Observation.
-	 * @param heureObs heureObs à définir
+	 * modifie l'heure de l'observation
+	 * @param heureObs la nouvelle heure de l'observation
 	 */
 	public void setHeureObs(java.sql.Time heureObs) {
-		this.heureObs = heureObs;
+		
+		if(heureObs != null){
+			this.heureObs = heureObs;
+		}
+		else{
+			System.err.println("L'heure ne doit pas être null");
+		}
 	}
 
 	/**
-	 * Définit l'idObs de Observation.
-	 * @param idObs idObs à définir
+	 * modifie l'id de l'observation
+	 * @param idObs la nouvelle id de l'observation
 	 */
 	public void setIdObs(int idObs) {
-		this.idObs = idObs;
+		
+		if(idObs >= 0){
+			this.idObs = idObs;
+		}
+		else{
+			System.err.println("L'id doit être supérieur ou égal à 0");
+		}
 	}
 
 	/**
-	 * Définit les Observateurs dans la collection lesObservateurs.
-	 * @param lesObservateurs lesObservateurs à définir dans la collection
+	 * modifie la liste des observateurs
+	 * @param lesObservateurs la nouvelle liste des observateurs
 	 */
 	public void setLesObservateurs(Collection<Observateur> lesObservateurs) {
-		this.lesObservateurs = lesObservateurs;
+		
+		if(lesObservateurs != null){
+			this.lesObservateurs = lesObservateurs;
+		}
+		else{
+			System.err.println("La liste des observateurs ne doit pas être null");
+		}
 	}
 
 	/**
-	 * Définit le lieu de Observation.
-	 * @param lieuObs lieu à définir
+	 * modifie le lieu de l'observation
+	 * @param lieuObs la nouvelle lieu de l'observation
+	 */
 	 */
 	public void setLieuObs(Lieu lieuObs) {
-		this.lieuObs = lieuObs;
+		
+		if(lieuObs != null){
+			this.lieuObs = lieuObs;
+		}
+		else{
+			System.err.println("Le lieu ne doit pas être null");
+		}
 	}
 
 }

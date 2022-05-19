@@ -48,17 +48,25 @@ public class NidGCI implements IObs<ObsGCI>{
 			
 	}
 	
+	/**
+	 * Renvoie la dateDebutObs de NidGCI.
+	 * @return dateDebutObs de NidGCI
+	 */
 	public Date dateDebutObs() {
 		return ((Observation) lesObservations.toArray()[0]).getDateObs();
 	}
 
+	/**
+	 * Renvoie la dateFinObs de NidGCI.
+	 * @return dateFinObs de NidGCI
+	 */
 	public Date dateFinObs() {
 		return ((Observation) lesObservations.toArray()[lesObservations.size()]).getDateObs();
 	}
 
 	/**
-	 * Renvoie l'identifiant du nid
-	 * @return l'identifiant du nid
+	 * Renvoie l'identifiant de nid
+	 * @return l'identifiant de nid
 	 */
 	public int getIdNid() {
 		return idNid;

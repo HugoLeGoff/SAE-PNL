@@ -7,10 +7,7 @@ import java.sql.Time;
  */
 public class ObsLoutre extends Observation {
 
-	/**
-	 * indice de la loutre
-	 */
-	private IndiceLoutre indice;
+	
 
 	/**
 	 * Constructeur de la classe ObsLoutre.

@@ -11,8 +11,8 @@ public class NidGCI implements IObs<ObsGCI>{
 
 	/**
 	 * Constructeur de la classe NidGCI
-	 * @param id
-	 * @param plage
+	 * @param id identifiant du nid
+	 * @param plage nom de la plage
 	 */
 	public NidGCI(int id, String plage) {
 		if(id > 0 && plage != null){
@@ -25,47 +25,83 @@ public class NidGCI implements IObs<ObsGCI>{
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Renvoie la date de début de l'observaion du nid
+	 * @return la date de début de l'observaion du nid
 	 */
 	public Date dateDebutObs() {
 		// TODO - implement NidGCI.dateDebutObs
 		throw new UnsupportedOperationException();
 	}
 
+	/**
+	 * Renvoie la date de fin de l'observaion du nid
+	 * @return la date de fin de l'observaion du nid
+	 */
 	public Date dateFinObs() {
 		// TODO - implement NidGCI.dateFinObs
 		throw new UnsupportedOperationException();
 	}
 
+	/**
+	 * renvoie l'identifiant du nid
+	 * @return l'identifiant du nid
+	 */
 	public int getIdNid() {
 		return idNid;
 	}
 
+	/**
+	 * renvoie la liste des observations du nid
+	 * @return la liste des observations du nid
+	 */
 	public Collection<ObsGCI> getLesObservations() {
 		return lesObservations;
 	}
 
+	/**
+	 * renvoie le nombre d'envol du nid
+	 * @return le nombre d'envol du nid
+	 */
 	public int getNbEnvol() {
 		return nbEnvol;
 	}
 
+	/**
+	 * renvoie le nom de la plage du nid
+	 * @return le nom de la plage du nid
+	 */
 	public String getNomPlage() {
 		return nomPlage;
 	}
 
+	/**
+	 * définit l'identifiant du nid
+	 * @param idNid identifiant du nid
+	 */
 	public void setIdNid(int idNid) {
 		this.idNid = idNid;
 	}
 
+	/**
+	 * définit la liste des observations du nid
+	 * @param lesObservations liste des observations du nid
+	 */
 	public void setLesObservations(Collection<ObsGCI> lesObservations) {
 		this.lesObservations = lesObservations;
 	}
 
+	/**
+	 * définit le nombre d'envol du nid
+	 * @param nbEnvol nombre d'envol du nid
+	 */
 	public void setNbEnvol(int nbEnvol) {
 		this.nbEnvol = nbEnvol;
 	}
 
+	/**
+	 * définit le nom de la plage du nid
+	 * @param nomPlage nom de la plage du nid
+	 */
 	public void setNomPlage(String nomPlage) {
 		this.nomPlage = nomPlage;
 	}

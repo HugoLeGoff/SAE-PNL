@@ -17,10 +17,10 @@ public class ScenarioDonnee {
         ArrayList<Observateur> listeObs = new ArrayList<Observateur>();
         listeObs.add(obsBen1);
         listeObs.add(obsBen2);
-
+        
 
         testObsChouette(d, t, l, listeObs, TypeObservation.VISUELLE);
-        testObsChouette(d, t, l, listeObs, TypeObservation.VISUELLE);
+        testObsGCI(d, t, l, listeObs, ContenuNid.POUSSIN, 5);
 
 
 
@@ -81,11 +81,18 @@ public class ScenarioDonnee {
         }
         else{
             System.out.println("\t: OK");
-        }
-    }*/
+        }*/
+    }
 
     public static void testObsChouette(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, TypeObservation type){
         System.out.println("*** Test cas normaux de ObsChouettes");
+
+        try{
+            ObsChouette chouette = new ObsChouette(5, d, t, l, obs, type);
+        }
+        catch(Exception e){
+            e.printStackTrace(); 
+        }
 
         ObsChouette chouette = new ObsChouette(5, d, t, l, obs, type);
         
@@ -143,50 +150,69 @@ public class ScenarioDonnee {
         
     }
 
-    public static void testObsGCI(){
+    public static void testObsGCI(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, ContenuNid nature, int nb){
         System.out.println("*** Test cas normaux de ObsGCI");
 
-        ObsChouette chouette = new ObsChouette(5, d, t, l, obs, type);
         
-        System.out.print (chouette.getDateObs());
-        if(chouette.getDateObs().equals(d)){
+        try{
+            ObsGCI gci = new ObsGCI(5, d, t, l, obs, nature, nb);
+        }
+        catch(Exception e){
+            e.printStackTrace(); 
+        }
+
+        ObsGCI gci = new ObsGCI(5, d, t, l, obs, nature, nb);
+        
+        
+        System.out.print (gci.getDateObs());
+        if(gci.getDateObs().equals(d)){
             System.out.println ("\t: OK");
         }
         else{
             System.out.println("\t: OK");
         }
 
-        System.out.print(chouette.getHeureObs());
-        if(chouette.getHeureObs().equals(t)){
+        System.out.print(gci.getHeureObs());
+        if(gci.getHeureObs().equals(t)){
             System.out.println ("\t: OK");
         }
         else{
             System.out.print("\t: OK");
         }
 
-        System.out.print(chouette.getLieuObs());
-        if(chouette.getLieuObs().equals(t)){
+        System.out.print(gci.getLieuObs());
+        if(gci.getLieuObs().equals(t)){
             System.out.println ("\t: OK");
         }
         else{
             System.out.println("\t: OK");
         }
 
-        System.out.print(chouette.getLesObservateurs());
-        if(chouette.getLesObservateurs().equals(t)){
+        System.out.print(gci.getLesObservateurs());
+        if(gci.getLesObservateurs().equals(t)){
             System.out.println ("\t: OK");
         }
         else{
             System.out.println("\t: OK");
         }
 
-        System.out.print(chouette.getTypeObs());
-        if(chouette.getTypeObs().equals(t)){
+        System.out.print(gci.getNatureObs());
+        if(gci.getNatureObs().equals(t)){
             System.out.println ("\t: OK");
         }
         else{
             System.out.println("\t: OK");
         }
+
+        System.out.print(gci.getNombre());
+        if(gci.getNombre() == nb){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: OK");
+        }
+
+
         
     }
 

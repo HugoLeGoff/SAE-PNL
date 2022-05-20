@@ -1,6 +1,9 @@
 package modele;
 import donnee.*;
 import java.util.*;
+
+import javax.naming.directory.NoSuchAttributeException;
+
 import java.sql.Time;
 import java.sql.Date;
 
@@ -24,6 +27,8 @@ public class ScenarioDonnee {
         testObsChouette(d, t, l, listeObs, TypeObservation.VISUELLE);
         testObsGCI(d, t, l, listeObs, ContenuNid.POUSSIN, 5);
         testObsBatracien(d, t, l, listeObs, bat, EspeceBatracien.PELODYTE);
+        testObsLoutre(d, t, l, listeObs,IndiceLoutre.POSITIF);
+
 
 
 
@@ -43,8 +48,10 @@ public class ScenarioDonnee {
 
         int[] tab = new int[]{1,2,3,4};
 
+        System.out.println("*** Test des cas normaux du constructeur");
+
         try{
-            ObsBatracien batracien = new ObsBatracien(5, d, t, l, listeObs, tab, espece);
+            ObsBatracien batracien = new ObsBatracien(5, d, t, l, listeObs, tab, EspeceBatracien.PELODYTE);
             System.out.println("Constructeur ObsBatracien : OK");
         }
         catch(Exception e){
@@ -59,9 +66,74 @@ public class ScenarioDonnee {
             e.printStackTrace(); 
         }
 
+        try{
+            ObsLoutre loutre = new ObsLoutre(5, d, t, l, listeObs, IndiceLoutre.POSITIF);
+            System.out.println("Constructeur ObsLoutre : OK");
+
+        }
+        catch(Exception e){
+            e.printStackTrace(); 
+        }
+
+        try{
+            ObsGCI gci = new ObsGCI(5, d, t, l, listeObs, ContenuNid.POUSSIN, 5);
+            System.out.println("Constructeur ObsGCI : OK");
+
+        }
+        catch(Exception e){
+            e.printStackTrace(); 
+        }
+
+        try{
+            ObsGCI gci = new ObsGCI(5, d, t, l, listeObs, ContenuNid.POUSSIN, 5);
+            System.out.println("Constructeur ObsGCI : OK");
+
+        }
+        catch(Exception e){
+            e.printStackTrace(); 
+        }
+          
 
 
 
+
+    }
+
+    public static void testObservation(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs,IndiceLoutre lIndice){
+        System.out.println("Test des cas normaux de la classe Observation");
+        ObsLoutre loutre = new ObsLoutre(5, d, t, l, obs, lIndice);      
+        
+        System.out.print (loutre.getDateObs());
+        if(loutre.getDateObs().equals(d)){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: ERROR");
+        }
+
+        System.out.print(loutre.getHeureObs());
+        if(loutre.getHeureObs().equals(t)){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.print("\t: ERROR");
+        }
+
+        System.out.print(loutre.getLieuObs());
+        if(loutre.getLieuObs().equals(l)){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: ERROR");
+        }
+
+        System.out.print(loutre.getLesObservateurs());
+        if(loutre.getLesObservateurs().equals(obs)){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: ERROR");
+        }
     }
 
     public static void testChouette(){
@@ -79,46 +151,9 @@ public class ScenarioDonnee {
     public static void testObsBatracien(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, int[] tab, EspeceBatracien espece){
         System.out.println("*** Test cas normaux de Obsbatracien");
 
-        try{
-            ObsBatracien batracien = new ObsBatracien(5, d, t, l, obs, tab, espece);
-        }
-        catch(Exception e){
-            e.printStackTrace(); 
-        }
 
         ObsBatracien batracien = new ObsBatracien(5, d, t, l, obs, tab, espece);
         
-        System.out.print (batracien.getDateObs());
-        if(batracien.getDateObs().equals(d)){
-            System.out.println ("\t: OK");
-        }
-        else{
-            System.out.println("\t: OK");
-        }
-
-        System.out.print(batracien.getHeureObs());
-        if(batracien.getHeureObs().equals(t)){
-            System.out.println ("\t: OK");
-        }
-        else{
-            System.out.print("\t: OK");
-        }
-
-        System.out.print(batracien.getLieuObs());
-        if(batracien.getLieuObs().equals(t)){
-            System.out.println ("\t: OK");
-        }
-        else{
-            System.out.println("\t: OK");
-        }
-
-        System.out.print(batracien.getLesObservateurs());
-        if(batracien.getLesObservateurs().equals(t)){
-            System.out.println ("\t: OK");
-        }
-        else{
-            System.out.println("\t: OK");
-        }
 
         System.out.print(batracien.getNombreAdultes());
         if(batracien.getNombreAdultes() == tab[0]){
@@ -159,9 +194,9 @@ public class ScenarioDonnee {
         else{
             System.out.println("\t: OK");
         }
-
-
     }
+
+
 
     public static void testObsChouette(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, TypeObservation type){
         System.out.println("*** Test cas normaux de ObsChouettes");
@@ -177,64 +212,20 @@ public class ScenarioDonnee {
         }
     }
 
-    
+
 
     public static void testObservateur(){
         
     }
 
-    public static void testObservation(){
-        
-    }
 
     public static void testObsGCI(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, ContenuNid nature, int nb){
         System.out.println("*** Test cas normaux de ObsGCI");
 
-        
-        try{
-            ObsGCI gci = new ObsGCI(5, d, t, l, obs, nature, nb);
-        }
-        catch(Exception e){
-            e.printStackTrace(); 
-        }
-
         ObsGCI gci = new ObsGCI(5, d, t, l, obs, nature, nb);
-        
-        
-        System.out.print (gci.getDateObs());
-        if(gci.getDateObs().equals(d)){
-            System.out.println ("\t: OK");
-        }
-        else{
-            System.out.println("\t: OK");
-        }
-
-        System.out.print(gci.getHeureObs());
-        if(gci.getHeureObs().equals(t)){
-            System.out.println ("\t: OK");
-        }
-        else{
-            System.out.print("\t: OK");
-        }
-
-        System.out.print(gci.getLieuObs());
-        if(gci.getLieuObs().equals(t)){
-            System.out.println ("\t: OK");
-        }
-        else{
-            System.out.println("\t: OK");
-        }
-
-        System.out.print(gci.getLesObservateurs());
-        if(gci.getLesObservateurs().equals(t)){
-            System.out.println ("\t: OK");
-        }
-        else{
-            System.out.println("\t: OK");
-        }
 
         System.out.print(gci.getNatureObs());
-        if(gci.getNatureObs().equals(t)){
+        if(gci.getNatureObs().equals(nature)){
             System.out.println ("\t: OK");
         }
         else{
@@ -257,7 +248,17 @@ public class ScenarioDonnee {
         
     }
 
-    public static void testObsLoutres(){
+    public static void testObsLoutre(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs,IndiceLoutre lIndice){
         
+        ObsLoutre loutre = new ObsLoutre(5, d, t, l, obs, lIndice);      
+        
+        System.out.print(loutre.getIndice());
+        if(loutre.getIndice().equals(lIndice)){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: ERROR");
+        }
+
     }
 }

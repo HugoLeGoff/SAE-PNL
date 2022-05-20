@@ -11,6 +11,7 @@ import java.sql.Date;
 public class ScenarioDonnee {
     public static void main(String[] args){
         testConstructeur();
+
         java.sql.Date d = new java.sql.Date(0);
         d = d.valueOf("2015-05-03");
         java.sql.Time t = new Time(3000);
@@ -28,7 +29,8 @@ public class ScenarioDonnee {
         testObsGCI(d, t, l, listeObs, ContenuNid.POUSSIN, 5);
         testObsBatracien(d, t, l, listeObs, bat, EspeceBatracien.PELODYTE);
         testObsLoutre(d, t, l, listeObs,IndiceLoutre.POSITIF);
-
+        testObsHippocampes(d, t, l, listeObs, 5.0, Peche.CASIER_CREVETTES, EspeceHippocampes.SYNGNATHUS_ACTUS, Sexe.MALE, true);
+        testLieu(5.0, 6.0);
 
 
 
@@ -85,14 +87,15 @@ public class ScenarioDonnee {
         }
 
         try{
-            ObsGCI gci = new ObsGCI(5, d, t, l, listeObs, ContenuNid.POUSSIN, 5);
-            System.out.println("Constructeur ObsGCI : OK");
+            ObsHippocampes hippocampes = new ObsHippocampes(5, d, t, l, listeObs, 5.0, Peche.CASIER_CREVETTES, EspeceHippocampes.SYNGNATHUS_ACTUS, Sexe.MALE, true);
+            System.out.println("Constructeur ObsHippocampe : OK");
 
         }
         catch(Exception e){
             e.printStackTrace(); 
         }
-          
+        
+        
 
 
 
@@ -136,11 +139,41 @@ public class ScenarioDonnee {
         }
     }
 
-    public static void testChouette(){
+    public static void testChouette(String id, Sexe leSexe, EspeceChouette IEspece){
+        /*Chouette chouette = new Chouette(id, leSexe, IEspece);
+
+        System.out.print(chouette.getEspece());
+        if(batracien.getNombreAdultes() == tab[0]){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: OK");
+        }*/
+        
 
     }
 
-    public static void testLieu(){
+    public static void testLieu(double x, double y){
+        System.out.println("*** Test cas normaux de Lieu");
+
+        Lieu lieu = new Lieu(x, y);
+
+        System.out.print(lieu.getxCoord());
+        if(lieu.getxCoord() == x){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
+        System.out.print(lieu.getyCoord());
+        if(lieu.getyCoord() == x){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
         
     }
 
@@ -160,7 +193,7 @@ public class ScenarioDonnee {
             System.out.println ("\t: OK");
         }
         else{
-            System.out.println("\t: OK");
+            System.out.println("\t: Error");
         }
 
         System.out.print(batracien.getNombreAmplexus());
@@ -168,7 +201,7 @@ public class ScenarioDonnee {
             System.out.println ("\t: OK");
         }
         else{
-            System.out.println("\t: OK");
+            System.out.println("\t: Error");
         }
 
         System.out.print(batracien.getNombrePonte());
@@ -176,7 +209,7 @@ public class ScenarioDonnee {
             System.out.println ("\t: OK");
         }
         else{
-            System.out.println("\t: OK");
+            System.out.println("\t: Error");
         }
 
         System.out.print(batracien.getNombreTetard());
@@ -184,7 +217,7 @@ public class ScenarioDonnee {
             System.out.println ("\t: OK");
         }
         else{
-            System.out.println("\t: OK");
+            System.out.println("\t: Error");
         }
 
         System.out.print(batracien.getEspece());
@@ -192,7 +225,7 @@ public class ScenarioDonnee {
             System.out.println ("\t: OK");
         }
         else{
-            System.out.println("\t: OK");
+            System.out.println("\t: Error");
         }
     }
 
@@ -208,7 +241,7 @@ public class ScenarioDonnee {
             System.out.println ("\t: OK");
         }
         else{
-            System.out.println("\t: OK");
+            System.out.println("\t: Error");
         }
     }
 
@@ -229,7 +262,7 @@ public class ScenarioDonnee {
             System.out.println ("\t: OK");
         }
         else{
-            System.out.println("\t: OK");
+            System.out.println("\t: Error");
         }
 
         System.out.print(gci.getNombre());
@@ -237,15 +270,16 @@ public class ScenarioDonnee {
             System.out.println ("\t: OK");
         }
         else{
-            System.out.println("\t: OK");
+            System.out.println("\t: Error");
         }
 
 
         
     }
 
-    public static void testObsHippocampes(){
-        
+    public static void testObsHippocampes(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, double laTaille, Peche leTypePeche, EspeceHippocampes lEspece, Sexe leSexe, boolean estGestant){
+        ObsHippocampes hippocampes = new ObsHippocampes(5, d, t, l, obs, laTaille, Peche.CASIER_CREVETTES, EspeceHippocampes.SYNGNATHUS_ACTUS, Sexe.MALE, estGestant);
+
     }
 
     public static void testObsLoutre(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs,IndiceLoutre lIndice){

@@ -24,7 +24,7 @@ public class ScenarioDonnee {
 
         int[] bat = new int[]{1,2,3,4};
         
-
+        testObservation(d, t, l, listeObs,IndiceLoutre.POSITIF);
         testObsChouette(d, t, l, listeObs, TypeObservation.VISUELLE);
         testObsGCI(d, t, l, listeObs, ContenuNid.POUSSIN, 5);
         testObsBatracien(d, t, l, listeObs, bat, EspeceBatracien.PELODYTE);
@@ -95,11 +95,24 @@ public class ScenarioDonnee {
             e.printStackTrace(); 
         }
         
-        
+        try{
+            Lieu lieu = new Lieu(5.0, 6.0);
+            System.out.println("Constructeur Lieu : OK");
 
+        }
+        catch(Exception e){
+            e.printStackTrace(); 
+        }
 
+        try{
+            Observateur observateur = new Observateur(1, "LE GOFF", "Hugo");
+            System.out.println("Constructeur Observateur : OK");
 
-
+        }
+        catch(Exception e){
+            e.printStackTrace(); 
+        }
+    
     }
 
     public static void testObservation(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs,IndiceLoutre lIndice){
@@ -167,7 +180,7 @@ public class ScenarioDonnee {
         }
 
         System.out.print(lieu.getyCoord());
-        if(lieu.getyCoord() == x){
+        if(lieu.getyCoord() == y){
             System.out.println ("\t: OK");
         }
         else{
@@ -204,24 +217,26 @@ public class ScenarioDonnee {
             System.out.println("\t: Error");
         }
 
-        System.out.print(batracien.getNombrePonte());
-        if(batracien.getNombrePonte()== tab[2]){
+        System.out.print(batracien.getNombreTetard());
+        if(batracien.getNombreTetard()== tab[2]){
             System.out.println ("\t: OK");
         }
         else{
             System.out.println("\t: Error");
         }
 
-        System.out.print(batracien.getNombreTetard());
-        if(batracien.getNombreTetard()== tab[3]){
+        System.out.print(batracien.getNombrePonte());
+        if(batracien.getNombrePonte()== tab[3]){
             System.out.println ("\t: OK");
         }
         else{
             System.out.println("\t: Error");
         }
+
+
 
         System.out.print(batracien.getEspece());
-        if(batracien.getEspece().equals(t)){
+        if(batracien.getEspece().equals(espece)){
             System.out.println ("\t: OK");
         }
         else{
@@ -247,8 +262,35 @@ public class ScenarioDonnee {
 
 
 
-    public static void testObservateur(){
-        
+    public static void testObservateur(int id, String prenom, String nom){
+        System.out.println("*** Test cas normaux de Observateur");
+
+        Observateur observateur = new Observateur(id, nom, prenom);
+
+        System.out.print(observateur.getIdObservateur());
+        if(observateur.getIdObservateur() == id){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
+        System.out.print(observateur.getNom());
+        if(observateur.getNom().equals(nom)){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
+        System.out.print(observateur.getPrenom());
+        if(observateur.getPrenom().equals(prenom)){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
     }
 
 

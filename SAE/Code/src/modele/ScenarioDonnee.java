@@ -7,7 +7,7 @@ import java.sql.Date;
 
 public class ScenarioDonnee {
     public static void main(String[] args){
-         
+        testConstructeur();
         java.sql.Date d = new java.sql.Date(0);
         d = d.valueOf("2015-05-03");
         java.sql.Time t = new Time(3000);
@@ -24,6 +24,41 @@ public class ScenarioDonnee {
         testObsChouette(d, t, l, listeObs, TypeObservation.VISUELLE);
         testObsGCI(d, t, l, listeObs, ContenuNid.POUSSIN, 5);
         testObsBatracien(d, t, l, listeObs, bat, EspeceBatracien.PELODYTE);
+
+
+
+    }
+
+    public static void testConstructeur(){
+
+        java.sql.Date d = new java.sql.Date(0);
+        d = d.valueOf("2015-05-03");
+        java.sql.Time t = new Time(3000);
+        Lieu l = new Lieu(50, 50);
+        Observateur obsBen1 = new Observateur(1, "Hugo", "Le Goff");
+        Observateur obsBen2 = new Observateur(1, "Lucas", "Torri");
+        ArrayList<Observateur> listeObs = new ArrayList<Observateur>();
+        listeObs.add(obsBen1);
+        listeObs.add(obsBen2);
+
+        int[] tab = new int[]{1,2,3,4};
+
+        try{
+            ObsBatracien batracien = new ObsBatracien(5, d, t, l, listeObs, tab, espece);
+            System.out.println("Constructeur ObsBatracien : OK");
+        }
+        catch(Exception e){
+            e.printStackTrace(); 
+        }
+
+        try{
+            ObsChouette chouette = new ObsChouette(5, d, t, l, listeObs, TypeObservation.VISUELLE);
+            System.out.println("Constructeur ObsChouette : OK");
+        }
+        catch(Exception e){
+            e.printStackTrace(); 
+        }
+
 
 
 
@@ -131,46 +166,7 @@ public class ScenarioDonnee {
     public static void testObsChouette(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, TypeObservation type){
         System.out.println("*** Test cas normaux de ObsChouettes");
 
-        try{
-            ObsChouette chouette = new ObsChouette(5, d, t, l, obs, type);
-        }
-        catch(Exception e){
-            e.printStackTrace(); 
-        }
-
         ObsChouette chouette = new ObsChouette(5, d, t, l, obs, type);
-        
-        System.out.print (chouette.getDateObs());
-        if(chouette.getDateObs().equals(d)){
-            System.out.println ("\t: OK");
-        }
-        else{
-            System.out.println("\t: OK");
-        }
-
-        System.out.print(chouette.getHeureObs());
-        if(chouette.getHeureObs().equals(t)){
-            System.out.println ("\t: OK");
-        }
-        else{
-            System.out.print("\t: OK");
-        }
-
-        System.out.print(chouette.getLieuObs());
-        if(chouette.getLieuObs().equals(l)){
-            System.out.println ("\t: OK");
-        }
-        else{
-            System.out.println("\t: OK");
-        }
-
-        System.out.print(chouette.getLesObservateurs());
-        if(chouette.getLesObservateurs().equals(obs)){
-            System.out.println ("\t: OK");
-        }
-        else{
-            System.out.println("\t: OK");
-        }
 
         System.out.print(chouette.getTypeObs());
         if(chouette.getTypeObs().equals(type)){
@@ -179,12 +175,9 @@ public class ScenarioDonnee {
         else{
             System.out.println("\t: OK");
         }
-
-
-
-
-
     }
+
+    
 
     public static void testObservateur(){
         

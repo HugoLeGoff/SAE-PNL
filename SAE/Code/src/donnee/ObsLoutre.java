@@ -7,7 +7,10 @@ import java.sql.Time;
  */
 public class ObsLoutre extends Observation {
 
-	
+	/**
+	 * indice de la loutre
+	 */
+	private IndiceLoutre indice;
 
 	/**
 	 * Constructeur de la classe ObsLoutre.
@@ -16,12 +19,24 @@ public class ObsLoutre extends Observation {
 	 * @param heure Heure de l'observation
 	 * @param lieu Lieu de l'observation
 	 * @param observateurs Liste des observateurs
+	 * @param lIndice indice de la loutre
 	 */
 
-	public ObsLoutre(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs) {
+	public ObsLoutre(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs,IndiceLoutre lIndice) {
 
 		super( id, date, heure, lieu, observateurs);
-	
+
+		try{
+			if(lIndice==null){
+				throw new IllegalArgumentException("L'indice est null");
+			}else{
+				this.indice = lIndice; 
+			}
+
+		}catch(IllegalArgumentException i){
+			i.printStackTrace();
+		}
+
 	}
 
 	/**

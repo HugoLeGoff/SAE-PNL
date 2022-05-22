@@ -198,7 +198,7 @@ public abstract class Observation {
 	public void setLesObservateurs(Collection<Observateur> lesObservateurs) {
 		
 		if(lesObservateurs != null){
-			this.lesObservateurs = lesObservateurs;
+			this.lesObservateurs = (ArrayList<Observateur>) lesObservateurs;
 		}
 		else{
 			System.err.println("La liste des observateurs ne doit pas être null");

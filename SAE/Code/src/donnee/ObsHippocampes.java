@@ -178,7 +178,7 @@ public class ObsHippocampes extends Observation {
 	 */
 	public void setEstGestant(boolean estGestant){
 		if(this.sexe==Sexe.FEMELLE && estGestant==true){
-			System.err.println("Une femelle ne peut être gestant")
+			System.err.println("Une femelle ne peut être gestant");
 		}
 		if(this.sexe==Sexe.INCONNU && estGestant==true){
 			this.sexe=Sexe.MALE;

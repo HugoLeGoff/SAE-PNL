@@ -206,11 +206,29 @@ public class ScenarioDonnee {
         listeObs.add(gci);
         listeObs.add(gci1);
         
-        nid.ajouteUneObs(gci2);
         nid.ajoutePlsObs(listeObs);
+        nid.ajouteUneObs(gci2);
 
         System.out.print("Nombre d'observations : " + nid.nbObs());
         if(nid.nbObs() == 3){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
+        java.sql.Date dTest = nid.dateDebutObs();
+        System.out.print("Test de la méthode dateDebutObs() : " + dTest);      
+        if(dTest.equals(d)){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
+        java.sql.Date dTest2 = nid.dateFinObs();
+        System.out.print("Test de la méthode dateFinObs() : " + dTest2);
+        if(dTest2.equals(d2)){
             System.out.println ("\t: OK");
         }
         else{

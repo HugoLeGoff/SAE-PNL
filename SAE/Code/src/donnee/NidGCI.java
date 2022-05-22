@@ -52,7 +52,7 @@ public class NidGCI implements IObs<ObsGCI>{
 	 * Renvoie la dateDebutObs de NidGCI.
 	 * @return dateDebutObs de NidGCI
 	 */
-	public Date dateDebutObs() {
+	public java.sql.Date dateDebutObs() {
 		return ((Observation) lesObservations.toArray()[0]).getDateObs();
 	}
 
@@ -60,8 +60,8 @@ public class NidGCI implements IObs<ObsGCI>{
 	 * Renvoie la dateFinObs de NidGCI.
 	 * @return dateFinObs de NidGCI
 	 */
-	public Date dateFinObs() {
-		return ((Observation) lesObservations.toArray()[lesObservations.size()]).getDateObs();
+	public java.sql.Date dateFinObs() {
+		return ((Observation) lesObservations.toArray()[lesObservations.size()-1]).getDateObs();
 	}
 
 	/**

@@ -32,7 +32,7 @@ public class ScenarioDonnee {
         testObsHippocampes(d, t, l, listeObs, 5.0, Peche.CASIER_CREVETTES, EspeceHippocampes.SYNGNATHUS_ACTUS, Sexe.MALE, true);
         testLieu(5.0, 6.0);
         testNidGCI(d, t, l, listeObs, ContenuNid.POUSSIN, 5);
-
+        testChouette(d, t, l, listeObs, TypeObservation.VISUELLE);
 
     }
 
@@ -112,6 +112,33 @@ public class ScenarioDonnee {
         catch(Exception e){
             e.printStackTrace(); 
         }
+
+        try{
+            NidGCI nid = new NidGCI(1, "Kerbilouet");
+            System.out.println("Constructeur NidGCI : OK");
+
+        }
+        catch(Exception e){
+            e.printStackTrace(); 
+        }
+
+        try{
+            NidGCI nid = new NidGCI(1, "Kerbilouet");
+            System.out.println("Constructeur NidGCI : OK");
+
+        }
+        catch(Exception e){
+            e.printStackTrace(); 
+        }
+
+        try{
+            Chouette chouette = new Chouette("1", Sexe.MALE, EspeceChouette.EFFRAIE);
+            System.out.println("Constructeur Chouette : OK");
+
+        }
+        catch(Exception e){
+            e.printStackTrace(); 
+        }
     
     }
 
@@ -152,17 +179,72 @@ public class ScenarioDonnee {
         }
     }
 
-    public static void testChouette(String id, Sexe leSexe, EspeceChouette IEspece){
-        /*Chouette chouette = new Chouette(id, leSexe, IEspece);
+    public static void testChouette(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, TypeObservation type){
+        System.out.println("*** Test cas normaux de NidGCI");
 
-        System.out.print(chouette.getEspece());
-        if(batracien.getNombreAdultes() == tab[0]){
+        java.sql.Date d2 = new java.sql.Date(0);
+        d2 = d2.valueOf("2016-05-03");
+        
+        ObsChouette ObsChouette = new ObsChouette(5, d, t, l, obs, TypeObservation.VISUELLE);
+        ObsChouette ObsChouette1 = new ObsChouette(6, d, t, l, obs, TypeObservation.VISUELLE);
+        ObsChouette ObsChouette2 = new ObsChouette(7, d, t, l, obs, TypeObservation.VISUELLE);
+
+        Chouette chouette = new Chouette("1", Sexe.MALE, EspeceChouette.EFFRAIE);
+
+        ArrayList<ObsChouette> listeObs = new ArrayList<ObsChouette>();
+        listeObs.add(ObsChouette1);
+        listeObs.add(ObsChouette2);
+        
+        chouette.ajoutePlsObs(listeObs);
+        chouette.ajouteUneObs(ObsChouette2);
+        
+        System.out.print("Nombre d'observations : " + chouette.nbObs());
+        if(chouette.nbObs() == 3){
             System.out.println ("\t: OK");
         }
         else{
-            System.out.println("\t: OK");
-        }*/
-        
+            System.out.println("\t: Error");
+        }
+
+
+        boolean test = chouette.retireObs(2);
+        System.out.print("Test de la méthode retirObs()");
+        if(test == true){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
+        System.out.print("Nombre d'observations : " + chouette.nbObs());
+        if(chouette.nbObs() == 2){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
+        chouette.videObs();
+        System.out.println("Test de la méthode videObs ");
+        System.out.print("Nombre d'observations : " + chouette.nbObs());
+        if(chouette.nbObs() == 0){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
+        System.out.println("*** Test cas d'erreur, ajout du même observateur ");
+        chouette.ajouteUneObs(ObsChouette2);
+        chouette.ajouteUneObs(ObsChouette2);
+        System.out.print("Nombre d'observations : " + chouette.nbObs());
+        if(chouette.nbObs() == 1){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
 
     }
 

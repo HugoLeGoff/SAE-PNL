@@ -143,7 +143,8 @@ public class ScenarioDonnee {
     }
 
     public static void testObservation(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs,IndiceLoutre lIndice){
-        System.out.println("Test des cas normaux de la classe Observation");
+        System.out.println();
+        System.out.println("*** Test de la classe Observation");
         ObsLoutre loutre = new ObsLoutre(5, d, t, l, obs, lIndice);      
         
         
@@ -191,7 +192,8 @@ public class ScenarioDonnee {
     }
 
     public static void testChouette(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, TypeObservation type){
-        System.out.println("*** Test cas normaux de Chouette");
+        System.out.println();
+        System.out.println("*** Test de la classe Chouette");
 
         java.sql.Date d2 = new java.sql.Date(0);
         d2 = d2.valueOf("2016-05-03");
@@ -260,7 +262,8 @@ public class ScenarioDonnee {
     }
 
     public static void testLieu(double x, double y){
-        System.out.println("*** Test cas normaux de Lieu");
+        System.out.println();
+        System.out.println("*** Test de la classe Lieu");
 
         Lieu lieu = new Lieu(x, y);
 
@@ -284,7 +287,8 @@ public class ScenarioDonnee {
     }
 
     public static void testNidGCI(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, ContenuNid nature, int nb){
-        System.out.println("*** Test cas normaux de NidGCI");
+        System.out.println();
+        System.out.println("*** Test de la classe NidGCI");
 
         java.sql.Date d2 = new java.sql.Date(0);
         d2 = d2.valueOf("2016-05-03");
@@ -371,13 +375,9 @@ public class ScenarioDonnee {
     }
 
 
-
-
-
-
-
     public static void testObsBatracien(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, int[] tab, EspeceBatracien espece){
-        System.out.println("*** Test cas normaux de Obsbatracien");
+        System.out.println();
+        System.out.println("*** Test de la classe Obsbatracien");
 
 
         ObsBatracien batracien = new ObsBatracien(5, d, t, l, obs, tab, espece);
@@ -429,10 +429,12 @@ public class ScenarioDonnee {
 
 
     public static void testObsChouette(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, TypeObservation type){
-        System.out.println("*** Test cas normaux de ObsChouettes");
+        System.out.println();
+        System.out.println("*** Test de la classe ObsChouettes");
 
         ObsChouette chouette = new ObsChouette(5, d, t, l, obs, type);
-
+        type = TypeObservation.SONORE_VISUELLE;
+        chouette.setTypeObs(type);
         System.out.print(chouette.getTypeObs());
         if(chouette.getTypeObs().equals(type)){
             System.out.println ("\t: OK");
@@ -445,10 +447,13 @@ public class ScenarioDonnee {
 
 
     public static void testObservateur(int id, String prenom, String nom){
+        System.out.println();
         System.out.println("*** Test cas normaux de Observateur");
 
         Observateur observateur = new Observateur(id, nom, prenom);
 
+        id = 12;
+        observateur.setIdObservateur(id);
         System.out.print(observateur.getIdObservateur());
         if(observateur.getIdObservateur() == id){
             System.out.println ("\t: OK");
@@ -457,6 +462,8 @@ public class ScenarioDonnee {
             System.out.println("\t: Error");
         }
 
+        nom = "Ridard";
+        observateur.setNom(nom);
         System.out.print(observateur.getNom());
         if(observateur.getNom().equals(nom)){
             System.out.println ("\t: OK");
@@ -465,6 +472,8 @@ public class ScenarioDonnee {
             System.out.println("\t: Error");
         }
 
+        prenom = "Anthony";
+        observateur.setPrenom(prenom);
         System.out.print(observateur.getPrenom());
         if(observateur.getPrenom().equals(prenom)){
             System.out.println ("\t: OK");
@@ -477,7 +486,8 @@ public class ScenarioDonnee {
 
 
     public static void testObsGCI(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, ContenuNid nature, int nb){
-        System.out.println("*** Test cas normaux de ObsGCI");
+        System.out.println();
+        System.out.println("*** Test de la classeObsGCI");
 
         ObsGCI gci = new ObsGCI(5, d, t, l, obs, nature, nb);
 
@@ -495,17 +505,16 @@ public class ScenarioDonnee {
         }
         else{
             System.out.println("\t: Error");
-        }
-
-
-        
+        }  
     }
 
     public static void testObsHippocampes(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, double laTaille, Peche leTypePeche, EspeceHippocampes lEspece, Sexe leSexe, boolean estGestant){
-        System.out.println("*** Test cas normaux de ObsHippocampes");
+        System.out.println();
+        System.out.println("*** Test de la classe ObsHippocampes");
 
         
         ObsHippocampes hippocampes = new ObsHippocampes(5, d, t, l, obs, laTaille, Peche.CASIER_CREVETTES, EspeceHippocampes.SYNGNATHUS_ACTUS, Sexe.MALE, estGestant);
+
 
         System.out.print(hippocampes.getTaille());
         if(hippocampes.getTaille()==laTaille){
@@ -549,7 +558,7 @@ public class ScenarioDonnee {
     }
 
     public static void testObsLoutre(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs,IndiceLoutre lIndice){
-        System.out.println("*** Test cas normaux de ObsLoutre");
+        System.out.println("*** Test de la classe ObsLoutre");
 
         ObsLoutre loutre = new ObsLoutre(5, d, t, l, obs, lIndice);      
         

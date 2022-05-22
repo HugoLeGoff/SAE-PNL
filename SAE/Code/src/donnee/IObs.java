@@ -27,6 +27,7 @@ public interface IObs <T>{
 	/**
 	 * Retire une observation de la liste des observations de la chouette.
 	 * @param idObs l'id de l'observation à retirer
+	 * @return true si une observation est retiré, fasle sinon
 	 */
 	boolean retireObs(int idObs);
 

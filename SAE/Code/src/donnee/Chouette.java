@@ -93,6 +93,7 @@ public class Chouette implements IObs<ObsChouette> {
 
 	/**
 	 * redéfinit l'espce de la chouette
+	 * @param espece espece de la chouette
 	 */
 	public void setEspece(EspeceChouette espece) {
 
@@ -106,6 +107,7 @@ public class Chouette implements IObs<ObsChouette> {
 
 	/**
 	 * redéfinit l'id de la chouette
+	 * @param idChouette id de la chouette
 	 */
 	public void setIdChouette(String idChouette) {
 	
@@ -119,6 +121,7 @@ public class Chouette implements IObs<ObsChouette> {
 
 	/**
 	 * redéfinit la liste des observations de la chouette
+	 * @param lesObservations liste des observations de la chouette
 	 */
 	public void setLesObservations(ArrayList<ObsChouette> lesObservations) {
 	
@@ -132,6 +135,7 @@ public class Chouette implements IObs<ObsChouette> {
 
 	/**
 	 * redéfinit le sexe de la chouette
+	 * @param sexe sexe de la chouette
 	 */
 	public void setSexe(Sexe sexe) {
 		

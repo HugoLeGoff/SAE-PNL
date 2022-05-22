@@ -41,8 +41,9 @@ public class ObsHippocampes extends Observation {
 	 * @param observateurs Liste des observateurs
 	 * @param laTaille Taille de l'individu
 	 * @param leTypePeche Type de peche
-	 * @param IEspece Espece observée
+	 * @param lEspece Espece observée
 	 * @param leSexe Sexe de l'individu
+	 * @param estGestant Indique si l'individu est gestant
 	 */
 	public ObsHippocampes(int id, java.sql.Date date, Time heure, Lieu lieu, ArrayList<Observateur> observateurs, double laTaille, Peche leTypePeche, EspeceHippocampes lEspece, Sexe leSexe, boolean estGestant) {
 		super(id, date, heure, lieu, observateurs);
@@ -138,7 +139,7 @@ public class ObsHippocampes extends Observation {
 
 	/**
 	 * Définit le typePeche de ObsHippocampe.
-	 * @param espece typePeche à définir
+	 * @param typePeche typePeche à définir
 	 */
 	public void setTypePeche(Peche typePeche){
 		if(typePeche!=null){
@@ -150,7 +151,7 @@ public class ObsHippocampes extends Observation {
 
 	/**
 	 * Définit la taille de ObsHippocampe.
-	 * @param espece taille à définir
+	 * @param taille taille à définir
 	 */
 	public void setTaille(double taille){
 		if(taille>0){
@@ -162,7 +163,7 @@ public class ObsHippocampes extends Observation {
 
 	/**
 	 * Définit le sexe de ObsHippocampe.
-	 * @param espece sexe à définir
+	 * @param sexe sexe à définir
 	 */
 	public void setSexe(Sexe sexe){
 		if(sexe!=null){
@@ -174,7 +175,7 @@ public class ObsHippocampes extends Observation {
 
 	/**
 	 * Définit le booleen estGestant de ObsHippocampe.
-	 * @param espece booleen estGestant à définir
+	 * @param estGestant booleen estGestant à définir
 	 */
 	public void setEstGestant(boolean estGestant){
 		if(this.sexe==Sexe.FEMELLE && estGestant==true){
@@ -190,10 +191,9 @@ public class ObsHippocampes extends Observation {
 	
 	/**
 	 * retourne l'espece observée
-	 * @return l'espece observée
-
 	 */
 	public EspeceObservee especeObs(){
+		
 		return EspeceObservee.HIPPOCAMPE;
 
 	}

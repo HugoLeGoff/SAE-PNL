@@ -31,7 +31,7 @@ public class ScenarioDonnee {
         testObsLoutre(d, t, l, listeObs,IndiceLoutre.POSITIF);
         testObsHippocampes(d, t, l, listeObs, 5.0, Peche.CASIER_CREVETTES, EspeceHippocampes.SYNGNATHUS_ACTUS, Sexe.MALE, true);
         testLieu(5.0, 6.0);
-
+        testNidGCI(d, t, l, listeObs, ContenuNid.POUSSIN, 5);
 
 
     }
@@ -190,9 +190,80 @@ public class ScenarioDonnee {
         
     }
 
-    public static void testNidGCI(){
+    public static void testNidGCI(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, ContenuNid nature, int nb){
+        System.out.println("*** Test cas normaux de NidGCI");
+
+        java.sql.Date d2 = new java.sql.Date(0);
+        d2 = d2.valueOf("2016-05-03");
+        
+        ObsGCI gci = new ObsGCI(5, d, t, l, obs, nature, nb);
+        ObsGCI gci1 = new ObsGCI(6, d, t, l, obs, nature, nb);
+        ObsGCI gci2 = new ObsGCI(7, d2, t, l, obs, nature, nb);
+
+        NidGCI nid = new NidGCI(1, "Kerbilouet");
+
+        ArrayList<ObsGCI> listeObs = new ArrayList<ObsGCI>();
+        listeObs.add(gci);
+        listeObs.add(gci1);
+        
+        nid.ajouteUneObs(gci2);
+        nid.ajoutePlsObs(listeObs);
+
+        System.out.print("Nombre d'observations : " + nid.nbObs());
+        if(nid.nbObs() == 3){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
+        boolean test = nid.retireObs(2);
+        System.out.print("Test de la méthode retirObs()");
+        if(test == true){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
+        System.out.print("Nombre d'observations : " + nid.nbObs());
+        if(nid.nbObs() == 2){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
+        nid.videObs();
+        System.out.println("Test de la méthode videObs ");
+        System.out.print("Nombre d'observations : " + nid.nbObs());
+        if(nid.nbObs() == 0){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
+        System.out.println("*** Test cas d'erreur, ajout du même observateur ");
+        nid.ajouteUneObs(gci2);
+        nid.ajouteUneObs(gci2);
+        System.out.print("Nombre d'observations : " + nid.nbObs());
+        if(nid.nbObs() == 1){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
+
         
     }
+
+
+
+
+
+
 
     public static void testObsBatracien(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, int[] tab, EspeceBatracien espece){
         System.out.println("*** Test cas normaux de Obsbatracien");
@@ -320,12 +391,55 @@ public class ScenarioDonnee {
     }
 
     public static void testObsHippocampes(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, double laTaille, Peche leTypePeche, EspeceHippocampes lEspece, Sexe leSexe, boolean estGestant){
+        System.out.println("*** Test cas normaux de ObsHippocampes");
+
+        
         ObsHippocampes hippocampes = new ObsHippocampes(5, d, t, l, obs, laTaille, Peche.CASIER_CREVETTES, EspeceHippocampes.SYNGNATHUS_ACTUS, Sexe.MALE, estGestant);
 
+        System.out.print(hippocampes.getTaille());
+        if(hippocampes.getTaille()==laTaille){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
+        System.out.print(hippocampes.getTypePeche());
+        if(hippocampes.getTypePeche().equals(leTypePeche)){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
+        System.out.print(hippocampes.getEspece());
+        if(hippocampes.getEspece().equals(lEspece)){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
+        System.out.print(hippocampes.getSexe());
+        if(hippocampes.getSexe().equals(lEspece)){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
+
+        System.out.print(hippocampes.getEstGestant());
+        if(hippocampes.getEstGestant() == estGestant){
+            System.out.println ("\t: OK");
+        }
+        else{
+            System.out.println("\t: Error");
+        }
     }
 
     public static void testObsLoutre(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs,IndiceLoutre lIndice){
-        
+        System.out.println("*** Test cas normaux de ObsLoutre");
+
         ObsLoutre loutre = new ObsLoutre(5, d, t, l, obs, lIndice);      
         
         System.out.print(loutre.getIndice());

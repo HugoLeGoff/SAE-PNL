@@ -33,15 +33,15 @@ public class Observateur {
 			}else{
 				this.idObservateur = id;
 			}
-			if(leNom==null){
+			if(lePrenom=="" && leNom==""){
+				throw new IllegalArgumentException("Le prenom et le nom sont vides au moins un des deux est nécessaire");
+			}else if(leNom==null){
 				throw new IllegalArgumentException("Le nom entré est null");
-			}else{
-				this.nom = leNom;
-			}
-			if(lePrenom==null){
+			}else if(lePrenom==null){
 				throw new IllegalArgumentException("Le prenom entré est null");
 			}else{
 				this.prenom = lePrenom;
+				this.nom = leNom;
 			}
 		}catch(IllegalArgumentException i){
 			i.printStackTrace();

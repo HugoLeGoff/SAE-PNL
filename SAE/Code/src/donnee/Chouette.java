@@ -9,7 +9,7 @@ public class Chouette implements IObs<ObsChouette> {
 	/**
 	 * la liste des observateurs
 	 */
-	private Collection<ObsChouette> lesObservations;
+	private ArrayList<ObsChouette> lesObservations = new ArrayList<ObsChouette>();
 
 	/**
 	 * sexe de la chouette
@@ -120,7 +120,7 @@ public class Chouette implements IObs<ObsChouette> {
 	/**
 	 * redéfinit la liste des observations de la chouette
 	 */
-	public void setLesObservations(Collection<ObsChouette> lesObservations) {
+	public void setLesObservations(ArrayList<ObsChouette> lesObservations) {
 	
 		if(lesObservations != null){
 			this.lesObservations = lesObservations;
@@ -151,7 +151,18 @@ public class Chouette implements IObs<ObsChouette> {
 	public void ajouteUneObs(ObsChouette obs) {
 
 		if(obs != null){
-			lesObservations.add(obs);
+			boolean estDansListe = false;
+			for(int i=0; i < lesObservations.size(); i++){
+				if(obs.getIdObs() == lesObservations.get(i).getIdObs()){
+					estDansListe = true;
+				}
+			}
+			if(estDansListe == false){
+				this.lesObservations.add(obs);
+			}
+			else{
+				System.err.println("Erreur : L'observation est déjà dans la liste");
+			}
 		}
 		else{
 			System.err.println("L'observation ne doit pas être null");
@@ -188,6 +199,7 @@ public class Chouette implements IObs<ObsChouette> {
 	public boolean retireObs(int idObs){
 		boolean retirer = false;
 		if(lesObservations != null){
+			
 			lesObservations.remove(idObs);
 			retirer = true;
 		}

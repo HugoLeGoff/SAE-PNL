@@ -146,6 +146,9 @@ public class ScenarioDonnee {
         System.out.println("Test des cas normaux de la classe Observation");
         ObsLoutre loutre = new ObsLoutre(5, d, t, l, obs, lIndice);      
         
+        
+        d = d.valueOf("2016-05-03");
+        loutre.setDateObs(d);
         System.out.print (loutre.getDateObs());
         if(loutre.getDateObs().equals(d)){
             System.out.println ("\t: OK");
@@ -154,6 +157,8 @@ public class ScenarioDonnee {
             System.out.println("\t: ERROR");
         }
 
+        t.setTime(4000);
+        loutre.setHeureObs(t);
         System.out.print(loutre.getHeureObs());
         if(loutre.getHeureObs().equals(t)){
             System.out.println ("\t: OK");
@@ -162,6 +167,9 @@ public class ScenarioDonnee {
             System.out.print("\t: ERROR");
         }
 
+        l.setxCoord(-5);
+        l.setyCoord(6);
+        loutre.setLieuObs(l);
         System.out.print(loutre.getLieuObs());
         if(loutre.getLieuObs().equals(l)){
             System.out.println ("\t: OK");
@@ -170,6 +178,9 @@ public class ScenarioDonnee {
             System.out.println("\t: ERROR");
         }
 
+        Observateur obsTest = new Observateur(3, "Nolan", "Jametti");
+        obs.add(obsTest);
+        loutre.setLesObservateurs(obs);
         System.out.print(loutre.getLesObservateurs());
         if(loutre.getLesObservateurs().equals(obs)){
             System.out.println ("\t: OK");
@@ -180,23 +191,23 @@ public class ScenarioDonnee {
     }
 
     public static void testChouette(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, TypeObservation type){
-        System.out.println("*** Test cas normaux de NidGCI");
+        System.out.println("*** Test cas normaux de Chouette");
 
         java.sql.Date d2 = new java.sql.Date(0);
         d2 = d2.valueOf("2016-05-03");
         
-        ObsChouette ObsChouette = new ObsChouette(5, d, t, l, obs, TypeObservation.VISUELLE);
-        ObsChouette ObsChouette1 = new ObsChouette(6, d, t, l, obs, TypeObservation.VISUELLE);
-        ObsChouette ObsChouette2 = new ObsChouette(7, d, t, l, obs, TypeObservation.VISUELLE);
+        ObsChouette obsChouette = new ObsChouette(5, d, t, l, obs, TypeObservation.VISUELLE);
+        ObsChouette obsChouette1 = new ObsChouette(6, d, t, l, obs, TypeObservation.VISUELLE);
+        ObsChouette obsChouette2 = new ObsChouette(7, d, t, l, obs, TypeObservation.VISUELLE);
 
         Chouette chouette = new Chouette("1", Sexe.MALE, EspeceChouette.EFFRAIE);
 
         ArrayList<ObsChouette> listeObs = new ArrayList<ObsChouette>();
-        listeObs.add(ObsChouette1);
-        listeObs.add(ObsChouette2);
+        listeObs.add(obsChouette1);
+        listeObs.add(obsChouette2);
         
         chouette.ajoutePlsObs(listeObs);
-        chouette.ajouteUneObs(ObsChouette2);
+        chouette.ajouteUneObs(obsChouette);
         
         System.out.print("Nombre d'observations : " + chouette.nbObs());
         if(chouette.nbObs() == 3){
@@ -235,8 +246,8 @@ public class ScenarioDonnee {
         }
 
         System.out.println("*** Test cas d'erreur, ajout du même observateur ");
-        chouette.ajouteUneObs(ObsChouette2);
-        chouette.ajouteUneObs(ObsChouette2);
+        chouette.ajouteUneObs(obsChouette2);
+        chouette.ajouteUneObs(obsChouette2);
         System.out.print("Nombre d'observations : " + chouette.nbObs());
         if(chouette.nbObs() == 1){
             System.out.println ("\t: OK");

@@ -41,6 +41,7 @@ public class NidGCI implements IObs<ObsGCI>{
 			}else{
 				this.nomPlage = plage;
 			}
+			this.nbEnvol=0;
 			
 		}catch(IllegalArgumentException i){
 			i.printStackTrace();

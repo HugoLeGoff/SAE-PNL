@@ -67,7 +67,15 @@ public class ObsHippocampes extends Observation {
 			}else{
 				this.sexe=leSexe;
 			}
-			this.estGestant = estGestant;
+			if(this.sexe==Sexe.FEMELLE){
+				this.estGestant=false;
+			}
+			else if(this.sexe==Sexe.INCONNU && estGestant==true){
+				this.sexe=Sexe.MALE;
+			}
+			else{
+				this.estGestant = estGestant;
+			}
 
 		}catch(IllegalArgumentException i){
 			i.printStackTrace();
@@ -169,7 +177,15 @@ public class ObsHippocampes extends Observation {
 	 * @param espece booleen estGestant à définir
 	 */
 	public void setEstGestant(boolean estGestant){
-		this.estGestant = estGestant;
+		if(this.sexe==Sexe.FEMELLE && estGestant==true){
+			System.err.println("Une femelle ne peut être gestant")
+		}
+		if(this.sexe==Sexe.INCONNU && estGestant==true){
+			this.sexe=Sexe.MALE;
+		}
+		if(this.sexe==Sexe.MALE){
+			this.estGestant=estGestant;
+		}
 	}
 	
 	/**

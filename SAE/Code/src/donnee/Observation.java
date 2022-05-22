@@ -1,6 +1,5 @@
 package donnee;
 import java.util.*;
-import java.util.Date;
 import java.sql.*;
 
 /**
@@ -16,7 +15,7 @@ public abstract class Observation {
 	/**
 	 * la liste des observateurs
 	 */
-	protected Collection<Observateur> lesObservateurs;
+	protected ArrayList<Observateur> lesObservateurs;
 
 	/**
 	 * identifiatn de l'observation
@@ -80,12 +79,14 @@ public abstract class Observation {
 	 * @param o Observateur a ajouter
 	 */
 	public void ajouteObservateur(Observateur o) {
-		if(o != null){
+		if(lesObservateurs.contains(o)){
+			System.err.println("L'observateur existe déjà");
+		}else if(o == null){
+			System.err.println("L'observateur ne doit pas être null");
+		}else{
 			lesObservateurs.add(o);
 		}
-		else{
-			System.err.println("L'observateur ne doit pas être null");
-		}
+		
 	}
 
 	/**
@@ -94,7 +95,7 @@ public abstract class Observation {
 	 */
 	public void retireObservateur(int idObservateur) {
 
-		if(lesObservateurs != null && idObservateur >= 0){
+		if(lesObservateurs != null && idObservateur >= 0 && idObservateur<lesObservateurs.size()){
 			lesObservateurs.remove(idObservateur); 
 		}
 		else{
@@ -103,7 +104,7 @@ public abstract class Observation {
 	}
 
 	/**
-	 * retorune l'espece observee
+	 * retourne l'espece observee
 	 * @return l'espece observee
 	 */
 	public abstract EspeceObservee especeObs();
@@ -197,7 +198,7 @@ public abstract class Observation {
 	public void setLesObservateurs(Collection<Observateur> lesObservateurs) {
 		
 		if(lesObservateurs != null){
-			this.lesObservateurs = lesObservateurs;
+			this.lesObservateurs = (ArrayList<Observateur>) lesObservateurs;
 		}
 		else{
 			System.err.println("La liste des observateurs ne doit pas être null");

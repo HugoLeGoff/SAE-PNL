@@ -10,7 +10,7 @@ public class NidGCI implements IObs<ObsGCI>{
 	/**
 	 * collection lesObservations
 	 */
-	private Collection<ObsGCI> lesObservations;
+	private ArrayList<ObsGCI> lesObservations = new ArrayList<ObsGCI>();
 	/**
 	 * id de NidGCI
 	 */
@@ -41,6 +41,7 @@ public class NidGCI implements IObs<ObsGCI>{
 			}else{
 				this.nomPlage = plage;
 			}
+			this.nbEnvol=0;
 			
 		}catch(IllegalArgumentException i){
 			i.printStackTrace();
@@ -52,7 +53,7 @@ public class NidGCI implements IObs<ObsGCI>{
 	 * Renvoie la dateDebutObs de NidGCI.
 	 * @return dateDebutObs de NidGCI
 	 */
-	public Date dateDebutObs() {
+	public java.sql.Date dateDebutObs() {
 		return ((Observation) lesObservations.toArray()[0]).getDateObs();
 	}
 
@@ -60,8 +61,8 @@ public class NidGCI implements IObs<ObsGCI>{
 	 * Renvoie la dateFinObs de NidGCI.
 	 * @return dateFinObs de NidGCI
 	 */
-	public Date dateFinObs() {
-		return ((Observation) lesObservations.toArray()[lesObservations.size()]).getDateObs();
+	public java.sql.Date dateFinObs() {
+		return ((Observation) lesObservations.toArray()[lesObservations.size()-1]).getDateObs();
 	}
 
 	/**
@@ -76,7 +77,7 @@ public class NidGCI implements IObs<ObsGCI>{
 	 * Renvoie la liste des observations pour cette objet
 	 * @return liste des observations
 	 */
-	public Collection<ObsGCI> getLesObservations() {
+	public ArrayList<ObsGCI> getLesObservations() {
 		return lesObservations;
 	}
 
@@ -112,7 +113,7 @@ public class NidGCI implements IObs<ObsGCI>{
 	 * Définir la collection d'observation de GCI
 	 * @param lesObservations les observation
 	 */
-	public void setLesObservations(Collection<ObsGCI> lesObservations) {
+	public void setLesObservations(ArrayList<ObsGCI> lesObservations) {
 		if(lesObservations != null){
 			this.lesObservations = lesObservations;
 		} else {
@@ -151,10 +152,21 @@ public class NidGCI implements IObs<ObsGCI>{
 	 */
 	public void ajouteUneObs(ObsGCI obs) {
 		if(obs != null){
-			this.lesObservations.add(obs);
+			boolean estDansListe = false;
+			for(int i=0; i < lesObservations.size(); i++){
+				if(obs.getIdObs() == lesObservations.get(i).getIdObs()){
+					estDansListe = true;
+				}
+			}
+			if(estDansListe == false){
+				this.lesObservations.add(obs);
+			}
+			else{
+				System.err.println("Erreur : L'observation est déjà dans la liste");
+			}
 		}
 		else{
-			System.err.println("L'observation ne doit pas être null");
+			System.err.println("Erreur : L'observation ne doit pas être null");
 		}
 	};
 
@@ -187,12 +199,12 @@ public class NidGCI implements IObs<ObsGCI>{
 	 */
 	public boolean retireObs(int idObs){
 		boolean retirer = false;
-		if(lesObservations != null){
+		if(lesObservations != null && idObs < lesObservations.size()){
 			lesObservations.remove(idObs);
 			retirer = true;
 		}
 		else{
-			System.err.println("La liste des observations ne doit pas être null");
+			System.err.println("La liste des observations ne doit pas être null et l'id doit être compris dedans");
 		}
 		return retirer;
 	}

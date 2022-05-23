@@ -1,11 +1,16 @@
 package traitement;
 import java.util.ArrayList;
 import java.util.HashMap;
+<<<<<<< HEAD
 
 public class Graphe {
 
     private HashMap<Sommet,ArrayList<Sommet>> sommetsVoisins;
 
+=======
+public class Graphe {
+    private HashMap<Sommet,ArrayList<Sommet>> sommetsVoisins;
+>>>>>>> 859b889bef70ba2ce916757c0f73a1a786395b4c
     public Graphe(ArrayList<Sommet> sommets,double dist){
 
         if(sommets == null) {
@@ -20,8 +25,14 @@ public class Graphe {
     }
 
     public Graphe(HashMap<Sommet,ArrayList<Sommet>> somVoisins){
+<<<<<<< HEAD
         
         this.sommetsVoisins=somVoisins;
+=======
+        this.sommetsVoisins=somVoisins;
+
+
+>>>>>>> 859b889bef70ba2ce916757c0f73a1a786395b4c
 
     }
 
@@ -41,7 +52,11 @@ public class Graphe {
 
     public int nbAretes(){
         //à faire
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 859b889bef70ba2ce916757c0f73a1a786395b4c
     }
 
     public boolean estDansGraphe(int idSom){

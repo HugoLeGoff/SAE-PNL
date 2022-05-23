@@ -1,5 +1,28 @@
 /*
  * Copyright (c) 2015, 2020, Oracle and/or its affiliates. All rights reserved.
+<<<<<<< HEAD
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+=======
  * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  *
  *
@@ -21,6 +44,7 @@
  *
  *
  *
+>>>>>>> 1f4982b466b2a6ce0e26b56dfe4a7420fc781452
  */
 
 var noResult = {l: "No results found"};
@@ -98,8 +122,13 @@ function createMatcher(pattern, flags) {
 }
 var watermark = 'Search';
 $(function() {
+<<<<<<< HEAD
+    var search = $("#search-input");
+    var reset = $("#reset-button");
+=======
     var search = $("#search");
     var reset = $("#reset");
+>>>>>>> 1f4982b466b2a6ce0e26b56dfe4a7420fc781452
     search.val('');
     search.prop("disabled", false);
     reset.prop("disabled", false);
@@ -258,7 +287,11 @@ function doSearch(request, response) {
     function searchIndex(indexArray, category, nameFunc) {
         var primaryResults = searchIndexWithMatcher(indexArray, camelCaseMatcher, category, nameFunc);
         result = result.concat(primaryResults);
+<<<<<<< HEAD
+        if (primaryResults.length <= MIN_RESULTS && !camelCaseMatcher.ignoreCase) {
+=======
         if (primaryResults.length <= MIN_RESULTS && camelCaseMatcher.flags.indexOf("i") === -1) {
+>>>>>>> 1f4982b466b2a6ce0e26b56dfe4a7420fc781452
             var secondaryResults = searchIndexWithMatcher(indexArray, fallbackMatcher, category, nameFunc);
             result = result.concat(secondaryResults.filter(function (item) {
                 return primaryResults.indexOf(item) === -1;
@@ -291,7 +324,11 @@ function doSearch(request, response) {
     response(result);
 }
 $(function() {
+<<<<<<< HEAD
+    $("#search-input").catcomplete({
+=======
     $("#search").catcomplete({
+>>>>>>> 1f4982b466b2a6ce0e26b56dfe4a7420fc781452
         minLength: 1,
         delay: 300,
         source: doSearch,
@@ -299,7 +336,11 @@ $(function() {
             if (!ui.content.length) {
                 ui.content.push(noResult);
             } else {
+<<<<<<< HEAD
+                $("#search-input").empty();
+=======
                 $("#search").empty();
+>>>>>>> 1f4982b466b2a6ce0e26b56dfe4a7420fc781452
             }
         },
         autoFocus: true,
@@ -347,7 +388,11 @@ $(function() {
                 } else {
                     window.location.href = pathtoroot + url;
                 }
+<<<<<<< HEAD
+                $("#search-input").focus();
+=======
                 $("#search").focus();
+>>>>>>> 1f4982b466b2a6ce0e26b56dfe4a7420fc781452
             }
         }
     });

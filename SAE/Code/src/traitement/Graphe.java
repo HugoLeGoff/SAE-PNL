@@ -17,7 +17,7 @@ public class Graphe {
     }
 
     public Graphe(HashMap<Sommet,ArrayList<Sommet>> somVoisins){
-        sommetsVoisins=somVoisins;
+        this.sommetsVoisins=somVoisins;
 
 
 
@@ -29,19 +29,17 @@ public class Graphe {
             throw new IllegalArgumentException("g ne peut être null");
         }
 
-        this.somVoisins = g.somVoisins;
-        this.sommets = g.sommets;
-        this.dist = g.dist;
+        this.sommetsVoisins = g;
     }
 
     public int nbSommets(){
 
-        return sommets.size();
+        return sommetsVoisins.size();
     }
 
     public int nbAretes(){
-
-        return somVoisins.size();
+        //à faire
+        
     }
 
     public boolean estDansGraphe(int idSom){

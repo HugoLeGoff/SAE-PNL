@@ -48,7 +48,7 @@ public class Graphe {
             throw new IllegalArgumentException("idSom doit être positif");
         }
 
-        return somVoisins.containsKey(idSom);
+        return sommetsVoisins.containsKey(idSom);
     }
 
     public int calculeDegre(int idSom){
@@ -57,7 +57,7 @@ public class Graphe {
             throw new IllegalArgumentException("idSom doit être positif");
         }
 
-        return somVoisins.get(idSom).size();
+        return sommetsVoisins.get(idSom).size();
     }
 
     public HashMap<Sommet,int> calculeDegres(){

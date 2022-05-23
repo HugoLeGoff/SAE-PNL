@@ -66,5 +66,14 @@ public class Sommet {
         return coordLieu.calculeDistance(som.coordLieu);
     }
 
+    /**
+     * retourne l'id du sommet
+     * @return id du sommet
+     */
+    public int getId(){
+
+        return this.id;
+    }
+
 
 }

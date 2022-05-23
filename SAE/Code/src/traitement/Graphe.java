@@ -1,5 +1,6 @@
 package traitement;
-
+import java.util.ArrayList;
+import java.util.HashMap;
 public class Graphe {
 
     public Graphe(ArrayList<Sommets> sommets,double dist){

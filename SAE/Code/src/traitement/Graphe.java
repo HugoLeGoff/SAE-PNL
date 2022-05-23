@@ -1,16 +1,12 @@
 package traitement;
 import java.util.ArrayList;
 import java.util.HashMap;
-<<<<<<< HEAD
+
 
 public class Graphe {
 
     private HashMap<Sommet,ArrayList<Sommet>> sommetsVoisins;
 
-=======
-public class Graphe {
-    private HashMap<Sommet,ArrayList<Sommet>> sommetsVoisins;
->>>>>>> 859b889bef70ba2ce916757c0f73a1a786395b4c
     public Graphe(ArrayList<Sommet> sommets,double dist){
 
         if(sommets == null) {
@@ -20,19 +16,15 @@ public class Graphe {
             throw new IllegalArgumentException("dist doit être positif");
         }
 
-        this.sommets = sommets;
-        this.dist = dist;
+        sommetsVoisins = new HashMap<Sommet,ArrayList<Sommet>>();
     }
 
     public Graphe(HashMap<Sommet,ArrayList<Sommet>> somVoisins){
-<<<<<<< HEAD
-        
-        this.sommetsVoisins=somVoisins;
-=======
-        this.sommetsVoisins=somVoisins;
 
-
->>>>>>> 859b889bef70ba2ce916757c0f73a1a786395b4c
+        if(somVoisins == null) {
+            throw new IllegalArgumentException("somVoisins ne peut être null");
+        }
+        this.sommetsVoisins=somVoisins;
 
     }
 
@@ -51,12 +43,13 @@ public class Graphe {
     }
 
     public int nbAretes(){
-        //à faire
-<<<<<<< HEAD
-
-=======
         
->>>>>>> 859b889bef70ba2ce916757c0f73a1a786395b4c
+        int nbAretes = 0;
+        for(Sommet s : sommetsVoisins.keySet()){
+            nbAretes += sommetsVoisins.get(s).size();
+        }
+        return nbAretes;
+
     }
 
     public boolean estDansGraphe(int idSom){

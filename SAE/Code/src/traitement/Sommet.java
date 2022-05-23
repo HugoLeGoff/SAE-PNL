@@ -1,3 +1,5 @@
+package traitement;
+
 public class Sommet {
     
     private int id;

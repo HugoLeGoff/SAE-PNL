@@ -243,7 +243,7 @@ public class Graphe {
             throw new IllegalArgumentException("idSom doit être positif");
         }
 
-        return somVoisins.get(idSom).size() - calculeDegre(idSom);
+        return sommetsVoisins.get(idSom).size() - calculeDegre(idSom);
     }
 
     public int diametre(){
@@ -308,6 +308,84 @@ public class Graphe {
         }
 
         return excentrite;
+    }
+
+    public double diametreDist(){
+
+        double diametre = 0;
+
+        for(int i = 0; i < nbSommets(); i++){
+
+            for(int j = 0; j < nbSommets(); j++){
+
+                if(calculeDist(i,j) > diametre){
+
+                    diametre = calculeDist(i,j);
+                }
+            }
+        }
+
+        return diametre;
+    }
+
+    public double rayonDist(){
+
+        double rayon = 0;
+
+        for(int i = 0; i < nbSommets(); i++){
+
+            if(calculeDegre(i) > rayon){
+
+                rayon = calculeDegre(i);
+            }
+        }
+
+        return rayon;
+    }
+
+    public double[][] matricePonderation(){
+
+        double[][] matrice = new double[nbSommets()][nbSommets()];
+
+        for(int i = 0; i < nbSommets(); i++){
+
+            for(int j = 0; j < nbSommets(); j++){
+
+                if(sontVoisins(i,j)){
+
+                    matrice[i][j] = calculeDist(i,j);
+                }
+            }
+        }
+
+        return matrice;
+    }
+
+    public Graphe clotureTransitive(){
+
+        Graphe g = new Graphe(this);
+
+        for(int i = 0; i < nbSommets(); i++){
+
+            for(int j = 0; j < nbSommets(); j++){
+
+                if(g.sontVoisins(i,j)){
+
+                    for(int k = 0; k < nbSommets(); k++){
+
+                        if(g.sontVoisins(j,k)){
+
+                            if(!g.sontVoisins(i,k)){
+
+                                g.ajouteArete(i,k);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return g;
     }
 
 }

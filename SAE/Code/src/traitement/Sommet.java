@@ -29,6 +29,12 @@ public class Sommet {
         if(obs == null) {
             throw new IllegalArgumentException("obs ne peut être null");
         }
-
     }
+
+    public double calculeDistance(Sommet som) {
+        
+        return coordLieu.calculeDistance(som.coordLieu);
+    }
+
+
 }

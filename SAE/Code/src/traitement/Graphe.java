@@ -2,7 +2,7 @@ package traitement;
 import java.util.ArrayList;
 import java.util.HashMap;
 public class Graphe {
-
+    private HashMap<Sommet,int> sommetsVoisins;
     public Graphe(ArrayList<Sommets> sommets,double dist){
 
         if(sommets == null) {
@@ -16,8 +16,8 @@ public class Graphe {
         this.dist = dist;
     }
 
-    public Graphe(HashMap<Sommet,ArrayList<Sommet>>){
-        
+    public Graphe(HashMap<Sommet,ArrayList<Sommet>> somVoisins){
+        sommetsVoisins=somVoisins;
 
 
 
@@ -62,7 +62,7 @@ public class Graphe {
         return somVoisins.get(idSom).size();
     }
 
-    public HashMap<Sommet,int> calculeDegre(){
+    public HashMap<Sommet,int> calculeDegres(){
 
         HashMap<Sommet,int> degre = new HashMap<Sommet,int>();
 

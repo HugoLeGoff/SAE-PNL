@@ -2,8 +2,8 @@ package traitement;
 import java.util.ArrayList;
 import java.util.HashMap;
 public class Graphe {
-    private HashMap<Sommet,int> sommetsVoisins;
-    public Graphe(ArrayList<Sommets> sommets,double dist){
+    private HashMap<Sommet,ArrayList<Sommet>> sommetsVoisins;
+    public Graphe(ArrayList<Sommet> sommets,double dist){
 
         if(sommets == null) {
             throw new IllegalArgumentException("sommets ne peut être null");
@@ -60,9 +60,9 @@ public class Graphe {
         return sommetsVoisins.get(idSom).size();
     }
 
-    public HashMap<Sommet,int> calculeDegres(){
+    public HashMap<Sommet,ArrayList<Sommet>> calculeDegres(){
 
-        HashMap<Sommet,int> degre = new HashMap<Sommet,int>();
+        HashMap<Sommet,ArrayList<Sommet>> degre = new HashMap<Sommet,int>();
 
         for(Sommet s : sommets){
 
@@ -77,7 +77,7 @@ public class Graphe {
         Sommet s = null;
         int max = 0;
 
-        for(Sommet som : sommets){
+        for(Sommet som : this.sommetsVoisins){
 
             if(calculeDegre(som.getId()) > max){
 

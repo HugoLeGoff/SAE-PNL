@@ -1,10 +1,24 @@
 package traitement;
 
+/**
+ * Classe représentant un sommet d'un graphe
+ */
 public class Sommet {
-    
+    /**
+     * Identifiant du sommet
+     */
     private int id;
+    /**
+     * Coordonnées du lieu
+     */
     private Lieu coordLieu;
+    /**
+     * Date de l'observation
+     */
     private Date date;
+    /**
+     * Espèce observée
+     */
     private EpseceObservee espece;
 
     public Sommet(int id, Lieu coordLieu, Date date) {
@@ -32,7 +46,7 @@ public class Sommet {
     }
 
     public double calculeDistance(Sommet som) {
-        
+
         return coordLieu.calculeDistance(som.coordLieu);
     }
 

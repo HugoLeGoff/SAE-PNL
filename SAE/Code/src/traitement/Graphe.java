@@ -51,8 +51,8 @@ public class Graphe {
         if(g == null) {
             throw new IllegalArgumentException("g ne peut être null");
         }
+        this.sommetsVoisins=g.sommetsVoisins;
 
-        this.sommetsVoisins = g;
     }
 
     /**
@@ -157,32 +157,60 @@ public class Graphe {
      */
     public boolean sontVoisins(int idSom1, int indSom2){
 
-        if(idSom1 < 0) {
-            throw new IllegalArgumentException("idSom1 doit être positif");
+        if(!estDansGraphe(idSom1)){
+            throw new IllegalArgumentException("Le sommet n'est pas dans le graphe");
         }
-        if(indSom2 < 0) {
-            throw new IllegalArgumentException("indSom2 doit être positif");
+        if(!estDansGraphe(indSom2)){
+            throw new IllegalArgumentException("Le sommet n'est pas dans le graphe");
         }
 
-        return somVoisins.get(idSom1).contains(sommets.get(indSom2));
+        for(Sommet s : sommetsVoisins.keySet()){
+            if(s.getId() == idSom1){
+                for(Sommet s2 : sommetsVoisins.get(s)){
+                    if(s2.getId() == indSom2){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 
     /**
-     * Vérifie si il existe un chemin entre deux sommets
+     * true si on peut aller du sommet
+d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆetes successives, false sinon.
      * @param indSom1 indice du premier sommet
      * @param indSom2 indice du deuxième sommet
      * @return true si il existe un chemin entre les sommets, false sinon
      */
     public boolean existeChemin(int indSom1, int indSom2){
 
-        if(indSom1 < 0) {
-            throw new IllegalArgumentException("indSom1 doit être positif");
+        boolean ret = false;
+        if(!estDansGraphe(indSom1)){
+            throw new IllegalArgumentException("Le sommet n'est pas dans le graphe");
         }
-        if(indSom2 < 0) {
-            throw new IllegalArgumentException("indSom2 doit être positif");
+        if(!estDansGraphe(indSom2)){
+            throw new IllegalArgumentException("Le sommet n'est pas dans le graphe");
         }
+        if(indSom1 == indSom2){
+            ret = true;
+        }
+        if(!ret){
+            for(Sommet s : sommetsVoisins.keySet()){
+                if(s.getId() == indSom1){
+                    for(Sommet s2 : sommetsVoisins.get(s)){
+                        if(s2.getId() == indSom2){
+                            ret = true;
+                        }
+                        else{
+                            ret = existeChemin(s2.getId(),indSom2);
+                        }
+                    }
+                }
+            }
+        }
+        return ret;
 
-        return existeChemin(sommets.get(indSom1),sommets.get(indSom2));
     }
 
     /**
@@ -192,11 +220,19 @@ public class Graphe {
      */
     public ArrayList<Sommet> voisins(int indSom){
 
-        if(indSom < 0) {
-            throw new IllegalArgumentException("indSom doit être positif");
+        if(!estDansGraphe(indSom)){
+            throw new IllegalArgumentException("Le sommet n'est pas dans le graphe");
         }
 
-        return somVoisins.get(indSom);
+        ArrayList<Sommet> sommets = new ArrayList<Sommet>();
+
+        for(Sommet s : sommetsVoisins.keySet()){
+            if(s.getId() == indSom){
+                sommets.addAll(sommetsVoisins.get(s));
+            }
+        }
+
+        return sommets;
     }
 
     /**
@@ -207,14 +243,32 @@ public class Graphe {
      */
     public boolean ajouteArete(int indSom1, int indSom2){
 
-        if(indSom1 < 0) {
-            throw new IllegalArgumentException("indSom1 doit être positif");
+        if(!estDansGraphe(indSom1)){
+            throw new IllegalArgumentException("Le sommet n'est pas dans le graphe");
         }
-        if(indSom2 < 0) {
-            throw new IllegalArgumentException("indSom2 doit être positif");
+        if(!estDansGraphe(indSom2)){
+            throw new IllegalArgumentException("Le sommet n'est pas dans le graphe");
         }
 
-        return ajouteArete(sommets.get(indSom1),sommets.get(indSom2));
+        Sommet s1 = null;
+        Sommet s2 = null;
+
+        for(Sommet s : sommetsVoisins.keySet()){
+            if(s.getId() == indSom1){
+                s1 = s;
+            }
+            if(s.getId() == indSom2){
+                s2 = s;
+            }
+        }
+
+        if(sommetsVoisins.get(s1).contains(s2)){
+            return false;
+        }
+        else{
+            sommetsVoisins.get(s1).add(s2);
+            return true;
+        }
     }
 
     /**
@@ -225,14 +279,32 @@ public class Graphe {
      */
     public boolean retireArete(int indSom1, int indSom2){
 
-        if(indSom1 < 0) {
-            throw new IllegalArgumentException("indSom1 doit être positif");
+        if(!estDansGraphe(indSom1)){
+            throw new IllegalArgumentException("Le sommet n'est pas dans le graphe");
         }
-        if(indSom2 < 0) {
-            throw new IllegalArgumentException("indSom2 doit être positif");
+        if(!estDansGraphe(indSom2)){
+            throw new IllegalArgumentException("Le sommet n'est pas dans le graphe");
         }
 
-        return retireArete(sommets.get(indSom1),sommets.get(indSom2));
+        Sommet s1 = null;
+        Sommet s2 = null;
+
+        for(Sommet s : sommetsVoisins.keySet()){
+            if(s.getId() == indSom1){
+                s1 = s;
+            }
+            if(s.getId() == indSom2){
+                s2 = s;
+            }
+        }
+
+        if(sommetsVoisins.get(s1).contains(s2)){
+            sommetsVoisins.get(s1).remove(s2);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     /**
@@ -324,14 +396,30 @@ public class Graphe {
      */
     public int distAretes(int idSom1, int idSom2){
 
-        if(idSom1 < 0) {
-            throw new IllegalArgumentException("idSom1 doit être positif");
+        if(!estDansGraphe(idSom1)){
+            throw new IllegalArgumentException("Le sommet n'est pas dans le graphe");
         }
-        if(idSom2 < 0) {
-            throw new IllegalArgumentException("idSom2 doit être positif");
+        if(!estDansGraphe(idSom2)){
+            throw new IllegalArgumentException("Le sommet n'est pas dans le graphe");
         }
 
-        return dist[idSom1][idSom2];
+        int nbAretes = 0;
+
+        for(Sommet s : sommetsVoisins.keySet()){
+
+            if(s.getId() == idSom1){
+
+                for(Sommet s2 : sommetsVoisins.get(s)){
+
+                    if(s2.getId() == idSom2){
+
+                        nbAretes++;
+                    }
+                }
+            }
+        }
+
+        return nbAretes;
     }
 
     /**
@@ -407,14 +495,30 @@ public class Graphe {
      */
     public double calculeDist(int idSom1, int idSom2){
 
-        if(idSom1 < 0) {
-            throw new IllegalArgumentException("idSom1 doit être positif");
+        if(!estDansGraphe(idSom1)){
+            throw new IllegalArgumentException("Le sommet n'est pas dans le graphe");
         }
-        if(idSom2 < 0) {
-            throw new IllegalArgumentException("idSom2 doit être positif");
+        if(!estDansGraphe(idSom2)){
+            throw new IllegalArgumentException("Le sommet n'est pas dans le graphe");
         }
 
-        return Math.sqrt(Math.pow(sommets.get(idSom1).getX() - sommets.get(idSom2).getX(),2) + Math.pow(sommets.get(idSom1).getY() - sommets.get(idSom2).getY(),2));
+        double dist = 0;
+
+        for(Sommet s : sommetsVoisins.keySet()){
+
+            if(s.getId() == idSom1){
+
+                for(Sommet s2 : sommetsVoisins.get(s)){
+
+                    if(s2.getId() == idSom2){
+
+                        dist += s.calculeDistance(s2);
+                    }
+                }
+            }
+        }
+
+        return dist;
     }
 
     /**

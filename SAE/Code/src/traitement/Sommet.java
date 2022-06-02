@@ -66,7 +66,11 @@ public class Sommet {
      */
     public double calculeDistance(Sommet som) {
 
-        return coordLieu.calculeDistance(som.coordLieu);
+        if(som == null) {
+            throw new IllegalArgumentException("som ne peut être null");
+        }
+
+        return coordLieu.calculeDistance(som.getCoordLieu());
     }
 
     /**
@@ -77,6 +81,16 @@ public class Sommet {
 
         return this.id;
     }
+
+    /**
+     * retourne la coordonnée du lieu
+     * @return coordonnée du lieu
+     */
+    public Lieu getCoordLieu(){
+
+        return this.coordLieu;
+    }
+
 
 
 }

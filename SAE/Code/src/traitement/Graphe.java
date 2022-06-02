@@ -43,7 +43,7 @@ public class Graphe {
     }
 
     /**
-     * Retourne la liste des sommets voisins du sommet
+     * Constructeur de la classe graphe (copie)
      * @param g graphe
      */
     public Graphe(Graphe g){
@@ -60,30 +60,26 @@ public class Graphe {
      * @return nombre de sommet dans le graphe
      */
     public int nbSommets(){
-
-        int nbSommets = 0;
-        for(Sommet s : sommetsVoisins.keySet()){
-            nbSommets++;
-        }
-        return nbSommets;
-
+        
+        return sommetsVoisins.size();
     }
 
     /**
-     * Retourne le d'arête du graphe
+     * Retourne le nombre d'arête du graphe
+     * @return nombre d'arête dans le graphe
      */
     public int nbAretes(){
-        
-        int nbAretes = 0;
+
+        int nbAretes=0;
         for(Sommet s : sommetsVoisins.keySet()){
-            nbAretes += sommetsVoisins.get(s).size();
+            nbAretes+=sommetsVoisins.get(s).size();
         }
-        return nbAretes;
+        return nbAretes/2;
 
     }
 
     /**
-     * Retourne si le sommet est dans le graphe
+     * Retourne true si le sommet est dans le graphe
      * @param idSom identifiant du sommet
      * @return true si le sommet est dans le graphe, false sinon
      */

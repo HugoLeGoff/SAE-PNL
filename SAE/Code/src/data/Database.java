@@ -11,7 +11,7 @@ public class Database {
     {
 
     
-      Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "root", "Hugo2002!");
+      Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
       //étape 3: créer l'objet statement 
       Statement stmt = c.createStatement();
       ResultSet res = stmt.executeQuery("SELECT * FROM Observateur LIMIT 10");
@@ -19,7 +19,7 @@ public class Database {
       while(res.next())
         System.out.println(res.getInt(1)+"  "+res.getString(2)
         +"  "+res.getString(3));
-        
+
       //étape 5: fermez l'objet de connexion*/
       c.close();
     }

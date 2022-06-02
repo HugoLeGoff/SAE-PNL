@@ -56,12 +56,17 @@ public class Graphe {
     }
 
     /**
-     * Retourne le nombre de sommet voisins du sommet
-     * @return liste des sommets voisins du sommet
+     * Retourne le nombre de sommet du graphe
+     * @return nombre de sommet dans le graphe
      */
     public int nbSommets(){
 
-        return sommetsVoisins.size();
+        int nbSommets = 0;
+        for(Sommet s : sommetsVoisins.keySet()){
+            nbSommets++;
+        }
+        return nbSommets;
+
     }
 
     /**

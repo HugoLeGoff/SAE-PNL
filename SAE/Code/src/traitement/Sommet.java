@@ -61,12 +61,9 @@ public class Sommet {
         }
     
     }
-    //calcule la distance à parir d'un sommet
 
     /**
-     * renvoie la distance (double) entre le sommet
-courant et le param`etre som. Pour calculer cette distance, on utilise la localisation (attribut
-coordLieu) des deux sommets consid´er´es
+     * calcule la distance à parir d'un sommet
      * @param som sommet
      * @return distance
      */
@@ -76,9 +73,10 @@ coordLieu) des deux sommets consid´er´es
             throw new IllegalArgumentException("som ne peut être null");
         }
 
-        return coordLieu.calculeDistance(som.getCoordLieu());
+        double ret = Math.sqrt(Math.pow(this.coordLieu.getxCoord() - som.getCoordLieu().getxCoord(), 2) + Math.pow(this.coordLieu.getyCoord() - som.getCoordLieu().getyCoord(), 2));
+        
+        return ret;
     }
-
 
 
     /**
@@ -99,6 +97,22 @@ coordLieu) des deux sommets consid´er´es
         return this.coordLieu;
     }
 
+    /**
+     * retourne la date de l'observation
+     * @return date de l'observation
+     */
+    public Date getDate(){
 
+        return this.date;
+    }
+
+    /**
+     * retourne l'espèce observée
+     * @return espèce observée
+     */
+    public EspeceObservee getEspece(){
+
+        return this.espece;
+    }
 
 }

@@ -73,12 +73,15 @@ public class Sommet {
             throw new IllegalArgumentException("som ne peut être null");
         }
 
-        return this.coordLieu.calculeDistance(som.getCoordLieu());
+        double ret = Math.sqrt(Math.pow(this.coordLieu.getxCoord() - som.getCoordLieu().getxCoord(), 2) + Math.pow(this.coordLieu.getyCoord() - som.getCoordLieu().getyCoord(), 2));
+        
+        return ret;
     }
 
+
     /**
-     * retourne l'id du sommet
-     * @return id du sommet
+     * retourne l'identifiant du sommet
+     * @return identifiant du sommet
      */
     public int getId(){
 
@@ -94,6 +97,22 @@ public class Sommet {
         return this.coordLieu;
     }
 
+    /**
+     * retourne la date de l'observation
+     * @return date de l'observation
+     */
+    public Date getDate(){
 
+        return this.date;
+    }
+
+    /**
+     * retourne l'espèce observée
+     * @return espèce observée
+     */
+    public EspeceObservee getEspece(){
+
+        return this.espece;
+    }
 
 }

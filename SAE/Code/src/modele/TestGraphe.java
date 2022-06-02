@@ -27,11 +27,15 @@ public class TestGraphe {
 
         Graphe g = new Graphe(sommetsVoisins);
 
-        System.out.println(g.toString());
+        System.out.println("sommets voisins : " + g.toString());
 
-        System.out.println(g.nbSommets());
+        System.out.println("nb sommets : " + g.nbSommets());
 
-        System.out.println(g.nbAretes());
+        System.out.println("nb aretes : " + g.nbAretes());
+
+        System.out.println("est connexe : " + g.estConnexe());
+
+
 
     }
 }

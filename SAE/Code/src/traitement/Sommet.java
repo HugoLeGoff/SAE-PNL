@@ -61,9 +61,12 @@ public class Sommet {
         }
     
     }
+    //calcule la distance à parir d'un sommet
 
     /**
-     * calcule la distance à parir d'un sommet
+     * renvoie la distance (double) entre le sommet
+courant et le param`etre som. Pour calculer cette distance, on utilise la localisation (attribut
+coordLieu) des deux sommets consid´er´es
      * @param som sommet
      * @return distance
      */
@@ -76,9 +79,11 @@ public class Sommet {
         return coordLieu.calculeDistance(som.getCoordLieu());
     }
 
+
+
     /**
-     * retourne l'id du sommet
-     * @return id du sommet
+     * retourne l'identifiant du sommet
+     * @return identifiant du sommet
      */
     public int getId(){
 

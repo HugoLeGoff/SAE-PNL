@@ -2,11 +2,21 @@ package traitement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
+/**
+ * Classe représentant un sommet d'un graphe
+ */
 public class Graphe {
 
+    /**
+     * Liste des sommets du graphe
+     */
     private HashMap<Sommet,ArrayList<Sommet>> sommetsVoisins;
 
+    /**
+     * Constructeur de la classe Graphe
+     * @param sommets liste des sommets du graphe
+     * @param dist liste des distances entre les sommets du graphe
+     */
     public Graphe(ArrayList<Sommet> sommets,double dist){
 
         if(sommets == null) {
@@ -19,6 +29,10 @@ public class Graphe {
         sommetsVoisins = new HashMap<Sommet,ArrayList<Sommet>>();
     }
 
+    /**
+     * Ajoute un sommet au graphe
+     * @param somVoisins liste des sommets voisins du sommet
+     */
     public Graphe(HashMap<Sommet,ArrayList<Sommet>> somVoisins){
 
         if(somVoisins == null) {
@@ -28,6 +42,10 @@ public class Graphe {
 
     }
 
+    /**
+     * Retourne la liste des sommets voisins du sommet
+     * @param g graphe
+     */
     public Graphe(Graphe g){
 
         if(g == null) {
@@ -37,11 +55,18 @@ public class Graphe {
         this.sommetsVoisins = g;
     }
 
+    /**
+     * Retourne le nombre de sommet voisins du sommet
+     * @return liste des sommets voisins du sommet
+     */
     public int nbSommets(){
 
         return sommetsVoisins.size();
     }
 
+    /**
+     * Retourne le d'arête du graphe
+     */
     public int nbAretes(){
         
         int nbAretes = 0;
@@ -52,6 +77,11 @@ public class Graphe {
 
     }
 
+    /**
+     * Retourne si le sommet est dans le graphe
+     * @param idSom identifiant du sommet
+     * @return true si le sommet est dans le graphe, false sinon
+     */
     public boolean estDansGraphe(int idSom){
 
         if(idSom < 0) {
@@ -61,6 +91,11 @@ public class Graphe {
         return sommetsVoisins.containsKey(idSom);
     }
 
+    /**
+     * Calcule le degré du sommet
+     * @param idSom identifiant du sommet
+     * @return le degré du sommet
+     */
     public int calculeDegre(int idSom){
 
         if(idSom < 0) {
@@ -70,6 +105,10 @@ public class Graphe {
         return sommetsVoisins.get(idSom).size();
     }
 
+    /**
+     * Calcule le degré de tout le graphe
+     * @return le degré de tout le graphe
+     */
     public HashMap<Sommet,ArrayList<Sommet>> calculeDegres(){
 
         HashMap<Sommet,ArrayList<Sommet>> degre = new HashMap<Sommet,int>();
@@ -82,6 +121,10 @@ public class Graphe {
         return degre;
     }
 
+    /**
+     * Retourne la somme maximum des degrés du graphe
+     * @return somme maximum des degrés du graphe
+     */
     public Sommet somMaxDegre(){
 
         Sommet s = null;
@@ -99,6 +142,12 @@ public class Graphe {
         return s;
     }
 
+    /**
+     * Vérifie si deux sommets sont voisins
+     * @param idSom1 identifiant du premier sommet
+     * @param indSom2 identifiant du deuxième sommet
+     * @return true si les sommets sont voisins, false sinon
+     */
     public boolean sontVoisins(int idSom1, int indSom2){
 
         if(idSom1 < 0) {
@@ -111,6 +160,12 @@ public class Graphe {
         return somVoisins.get(idSom1).contains(sommets.get(indSom2));
     }
 
+    /**
+     * Vérifie si il existe un chemin entre deux sommets
+     * @param indSom1 indice du premier sommet
+     * @param indSom2 indice du deuxième sommet
+     * @return true si il existe un chemin entre les sommets, false sinon
+     */
     public boolean existeChemin(int indSom1, int indSom2){
 
         if(indSom1 < 0) {
@@ -123,6 +178,11 @@ public class Graphe {
         return existeChemin(sommets.get(indSom1),sommets.get(indSom2));
     }
 
+    /**
+     * Renvoie les voisins d'un sommet
+     * @param indSom indice du sommet
+     * @return liste des voisins du sommet
+     */
     public ArrayList<Sommet> voisins(int indSom){
 
         if(indSom < 0) {
@@ -132,6 +192,12 @@ public class Graphe {
         return somVoisins.get(indSom);
     }
 
+    /**
+     * Ajoute une arête entre deux sommets
+     * @param indSom1 indice du premier sommet
+     * @param indSom2 indice du deuxième sommet
+     * @return true si l'ajout a réussi, false sinon
+     */
     public boolean ajouteArete(int indSom1, int indSom2){
 
         if(indSom1 < 0) {
@@ -144,6 +210,12 @@ public class Graphe {
         return ajouteArete(sommets.get(indSom1),sommets.get(indSom2));
     }
 
+    /**
+     * Retire une arête entre deux sommets
+     * @param indSom1 indice du premier sommet
+     * @param indSom2 indice du deuxième sommet
+     * @return true si la suppression a réussi, false sinon
+     */
     public boolean retireArete(int indSom1, int indSom2){
 
         if(indSom1 < 0) {
@@ -156,6 +228,10 @@ public class Graphe {
         return retireArete(sommets.get(indSom1),sommets.get(indSom2));
     }
 
+    /**
+     * Renvoie la matrice d'adjacence du graphe
+     * @return matrice d'adjacence du graphe
+     */
     public int[][] matriceAdjacente(){
 
         int[][] matrice = new int[nbSommets()][nbSommets()];
@@ -174,6 +250,10 @@ public class Graphe {
         return matrice;
     }
 
+    /**
+     * Vérifie si le graphe est connexe
+     * @return true si le graphe est connexe, false sinon
+     */
     public boolean estConnexe(){
 
         int[][] matrice = matriceAdjacente();
@@ -192,6 +272,10 @@ public class Graphe {
         return true;
     }
 
+    /**
+     * Vérifie si le graphe possède une composante connexe
+     * @return true si le graphe possède une composante connexe, false sinon
+     */
     public ArrayList<Graphe> composanteConnexe(){
 
         ArrayList<Graphe> composantes = new ArrayList<Graphe>();
@@ -225,6 +309,12 @@ public class Graphe {
         return composantes;
     }
 
+    /**
+     * Renvoie le nombre d'arêtes entre deux sommets
+     * @param idSom1 identifiant du premier sommet
+     * @param idSom2 identifiant du deuxième sommet
+     * @return nombre d'arêtes entre les sommets
+     */
     public int distAretes(int idSom1, int idSom2){
 
         if(idSom1 < 0) {
@@ -237,6 +327,11 @@ public class Graphe {
         return dist[idSom1][idSom2];
     }
 
+    /**
+     * Renvoie le nombre maximal d'arêtes entre deux sommets
+     * @param idSom identifiant du sommet
+     * @return nombre maximal d'arêtes entre deux sommets
+     */
     public int excentrite(int idSom){
 
         if(idSom < 0) {
@@ -246,6 +341,10 @@ public class Graphe {
         return sommetsVoisins.get(idSom).size() - calculeDegre(idSom);
     }
 
+    /**
+     * Renvoie le maximum d'excentrité d'un sommet
+     * @return maximum d'excentrité d'un sommet
+     */
     public int diametre(){
 
         int diametre = 0;
@@ -264,6 +363,10 @@ public class Graphe {
         return diametre;
     }
 
+    /**
+     * Renvoie le minimum d'excentrité d'un sommet
+     * @return minimum d'excentrité d'un sommet
+     */
     public int rayon(){
 
         int rayon = 0;
@@ -279,6 +382,12 @@ public class Graphe {
         return rayon;
     }
 
+    /**
+     * Calcule la somme des distances entre deux sommets
+     * @param idSom1 identifiant du premier sommet
+     * @param idSom2 identifiant du deuxième sommet
+     * @return somme des distances entre deux sommets
+     */
     public double calculeDist(int idSom1, int idSom2){
 
         if(idSom1 < 0) {
@@ -291,6 +400,11 @@ public class Graphe {
         return Math.sqrt(Math.pow(sommets.get(idSom1).getX() - sommets.get(idSom2).getX(),2) + Math.pow(sommets.get(idSom1).getY() - sommets.get(idSom2).getY(),2));
     }
 
+    /**
+     * Renvoie la distance maximale entre un sommet et tout les autres
+     * @param idSom identifiant du sommet
+     * @return distance maximale entre un sommet et tout les autres
+     */
     public double excentriteDist(int idSom){
 
         if(idSom < 0) {
@@ -310,6 +424,10 @@ public class Graphe {
         return excentrite;
     }
 
+    /**
+     * Renvoie le maximum d'excentrité de distance
+     * @return maximum d'excentrité de distance
+     */
     public double diametreDist(){
 
         double diametre = 0;
@@ -328,6 +446,10 @@ public class Graphe {
         return diametre;
     }
 
+    /**
+     * Renvoie le minimum d'excentrité de distance
+     * @return minimum d'excentrité de distance
+     */
     public double rayonDist(){
 
         double rayon = 0;
@@ -343,6 +465,10 @@ public class Graphe {
         return rayon;
     }
 
+    /**
+     * Renvoie une matrice de pondération
+     * @return matrice de pondération
+     */
     public double[][] matricePonderation(){
 
         double[][] matrice = new double[nbSommets()][nbSommets()];
@@ -361,6 +487,10 @@ public class Graphe {
         return matrice;
     }
 
+    /**
+     * Renvoie un nouveau graphe qui est la clôture transitive du graphe courant
+     * @return nouveau graphe qui est la clôture transitive du graphe courant
+     */
     public Graphe clotureTransitive(){
 
         Graphe g = new Graphe(this);

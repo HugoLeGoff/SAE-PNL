@@ -1,4 +1,7 @@
 package traitement;
+import donnee.*;
+import java.sql.Date;
+import java.util.*;
 
 /**
  * Classe représentant un sommet d'un graphe

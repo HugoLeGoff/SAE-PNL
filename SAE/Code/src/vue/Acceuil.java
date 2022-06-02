@@ -16,14 +16,14 @@ public class Acceuil extends Application {
         btn.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                System.out.println("PNL! COUCOU SEBICHE");
             }
         });
 
         StackPane root = new StackPane();
         root.getChildren().add(btn);
         Scene scene = new Scene(root, 300, 250);
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("PNL ! ");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

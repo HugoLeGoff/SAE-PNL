@@ -22,7 +22,7 @@ public class Sommet {
     /**
      * Espèce observée
      */
-    private EpseceObservee espece;
+    private EspeceObservee espece;
 
     /**
      * Constructeur de la classe Sommet
@@ -30,7 +30,7 @@ public class Sommet {
      * @param coordLieu coordonnées du lieu
      * @param date date de l'observation
      */
-    public Sommet(int id, Lieu coordLieu, Date date) {
+    public Sommet(int id, Lieu coordLieu, Date date, EspeceObservee espece) {
         
         if(id < 0) {
             throw new IllegalArgumentException("id doit être positif");
@@ -41,10 +41,14 @@ public class Sommet {
         if(date == null) {
             throw new IllegalArgumentException("date ne peut être null");
         }
+        if(espece == null) {
+            throw new IllegalArgumentException("espece ne peut être null");
+        }
 
         this.id = id;
         this.coordLieu = coordLieu;
         this.date = date;
+        this.espece = espece;
     }
 
     /**
@@ -70,7 +74,7 @@ public class Sommet {
             throw new IllegalArgumentException("som ne peut être null");
         }
 
-        return coordLieu.calculeDistance(som.getCoordLieu());
+        return this.coordLieu.calculeDistance(som.getCoordLieu());
     }
 
     /**

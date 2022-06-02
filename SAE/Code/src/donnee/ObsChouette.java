@@ -6,7 +6,7 @@ import java.sql.Time;
 /**
  * crée une observation de chouette
  */
-public class Obs_Chouette extends Observation {
+public class ObsChouette extends Observation {
 
 	/**
 	 * type de l'observation

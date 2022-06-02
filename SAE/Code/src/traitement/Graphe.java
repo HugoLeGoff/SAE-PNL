@@ -639,4 +639,22 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
         return g;
     }
 
+    public String toString(){
+
+        String s = "";
+
+        for(Sommet sommet : sommetsVoisins.keySet()){
+
+            s += sommet.getId() + " : ";
+
+            for(Sommet sommet2 : sommetsVoisins.get(sommet)){
+
+                s += sommet2.getId() + " ";
+            }
+
+            s += "\n";
+        }
+
+        return s;
+    }
 }

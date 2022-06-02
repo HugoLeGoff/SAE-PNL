@@ -23,7 +23,7 @@ public class Acceuil extends Application {
         StackPane root = new StackPane();
         root.getChildren().add(btn);
         Scene scene = new Scene(root, 300, 250);
-        primaryStage.setTitle("PNL !");
+        primaryStage.setTitle("PNL ! ");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

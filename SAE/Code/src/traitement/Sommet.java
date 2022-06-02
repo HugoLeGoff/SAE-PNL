@@ -1,4 +1,6 @@
 package traitement;
+import donnee.*;
+import java.sql.Date;
 
 /**
  * Classe représentant un sommet d'un graphe
@@ -19,7 +21,7 @@ public class Sommet {
     /**
      * Espèce observée
      */
-    private EpseceObservee espece;
+    private EspeceObservee espece;
 
     /**
      * Constructeur de la classe Sommet
@@ -27,7 +29,7 @@ public class Sommet {
      * @param coordLieu coordonnées du lieu
      * @param date date de l'observation
      */
-    public Sommet(int id, Lieu coordLieu, Date date) {
+    public Sommet(int id, Lieu coordLieu, Date date, EspeceObservee espece) {
         
         if(id < 0) {
             throw new IllegalArgumentException("id doit être positif");
@@ -38,10 +40,14 @@ public class Sommet {
         if(date == null) {
             throw new IllegalArgumentException("date ne peut être null");
         }
+        if(espece == null) {
+            throw new IllegalArgumentException("espece ne peut être null");
+        }
 
         this.id = id;
         this.coordLieu = coordLieu;
         this.date = date;
+        this.espece = espece;
     }
 
     /**
@@ -63,7 +69,11 @@ public class Sommet {
      */
     public double calculeDistance(Sommet som) {
 
-        return coordLieu.calculeDistance(som.coordLieu);
+        if(som == null) {
+            throw new IllegalArgumentException("som ne peut être null");
+        }
+
+        return this.coordLieu.calculeDistance(som.getCoordLieu());
     }
 
     /**
@@ -74,6 +84,16 @@ public class Sommet {
 
         return this.id;
     }
+
+    /**
+     * retourne la coordonnée du lieu
+     * @return coordonnée du lieu
+     */
+    public Lieu getCoordLieu(){
+
+        return this.coordLieu;
+    }
+
 
 
 }

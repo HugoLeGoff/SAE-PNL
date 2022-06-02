@@ -73,7 +73,7 @@ public class Sommet {
             throw new IllegalArgumentException("som ne peut être null");
         }
 
-        return this.coordLieu.calculeDistance(som.getCoordLieu());
+        return coordLieu.calculeDistance(som.getCoordLieu());
     }
 
     /**

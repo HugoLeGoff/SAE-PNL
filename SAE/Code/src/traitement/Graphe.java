@@ -84,12 +84,14 @@ public class Graphe {
      */
     public boolean estDansGraphe(int idSom){
 
-        if(idSom < 0) {
-            throw new IllegalArgumentException("idSom doit être positif");
+        for(Sommet s : sommetsVoisins.keySet()){
+            if(s.getId() == idSom){
+                return true;
+            }
         }
-
-        return sommetsVoisins.containsKey(idSom);
+        return false;
     }
+
 
     /**
      * Calcule le degré du sommet
@@ -98,24 +100,30 @@ public class Graphe {
      */
     public int calculeDegre(int idSom){
 
-        if(idSom < 0) {
-            throw new IllegalArgumentException("idSom doit être positif");
+        if(!estDansGraphe(idSom)){
+            throw new IllegalArgumentException("Le sommet n'est pas dans le graphe");
         }
 
-        return sommetsVoisins.get(idSom).size();
+        int degre = 0;
+        for(Sommet s : sommetsVoisins.keySet()){
+            if(s.getId() == idSom){
+                degre = sommetsVoisins.get(s).size();
+            }
+        }
+        return degre;
     }
+
 
     /**
      * Calcule le degré de tout le graphe
      * @return le degré de tout le graphe
      */
-    public HashMap<Sommet,ArrayList<Sommet>> calculeDegres(){
+    public HashMap<Sommet,Integer> calculeDegres(){
 
-        HashMap<Sommet,ArrayList<Sommet>> degre = new HashMap<Sommet,int>();
+        HashMap<Sommet,Integer> degre = new HashMap<Sommet,Integer>();
 
-        for(Sommet s : sommets){
-
-            degre.put(s,calculeDegre(s.id));
+        for(Sommet s : sommetsVoisins.keySet()){
+            degre.put(s,sommetsVoisins.get(s).size());
         }
 
         return degre;
@@ -130,12 +138,11 @@ public class Graphe {
         Sommet s = null;
         int max = 0;
 
-        for(Sommet som : this.sommetsVoisins){
+        for(Sommet sommet : sommetsVoisins.keySet()){
 
-            if(calculeDegre(som.getId()) > max){
-
-                max = calculeDegre(som.getId());
-                s = som;
+            if(sommetsVoisins.get(sommet).size() > max){
+                max = sommetsVoisins.get(sommet).size();
+                s = sommet;
             }
         }
 
@@ -338,7 +345,17 @@ public class Graphe {
             throw new IllegalArgumentException("idSom doit être positif");
         }
 
-        return sommetsVoisins.get(idSom).size() - calculeDegre(idSom);
+        int excentrit = 0;
+
+        for(int i = 0; i < nbSommets(); i++){
+
+            if(distAretes(idSom,i) > excentrit){
+
+                excentrit = distAretes(idSom,i);
+            }
+        }
+
+        return excentrit;
     }
 
     /**

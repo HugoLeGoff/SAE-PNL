@@ -1,6 +1,7 @@
 package data;
-import java.util.*;
+//import java.util.*;
 import java.sql.*;
+import donnee.*;
 
 
 public class Database {
@@ -8,19 +9,21 @@ public class Database {
   {
     try
     {
-      //étape 1: charger la classe de driver
-      Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr","root","Enzolebodo2003");
+
+    
+      Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+      //étape 3: créer l'objet statement 
       Statement stmt = c.createStatement();
-      //étape 4: exécuter la requête
-      
       ResultSet res = stmt.executeQuery("SELECT * FROM Observateur LIMIT 10");
       //étape 4: exécuter la requête
       while(res.next())
         System.out.println(res.getInt(1)+"  "+res.getString(2)
         +"  "+res.getString(3));
+
       //étape 5: fermez l'objet de connexion*/
       c.close();
     }
+
     catch(Exception e){ 
       System.out.println(e);
     }

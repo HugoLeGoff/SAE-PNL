@@ -29,6 +29,9 @@ public class TestGraphe {
 
         System.out.println(g.toString());
 
+        System.out.println(g.nbSommets());
+
+        System.out.println(g.nbAretes());
 
     }
 }

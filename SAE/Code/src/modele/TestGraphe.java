@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class TestGraphe {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
+        
         Sommet s1 = new Sommet(1, new Lieu(0,0), new Date(01/02/2021), EspeceObservee.LOUTRE);
         Sommet s2 = new Sommet(2, new Lieu(0,0), new Date(01/02/2021), EspeceObservee.HIPPOCAMPE);
         Sommet s3 = new Sommet(3, new Lieu(0,0), new Date(01/02/2021), EspeceObservee.BATRACIEN);
@@ -34,7 +34,6 @@ public class TestGraphe {
         System.out.println("nb aretes : " + g.nbAretes());
 
         System.out.println("est connexe : " + g.estConnexe());
-
 
 
     }

@@ -9,9 +9,10 @@ public class Database {
     try
     {
       //étape 1: charger la classe de driver
-      Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "root", "Hugo2002!");
-      //étape 3: créer l'objet statement 
-      /*Statement stmt = conn.createStatement();
+      Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr","root","Enzolebodo2003");
+      Statement stmt = c.createStatement();
+      //étape 4: exécuter la requête
+      
       ResultSet res = stmt.executeQuery("SELECT * FROM Observateur LIMIT 10");
       //étape 4: exécuter la requête
       while(res.next())

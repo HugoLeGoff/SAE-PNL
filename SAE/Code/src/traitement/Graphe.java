@@ -60,12 +60,8 @@ public class Graphe {
      * @return nombre de sommet dans le graphe
      */
     public int nbSommets(){
-
-        int nbSommets = 0;
-        for(Sommet s : sommetsVoisins.keySet()){
-            nbSommets++;
-        }
-        return nbSommets;
+        
+        
 
     }
 

@@ -336,7 +336,7 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
      */
     public boolean estConnexe(){
 
-        int[][] matrice = matriceAdjacente();
+        int[][] matrice = matriceAdjacence();
 
         for(int i = 0; i < nbSommets(); i++){
 
@@ -366,7 +366,7 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
         }
         else{
 
-            int[][] matrice = matriceAdjacente();
+            int[][] matrice = matriceAdjacence();
 
             for(int i = 0; i < nbSommets(); i++){
 

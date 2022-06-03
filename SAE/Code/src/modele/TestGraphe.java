@@ -56,9 +56,13 @@ public class TestGraphe {
 
         System.out.println("nb aretes : " + g.nbAretes() + " doit valoir 5");
 
+        System.out.println("");
+
         System.out.println("est dans graphe : " + g.estDansGraphe(7) + " doit valoir false");
 
         System.out.println("calcul degre : " + g.estDansGraphe(5) + " doit valoir true");
+
+        System.out.println("");
 
         System.out.println("calcul degre : " + g.calculeDegre(3) + " doit valoir 1");
 
@@ -66,22 +70,31 @@ public class TestGraphe {
 
         System.out.println("calcule degre : " + g.calculeDegre(5) + " doit valoir 0");
 
-        System.out.println("calcule degre : " + g.calculeDegre() + " doit valoir [(1,2), (2, 2), (3,1),(4,4),(5,0),(6,1)]");
+        System.out.println("calcule degre : " + g.calculeDegres() + " doit valoir [(1,2), (2, 2), (3,1),(4,4),(5,0),(6,1)]");
+
+        System.out.println("");
 
         System.out.println("sont voisins : " + g.sontVoisins(3,4) + " doit valoir true");
 
         System.out.println("sont voisins : " + g.sontVoisins(6,2) + " doit valoir false");
 
+        System.out.println("");
+
         System.out.println("il existe un chemin entre 5 et 6 : " + g.existeChemin(5,6) + " doit valoir false");
 
         System.out.println("il existe un chemin entre 6 et 2 : " + g.existeChemin(6,2) + " doit valoir true");
+
+        System.out.println("");
 
         System.out.println("Matrice adjacence : " + g.matriceAdjacence());
 
         System.out.println("est connexe : " + g.estConnexe());
 
         System.out.println("composante connexe : ");
-        for(int i = 0; i < g.composanteConnexe().size(); i++) {   
+
+        System.out.println("");
+
+        for(int i = 0; i < g.composanteConnexe().size(); i++) {
             System.out.print(g.composanteConnexe().get(i));
         }
 
@@ -91,25 +104,37 @@ public class TestGraphe {
 
         System.out.println("matrice de pondération : " + g.matricePonderation());
 
+        System.out.println("");
+
         Graphe grapheEx2=g.clotureTransitive();
 
         System.out.println("GrapheEx2 estConnexe()"+grapheEx2.estConnexe()+" Doit valoir true");
 
+        System.out.println("");
+
         System.out.println("GrapheEx2 exentricite(6)"+grapheEx2.excentricite(6)+" Doit valoir 2");
 
-        System.out.println("GrapheEx2 exentricite(4)"+(grapheEx2.excentricite(4)+" Doit valoir 1");
+        System.out.println("GrapheEx2 exentricite(4)"+grapheEx2.excentricite(4)+" Doit valoir 1");
+
+        System.out.println("");
 
         System.out.println("GrapheEx2 diametre()"+grapheEx2.diametre()+" Doit valoir 2");
 
         System.out.println("GrapheEx2 rayon()"+grapheEx2.rayon()+" Doit valoir 1");
 
+        System.out.println("");
+
         System.out.println("GrapheEx2 calculDist(6,2)"+grapheEx2.calculeDist(6,2)+" Doit valoir 6");
 
         System.out.println("GrapheEx2 calculDist(3,2)"+grapheEx2.calculeDist(3,2)+" Doit valoir 8");
 
+        System.out.println("");
+
         System.out.println("GrapheEx2 exentriciteDist(6)"+grapheEx2.excentriciteDist(6)+" Doit valoir 6");
 
         System.out.println("GrapheEx2 diametreDist()"+grapheEx2.diametreDist()+" Doit valoir 8");
+
+        System.out.println("");
 
         System.out.println("GrapheEx2 rayonDist() "+grapheEx2.rayonDist()+" Doit valoir 4");
 

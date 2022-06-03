@@ -70,7 +70,7 @@ public class TestGraphe {
 
         System.out.println("calcule degre : " + g.calculeDegre(5) + " doit valoir 0");
 
-        System.out.println("calcule degre : " + g.calculeDegres() + " doit valoir [(1,2), (2, 2), (3,1),(4,4),(5,0),(6,1)]");
+        System.out.println("calcule degre : " + g.calculeDegre() + " doit valoir [(1,2), (2, 2), (3,1),(4,4),(5,0),(6,1)]");
 
         System.out.println("");
 

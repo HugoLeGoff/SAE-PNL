@@ -312,7 +312,7 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
      * Renvoie la matrice d'adjacence du graphe
      * @return matrice d'adjacence du graphe
      */
-    public int[][] matriceAdjacence(){
+    public int[][] matriceAdjacente(){
 
         int[][] matrice = new int[nbSommets()][nbSommets()];
 
@@ -428,23 +428,23 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
      * @param idSom identifiant du sommet
      * @return nombre maximal d'arêtes entre deux sommets
      */
-    public int excentricite(int idSom){
+    public int excentrite(int idSom){
 
         if(idSom < 0) {
             throw new IllegalArgumentException("idSom doit être positif");
         }
 
-        int excentricite = 0;
+        int excentrit = 0;
 
         for(int i = 0; i < nbSommets(); i++){
 
-            if(distAretes(idSom,i) > excentricite){
+            if(distAretes(idSom,i) > excentrit){
 
-                excentricite = distAretes(idSom,i);
+                excentrit = distAretes(idSom,i);
             }
         }
 
-        return excentricite;
+        return excentrit;
     }
 
     /**
@@ -527,23 +527,23 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
      * @param idSom identifiant du sommet
      * @return distance maximale entre un sommet et tout les autres
      */
-    public double excentriciteDist(int idSom){
+    public double excentriteDist(int idSom){
 
         if(idSom < 0) {
             throw new IllegalArgumentException("idSom doit être positif");
         }
 
-        double excentricite = 0;
+        double excentrite = 0;
 
         for(int i = 0; i < nbSommets(); i++){
 
             if(i != idSom){
 
-                excentricite += calculeDist(idSom,i);
+                excentrite += calculeDist(idSom,i);
             }
         }
 
-        return excentricite;
+        return excentrite;
     }
 
     /**

@@ -201,17 +201,15 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
             for(Sommet s : sommetsVoisins.keySet()){
 
                 if(s.getId() == indSom1){
-                    System.out.println("S1= "+s.getId());
                     for(Sommet s2 : sommetsVoisins.get(s)){
-                        System.out.println("Voisins"+s2.getId());
+
                         if(s2.getId() == indSom2){
                             ret = true;
                         }
                         tmp=s2;
 
                     }
-                    if(!ret){
-                        System.out.println("s2="+tmp.getId());
+                    if(!ret && tmp != null){
                         ret = existeChemin(tmp.getId(),indSom2);
                     }
                 }

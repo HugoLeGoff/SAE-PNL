@@ -196,16 +196,23 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
         if(indSom1 == indSom2){
             ret = true;
         }
+        Sommet tmp=null;
         if(!ret){
             for(Sommet s : sommetsVoisins.keySet()){
+
                 if(s.getId() == indSom1){
+                    System.out.println("S1= "+s.getId());
                     for(Sommet s2 : sommetsVoisins.get(s)){
+                        System.out.println("Voisins"+s2.getId());
                         if(s2.getId() == indSom2){
                             ret = true;
                         }
-                        else{
-                            ret = existeChemin(s2.getId(),indSom2);
-                        }
+                        tmp=s2;
+
+                    }
+                    if(!ret){
+                        System.out.println("s2="+tmp.getId());
+                        ret = existeChemin(tmp.getId(),indSom2);
                     }
                 }
             }
@@ -316,11 +323,11 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
         int[][] matrice = new int[nbSommets()][nbSommets()];
 
-        for(int i = 0; i < nbSommets(); i++){
+        for(int i = 0; i < this.nbSommets(); i++){
 
-            for(int j = 0; j < nbSommets(); j++){
+            for(int j = 0; j < this.nbSommets(); j++){
 
-                if(sontVoisins(i,j)){
+                if(sontVoisins(i+1,j+1)){
 
                     matrice[i][j] = 1;
                 }
@@ -353,16 +360,17 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
     }
 
     /**
-     * Vérifie si le graphe possède une composante connexe
-     * @return true si le graphe possède une composante connexe, false sinon
+     * renvoie la liste des graphes connexes composant le graphe courant
+     * @return liste des graphes connexes composant le graphe courant
      */
     public ArrayList<Graphe> composanteConnexe(){
 
-        ArrayList<Graphe> composantes = new ArrayList<Graphe>();
+        ArrayList<Graphe> graphes = new ArrayList<Graphe>();
 
         if(estConnexe()){
 
-            composantes.add(this);
+            Graphe graphe = new Graphe(this);
+            graphes.add(graphe);
         }
         else{
 
@@ -374,19 +382,15 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
                     if(matrice[i][j] == 0){
 
-                        matrice[i][j] = 1;
-                        matrice[j][i] = 1;
-
-                        Graphe g = new Graphe(this);
-                        g.retireArete(i,j);
-
-                        composantes.addAll(g.composanteConnexe());
+                        Graphe graphe = new Graphe(this);
+                        graphe.ajouteArete(i+1,j+1);
+                        graphes.add(graphe);
                     }
                 }
             }
         }
 
-        return composantes;
+        return graphes;
     }
 
     /**

@@ -60,7 +60,7 @@ public class TestGraphe {
 
         System.out.println("est dans graphe : " + g.estDansGraphe(7) + " doit valoir false");
 
-        System.out.println("calcul degre : " + g.estDansGraphe(5) + " doit valoir true");
+        System.out.println("est dans graphe : " + g.estDansGraphe(5) + " doit valoir true");
 
         System.out.println("");
 
@@ -70,7 +70,12 @@ public class TestGraphe {
 
         System.out.println("calcule degre : " + g.calculeDegre(5) + " doit valoir 0");
 
-        System.out.println("calcule degre : " + g.calculeDegres() + " doit valoir [(1,2), (2, 2), (3,1),(4,4),(5,0),(6,1)]");
+        System.out.println("calcule degres : " );
+         //afficher hashmap
+        for (Sommet s : g.calculeDegres().keySet()) {
+            System.out.println(s.getId() + " : " + g.calculeDegres().get(s));
+        }
+        System.out.println(" doit valoir [(1,2), (2, 2), (3,1),(4,4),(5,0),(6,1)]");
 
         System.out.println("");
 
@@ -88,7 +93,7 @@ public class TestGraphe {
 
         System.out.println("Matrice adjacence : " + g.matriceAdjacence());
 
-        System.out.println("est connexe : " + g.estConnexe());
+        System.out.println("est connexe : " + g.estConnexe() + " doit valoir false");
 
         System.out.println("composante connexe : ");
 
@@ -98,9 +103,9 @@ public class TestGraphe {
             System.out.print(g.composanteConnexe().get(i));
         }
 
-        System.out.println("distAretes(6,2) : " + g.distAretes(6, 2));
+        System.out.println("distAretes(6,2) : " + g.distAretes(6, 2) + " doit valoir 2");
 
-        System.out.println("excentricite(6) : " + g.excentricite(6));
+        System.out.println("excentricite(6) : " + g.excentricite(6) + " doit valoir -1");
 
         System.out.println("matrice de pondération : " + g.matricePonderation());
 

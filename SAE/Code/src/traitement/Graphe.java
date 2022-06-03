@@ -428,7 +428,7 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
      * @param idSom identifiant du sommet
      * @return nombre maximal d'arêtes entre deux sommets
      */
-    public int excentrite(int idSom){
+    public int excentricite(int idSom){
 
         if(idSom < 0) {
             throw new IllegalArgumentException("idSom doit être positif");
@@ -527,7 +527,7 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
      * @param idSom identifiant du sommet
      * @return distance maximale entre un sommet et tout les autres
      */
-    public double excentriteDist(int idSom){
+    public double excentriciteDist(int idSom){
 
         if(idSom < 0) {
             throw new IllegalArgumentException("idSom doit être positif");

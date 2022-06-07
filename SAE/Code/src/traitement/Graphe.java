@@ -19,14 +19,19 @@ public class Graphe {
      */
     public Graphe(ArrayList<Sommet> sommets,double dist){
 
-        if(sommets == null) {
-            throw new IllegalArgumentException("sommets ne peut être null");
-        }
-        if(dist < 0) {
-            throw new IllegalArgumentException("dist doit être positif");
-        }
+        this.sommetsVoisins = new HashMap<Sommet,ArrayList<Sommet>>();
 
-        sommetsVoisins = new HashMap<Sommet,ArrayList<Sommet>>();
+        for(int i=0;i<sommets.size();i++){
+            ArrayList<Sommet> listeVoisins = new ArrayList<Sommet>();
+            for(int j=0;j<sommets.size();j++){
+                if(i!=j){
+                    if(dist<=sommets.get(i).calculeDistance(sommets.get(j))){
+                        listeVoisins.add(sommets.get(j));
+                    }
+                }
+            }
+            this.sommetsVoisins.put(sommets.get(i),listeVoisins);
+        }
     }
 
     /**

@@ -491,9 +491,9 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
         for(int i = 0; i < nbSommets(); i++){
 
-            if(calculeDegre(i) > rayon){
+            if(excentricite(i+1) < rayon){
 
-                rayon = calculeDegre(i);
+                rayon = excentricite(i+1);
             }
         }
 
@@ -537,7 +537,7 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
     /**
      * Renvoie la distance maximale entre un sommet et tout les autres
      * @param idSom identifiant du sommet
-     * @return distance maximale entre un sommet et tout les autres
+     * @return distance maximale entre un sommet et tous les autres
      */
     public double excentriciteDist(int idSom){
 

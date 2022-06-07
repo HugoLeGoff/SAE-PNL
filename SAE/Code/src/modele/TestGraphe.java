@@ -91,7 +91,15 @@ public class TestGraphe {
 
         System.out.println("");
 
-        System.out.println("Matrice adjacence : " + g.matriceAdjacence());
+        System.out.println("Matrice adjacence : " );
+
+        //afficher matrice adjacence de g
+        for (int i = 0; i < g.nbSommets(); i++) {
+            for (int j = 0; j < g.nbSommets(); j++) {
+                System.out.print(g.matriceAdjacence()[i][j] + " ");
+            }
+            System.out.println();
+        }
 
         System.out.println("est connexe : " + g.estConnexe() + " doit valoir false");
 

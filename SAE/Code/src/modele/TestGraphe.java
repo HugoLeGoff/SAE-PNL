@@ -108,7 +108,14 @@ public class TestGraphe {
 
         System.out.println("excentricite(6) : " + g.excentricite(6) + " doit valoir -1");
 
-        System.out.println("matrice de pondération : " + g.matricePonderation());
+        System.out.println("matrice de pondération : ");
+
+        for (int i = 0; i < g.nbSommets(); i++) {
+            for (int j = 0; j < g.nbSommets(); j++) {
+                System.out.print(g.matricePonderation()[i][j] + " ");
+            }
+            System.out.println();
+        }
 
         System.out.println("");
 

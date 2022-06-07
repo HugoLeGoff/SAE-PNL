@@ -623,7 +623,7 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
             for(int j = 0; j < nbSommets(); j++){
 
-                matrice[i][j] = calculeDist(i,j);
+                matrice[i][j] = calculeDist(i+1,j+1);
             }
         }
 

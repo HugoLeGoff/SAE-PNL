@@ -51,7 +51,17 @@ public class Graphe {
         if(g == null) {
             throw new IllegalArgumentException("g ne peut être null");
         }
-        this.sommetsVoisins=g.sommetsVoisins;
+        HashMap<Sommet,ArrayList<Sommet>> sommetsCopie = new HashMap<Sommet,ArrayList<Sommet>>();
+        //create a copie og g.sommetsVoisins
+        for(Sommet s : g.sommetsVoisins.keySet()){
+            ArrayList<Sommet> sommetsVoisinsCopie = new ArrayList<Sommet>();
+            for(Sommet s2 : g.sommetsVoisins.get(s)){
+                sommetsVoisinsCopie.add(s2);
+            }
+            sommetsCopie.put(s,sommetsVoisinsCopie);
+        }
+        
+        this.sommetsVoisins=sommetsCopie;
 
     }
 
@@ -440,14 +450,18 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
         }
 
         int excentrit = 0;
-
-        for(int i = 0; i < nbSommets(); i++){
-
-            if(distAretes(idSom,i) > excentrit){
-
-                excentrit = distAretes(idSom,i);
+        if(this.estConnexe()==false){
+            excentrit=-1;
+        }else{
+            for(int i = 1; i < nbSommets(); i++){
+                System.out.println(i);
+                if(distAretes(idSom,i) > excentrit){
+    
+                    excentrit = distAretes(idSom,i);
+                }
             }
         }
+        
 
         return excentrit;
     }

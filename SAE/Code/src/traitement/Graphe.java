@@ -623,14 +623,12 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
             for(int j = 0; j < nbSommets(); j++){
 
-                if(sontVoisins(i,j)){
-
-                    matrice[i][j] = calculeDist(i,j);
-                }
+                matrice[i][j] = calculeDist(i,j);
             }
         }
 
         return matrice;
+
     }
 
     /**
@@ -645,24 +643,16 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
             for(int j = 0; j < nbSommets(); j++){
 
-                if(g.sontVoisins(i,j)){
+                if(calculeDist(i,j) < calculeDist(i,j)){
 
-                    for(int k = 0; k < nbSommets(); k++){
-
-                        if(g.sontVoisins(j,k)){
-
-                            if(!g.sontVoisins(i,k)){
-
-                                g.ajouteArete(i,k);
-                            }
-                        }
-                    }
+                    g.ajouteArete(i,j);
                 }
             }
         }
 
         return g;
-    }
+
+    }  
 
     public String toString(){
 

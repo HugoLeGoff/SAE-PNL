@@ -144,8 +144,5 @@ public class TestGraphe {
 
         System.out.println("GrapheEx2 rayonDist() "+grapheEx2.rayonDist()+" Doit valoir 4");
 
-
-
-
     }
 }

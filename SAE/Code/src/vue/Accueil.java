@@ -8,11 +8,7 @@ public class Accueil extends Application {
 @Override
     public void start(Stage stage)
     throws Exception {
-<<<<<<< HEAD
         Parent root = FXMLLoader.load(getClass().getResource("Selection.fxml"));
-=======
-        Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
->>>>>>> 6d694151a9bc070e03d19203a2c699af9c4c9407
         stage.setTitle("FXML Welcome");
         stage.setScene(new Scene(root, 300, 275));
         stage.show();

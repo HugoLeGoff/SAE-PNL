@@ -387,20 +387,11 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
         }
         else{
 
-            int[][] matrice = matriceAdjacence();
+            for(Sommet s : sommetsVoisins.keySet()){
 
-            for(int i = 0; i < nbSommets(); i++){
-
-                for(int j = 0; j < nbSommets(); j++){
-
-                    if(matrice[i][j] == 0){
-
-                        Graphe graphe = new Graphe(this);
-                        graphe.ajouteArete(i+1,j+1);
-                        graphes.add(graphe);
-                    }
-                }
+                
             }
+            
         }
 
         return graphes;
@@ -481,12 +472,9 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
         for(int i = 0; i < nbSommets(); i++){
 
-            for(int j = 0; j < nbSommets(); j++){
+            if(excentricite(i+1) > diametre){
 
-                if(distAretes(i,j) > diametre){
-
-                    diametre = distAretes(i,j);
-                }
+                diametre = excentricite(i+1);
             }
         }
 

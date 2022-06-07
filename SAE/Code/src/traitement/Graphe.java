@@ -19,14 +19,19 @@ public class Graphe {
      */
     public Graphe(ArrayList<Sommet> sommets,double dist){
 
-        if(sommets == null) {
-            throw new IllegalArgumentException("sommets ne peut être null");
-        }
-        if(dist < 0) {
-            throw new IllegalArgumentException("dist doit être positif");
-        }
+        this.sommetsVoisins = new HashMap<Sommet,ArrayList<Sommet>>();
 
-        sommetsVoisins = new HashMap<Sommet,ArrayList<Sommet>>();
+        for(int i=0;i<sommets.size();i++){
+            ArrayList<Sommet> listeVoisins = new ArrayList<Sommet>();
+            for(int j=0;j<sommets.size();j++){
+                if(i!=j){
+                    if(dist<=sommets.get(i).calculeDistance(sommets.get(j))){
+                        listeVoisins.add(sommets.get(j));
+                    }
+                }
+            }
+            this.sommetsVoisins.put(sommets.get(i),listeVoisins);
+        }
     }
 
     /**
@@ -51,7 +56,17 @@ public class Graphe {
         if(g == null) {
             throw new IllegalArgumentException("g ne peut être null");
         }
-        this.sommetsVoisins=g.sommetsVoisins;
+        HashMap<Sommet,ArrayList<Sommet>> sommetsCopie = new HashMap<Sommet,ArrayList<Sommet>>();
+        //create a copie og g.sommetsVoisins
+        for(Sommet s : g.sommetsVoisins.keySet()){
+            ArrayList<Sommet> sommetsVoisinsCopie = new ArrayList<Sommet>();
+            for(Sommet s2 : g.sommetsVoisins.get(s)){
+                sommetsVoisinsCopie.add(s2);
+            }
+            sommetsCopie.put(s,sommetsVoisinsCopie);
+        }
+        
+        this.sommetsVoisins=sommetsCopie;
 
     }
 
@@ -440,14 +455,18 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
         }
 
         int excentrit = 0;
-
-        for(int i = 0; i < nbSommets(); i++){
-
-            if(distAretes(idSom,i) > excentrit){
-
-                excentrit = distAretes(idSom,i);
+        if(this.estConnexe()==false){
+            excentrit=-1;
+        }else{
+            for(int i = 1; i < nbSommets(); i++){
+                System.out.println(i);
+                if(distAretes(idSom,i) > excentrit){
+    
+                    excentrit = distAretes(idSom,i);
+                }
             }
         }
+        
 
         return excentrit;
     }
@@ -470,7 +489,7 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
                 }
             }
         }
-
+        
         return diametre;
     }
 
@@ -604,14 +623,12 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
             for(int j = 0; j < nbSommets(); j++){
 
-                if(sontVoisins(i,j)){
-
-                    matrice[i][j] = calculeDist(i,j);
-                }
+                matrice[i][j] = calculeDist(i,j);
             }
         }
 
         return matrice;
+
     }
 
     /**
@@ -626,24 +643,16 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
             for(int j = 0; j < nbSommets(); j++){
 
-                if(g.sontVoisins(i,j)){
+                if(calculeDist(i,j) < calculeDist(i,j)){
 
-                    for(int k = 0; k < nbSommets(); k++){
-
-                        if(g.sontVoisins(j,k)){
-
-                            if(!g.sontVoisins(i,k)){
-
-                                g.ajouteArete(i,k);
-                            }
-                        }
-                    }
+                    g.ajouteArete(i,j);
                 }
             }
         }
 
         return g;
-    }
+
+    }  
 
     public String toString(){
 

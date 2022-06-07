@@ -40,53 +40,57 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <top>
-      <VBox BorderPane.alignment="CENTER">
+      <VBox>
          <children>
-            <HBox prefHeight="48.0" prefWidth="586.0">
+            <HBox prefHeight="48.0" prefWidth="586.0" VBox.vgrow="ALWAYS">
                <children>
-                  <AnchorPane prefHeight="48.0" prefWidth="86.0" />
-                  <AnchorPane>
+                  <AnchorPane HBox.hgrow="ALWAYS">
                      <children>
-                        <ImageView fitHeight="41.0" fitWidth="36.0" layoutX="2.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="4.0">
+                        <ImageView fitHeight="41.0" fitWidth="36.0" layoutX="2.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="4.0">
                            <image>
                               <Image url="@Parc_naturel_régional_du_Golfe_du_Morbihan.svg.png" />
                            </image>
                         </ImageView>
                      </children>
                   </AnchorPane>
-                  <AnchorPane prefHeight="47.0" prefWidth="314.0">
+                  <AnchorPane prefHeight="48.0" prefWidth="426.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <Label layoutX="14.0" layoutY="15.0" text="Au dd" />
+                        <Label layoutX="14.0" layoutY="15.0" text="Observateur - Hugo Le Goff" />
                      </children>
                   </AnchorPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" />
-                  <ImageView fitHeight="47.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fitHeight="41.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fitHeight="45.0" fitWidth="43.0">
-                     <image>
-                        <Image url="@32205.png" />
-                     </image>
-                  </ImageView>
+                  <Label prefHeight="48.0" prefWidth="432.0" text="Hippocampes" />
+                  <AnchorPane>
+                     <children>
+                        <ImageView fitHeight="31.0" fitWidth="39.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="8.0">
+                           <image>
+                              <Image url="@588a6aa3d06f6719692a2d23.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane>
+                     <children>
+                        <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="6.0" layoutY="9.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="9.0">
+                           <image>
+                              <Image url="@32205.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
                   <AnchorPane prefHeight="50.0" prefWidth="34.0">
                      <children>
-                        <ImageView fitHeight="34.0" fitWidth="46.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="34.0" fitWidth="46.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="10.0">
                            <image>
                               <Image url="@58308.png" />
                            </image>
                         </ImageView>
                      </children>
                   </AnchorPane>
-                  <AnchorPane prefHeight="48.0" prefWidth="82.0" />
                </children>
             </HBox>
-            <ImageView fitHeight="7.0" fitWidth="601.0">
-               <image>
-                  <Image url="@tempsnip.png" />
-               </image>
-            </ImageView>
+            <AnchorPane prefHeight="9.0" prefWidth="600.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
    </top>

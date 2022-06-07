@@ -378,23 +378,39 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
      */
     public ArrayList<Graphe> composanteConnexe(){
 
-        ArrayList<Graphe> graphes = new ArrayList<Graphe>();
+        ArrayList<Graphe> ret = new ArrayList<Graphe>();
+        int[][] matrice = matriceAdjacence();
+        int nbSommets = sommetsVoisins.size();
+        int[] parcouru = new int[nbSommets];
+        int[] sommets = new int[nbSommets];
+        int nbSommetsParcourus = 0;
+        int i = 0;
+        int j = 0;
 
-        if(estConnexe()){
-
-            Graphe graphe = new Graphe(this);
-            graphes.add(graphe);
+        for(i = 0; i < nbSommets; i++){
+            sommets[i] = i;
         }
-        else{
 
-            for(Sommet s : sommetsVoisins.keySet()){
-
-                
+        for(i = 0; i < nbSommets; i++){
+            if(parcouru[i] == 0){
+                parcouru[i] = 1;
+                nbSommetsParcourus++;
+                for(j = 0; j < nbSommets; j++){
+                    if(matrice[i][j] == 1){
+                        parcouru[j] = 1;
+                    }
+                }
+                Graphe g = new Graphe();
+                for(i = 0; i < nbSommets; i++){
+                    if(parcouru[i] == 1){
+                        g.ajouteSommet(sommets[i]);
+                    }
+                }
+                ret.add(g);
             }
-            
         }
 
-        return graphes;
+        return ret;
     }
 
     /**

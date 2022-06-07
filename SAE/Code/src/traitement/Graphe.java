@@ -475,7 +475,7 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
                 }
             }
         }
-
+        
         return diametre;
     }
 

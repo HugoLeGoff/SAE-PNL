@@ -32,18 +32,23 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
-   <top>
-      <VBox>
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+      <VBox prefWidth="900.0">
          <children>
             <HBox prefHeight="48.0" prefWidth="586.0" VBox.vgrow="ALWAYS">
                <children>
@@ -61,22 +66,15 @@
                         <Label layoutX="14.0" layoutY="15.0" text="Observateur - Hugo Le Goff">
                            <font>
                               <Font size="14.0" />
-                           </font></Label>
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                   <Label prefHeight="48.0" prefWidth="432.0" text="Hippocampes">
                      <font>
                         <Font size="14.0" />
-                     </font></Label>
-                  <AnchorPane>
-                     <children>
-                        <ImageView fitHeight="31.0" fitWidth="39.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="8.0">
-                           <image>
-                              <Image url="@588a6aa3d06f6719692a2d23.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </AnchorPane>
+                     </font>
+                  </Label>
                   <AnchorPane>
                      <children>
                         <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="6.0" layoutY="9.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="9.0">
@@ -98,7 +96,68 @@
                </children>
             </HBox>
             <AnchorPane prefHeight="9.0" prefWidth="600.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" VBox.vgrow="ALWAYS" />
+            <AnchorPane prefHeight="107.0" prefWidth="900.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="313.0" layoutY="49.0" prefHeight="46.0" prefWidth="325.0" text="Sélectionnez une interaction" textFill="#008967">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
          </children>
       </VBox>
-   </top>
-</BorderPane>
+      <BorderPane prefHeight="325.0" prefWidth="900.0">
+         <center>
+            <GridPane alignment="CENTER" pickOnBounds="false" prefHeight="138.0" prefWidth="900.0" style="-fx-border-color: #008967; -fx-border-width: 5;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <AnchorPane prefHeight="30.0" prefWidth="449.0" GridPane.rowIndex="1">
+                     <children>
+                      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="49.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Exportation des données" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="48.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Gestion des données" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                            <Button alignment="CENTER" layoutX="45.0" layoutY="48.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Consultation des données" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </GridPane>
+         </center>
+         <right>
+            <AnchorPane prefHeight="326.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+         </right>
+         <left>
+            <AnchorPane prefHeight="326.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+         </left>
+      </BorderPane>
+  </children>
+</VBox>

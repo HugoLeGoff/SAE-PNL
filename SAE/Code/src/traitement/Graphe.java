@@ -407,17 +407,20 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
         }
 
         int nbAretes = 0;
+        int add=1;
 
         for(Sommet s : sommetsVoisins.keySet()){
 
             if(s.getId() == idSom1){
 
                 for(Sommet s2 : sommetsVoisins.get(s)){
+                    
 
                     if(s2.getId() == idSom2){
 
-                        nbAretes++;
+                        add=0;
                     }
+                    nbAretes+=add;
                 }
             }
         }

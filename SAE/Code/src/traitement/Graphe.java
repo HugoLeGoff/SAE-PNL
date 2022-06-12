@@ -356,20 +356,29 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
      */
     public boolean estConnexe(){
 
-        int[][] matrice = matriceAdjacence();
+        boolean connexe = true;
+        int nbSommets = this.nbSommets();
+        int nbSommetsVoisins = 0;
+        int nbSommetsVoisins2 = 0;
 
-        for(int i = 0; i < nbSommets(); i++){
+        for(int i = 0; i < nbSommets; i++){
 
-            for(int j = 0; j < nbSommets(); j++){
+            for(int j = 0; j < nbSommets; j++){
 
-                if(matrice[i][j] == 0){
+                if(sontVoisins(i+1,j+1)){
 
-                    return false;
+                    nbSommetsVoisins++;
                 }
             }
+            if(nbSommetsVoisins != nbSommetsVoisins2){
+                connexe = false;
+            }
+            nbSommetsVoisins2 = nbSommetsVoisins;
+            nbSommetsVoisins = 0;
+
         }
 
-        return true;
+        return connexe;
     }
 
     /**

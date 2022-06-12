@@ -371,10 +371,6 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
         return true;
     }
-    //add a sommet in the graphe
-    
-
-
 
     /**
      * renvoie la liste des graphes connexes composant le graphe courant
@@ -382,39 +378,59 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
      */
     public ArrayList<Graphe> composanteConnexe(){
 
-        ArrayList<Graphe> ret = new ArrayList<Graphe>();
-        int[][] matrice = matriceAdjacence();
-        int nbSommets = sommetsVoisins.size();
-        int[] parcouru = new int[nbSommets];
-        int[] sommets = new int[nbSommets];
-        int nbSommetsParcourus = 0;
-        int i = 0;
-        int j = 0;
+        ArrayList<Graphe> graphes = new ArrayList<Graphe>();
 
-        for(i = 0; i < nbSommets; i++){
-            sommets[i] = i;
-        }
+        if(estConnexe()){
 
-        for(i = 0; i < nbSommets; i++){
-            if(parcouru[i] == 0){
-                parcouru[i] = 1;
-                nbSommetsParcourus++;
-                for(j = 0; j < nbSommets; j++){
+            int[][] matrice = matriceAdjacence();
+
+            for(int i = 0; i < nbSommets(); i++){
+
+                for(int j = 0; j < nbSommets(); j++){
+
+                    if(matrice[i][j] == 0){
+
+                        matrice[i][j] = 1;
+                        matrice[j][i] = 1;
+                    }
+                }
+            }
+
+            for(int i = 0; i < nbSommets(); i++){
+
+                for(int j = 0; j < nbSommets(); j++){
+
                     if(matrice[i][j] == 1){
-                        parcouru[j] = 1;
+
+                        Graphe graphe = new Graphe(null,0);
+
+                        for(int k = 0; k < nbSommets(); k++){
+
+                            if(matrice[i][k] == 1){
+
+                                graphe.ajouteSommet(k+1);
+                            }
+                        }
+
+                        for(int k = 0; k < nbSommets(); k++){
+
+                            if(matrice[k][j] == 1){
+
+                                graphe.ajouteArete(k+1,j+1);
+                            }
+                        }
+
+                        graphes.add(graphe);
                     }
                 }
-                Graphe g = new Graphe(new HashMap<Sommet,ArrayList<Sommet>>());
-                for(i = 0; i < nbSommets; i++){
-                    if(parcouru[i] == 1){
-                        g.sommetsVoisins.put(sommets[i], new ArrayList<Sommet>());
-                    }
-                }
-                ret.add(g);
             }
         }
 
-        return ret;
+        return graphes;
+    }
+
+
+    private void ajouteSommet(int i) {
     }
 
     /**

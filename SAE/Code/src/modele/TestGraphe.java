@@ -11,9 +11,9 @@ public class TestGraphe {
         
         Sommet s1 = new Sommet(1, new Lieu(0,50), new Date(01/02/2021), EspeceObservee.LOUTRE);
         Sommet s2 = new Sommet(2, new Lieu(50,0), new Date(01/02/2021), EspeceObservee.HIPPOCAMPE);
-        Sommet s3 = new Sommet(3, new Lieu(100,-500), new Date(01/02/2021), EspeceObservee.BATRACIEN);
+        Sommet s3 = new Sommet(3, new Lieu(100,500), new Date(01/02/2021), EspeceObservee.BATRACIEN);
         Sommet s4 = new Sommet(4, new Lieu(40,150), new Date(01/02/2021), EspeceObservee.CHOUETTE);
-        Sommet s5 = new Sommet(5, new Lieu(-500,25), new Date(01/02/2021), EspeceObservee.GCI);
+        Sommet s5 = new Sommet(5, new Lieu(500,25), new Date(01/02/2021), EspeceObservee.GCI);
         Sommet s6 = new Sommet(6, new Lieu(80,80), new Date(01/02/2021), EspeceObservee.LOUTRE);
 
         ArrayList<Sommet> listeSommets1 = new ArrayList<Sommet>();
@@ -103,8 +103,12 @@ public class TestGraphe {
         System.out.println("est connexe : " + g.estConnexe() + " doit valoir false");
 
         System.out.println("composante connexe : ");
+
+        //afficher composante connexe
         for (Graphe composante : g.composanteConnexe()) {
-            System.out.println(composante);
+
+            System.out.println(composante.toString());
+            System.out.println();
         }
 
         System.out.println("distAretes(6,2) : " + g.distAretes(6, 2) + " doit valoir 2");

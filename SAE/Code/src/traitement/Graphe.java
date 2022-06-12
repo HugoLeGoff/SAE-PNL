@@ -359,24 +359,17 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
         boolean connexe = true;
         int cpt = 0;
 
-        
-
         for(Sommet s : sommetsVoisins.keySet()){
             cpt=0;
 
             for(Sommet s2 : sommetsVoisins.keySet()){
                 if(sontVoisins(s.getId(), s2.getId()) && s.getId()!=s2.getId()){
                     cpt++;
-                }
-
-                
+                }         
             }
             if(cpt == 0){
                 connexe = false;
             }
-        
-        
-
         }
 
         return connexe;
@@ -387,6 +380,7 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
      * @return liste des graphes connexes composant le graphe courant
      */
     public ArrayList<Graphe> composanteConnexe(){
+
         boolean ret = false;
         int i = 0;
 
@@ -408,10 +402,8 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
             traiter.add(sommetATraiter);
 
-            
             ArrayList<Sommet> lesVoisin = voisins(sommetATraiter.getId());
 
-            
             ArrayList<Sommet> copy = new ArrayList<Sommet>(lesVoisin);
             hashMap.put(sommetATraiter,copy);
 
@@ -419,20 +411,20 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
             lesVoisin.removeIf(traiter::contains);
             file.addAll(lesVoisin);
 
-            
             if (file.size() == 0){
 
-                
                 HashMap<Sommet,ArrayList<Sommet>> leClone = new HashMap<Sommet,ArrayList<Sommet>>(hashMap);
                 graphes.add(new Graphe(leClone));
                 hashMap.clear();
 
-                
-                while (i < lSommets.size() && !ret){
+                while (i < lSommets.size()&& !ret){
+
                     if (!traiter.contains(lSommets.get(i))){
+
                         ret = true;
                         file.add(lSommets.get(i));
                     }
+
                     i++;
                 }
             }
@@ -441,18 +433,12 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
         return graphes;
     }
 
-
-    
-
     /**
      * Renvoie le nombre d'arêtes entre deux sommets
      * @param idSom1 identifiant du premier sommet
      * @param idSom2 identifiant du deuxième sommet
      * @return nombre d'arêtes entre les sommets
      */
-    
-
-
     public int distAretes(int idSom1, int idSom2){
 
         if(!estDansGraphe(idSom1)){

@@ -16,6 +16,8 @@ public class TestGraphe {
         Sommet s5 = new Sommet(5, new Lieu(500,25), new Date(01/02/2021), EspeceObservee.GCI);
         Sommet s6 = new Sommet(6, new Lieu(80,80), new Date(01/02/2021), EspeceObservee.LOUTRE);
 
+        
+
         ArrayList<Sommet> listeSommets1 = new ArrayList<Sommet>();
         listeSommets1.add(s2);
         listeSommets1.add(s4);
@@ -32,6 +34,7 @@ public class TestGraphe {
         listeSommets4.add(s2);
         listeSommets4.add(s3);
         listeSommets4.add(s6);
+        
 
         ArrayList<Sommet> listeSommets5 = new ArrayList<Sommet>();
 
@@ -40,16 +43,18 @@ public class TestGraphe {
 
 
         HashMap<Sommet,ArrayList<Sommet>> sommetsVoisins = new HashMap<Sommet,ArrayList<Sommet>>();
-
+        
         sommetsVoisins.put(s1,listeSommets1);
         sommetsVoisins.put(s2,listeSommets2);
         sommetsVoisins.put(s3,listeSommets3);
         sommetsVoisins.put(s4,listeSommets4);
         sommetsVoisins.put(s5,listeSommets5);
         sommetsVoisins.put(s6,listeSommets6);
+        
 
         Graphe g = new Graphe(sommetsVoisins);
 
+        
         System.out.println("sommets voisins : [(1,(2,4)), (2, (1,4)), (3,(4)),(4,(1,2,3,6)),(5,()),(6,(4))] \n" + g.toString());
 
         System.out.println("nb sommets : " + g.nbSommets() + " doit valoir 6");

@@ -357,24 +357,25 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
     public boolean estConnexe(){
 
         boolean connexe = true;
-        int nbSommets = this.nbSommets();
-        int nbSommetsVoisins = 0;
-        int nbSommetsVoisins2 = 0;
+        int cpt = 0;
 
-        for(int i = 0; i < nbSommets; i++){
+        
 
-            for(int j = 0; j < nbSommets; j++){
+        for(Sommet s : sommetsVoisins.keySet()){
+            cpt=0;
 
-                if(sontVoisins(i+1,j+1)){
-
-                    nbSommetsVoisins++;
+            for(Sommet s2 : sommetsVoisins.keySet()){
+                if(sontVoisins(s.getId(), s2.getId()) && s.getId()!=s2.getId()){
+                    cpt++;
                 }
+
+                
             }
-            if(nbSommetsVoisins != nbSommetsVoisins2){
+            if(cpt == 0){
                 connexe = false;
             }
-            nbSommetsVoisins2 = nbSommetsVoisins;
-            nbSommetsVoisins = 0;
+        
+        
 
         }
 

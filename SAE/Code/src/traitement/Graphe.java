@@ -397,21 +397,21 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
         HashMap<Sommet, ArrayList<Sommet>> hashMap = new HashMap<Sommet,ArrayList<Sommet>>();
         ArrayList<Graphe> graphes = new ArrayList<Graphe>();
 
-        // on ajoute le premier sommet cela peut être au hazard
+       
         Sommet sommet1 = lSommets.get(0);
         file.add(sommet1);
 
-        // tant que on a pas traiter tout les sommets
+        
         while (traiter.size() != lSommets.size()){
 
             Sommet sommetATraiter = file.remove(0);
 
             traiter.add(sommetATraiter);
 
-            // on prend tout les voisins du sommet qui est traiter
+            
             ArrayList<Sommet> lesVoisin = voisins(sommetATraiter.getId());
 
-            // copy defensive pour ne pas modifier les voisins lorsqu'on fait des removes
+            
             ArrayList<Sommet> copy = new ArrayList<Sommet>(lesVoisin);
             hashMap.put(sommetATraiter,copy);
 
@@ -419,15 +419,15 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
             lesVoisin.removeIf(traiter::contains);
             file.addAll(lesVoisin);
 
-            // si la file n'a plus de sommet c'est que une composante a été finit et donc on l'ajotue
+            
             if (file.size() == 0){
 
-                // ici on fait une autre copie defensive car l'orsqu'on appelle la méthode clear sa modifie ce qu'il ya dans le hashmap
+                
                 HashMap<Sommet,ArrayList<Sommet>> leClone = new HashMap<Sommet,ArrayList<Sommet>>(hashMap);
                 graphes.add(new Graphe(leClone));
                 hashMap.clear();
 
-                // chercher un sommet non traiter pour la nouvelle composante
+                
                 while (i < lSommets.size() && !ret){
                     if (!traiter.contains(lSommets.get(i))){
                         ret = true;

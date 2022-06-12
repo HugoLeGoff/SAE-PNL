@@ -129,6 +129,7 @@ public class TestGraphe {
         }
 
         System.out.println("");
+        /*
 
         Graphe grapheEx2=g.clotureTransitive();
 
@@ -161,6 +162,6 @@ public class TestGraphe {
         System.out.println("");
 
         System.out.println("GrapheEx2 rayonDist() "+grapheEx2.rayonDist()+" Doit valoir 4");
-
+    */
     }
 }

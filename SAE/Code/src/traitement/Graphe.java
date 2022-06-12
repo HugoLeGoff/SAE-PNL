@@ -387,54 +387,8 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
      * @return liste des graphes connexes composant le graphe courant
      */
     public ArrayList<Graphe> composanteConnexe(){
-
+        int cpt=0;
         ArrayList<Graphe> graphes = new ArrayList<Graphe>();
-
-        if(estConnexe()){
-
-            int[][] matrice = matriceAdjacence();
-
-            for(int i = 0; i < nbSommets(); i++){
-
-                for(int j = 0; j < nbSommets(); j++){
-
-                    if(matrice[i][j] == 0){
-
-                        matrice[i][j] = 1;
-                        matrice[j][i] = 1;
-                    }
-                }
-            }
-
-            for(int i = 0; i < nbSommets(); i++){
-
-                for(int j = 0; j < nbSommets(); j++){
-
-                    if(matrice[i][j] == 1){
-
-                        Graphe graphe = new Graphe(null,0);
-
-                        for(int k = 0; k < nbSommets(); k++){
-
-                            if(matrice[i][k] == 1){
-
-                                graphe.ajouteSommet(k+1);
-                            }
-                        }
-
-                        for(int k = 0; k < nbSommets(); k++){
-
-                            if(matrice[k][j] == 1){
-
-                                graphe.ajouteArete(k+1,j+1);
-                            }
-                        }
-
-                        graphes.add(graphe); 
-                    }
-                }
-            }
-        }
 
         return graphes;
     }
@@ -556,13 +510,14 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
         return rayon;
     }
-
+    
     /**
      * Calcule la somme des distances entre deux sommets
      * @param idSom1 identifiant du premier sommet
      * @param idSom2 identifiant du deuxième sommet
      * @return somme des distances entre deux sommets
      */
+    
     public double calculeDist(int idSom1, int idSom2){
 
         if(!estDansGraphe(idSom1)){
@@ -590,12 +545,13 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
         return dist;
     }
-
+    
     /**
      * Renvoie la distance maximale entre un sommet et tout les autres
      * @param idSom identifiant du sommet
      * @return distance maximale entre un sommet et tous les autres
      */
+    /*
     public double excentriciteDist(int idSom){
 
         if(idSom < 0) {
@@ -614,11 +570,13 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
         return excentrite;
     }
+    */
 
     /**
      * Renvoie le maximum d'excentrité de distance
      * @return maximum d'excentrité de distance
      */
+    /*
     public double diametreDist(){
 
         double diametre = 0;
@@ -636,11 +594,13 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
         return diametre;
     }
+    */
 
     /**
      * Renvoie le minimum d'excentrité de distance
      * @return minimum d'excentrité de distance
      */
+    /*
     public double rayonDist(){
 
         double rayon = 0;
@@ -659,11 +619,13 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
         return rayon;
     }
+    */
 
     /**
      * Renvoie une matrice de pondération
      * @return matrice de pondération
      */
+    
     public double[][] matricePonderation(){
 
         double[][] matrice = new double[nbSommets()][nbSommets()];
@@ -679,11 +641,13 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
         return matrice;
 
     }
+    
 
     /**
      * Renvoie un nouveau graphe qui est la clôture transitive du graphe courant
      * @return nouveau graphe qui est la clôture transitive du graphe courant
      */
+    /*
     public Graphe clotureTransitive(){
 
         Graphe g = new Graphe(this);
@@ -698,10 +662,12 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
                 }
             }
         }
+        
 
         return g;
 
     }  
+    */
 
     public String toString(){
 
@@ -721,4 +687,5 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
         return s;
     }
+    
 }

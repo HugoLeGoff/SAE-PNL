@@ -103,9 +103,11 @@ public class TestGraphe {
         System.out.println("est connexe : " + g.estConnexe() + " doit valoir false");
 
         System.out.println("composante connexe : ");
+        for (Graphe composante : g.composanteConnexe()) {
+            System.out.println(composante);
+        }
 
         System.out.println("distAretes(6,2) : " + g.distAretes(6, 2) + " doit valoir 2");
-
         System.out.println("excentricite(6) : " + g.excentricite(6) + " doit valoir -1");
 
         System.out.println("matrice de pondération : ");

@@ -371,6 +371,10 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
         return true;
     }
+    //add a sommet in the graphe
+    
+
+
 
     /**
      * renvoie la liste des graphes connexes composant le graphe courant
@@ -400,10 +404,10 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
                         parcouru[j] = 1;
                     }
                 }
-                Graphe g = new Graphe();
+                Graphe g = new Graphe(new HashMap<Sommet,ArrayList<Sommet>>());
                 for(i = 0; i < nbSommets; i++){
                     if(parcouru[i] == 1){
-                        g.ajouteSommet(sommets[i]);
+                        g.sommetsVoisins.put(sommets[i], new ArrayList<Sommet>());
                     }
                 }
                 ret.add(g);
@@ -419,6 +423,9 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
      * @param idSom2 identifiant du deuxième sommet
      * @return nombre d'arêtes entre les sommets
      */
+    
+
+
     public int distAretes(int idSom1, int idSom2){
 
         if(!estDansGraphe(idSom1)){
@@ -429,7 +436,8 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
         }
 
         int nbAretes = 0;
-        int add=1;
+        int i = 0;
+
 
         for(Sommet s : sommetsVoisins.keySet()){
 
@@ -440,9 +448,16 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
                     if(s2.getId() == idSom2){
 
-                        add=0;
+                        nbAretes++;
+                        i++;
                     }
-                    nbAretes+=add;
+            
+                }
+                if (i == 0){
+                    for(Sommet s2 : sommetsVoisins.get(s)){
+                      nbAretes= distAretes(s2.getId(), idSom2)+1;
+
+                    }
                 }
             }
         }
@@ -581,14 +596,14 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
     public double diametreDist(){
 
         double diametre = 0;
+        if(this.estConnexe()==false){
+            diametre=-1;
+        }else{
 
-        for(int i = 0; i < nbSommets(); i++){
+            for(int i = 0; i < nbSommets(); i++){
 
-            for(int j = 0; j < nbSommets(); j++){
-
-                if(calculeDist(i,j) > diametre){
-
-                    diametre = calculeDist(i,j);
+                if(excentriciteDist(i+1) > diametre){
+                    diametre=excentriciteDist(i+1);
                 }
             }
         }
@@ -604,11 +619,15 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
         double rayon = 0;
 
-        for(int i = 0; i < nbSommets(); i++){
+        if(this.estConnexe()==false){
+            rayon=-1;
+        }else{
 
-            if(calculeDegre(i) > rayon){
+            for(int i = 0; i < nbSommets(); i++){
 
-                rayon = calculeDegre(i);
+                if(excentriciteDist(i+1) < rayon){
+                    rayon=excentriciteDist(i+1);
+                }
             }
         }
 

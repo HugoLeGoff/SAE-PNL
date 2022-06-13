@@ -365,13 +365,13 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
             cpt=0;
 
             for(Sommet s2 : sommetsVoisins.keySet()){
-                if(sontVoisins(s.getId(), s2.getId()) && s.getId()!=s2.getId()){
+                if(existeChemin(s.getId(), s2.getId()) && s.getId()!=s2.getId()){
                     cpt++;
                 }
 
                 
             }
-            if(cpt == 0){
+            if(cpt == nbSommets()-1){
                 connexe = false;
             }
         

@@ -359,24 +359,17 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
         boolean connexe = true;
         int cpt = 0;
 
-        
-
         for(Sommet s : sommetsVoisins.keySet()){
             cpt=0;
 
             for(Sommet s2 : sommetsVoisins.keySet()){
                 if(existeChemin(s.getId(), s2.getId()) && s.getId()!=s2.getId()){
                     cpt++;
-                }
-
-                
+                }         
             }
             if(cpt == nbSommets()-1){
                 connexe = false;
             }
-        
-        
-
         }
 
         return connexe;
@@ -387,52 +380,51 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
      * @return liste des graphes connexes composant le graphe courant
      */
     public ArrayList<Graphe> composanteConnexe(){
+
         boolean ret = false;
         int i = 0;
 
         ArrayList<Sommet> file = new ArrayList<Sommet>();
-        ArrayList<Sommet> traiter = new ArrayList<Sommet>();
-        ArrayList<Sommet> lSommets = new ArrayList<Sommet>(sommetsVoisins.keySet());
+        ArrayList<Sommet> traite = new ArrayList<Sommet>();
+        ArrayList<Sommet> listSommets = new ArrayList<Sommet>(sommetsVoisins.keySet());
 
         HashMap<Sommet, ArrayList<Sommet>> hashMap = new HashMap<Sommet,ArrayList<Sommet>>();
         ArrayList<Graphe> graphes = new ArrayList<Graphe>();
 
        
-        Sommet sommet1 = lSommets.get(0);
-        file.add(sommet1);
+        Sommet sommet = listSommets.get(0);
+        file.add(sommet);
 
         
-        while (traiter.size() != lSommets.size()){
+        while (traite.size() != listSommets.size()){
 
             Sommet sommetATraiter = file.remove(0);
 
-            traiter.add(sommetATraiter);
+            traite.add(sommetATraiter);
 
-            
-            ArrayList<Sommet> lesVoisin = voisins(sommetATraiter.getId());
+            ArrayList<Sommet> lesVoisins = voisins(sommetATraiter.getId());
 
-            
-            ArrayList<Sommet> copy = new ArrayList<Sommet>(lesVoisin);
-            hashMap.put(sommetATraiter,copy);
+            ArrayList<Sommet> copie = new ArrayList<Sommet>(lesVoisins);
+            hashMap.put(sommetATraiter,copie);
 
-            lesVoisin.removeIf(file::contains);
-            lesVoisin.removeIf(traiter::contains);
-            file.addAll(lesVoisin);
+            lesVoisins.removeIf(file::contains);
+            lesVoisins.removeIf(traite::contains);
+            file.addAll(lesVoisins);
 
-            
             if (file.size() == 0){
 
-                
-                HashMap<Sommet,ArrayList<Sommet>> leClone = new HashMap<Sommet,ArrayList<Sommet>>(hashMap);
-                graphes.add(new Graphe(leClone));
+                HashMap<Sommet,ArrayList<Sommet>> clone = new HashMap<Sommet,ArrayList<Sommet>>(hashMap);
+                graphes.add(new Graphe(clone));
                 hashMap.clear();
 
-                
-                while (i < lSommets.size() && !ret){
-                    if (!traiter.contains(lSommets.get(i))){
+                while (i < listSommets.size()&& !ret){
+
+                    if (!traite.contains(listSommets.get(i))){
+
                         ret = true;
-                        file.add(lSommets.get(i));
+                        file.add(listSommets.get(i));
                     }
+
                     i++;
                 }
             }
@@ -441,18 +433,12 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
         return graphes;
     }
 
-
-    
-
     /**
      * Renvoie le nombre d'arêtes entre deux sommets
      * @param idSom1 identifiant du premier sommet
      * @param idSom2 identifiant du deuxième sommet
      * @return nombre d'arêtes entre les sommets
      */
-    
-
-
     public int distAretes(int idSom1, int idSom2){
 
         if(!estDansGraphe(idSom1)){

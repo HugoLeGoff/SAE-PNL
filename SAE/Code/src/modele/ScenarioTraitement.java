@@ -5,7 +5,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class TestGraphe {
+public class ScenarioTraitement {
 
     public static void main(String[] args) {
         

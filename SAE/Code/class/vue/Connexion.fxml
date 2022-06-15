@@ -149,7 +149,7 @@
                               </AnchorPane>
                               <AnchorPane VBox.vgrow="ALWAYS">
                                  <children>
-                                    <PasswordField layoutX="16.0" prefHeight="26.0" prefWidth="338.0" />
+                                    <PasswordField layoutX="16.0" prefHeight="26.0" prefWidth="339.0" />
                                  </children>
                               </AnchorPane>
                            </children>

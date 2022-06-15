@@ -28,4 +28,25 @@ public class Database {
       System.out.println(e);
     }
   }
+
+
+  public boolean testMDP(String login, String pw) throws SQLException{
+    boolean ret = false;
+
+    Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+    Statement stmt = c.createStatement();
+    ResultSet res = stmt.executeQuery("SELECT * FROM Connexion");
+
+      while(res.next()){
+        
+        if(res.getString(1).equals(login) && res.getString(2).equals(pw)){
+          ret = true;
+        }
+
+      }
+      c.close();
+
+      return ret;
+  }
+
 }

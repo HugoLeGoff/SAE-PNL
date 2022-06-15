@@ -1,6 +1,8 @@
+
 package vue;
 import java.io.IOException;
 
+import data.*;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -21,8 +23,8 @@ public class AccueilController {
 
 
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
-    Scene scene = actiontarget.getScene();
-    Parent root = FXMLLoader.load(getClass().getResource("Modele.fxml"));
-    scene.setRoot(root);
-       }
+        Scene scene = actiontarget.getScene();
+        Parent root = FXMLLoader.load(getClass().getResource("Selection.fxml"));
+        scene.setRoot(root);
+    }
 }

@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
 <!--
   Copyright (c) 2015, 2019, Gluon and/or its affiliates.
   All rights reserved. Use is subject to license terms.
@@ -32,19 +46,7 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.AccueilController">
    <top>
       <VBox>
          <children>
@@ -61,27 +63,19 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="48.0" prefWidth="426.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <Label layoutX="14.0" layoutY="15.0" text="Observateur - Hugo Le Goff">
+                        <Label layoutX="14.0" layoutY="15.0">
                            <font>
                               <Font size="14.0" />
                            </font></Label>
                      </children>
                   </AnchorPane>
-                  <Label prefHeight="48.0" prefWidth="432.0" text="Hippocampes">
+                  <Label prefHeight="48.0" prefWidth="432.0">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
                   <AnchorPane />
-                  <AnchorPane>
-                     <children>
-                        <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="6.0" layoutY="9.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="9.0">
-                           <image>
-                              <Image url="@32205.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </AnchorPane>
+                  <AnchorPane />
                   <AnchorPane prefHeight="50.0" prefWidth="34.0">
                      <children>
                         <ImageView fitHeight="34.0" fitWidth="46.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="10.0">
@@ -98,9 +92,9 @@
       </VBox>
    </top>
    <center>
-      <VBox alignment="CENTER" prefHeight="359.0" prefWidth="786.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="329.0" prefWidth="573.0">
          <children>
-            <AnchorPane>
+            <AnchorPane VBox.vgrow="ALWAYS">
                <children>
                   <Label layoutX="104.0" layoutY="14.0" prefHeight="51.0" prefWidth="408.0" style="-fx-text-fill: ht;" text="Parc naturel régional du Morbihan" textFill="#008967" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="88.0">
                      <font>
@@ -149,7 +143,7 @@
                               </AnchorPane>
                               <AnchorPane VBox.vgrow="ALWAYS">
                                  <children>
-                                    <PasswordField layoutX="16.0" prefHeight="26.0" prefWidth="339.0" />
+                                    <PasswordField layoutX="17.0" prefHeight="26.0" prefWidth="338.0" />
                                  </children>
                               </AnchorPane>
                            </children>
@@ -160,14 +154,20 @@
             </AnchorPane>
             <AnchorPane VBox.vgrow="ALWAYS">
                <children>
-                  <Button layoutX="233.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="133.0" style="-fx-background-color: #008967;" text="Se connecter" textFill="WHITE">
+                  <Button layoutX="233.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="38.0" prefWidth="133.0" style="-fx-background-color: #008967;" text="Se connecter" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Button>
+                     <Text fx:id="actiontarget" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
                </children>
             </AnchorPane>
          </children>
       </VBox>
+      
+
    </center>
+
+
+
 </BorderPane>

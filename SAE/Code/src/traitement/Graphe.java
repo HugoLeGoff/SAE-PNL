@@ -356,20 +356,23 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
      */
     public boolean estConnexe(){
 
-        int[][] matrice = matriceAdjacence();
+        boolean connexe = true;
+        int cpt = 0;
 
-        for(int i = 0; i < nbSommets(); i++){
+        for(Sommet s : sommetsVoisins.keySet()){
+            cpt=0;
 
-            for(int j = 0; j < nbSommets(); j++){
-
-                if(matrice[i][j] == 0){
-
-                    return false;
-                }
+            for(Sommet s2 : sommetsVoisins.keySet()){
+                if(existeChemin(s.getId(), s2.getId()) && s.getId()!=s2.getId()){
+                    cpt++;
+                }         
+            }
+            if(cpt == nbSommets()-1){
+                connexe = false;
             }
         }
 
-        return true;
+        return connexe;
     }
 
     /**
@@ -378,27 +381,51 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
      */
     public ArrayList<Graphe> composanteConnexe(){
 
+        boolean ret = false;
+        int i = 0;
+
+        ArrayList<Sommet> file = new ArrayList<Sommet>();
+        ArrayList<Sommet> traite = new ArrayList<Sommet>();
+        ArrayList<Sommet> listSommets = new ArrayList<Sommet>(sommetsVoisins.keySet());
+
+        HashMap<Sommet, ArrayList<Sommet>> hashMap = new HashMap<Sommet,ArrayList<Sommet>>();
         ArrayList<Graphe> graphes = new ArrayList<Graphe>();
 
-        if(estConnexe()){
+       
+        Sommet sommet = listSommets.get(0);
+        file.add(sommet);
 
-            Graphe graphe = new Graphe(this);
-            graphes.add(graphe);
-        }
-        else{
+        
+        while (traite.size() != listSommets.size()){
 
-            int[][] matrice = matriceAdjacence();
+            Sommet sommetATraiter = file.remove(0);
 
-            for(int i = 0; i < nbSommets(); i++){
+            traite.add(sommetATraiter);
 
-                for(int j = 0; j < nbSommets(); j++){
+            ArrayList<Sommet> lesVoisins = voisins(sommetATraiter.getId());
 
-                    if(matrice[i][j] == 0){
+            ArrayList<Sommet> copie = new ArrayList<Sommet>(lesVoisins);
+            hashMap.put(sommetATraiter,copie);
 
-                        Graphe graphe = new Graphe(this);
-                        graphe.ajouteArete(i+1,j+1);
-                        graphes.add(graphe);
+            lesVoisins.removeIf(file::contains);
+            lesVoisins.removeIf(traite::contains);
+            file.addAll(lesVoisins);
+
+            if (file.size() == 0){
+
+                HashMap<Sommet,ArrayList<Sommet>> clone = new HashMap<Sommet,ArrayList<Sommet>>(hashMap);
+                graphes.add(new Graphe(clone));
+                hashMap.clear();
+
+                while (i < listSommets.size()&& !ret){
+
+                    if (!traite.contains(listSommets.get(i))){
+
+                        ret = true;
+                        file.add(listSommets.get(i));
                     }
+
+                    i++;
                 }
             }
         }
@@ -422,7 +449,8 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
         }
 
         int nbAretes = 0;
-        int add=1;
+        int i = 0;
+
 
         for(Sommet s : sommetsVoisins.keySet()){
 
@@ -433,9 +461,16 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
                     if(s2.getId() == idSom2){
 
-                        add=0;
+                        nbAretes++;
+                        i++;
                     }
-                    nbAretes+=add;
+            
+                }
+                if (i == 0){
+                    for(Sommet s2 : sommetsVoisins.get(s)){
+                      nbAretes= distAretes(s2.getId(), idSom2)+1;
+
+                    }
                 }
             }
         }
@@ -481,12 +516,9 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
         for(int i = 0; i < nbSommets(); i++){
 
-            for(int j = 0; j < nbSommets(); j++){
+            if(excentricite(i+1) > diametre){
 
-                if(distAretes(i,j) > diametre){
-
-                    diametre = distAretes(i,j);
-                }
+                diametre = excentricite(i+1);
             }
         }
         
@@ -503,21 +535,22 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
         for(int i = 0; i < nbSommets(); i++){
 
-            if(calculeDegre(i) > rayon){
+            if(excentricite(i+1) < rayon){
 
-                rayon = calculeDegre(i);
+                rayon = excentricite(i+1);
             }
         }
 
         return rayon;
     }
-
+    
     /**
      * Calcule la somme des distances entre deux sommets
      * @param idSom1 identifiant du premier sommet
      * @param idSom2 identifiant du deuxième sommet
      * @return somme des distances entre deux sommets
      */
+    
     public double calculeDist(int idSom1, int idSom2){
 
         if(!estDansGraphe(idSom1)){
@@ -545,12 +578,13 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
         return dist;
     }
-
+    
     /**
      * Renvoie la distance maximale entre un sommet et tout les autres
      * @param idSom identifiant du sommet
-     * @return distance maximale entre un sommet et tout les autres
+     * @return distance maximale entre un sommet et tous les autres
      */
+    /*
     public double excentriciteDist(int idSom){
 
         if(idSom < 0) {
@@ -569,52 +603,62 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
         return excentrite;
     }
+    */
 
     /**
      * Renvoie le maximum d'excentrité de distance
      * @return maximum d'excentrité de distance
      */
+    /*
     public double diametreDist(){
 
         double diametre = 0;
+        if(this.estConnexe()==false){
+            diametre=-1;
+        }else{
 
-        for(int i = 0; i < nbSommets(); i++){
+            for(int i = 0; i < nbSommets(); i++){
 
-            for(int j = 0; j < nbSommets(); j++){
-
-                if(calculeDist(i,j) > diametre){
-
-                    diametre = calculeDist(i,j);
+                if(excentriciteDist(i+1) > diametre){
+                    diametre=excentriciteDist(i+1);
                 }
             }
         }
 
         return diametre;
     }
+    */
 
     /**
      * Renvoie le minimum d'excentrité de distance
      * @return minimum d'excentrité de distance
      */
+    /*
     public double rayonDist(){
 
         double rayon = 0;
 
-        for(int i = 0; i < nbSommets(); i++){
+        if(this.estConnexe()==false){
+            rayon=-1;
+        }else{
 
-            if(calculeDegre(i) > rayon){
+            for(int i = 0; i < nbSommets(); i++){
 
-                rayon = calculeDegre(i);
+                if(excentriciteDist(i+1) < rayon){
+                    rayon=excentriciteDist(i+1);
+                }
             }
         }
 
         return rayon;
     }
+    */
 
     /**
      * Renvoie une matrice de pondération
      * @return matrice de pondération
      */
+    
     public double[][] matricePonderation(){
 
         double[][] matrice = new double[nbSommets()][nbSommets()];
@@ -623,18 +667,20 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
             for(int j = 0; j < nbSommets(); j++){
 
-                matrice[i][j] = calculeDist(i,j);
+                matrice[i][j] = calculeDist(i+1,j+1);
             }
         }
 
         return matrice;
 
     }
+    
 
     /**
      * Renvoie un nouveau graphe qui est la clôture transitive du graphe courant
      * @return nouveau graphe qui est la clôture transitive du graphe courant
      */
+    /*
     public Graphe clotureTransitive(){
 
         Graphe g = new Graphe(this);
@@ -649,10 +695,12 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
                 }
             }
         }
+        
 
         return g;
 
     }  
+    */
 
     public String toString(){
 
@@ -672,4 +720,5 @@ d’identifiant idSom1 au sommet d’identifiant idSom2 en passant par des arˆe
 
         return s;
     }
+    
 }

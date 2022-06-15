@@ -5,16 +5,18 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class TestGraphe {
+public class ScenarioTraitement {
 
     public static void main(String[] args) {
         
-        Sommet s1 = new Sommet(1, new Lieu(0,0), new Date(01/02/2021), EspeceObservee.LOUTRE);
-        Sommet s2 = new Sommet(2, new Lieu(0,0), new Date(01/02/2021), EspeceObservee.HIPPOCAMPE);
-        Sommet s3 = new Sommet(3, new Lieu(0,0), new Date(01/02/2021), EspeceObservee.BATRACIEN);
-        Sommet s4 = new Sommet(4, new Lieu(0,0), new Date(01/02/2021), EspeceObservee.CHOUETTE);
-        Sommet s5 = new Sommet(5, new Lieu(0,0), new Date(01/02/2021), EspeceObservee.GCI);
-        Sommet s6 = new Sommet(6, new Lieu(0,0), new Date(01/02/2021), EspeceObservee.LOUTRE);
+        Sommet s1 = new Sommet(1, new Lieu(0,50), new Date(01/02/2021), EspeceObservee.LOUTRE);
+        Sommet s2 = new Sommet(2, new Lieu(50,0), new Date(01/02/2021), EspeceObservee.HIPPOCAMPE);
+        Sommet s3 = new Sommet(3, new Lieu(100,500), new Date(01/02/2021), EspeceObservee.BATRACIEN);
+        Sommet s4 = new Sommet(4, new Lieu(40,150), new Date(01/02/2021), EspeceObservee.CHOUETTE);
+        Sommet s5 = new Sommet(5, new Lieu(500,25), new Date(01/02/2021), EspeceObservee.GCI);
+        Sommet s6 = new Sommet(6, new Lieu(80,80), new Date(01/02/2021), EspeceObservee.LOUTRE);
+
+        
 
         ArrayList<Sommet> listeSommets1 = new ArrayList<Sommet>();
         listeSommets1.add(s2);
@@ -32,6 +34,7 @@ public class TestGraphe {
         listeSommets4.add(s2);
         listeSommets4.add(s3);
         listeSommets4.add(s6);
+        
 
         ArrayList<Sommet> listeSommets5 = new ArrayList<Sommet>();
 
@@ -40,16 +43,18 @@ public class TestGraphe {
 
 
         HashMap<Sommet,ArrayList<Sommet>> sommetsVoisins = new HashMap<Sommet,ArrayList<Sommet>>();
-
+        
         sommetsVoisins.put(s1,listeSommets1);
         sommetsVoisins.put(s2,listeSommets2);
         sommetsVoisins.put(s3,listeSommets3);
         sommetsVoisins.put(s4,listeSommets4);
         sommetsVoisins.put(s5,listeSommets5);
         sommetsVoisins.put(s6,listeSommets6);
+        
 
         Graphe g = new Graphe(sommetsVoisins);
 
+        
         System.out.println("sommets voisins : [(1,(2,4)), (2, (1,4)), (3,(4)),(4,(1,2,3,6)),(5,()),(6,(4))] \n" + g.toString());
 
         System.out.println("nb sommets : " + g.nbSommets() + " doit valoir 6");
@@ -104,13 +109,27 @@ public class TestGraphe {
 
         System.out.println("composante connexe : ");
 
-        System.out.println("distAretes(6,2) : " + g.distAretes(6, 2) + " doit valoir 2");
+        //afficher composante connexe
+        for (Graphe composante : g.composanteConnexe()) {
 
+            System.out.println(composante.toString());
+            System.out.println();
+        }
+
+        System.out.println("distAretes(6,2) : " + g.distAretes(6, 2) + " doit valoir 2");
         System.out.println("excentricite(6) : " + g.excentricite(6) + " doit valoir -1");
 
-        System.out.println("matrice de pondération : " + g.matricePonderation());
+        System.out.println("matrice de pondération : ");
+
+        for (int i = 0; i < g.nbSommets(); i++) {
+            for (int j = 0; j < g.nbSommets(); j++) {
+                System.out.print(g.matricePonderation()[i][j] + " ");
+            }
+            System.out.println();
+        }
 
         System.out.println("");
+        /*
 
         Graphe grapheEx2=g.clotureTransitive();
 
@@ -143,6 +162,6 @@ public class TestGraphe {
         System.out.println("");
 
         System.out.println("GrapheEx2 rayonDist() "+grapheEx2.rayonDist()+" Doit valoir 4");
-
+    */
     }
 }

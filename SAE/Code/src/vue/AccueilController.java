@@ -1,8 +1,9 @@
 
 package vue;
 import java.io.IOException;
+import java.sql.SQLException;
 
-import data.Database;
+import data.AccTest;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -31,11 +32,14 @@ private PasswordField pw ;
 @FXML
 
 
-    protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
-        boolean estValide = Database.testMDP(this.login.getText(), this.pw.getText());
-        Scene scene = actiontarget.getScene();
-        Parent root = FXMLLoader.load(getClass().getResource("Selection.fxml"));
-        scene.setRoot(root);
+    protected void handleSubmitButtonAction(ActionEvent event) throws IOException, SQLException{
+        AccTest test = new AccTest(this.login.getText(), this.pw.getText());
+        boolean testLog = test.testMDP(this.login.getText(), this.pw.getText());
+        if(testLog == true){   
+            Scene scene = actiontarget.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("Selection.fxml"));
+            scene.setRoot(root);
+        }
     }
 
 

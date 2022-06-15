@@ -129,7 +129,7 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="38.0" prefWidth="366.0" VBox.vgrow="ALWAYS">
                                  <children>
-                                    <TextField layoutX="14.0" layoutY="1.0" prefHeight="26.0" prefWidth="338.0" />
+                                    <TextField fx:id="login" layoutX="14.0" layoutY="1.0" prefHeight="26.0" prefWidth="338.0" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane prefHeight="2.0" prefWidth="366.0" VBox.vgrow="ALWAYS">
@@ -143,7 +143,7 @@
                               </AnchorPane>
                               <AnchorPane VBox.vgrow="ALWAYS">
                                  <children>
-                                    <PasswordField layoutX="17.0" prefHeight="26.0" prefWidth="338.0" />
+                                    <PasswordField fx:id="pw" layoutX="17.0" prefHeight="26.0" prefWidth="338.0" />
                                  </children>
                               </AnchorPane>
                            </children>

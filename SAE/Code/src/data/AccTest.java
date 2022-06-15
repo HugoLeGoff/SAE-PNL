@@ -4,14 +4,9 @@ import java.sql.*;
 import donnee.*;
 
 public class AccTest {
-    private String login;
-    private String pw;
 
-    public AccTest(String login, String pw){
-        this.login = login;
-        this.pw = pw;
-      
-    }
+
+
 
     public boolean testMDP(String login, String pw) throws SQLException{
         boolean ret = false;

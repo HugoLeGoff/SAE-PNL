@@ -105,6 +105,11 @@
             </AnchorPane>
             <AnchorPane VBox.vgrow="ALWAYS">
                <children>
+                  <AnchorPane layoutX="127.0" layoutY="179.0" prefHeight="30.0" prefWidth="129.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="111.0" />
+                     </children>
+                  </AnchorPane>
                   <AnchorPane layoutX="116.0" prefHeight="179.0" prefWidth="366.0" style="-fx-background-color: #008967; -fx-background-radius: 20;">
                      <children>
                         <VBox prefHeight="148.0" prefWidth="366.0">
@@ -129,7 +134,7 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="38.0" prefWidth="366.0" VBox.vgrow="ALWAYS">
                                  <children>
-                                    <TextField layoutX="14.0" layoutY="1.0" prefHeight="26.0" prefWidth="338.0" />
+                                    <TextField fx:id="login" layoutX="14.0" layoutY="1.0" prefHeight="26.0" prefWidth="338.0" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane prefHeight="2.0" prefWidth="366.0" VBox.vgrow="ALWAYS">
@@ -143,7 +148,7 @@
                               </AnchorPane>
                               <AnchorPane VBox.vgrow="ALWAYS">
                                  <children>
-                                    <PasswordField layoutX="17.0" prefHeight="26.0" prefWidth="338.0" />
+                                    <PasswordField fx:id="pw" layoutX="17.0" prefHeight="26.0" prefWidth="338.0" />
                                  </children>
                               </AnchorPane>
                            </children>

@@ -35,17 +35,18 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HippoTables">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <VBox>
          <children>
@@ -102,9 +103,9 @@
          <children>
             <AnchorPane prefHeight="67.0" prefWidth="205.0">
                <children>
-                  <ImageView fitHeight="42.0" fitWidth="42.0">
+                  <ImageView fitHeight="35.0" fitWidth="50.0">
                      <image>
-                        <Image url="@17319.png" />
+                        <Image url="@flecheRetour.png" />
                      </image>
                   </ImageView>
                </children>
@@ -118,14 +119,21 @@
                   </Label>
                   <Label layoutX="50.0" layoutY="23.0" text="Trier par : " />
                   <ComboBox layoutX="104.0" layoutY="18.0" prefHeight="26.0" prefWidth="158.0" promptText="Date la plus récente" />
-                  <Button fx:id="modifier" layoutX="346.0" layoutY="65.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Modifier" textFill="WHITE" />
-                  <Button fx:id="renommer" layoutX="346.0" layoutY="98.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Renommer" textFill="WHITE" />
-                  <Button fx:id="supprimmer" layoutX="346.0" layoutY="130.0" mnemonicParsing="false" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Supprimmer" textFill="WHITE" />
-                  <TableView layoutX="24.0" layoutY="53.0" prefHeight="178.0" prefWidth="318.0">
-                     <columns>
-                        <TableColumn fx:id="tabColumn" prefWidth="75.0" text="Table" />
-                     </columns>
-                  </TableView>
+                  <GridPane gridLinesVisible="true" layoutX="50.0" layoutY="65.0" prefHeight="130.0" prefWidth="286.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+                  <Button layoutX="346.0" layoutY="65.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Modifier" textFill="WHITE" />
+                  <Button layoutX="346.0" layoutY="98.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Renommer" textFill="WHITE" />
+                  <Button layoutX="346.0" layoutY="130.0" mnemonicParsing="false" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Supprimmer" textFill="WHITE" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -135,7 +143,7 @@
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Button fx:id="plus" graphicTextGap="3.0" layoutX="164.0" layoutY="10.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="22.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="+" textFill="WHITE" />
+                  <Button graphicTextGap="3.0" layoutX="164.0" layoutY="10.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="22.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="+" textFill="WHITE" />
                </children>
             </AnchorPane>
          </children>

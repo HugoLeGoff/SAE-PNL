@@ -2,6 +2,7 @@ package vue;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import connexion.*;
 import data.AccTest;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -17,18 +18,42 @@ import javafx.fxml.*;
 
 public class SelectionEspeceController {
 
-    @FXML
-    private ImageView action;
+   
     
+    @FXML Button deconnexion;
+
+    @FXML Button hippo;
+
+    @FXML Label nom = new Label(" ");
+
+
+
+
+    @FXML
+    private void initialize() {
+        Compte compte = new Compte();
+        String log = compte.getLogin();
+        nom.setText(log);
+    }
+
     @FXML
 
 
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
-
-        Scene scene = action.getScene();
-        System.out.println("aeaze");
-        Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
-        scene.setRoot(root);
+        if(event.getSource() == this.deconnexion){
+            Scene scene = deconnexion.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
+            scene.setRoot(root);
+        }
+        else if(event.getSource() == this.hippo){
+            Scene scene = deconnexion.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
+            scene.setRoot(root);
+        }
     }
+
+
+
+
 
 }

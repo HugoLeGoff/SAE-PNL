@@ -32,7 +32,7 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -44,7 +44,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.HippoController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <VBox>
          <children>
@@ -101,18 +101,20 @@
                </children>
             </HBox>
             <AnchorPane prefHeight="9.0" prefWidth="600.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" VBox.vgrow="ALWAYS" />
-            <AnchorPane prefHeight="79.0" prefWidth="600.0">
+            <AnchorPane prefHeight="110.0" prefWidth="600.0">
                <children>
                   <Label layoutX="54.0" layoutY="37.0" prefHeight="35.0" prefWidth="319.0" text="Tables Hippocampes :" textFill="#008967">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
+                  <ComboBox layoutX="126.0" layoutY="79.0" prefWidth="150.0" promptText="Date la plus récente" />
                   <ImageView accessibleRole="BUTTON" fitHeight="46.0" fitWidth="40.0" layoutX="4.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@17319.png" />
                      </image>
                   </ImageView>
+                  <Label layoutX="72.0" layoutY="83.0" text="Trier par : " />
                </children>
             </AnchorPane>
          </children>
@@ -122,17 +124,16 @@
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="600.0">
          <children>
             <Label layoutX="24.0" layoutY="5.0" prefHeight="24.0" prefWidth="96.0" text="Ajouter une table " />
-            <ImageView fitHeight="62.0" fitWidth="26.0" layoutX="127.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView accessibleRole="BUTTON" fitHeight="62.0" fitWidth="26.0" layoutX="127.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@+.png" />
                </image>
             </ImageView>
-            <Button fx:id="newTuples" ellipsisString="" layoutX="127.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="17.0" prefWidth="28.0" text="Button" />
          </children>
       </AnchorPane>
    </bottom>
    <center>
-      <TableView prefHeight="222.0" prefWidth="530.0" BorderPane.alignment="CENTER">
+      <TableView prefHeight="269.0" prefWidth="600.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn prefWidth="75.0" text="obsH" />
           <TableColumn prefWidth="75.0" text="espece" />

@@ -2,6 +2,7 @@ package vue;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import connexion.*;
 import data.AccTest;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -23,7 +24,17 @@ public class SelectionEspeceController {
 
     @FXML Button hippo;
 
+    @FXML Label nom = new Label(" ");
 
+
+
+
+    @FXML
+    private void initialize() {
+        Compte compte = new Compte();
+        String log = compte.getLogin();
+        nom.setText(log);
+    }
 
     @FXML
 
@@ -40,5 +51,9 @@ public class SelectionEspeceController {
             scene.setRoot(root);
         }
     }
+
+
+
+
 
 }

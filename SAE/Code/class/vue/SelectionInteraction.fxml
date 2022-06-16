@@ -141,7 +141,7 @@
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                            <Button alignment="CENTER" layoutX="45.0" layoutY="48.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Consultation des données" textFill="WHITE">
+                            <Button fx:id="consultation" alignment="CENTER" layoutX="45.0" layoutY="48.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Consultation des données" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>

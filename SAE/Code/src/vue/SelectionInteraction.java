@@ -24,6 +24,8 @@ public class SelectionInteraction {
 
     @FXML Button deconnexion;
 
+    @FXML Button consultation;
+
 
 
     @FXML Label nom = new Label(" ");
@@ -50,6 +52,12 @@ public class SelectionInteraction {
         else if(event.getSource() == this.gestionDo){
             Scene scene = gestionDo.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("Lucas.fxml"));
+            scene.setRoot(root);
+        }
+
+        else if(event.getSource() == this.consultation){
+            Scene scene = gestionDo.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
             scene.setRoot(root);
         }
     }

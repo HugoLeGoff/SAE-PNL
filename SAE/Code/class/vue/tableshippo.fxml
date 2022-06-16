@@ -135,9 +135,20 @@
    <center>
       <TableView prefHeight="269.0" prefWidth="600.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn prefWidth="75.0" text="obsH" />
+          <TableColumn prefWidth="75.0" text="espece" />
+            <TableColumn prefWidth="75.0" text="sexe" />
+            <TableColumn prefWidth="103.19999694824219" text="temperatureEau" />
+            <TableColumn prefWidth="64.79998779296875" text="typePeche" />
+            <TableColumn prefWidth="58.4000244140625" text="taille" />
+            <TableColumn prefWidth="75.0" text="gestant" />
         </columns>
       </TableView>
    </center>
+   <left>
+      <AnchorPane prefHeight="197.0" prefWidth="35.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <AnchorPane prefHeight="197.0" prefWidth="35.0" BorderPane.alignment="CENTER" />
+   </right>
 </BorderPane>

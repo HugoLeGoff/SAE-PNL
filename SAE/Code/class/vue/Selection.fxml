@@ -46,7 +46,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.SelectionEspeceController">
   <children>
       <VBox prefWidth="900.0">
          <children>
@@ -54,7 +54,7 @@
                <children>
                   <AnchorPane HBox.hgrow="ALWAYS">
                      <children>
-                        <ImageView fitHeight="41.0" fitWidth="36.0" layoutX="2.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="4.0">
+                        <ImageView fx:id="action" fitHeight="41.0" fitWidth="36.0" layoutX="2.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="4.0">
                            <image>
                               <Image url="@Parc_naturel_régional_du_Golfe_du_Morbihan.svg.png" />
                            </image>
@@ -78,11 +78,12 @@
                   <AnchorPane />
                   <AnchorPane>
                      <children>
-                        <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="6.0" layoutY="9.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="9.0">
+                        <ImageView accessibleRole="BUTTON" fitHeight="34.0" fitWidth="35.0" layoutX="6.0" layoutY="9.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="9.0">
                            <image>
                               <Image url="@32205.png" />
                            </image>
                         </ImageView>
+                        <Button layoutX="4.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="48.0" prefWidth="34.0" text="Button" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="50.0" prefWidth="34.0">

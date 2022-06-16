@@ -1,7 +1,7 @@
-
 package vue;
 import java.io.IOException;
 import java.sql.SQLException;
+
 
 import data.AccTest;
 import javafx.application.Application;
@@ -19,8 +19,7 @@ import javafx.fxml.*;
 
 public class AccueilController {
 
-@FXML
-    private Text actiontarget;
+
 
 @FXML 
 private TextField login ;
@@ -28,19 +27,26 @@ private TextField login ;
 @FXML
 private PasswordField pw ;
 
+@FXML
+private Label msgErr ;
+
+
 
 @FXML
 
 
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException, SQLException{
-        AccTest test = new AccTest(this.login.getText(), this.pw.getText());
+        
+        AccTest test = new AccTest();
         boolean testLog = test.testMDP(this.login.getText(), this.pw.getText());
         if(testLog == true){   
-            Scene scene = actiontarget.getScene();
+            Scene scene = login.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("Selection.fxml"));
             scene.setRoot(root);
         }
+        else{
+            msgErr.setText("Identifiant ou mot de passe incorrect");
+        }
     }
-
 
 }

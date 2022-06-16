@@ -25,5 +25,5 @@ public class AccTest {
     return ret;
   }
 
-  public String getNom
+
 }

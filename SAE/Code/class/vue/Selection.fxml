@@ -50,7 +50,7 @@
                <children>
                   <AnchorPane HBox.hgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="action" fitHeight="41.0" fitWidth="36.0" layoutX="2.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="4.0">
+                        <ImageView  fitHeight="41.0" fitWidth="36.0" layoutX="2.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="4.0">
                            <image>
                               <Image url="@Parc_naturel_régional_du_Golfe_du_Morbihan.svg.png" />
                            </image>
@@ -79,7 +79,7 @@
                               <Image url="@32205.png" />
                            </image>
                         </ImageView>
-                        <Button layoutX="4.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="48.0" prefWidth="34.0" text="Button" />
+                        <Button fx:id="deconnexion" layoutX="4.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="48.0" prefWidth="34.0" text="Button" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="50.0" prefWidth="34.0">
@@ -128,7 +128,7 @@
                                     </Button>
                                   <AnchorPane layoutX="484.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                        <children>
-                                          <Button alignment="CENTER" contentDisplay="CENTER" layoutX="-89.0" layoutY="8.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="GCI" textFill="WHITE">
+                                          <Button  alignment="CENTER" contentDisplay="CENTER" layoutX="-89.0" layoutY="8.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="GCI" textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold" size="16.0" />
                                              </font>
@@ -163,7 +163,7 @@
                         </HBox>
                         <AnchorPane prefHeight="30.0" prefWidth="449.0">
                            <children>
-                            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Hippocampes" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+                            <Button fx:id="hippo" alignment="CENTER" contentDisplay="CENTER" onAction="#handleSubmitButtonAction" layoutX="220.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Hippocampes" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>

@@ -17,18 +17,28 @@ import javafx.fxml.*;
 
 public class SelectionEspeceController {
 
-    @FXML
-    private ImageView action;
+   
     
+    @FXML Button deconnexion;
+
+    @FXML Button hippo;
+
+
+
     @FXML
 
 
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
-
-        Scene scene = action.getScene();
-        System.out.println("aeaze");
-        Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
-        scene.setRoot(root);
+        if(event.getSource() == this.deconnexion){
+            Scene scene = deconnexion.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
+            scene.setRoot(root);
+        }
+        else if(event.getSource() == this.hippo){
+            Scene scene = deconnexion.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("Lucas.fxml"));
+            scene.setRoot(root);
+        }
     }
 
 }

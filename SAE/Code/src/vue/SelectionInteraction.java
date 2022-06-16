@@ -16,13 +16,15 @@ import javafx.scene.text.Text;
 import javafx.fxml.*;
 
 
-public class SelectionEspeceController {
+public class SelectionInteraction {
 
    
     
+    @FXML Button gestionDo;
+
     @FXML Button deconnexion;
 
-    @FXML Button hippo;
+
 
     @FXML Label nom = new Label(" ");
 
@@ -45,9 +47,9 @@ public class SelectionEspeceController {
             Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
             scene.setRoot(root);
         }
-        else if(event.getSource() == this.hippo){
-            Scene scene = deconnexion.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
+        else if(event.getSource() == this.gestionDo){
+            Scene scene = gestionDo.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("Lucas.fxml"));
             scene.setRoot(root);
         }
     }

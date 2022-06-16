@@ -105,9 +105,9 @@
             </AnchorPane>
             <AnchorPane VBox.vgrow="ALWAYS">
                <children>
-                  <AnchorPane layoutX="127.0" layoutY="179.0" prefHeight="30.0" prefWidth="129.0">
+                  <AnchorPane layoutX="127.0" layoutY="179.0" prefHeight="30.0" prefWidth="308.0">
                      <children>
-                        <Label prefHeight="18.0" prefWidth="111.0" />
+                        <Label fx:id="msgErr" prefHeight="18.0" prefWidth="286.0" text="" />
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="116.0" prefHeight="179.0" prefWidth="366.0" style="-fx-background-color: #008967; -fx-background-radius: 20;">
@@ -164,7 +164,6 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Button>
-                     <Text fx:id="actiontarget" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
                </children>
             </AnchorPane>
          </children>

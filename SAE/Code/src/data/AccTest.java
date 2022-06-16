@@ -6,8 +6,6 @@ import donnee.*;
 public class AccTest {
 
 
-
-
     public boolean testMDP(String login, String pw) throws SQLException{
         boolean ret = false;
     

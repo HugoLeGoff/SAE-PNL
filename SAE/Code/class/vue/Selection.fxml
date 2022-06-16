@@ -105,28 +105,54 @@
             </AnchorPane>
          </children>
       </VBox>
-      <BorderPane prefHeight="325.0" prefWidth="900.0">
-         <right>
-            <AnchorPane prefHeight="326.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
-         </right>
-         <left>
-            <AnchorPane prefHeight="326.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
-         </left>
-         <center>
-            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: #008967; -fx-border-width: 5;" BorderPane.alignment="CENTER">
-               <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox prefHeight="446.0" prefWidth="900.0" VBox.vgrow="ALWAYS">
+         <children>
+            <BorderPane prefHeight="279.0" prefWidth="900.0">
+               <right>
+                  <AnchorPane prefHeight="326.0" prefWidth="100.0" BorderPane.alignment="CENTER_RIGHT" />
+               </right>
+               <left>
+                  <AnchorPane prefHeight="326.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+               </left>
+               <center>
+                  <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: #008967; -fx-border-width: 5;" BorderPane.alignment="CENTER">
                      <children>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="29.0" prefWidth="609.0">
+                        <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                            <children>
-                            <Button alignment="CENTER" layoutX="45.0" layoutY="22.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Chouettes" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Button>
-                            <AnchorPane layoutX="484.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="29.0" prefWidth="609.0">
                                  <children>
-                                    <Button alignment="CENTER" contentDisplay="CENTER" layoutX="-89.0" layoutY="8.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="GCI" textFill="WHITE">
+                                  <Button alignment="CENTER" layoutX="45.0" layoutY="22.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Chouettes" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Button>
+                                  <AnchorPane layoutX="484.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <Button alignment="CENTER" contentDisplay="CENTER" layoutX="-89.0" layoutY="8.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="GCI" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <children>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="90.0" prefWidth="380.0">
+                                 <children>
+                                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="22.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Loutres" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                  <Button alignment="CENTER" layoutX="18.0" layoutY="19.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="237.0" style="-fx-background-color: #008967;" text="Batraciens" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="16.0" />
                                        </font>
@@ -134,43 +160,25 @@
                                  </children>
                               </AnchorPane>
                            </children>
-                        </AnchorPane>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="90.0" prefWidth="380.0">
+                        </HBox>
+                        <AnchorPane prefHeight="30.0" prefWidth="449.0">
                            <children>
-                            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="22.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Loutres" textFill="WHITE">
+                            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Hippocampes" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Button>
                            </children>
                         </AnchorPane>
-                        <AnchorPane>
-                           <children>
-                            <Button alignment="CENTER" layoutX="18.0" layoutY="19.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="237.0" style="-fx-background-color: #008967;" text="Batraciens" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </AnchorPane>
+                        <AnchorPane prefHeight="32.0" prefWidth="691.0" />
                      </children>
-                  </HBox>
-                  <AnchorPane prefHeight="30.0" prefWidth="449.0">
-                     <children>
-                      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="23.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Hippocampes" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </VBox>
-         </center>
-      </BorderPane>
+                  </VBox>
+               </center>
+               <bottom>
+                  <AnchorPane prefHeight="91.0" prefWidth="900.0" BorderPane.alignment="CENTER" />
+               </bottom>
+            </BorderPane>
+         </children>
+      </HBox>
   </children>
 </VBox>

@@ -26,6 +26,8 @@ public class SelectionInteraction {
 
     @FXML Button consultation;
 
+    @FXML Label espece = new Label();
+
 
 
     @FXML Label nom = new Label(" ");
@@ -38,6 +40,12 @@ public class SelectionInteraction {
         Compte compte = new Compte();
         String log = compte.getLogin();
         nom.setText(log);
+
+        ChoixEspece especeChoix = new ChoixEspece();
+        String nomEspece = especeChoix.getEspece();
+        espece.setText(nomEspece);
+
+
     }
 
     @FXML

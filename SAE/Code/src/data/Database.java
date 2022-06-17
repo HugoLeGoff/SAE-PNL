@@ -1,12 +1,17 @@
 package data;
 //import java.util.*;
-import java.sql.*;
-import donnee.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import connexion.Compte;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 
 public class Database {
-    public static void main(String args[])
-  {
+    public static void main(String args[]){
     try
     {
 
@@ -29,6 +34,21 @@ public class Database {
     }
   }
 
+  public static ObservableList<Compte> getComptes() {
 
+    ObservableList<Compte> comptes = FXCollections.observableArrayList();
+    try {
+      Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+      Statement stmt = c.createStatement();
+      ResultSet res = stmt.executeQuery("SELECT * FROM Connexion");
+      while(res.next()) {
+        comptes.add(new Compte(res.getString("login"), res.getString("mdp")));
+      }
+      c.close();
+    } catch(Exception e) {
+      System.out.println(e);
+    }
+    return comptes;
+  }
 
 }

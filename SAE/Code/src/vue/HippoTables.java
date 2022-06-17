@@ -29,6 +29,9 @@ public class HippoTables {
     private Button plus;
 
     @FXML
+    private Button deconnexion;
+
+    @FXML
 
 
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
@@ -45,7 +48,7 @@ public class HippoTables {
             System.out.println("aeaze");
             Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
             scene.setRoot(root);
-        }       
+        }
         
         else if(event.getSource() == supprimmer){
             Scene scene = modifier.getScene();
@@ -54,10 +57,16 @@ public class HippoTables {
             scene.setRoot(root);
         }
 
-        if(event.getSource() == plus){
+        else if(event.getSource() == plus){
             Scene scene = modifier.getScene();
             System.out.println("aeaze");
             Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
+            scene.setRoot(root);
+        }
+
+        else if(event.getSource() == deconnexion){
+            Scene scene = deconnexion.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
             scene.setRoot(root);
         }
     }

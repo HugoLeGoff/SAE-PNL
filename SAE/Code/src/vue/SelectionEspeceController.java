@@ -46,9 +46,13 @@ public class SelectionEspeceController {
             scene.setRoot(root);
         }
         else if(event.getSource() == this.hippo){
+            ChoixEspece espece = new ChoixEspece("Hippocampes");
+
             Scene scene = deconnexion.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
             scene.setRoot(root);
+
+            
         }
     }
 

@@ -51,7 +51,7 @@ public class HippoController {
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
         if (event.getSource() == pop){
             System.out.print("zatz");
-            popUp();
+           
         } else if (event.getSource() == buttonAdd) {
             ajouterTuple();
         }

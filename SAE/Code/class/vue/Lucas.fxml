@@ -80,7 +80,7 @@
                               <Image url="@32205.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="deconnexion" layoutY="7.0" mnemonicParsing="false" opacity="0.0" prefHeight="37.0" prefWidth="42.0" text="Button" textFill="TRANSPARENT" />
+                        <Button fx:id="deconnexion" layoutY="7.0" mnemonicParsing="false" opacity="0.0" prefHeight="38.0" prefWidth="42.0" text="Button" textFill="TRANSPARENT" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="50.0" prefWidth="34.0">

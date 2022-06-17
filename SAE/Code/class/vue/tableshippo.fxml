@@ -116,6 +116,7 @@
                      </image>
                   </ImageView>
                   <Label layoutX="72.0" layoutY="83.0" text="Trier par : " />
+                  <Button fx:id="retour" layoutX="4.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="32.0" prefWidth="40.0" text="Button" />
                </children>
             </AnchorPane>
          </children>
@@ -124,8 +125,8 @@
    <bottom>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="600.0">
          <children>
+            <Button fx:id="pop" layoutX="127.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="26.0" prefWidth="27.0" text="Button" />
             <Label layoutX="24.0" layoutY="5.0" prefHeight="24.0" prefWidth="96.0" text="Ajouter une table " />
-            <Button fx:id="buttonPopUp" layoutX="127.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="26.0" prefWidth="27.0" text="Button" />
             <ImageView accessibleRole="BUTTON" fitHeight="62.0" fitWidth="26.0" layoutX="127.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@+.png" />

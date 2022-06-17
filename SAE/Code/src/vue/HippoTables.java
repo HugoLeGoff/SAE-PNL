@@ -64,7 +64,7 @@ public class HippoTables {
             scene.setRoot(root);
         }
 
-        else if(event.getSource() == this.deconnexion){
+        else if(event.getSource() == deconnexion){
             Scene scene = deconnexion.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
             scene.setRoot(root);

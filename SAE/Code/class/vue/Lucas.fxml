@@ -75,7 +75,7 @@
                   <AnchorPane />
                   <AnchorPane>
                      <children>
-                        <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="6.0" layoutY="9.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="9.0">
+                        <ImageView fx:id="deconnexion" fitHeight="34.0" fitWidth="35.0" layoutX="6.0" layoutY="9.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="9.0">
                            <image>
                               <Image url="@32205.png" />
                            </image>

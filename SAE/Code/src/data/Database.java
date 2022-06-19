@@ -34,7 +34,7 @@ public class Database {
     }
   }
 
-  public static ObservableList<Compte> getComptes() {
+  /*public static ObservableList<Compte> getComptes() {
 
     ObservableList<Compte> comptes = FXCollections.observableArrayList();
     try {
@@ -49,6 +49,6 @@ public class Database {
       System.out.println(e);
     }
     return comptes;
-  }
+  }*/
 
 }

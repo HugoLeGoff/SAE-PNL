@@ -75,7 +75,7 @@
                   <AnchorPane />
                   <AnchorPane>
                      <children>
-                        <Button fx:id="deconnexion" layoutY="7.0" mnemonicParsing="false" opacity="0.0" prefHeight="38.0" prefWidth="42.0" text="Button" textFill="TRANSPARENT" />
+                        <Button fx:id="deconnexion" layoutX="5.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="46.0" prefWidth="29.0" text="Button" />
                         <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="6.0" layoutY="9.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="9.0">
                            <image>
                               <Image url="@32205.png" />
@@ -119,10 +119,10 @@
                   </Label>
                   <Label layoutX="50.0" layoutY="23.0" text="Trier par : " />
                   <ComboBox layoutX="104.0" layoutY="18.0" prefHeight="26.0" prefWidth="158.0" promptText="Date la plus récente" />
-                  <Button fx:id="modifier" layoutX="346.0" layoutY="65.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Modifier" textFill="WHITE" />
-                  <Button fx:id="renommer" layoutX="346.0" layoutY="98.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Renommer" textFill="WHITE" />
-                  <Button fx:id="supprimmer" layoutX="346.0" layoutY="130.0" mnemonicParsing="false" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Supprimmer" textFill="WHITE" />
-                  <TableView layoutX="24.0" layoutY="53.0" prefHeight="178.0" prefWidth="318.0">
+                  <Button fx:id="modifier" layoutX="346.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Modifier" textFill="WHITE" />
+                  <Button fx:id="renommer" layoutX="346.0" layoutY="98.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Renommer" textFill="WHITE" />
+                  <Button fx:id="supprimmer" layoutX="346.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Supprimmer" textFill="WHITE" />
+                  <TableView fx:id="tableView" layoutX="24.0" layoutY="53.0" prefHeight="178.0" prefWidth="318.0">
                      <columns>
                         <TableColumn fx:id="tabColumn" prefWidth="75.0" text="Table" />
                      </columns>
@@ -136,7 +136,12 @@
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Button fx:id="plus" graphicTextGap="3.0" layoutX="164.0" layoutY="10.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="22.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="+" textFill="WHITE" />
+                  <Button fx:id="plus" graphicTextGap="3.0" layoutX="164.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="20.0" prefWidth="22.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="+" textFill="WHITE" />
+                  <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="164.0" layoutY="10.0">
+                     <image>
+                        <Image url="@+.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </children>

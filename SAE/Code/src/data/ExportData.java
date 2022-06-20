@@ -17,7 +17,6 @@ public class ExportData {
     private String fileName;
     private int annee;
     private String espece;
-    private String tableName;
     private String fileDirectory;
     private int nbColonnes;
 
@@ -31,11 +30,11 @@ public class ExportData {
 
         
     }
-    public ExportData(String name, int annee, String espece) {
-        this.annee=annee;
+    public ExportData(String name, String annee, String espece) {
+        this.annee=Integer.valueOf(annee);
         this.espece=espece;
         this.fileName = name;
-        this.fileDirectory="C:\\";
+        this.fileDirectory="C:\\Users\\public\\Downloads\\";//directory de base vers Utilisateur/public/telechargements
 
         
     }
@@ -43,31 +42,35 @@ public class ExportData {
     public String requete(){
         String ret="";
         if(espece=="Hippocampe"){
-            ret="SELECT * FROM "+tableName+" JOIN Observation ON obsH = idObs JOIN Aobserve ON idObs = lobservation JOIN observateur ON lobservateur = idObservateur WHERE YEAR (dateObs) = "+annee+";";
+            ret="SELECT obsH,espece,sexe,temperatureEau,typePeche,taille,gestant,dateObs,heureObs,lieu_Lambert_X,lieu_Lambert_Y,idObservateur,nom,prenom FROM Obs_hippocampe LEFT JOIN Observation ON obsH = idObs LEFT JOIN Aobserve ON idObs = lobservation LEFT JOIN observateur ON lobservateur = idObservateur WHERE YEAR (dateObs) = "+annee+";";
         }else if(espece=="GCI"){
-            ret="SELECT * FROM "+tableName+" JOIN Observation ON obsG = idObs JOIN Aobserve ON idObs = lobservation JOIN observateur ON lobservateur = idObservateur WHERE YEAR (dateObs) = "+annee+";";
+            ret="SELECT obsG,nature,nombre,presentMaisNonObs,idNid,nomPlage,raisonArretObservation,nbEnvol,protection,bagueMale,bagueFemelle,dateObs,heureObs,lieu_Lambert_X,lieu_Lambert_Y,idObservateur,nom,prenom FROM obs_GCI LEFT JOIN Nid_GCI ON idNid=leNid LEFT JOIN Observation ON obsG = idObs LEFT JOIN Aobserve ON idObs = lobservation LEFT JOIN observateur ON lobservateur = idObservateur WHERE YEAR (dateObs) = "+annee+";";
         }else if(espece=="Loutre"){
-            ret="SELECT * FROM "+tableName+" JOIN Observation ON obsL = idObs JOIN Aobserve ON idObs = lobservation JOIN observateur ON lobservateur = idObservateur WHERE YEAR (dateObs) = "+annee+";";
+            ret="SELECT obsL,commune,lieuDit,indice,idObs,dateObs,heureObs,lieu_Lambert_X,lieu_Lambert_Y,idObservateur,nom,prenom FROM obs_Loutre JOIN Observation ON obsL = idObs JOIN Aobserve ON idObs = lobservation LEFT JOIN observateur ON lobservateur = idObservateur WHERE YEAR (dateObs) = "+annee+";";
         }else if(espece=="Batracien"){
-            ret="SELECT * FROM Obs_Batracien JOIN Observation ON obsB = idObs JOIN Aobserve ON idObs = lobservation JOIN observateur ON lobservateur = idObservateur JOIN ZoneHumide ON concerne_ZH = zh_id JOIN Vegetation ON concernes_vege = idVege JOIN Lieu_Vegetation ON idVegeLieu = decrit_LieuVege;";
+            ret="SELECT obsB,espece,nombreAdultes,nombreAmplexus,nombrePonte,nombreTetard,temperature,meteo_ciel,meteo_temp,meteo_vent,meteo_pluie,concerne_ZH,concernes_vege,dateObs,heureObs,lieu_Lambert_X,lieu_Lambert_Y,idObservateur,nom,prenom,zh_temporaire,zh_surface,zh_typeMare,zh_pente,zh_ouverture,natureVege,vegetation,decrit_LieuVege,idVegeLieu FROM Obs_Batracien JOIN Observation ON obsB = idObs JOIN Aobserve ON idObs = lobservation JOIN observateur ON lobservateur = idObservateur JOIN ZoneHumide ON concerne_ZH = zh_id JOIN Vegetation ON concernes_vege = idVege JOIN Lieu_Vegetation ON idVegeLieu = decrit_LieuVege WHERE YEAR (dateObs) = "+annee+";";
         }else if(espece=="Chouette"){
-            ret="SELECT * FROM "+tableName+" JOIN Observation ON obsC = idObs JOIN Aobserve ON idObs = lobservation JOIN observateur ON lobservateur = idObservateur WHERE YEAR (dateObs) = "+annee+";";
+            ret="SELECT idObs,protocole,typeObs,leNumIndividu,numObs,numIndividu,espece,sexe,dateObs,heureObs,lieu_Lambert_X,lieu_Lambert_Y,idObservateur,nom,prenom FROM Obs_Chouette JOIN Chouette ON numIndividu=leNumIndividu JOIN Observation ON numObs=idObs JOIN Lieu ON (lieu_Lambert_X,lieu_Lambert_Y)=(coord_Lambert_X,coord_Lambert_Y) LEFT JOIN Aobserve ON idObs =lobservation LEFT JOIN observateur ON lobservateur = idObservateur WHERE YEAR (dateObs) = "+annee+";";
         }
         return ret;
     }
     public String printColonnes(){
         String ret="";
         if(espece=="Hippocampe"){
-            ret="idObs,dateObs,idObservateur,nomObservateur,prenomObservateur,obsH,idA,nomA,prenomA,idObsH,idObsG,idObsL,idObsB,idObsC";
+            nbColonnes=14;
+            ret="obsH;espece;sexe;temperatureEau;typePeche;taille;gestant;dateObs;heureObs;lieu_Lambert_X;lieu_Lambert_Y;idObservateur;nom;prenom";
         }else if(espece=="GCI"){
-            ret="idObs,dateObs,idObservateur,nomObservateur,prenomObservateur,obsG,idA,nomA,prenomA,idObsH,idObsG,idObsL,idObsB,idObsC";
+            nbColonnes=18;
+            ret="obsG;nature;nombre;presentMaisNonObs;idNid;nomPlage;raisonArretObservation;nbEnvol;protection;bagueMale;bagueFemelle;dateObs;heureObs;lieu_Lambert_X;lieu_Lambert_Y;idObservateur;nom;prenom";
         }else if(espece=="Loutre"){
-            ret="idObs,dateObs,idObservateur,nomObservateur,prenomObservateur,obsL,idA,nomA,prenomA,idObsH,idObsG,idObsL,idObsB,idObsC";
+            nbColonnes=12;
+            ret="obsL;commune;lieuDit;indice;idObs;dateObs;heureObs;lieu_Lambert_X;lieu_Lambert_Y;idObservateur;nom;prenom";
         }else if(espece=="Batracien"){
-            nbColonnes=32;
-            ret="obsB;espece;nombreAdultes;nombreAmplexus;nombrePonte;nombreTetard;temperature;meteo_ciel;meteo_temp;meteo_vent;meteo_pluie;concerne_ZH;concerne_vege;idObs,dateObs,heureObs;lieu_Lambert_X;lieu_Lambert_Y;lobservateur;lobservation;idObservateur;nom;prenom;zh_id;zh_temporaire;zh_surface;zh_typeMare;zh_pente;zh_ouverture;idVege;natureVege;vegetation;decrit_LieuVege_idVege;idVegeLieu";
+            nbColonnes=29;
+            ret="obsB;espece;nombreAdultes;nombreAmplexus;nombrePonte;nombreTetard;temperature;meteo_ciel;meteo_temp;meteo_vent;meteo_pluie;concerne_ZH;concerne_vege;dateObs;heureObs;lieu_Lambert_X;lieu_Lambert_Y;idObservateur;nom;prenom;zh_temporaire;zh_surface;zh_typeMare;zh_pente;zh_ouverture;natureVege;vegetation;decrit_LieuVege_idVege;idVegeLieu";
         }else if(espece=="Chouette"){
-            ret="idObs,dateObs,idObservateur,nomObservateur,prenomObservateur,obsC,idA,nomA,prenomA,idObsH,idObsG,idObsL,idObsB,idObsC";
+            nbColonnes=15;
+            ret="idObs;protocole;typeObs;leNumIndividu;numObs;numIndividu;espece;sexe;dateObs;heureObs;lieu_Lambert_X;lieu_Lambert_Y;idObservateur;nom;prenom";
         }
         return ret;
     }

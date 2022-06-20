@@ -28,9 +28,6 @@ public class HippoTables {
     private Button modifier;
 
     @FXML
-    private Button renommer;
-
-    @FXML
     private Button supprimmer;
 
     @FXML
@@ -54,38 +51,23 @@ public class HippoTables {
     }
 
 
-
-
-
     @FXML
-
-
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
 
         if(event.getSource() == modifier){
             Scene scene = modifier.getScene();
-            System.out.println("aeaze");
-            Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
-            scene.setRoot(root);
-        }
-
-        else if(event.getSource() == renommer){
-            Scene scene = modifier.getScene();
-            System.out.println("aeaze");
             Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
             scene.setRoot(root);
         }
         
         else if(event.getSource() == supprimmer){
             Scene scene = modifier.getScene();
-            System.out.println("aeaze");
             Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
             scene.setRoot(root);
         }
 
         else if(event.getSource() == plus){
             Scene scene = modifier.getScene();
-            System.out.println("aeaze");
             Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
             scene.setRoot(root);
         }
@@ -96,5 +78,4 @@ public class HippoTables {
             scene.setRoot(root);
         }
     }
-
 }

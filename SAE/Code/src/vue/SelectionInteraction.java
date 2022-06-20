@@ -62,6 +62,7 @@ public class SelectionInteraction {
             Parent root = FXMLLoader.load(getClass().getResource("Lucas.fxml"));
             scene.setRoot(root);
         }
+        
 
         else if(event.getSource() == this.consultation){
             Scene scene = gestionDo.getScene();

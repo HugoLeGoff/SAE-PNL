@@ -112,7 +112,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Label layoutX="50.0" layoutY="-14.0" text="Tables hippocampes :" textFill="#008967">
+                  <Label layoutX="50.0" layoutY="-14.0" text="Tables Loutres :" textFill="#008967">
                      <font>
                         <Font size="18.0" />
                      </font>

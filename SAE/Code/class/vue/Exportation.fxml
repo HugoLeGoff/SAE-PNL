@@ -101,7 +101,7 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="63.0" prefWidth="600.0">
+            <AnchorPane prefHeight="55.0" prefWidth="600.0">
                <children>
                   <ImageView fitHeight="42.0" fitWidth="42.0">
                      <image>
@@ -117,7 +117,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="196.0" prefWidth="600.0">
                <children>
-                  <TableView fx:id="tableView" layoutX="24.0" layoutY="18.0" prefHeight="178.0" prefWidth="358.0">
+                  <TableView fx:id="tableView" layoutX="24.0" layoutY="18.0" prefHeight="135.0" prefWidth="358.0">
                      <columns>
                         <TableColumn fx:id="tabColumn" prefWidth="357.6000122070312" text="Table" />
                      </columns>
@@ -126,9 +126,11 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="exporter" layoutX="339.0" layoutY="34.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Exporter" textFill="WHITE" />
+                  <Button fx:id="exporter" layoutX="242.0" layoutY="84.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Exporter" textFill="WHITE" />
                   <Label layoutX="24.0" layoutY="14.0" text="Indiquez l'année de la table que vous souhaitez exporter :" />
-                  <TextField layoutX="24.0" layoutY="34.0" prefHeight="16.0" prefWidth="152.0" />
+                  <TextField fx:id="annee" layoutX="24.0" layoutY="34.0" prefHeight="16.0" prefWidth="152.0" />
+                  <Label layoutX="24.0" layoutY="66.0" text="Nom du fichier :" />
+                  <TextField fx:id="nomFichier" layoutX="24.0" layoutY="84.0" onAction="#handleSubmitButtonAction" prefHeight="16.0" prefWidth="152.0" />
                </children>
             </AnchorPane>
          </children>

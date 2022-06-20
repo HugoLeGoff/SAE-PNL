@@ -36,6 +36,9 @@ public class ExportationController {
     @FXML 
     private TextField annee;
 
+    @FXML 
+    private TextField nomFichier;
+
     @FXML private TableView<Table> tableView;
     @FXML private TableColumn<Table, String> tabColumn;
 
@@ -68,7 +71,10 @@ public class ExportationController {
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
 
         if(event.getSource() == exporter){
-            System.out.println(this.annee);
+            ChoixEspece especeChoix = new ChoixEspece();
+            String nomEspece = especeChoix.getEspece();
+            
+            ExportData Fich = new ExportData(this.nomFichier.getText(), this.annee.getText(), nomEspece);
             
         }
 

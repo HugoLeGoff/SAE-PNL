@@ -53,19 +53,19 @@ public class ExportData {
     }
     public String printColonnes(){
         String ret="";
-        if(espece=="Hippocampes"){
+        if(espece.equals("Hippocampes")){
             nbColonnes=14;
             ret="obsH;espece;sexe;temperatureEau;typePeche;taille;gestant;dateObs;heureObs;lieu_Lambert_X;lieu_Lambert_Y;idObservateur;nom;prenom";
-        }else if(espece=="GCI"){
+        }else if(espece.equals("GCI")){
             nbColonnes=18;
             ret="obsG;nature;nombre;presentMaisNonObs;idNid;nomPlage;raisonArretObservation;nbEnvol;protection;bagueMale;bagueFemelle;dateObs;heureObs;lieu_Lambert_X;lieu_Lambert_Y;idObservateur;nom;prenom";
-        }else if(espece=="Loutres"){
+        }else if(espece.equals("Loutres")){
             nbColonnes=12;
             ret="obsL;commune;lieuDit;indice;idObs;dateObs;heureObs;lieu_Lambert_X;lieu_Lambert_Y;idObservateur;nom;prenom";
-        }else if(espece=="Batraciens"){
+        }else if(espece.equals("Batraciens")){
             nbColonnes=29;
             ret="obsB;espece;nombreAdultes;nombreAmplexus;nombrePonte;nombreTetard;temperature;meteo_ciel;meteo_temp;meteo_vent;meteo_pluie;concerne_ZH;concerne_vege;dateObs;heureObs;lieu_Lambert_X;lieu_Lambert_Y;idObservateur;nom;prenom;zh_temporaire;zh_surface;zh_typeMare;zh_pente;zh_ouverture;natureVege;vegetation;decrit_LieuVege_idVege;idVegeLieu";
-        }else if(espece=="Chouettes"){
+        }else if(espece.equals("Chouettes")){
             nbColonnes=15;
             ret="idObs;protocole;typeObs;leNumIndividu;numObs;numIndividu;espece;sexe;dateObs;heureObs;lieu_Lambert_X;lieu_Lambert_Y;idObservateur;nom;prenom";
         }

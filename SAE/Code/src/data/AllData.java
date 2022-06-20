@@ -6,7 +6,7 @@ import java.util.*;
 public class AllData {
 
 
-  public ArrayList<Table> table() throws SQLException{
+  public ArrayList<Table> tableHippo() throws SQLException{
 
     ArrayList<Table> ret = new ArrayList<Table>();
 
@@ -25,6 +25,8 @@ public class AllData {
 
     return ret;
   }
+
+  
 
   /*public ArrayList<ObsHippocampes> hippocampe() throws SQLException{
 

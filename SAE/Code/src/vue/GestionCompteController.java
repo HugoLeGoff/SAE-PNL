@@ -1,4 +1,4 @@
-package vue;
+/*package vue;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -113,4 +113,4 @@ public class GestionCompteController implements Initializable{
         listM = data.Database.getComptes();
         table_compte.setItems(listM);
     }
-}
+}*/

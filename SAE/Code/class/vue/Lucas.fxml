@@ -120,8 +120,7 @@
                   <Label layoutX="50.0" layoutY="23.0" text="Trier par : " />
                   <ComboBox layoutX="104.0" layoutY="18.0" prefHeight="26.0" prefWidth="158.0" promptText="Date la plus récente" />
                   <Button fx:id="modifier" layoutX="346.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Modifier" textFill="WHITE" />
-                  <Button fx:id="renommer" layoutX="346.0" layoutY="98.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Renommer" textFill="WHITE" />
-                  <Button fx:id="supprimmer" layoutX="346.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Supprimmer" textFill="WHITE" />
+                  <Button fx:id="supprimmer" layoutX="346.0" layoutY="103.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Supprimmer" textFill="WHITE" />
                   <TableView fx:id="tableView" layoutX="24.0" layoutY="53.0" prefHeight="178.0" prefWidth="318.0">
                      <columns>
                         <TableColumn fx:id="tabColumn" prefWidth="317.6000122070312" text="Table" />

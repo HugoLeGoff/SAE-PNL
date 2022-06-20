@@ -40,7 +40,7 @@ public class AfficheObsHippocampes {
 	 * @param leSexe Sexe de l'individu
 	 * @param estGestant Indique si l'individu est gestant
 	 */
-	public AfficheObsHippocampes(String obsH, String espece, String sexe, String temperatureEau, String typePeche, String taille, String gestant, String idObs, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String lobservateur, String lobservation, String idObservateur, String nom, String prenom) {
+	public AfficheObsHippocampes(String obsH, String espece, String sexe, String temperatureEau, String typePeche, String taille, String gestant, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String idObservateur, String nom, String prenom) {
         
         this.obsH = obsH;
         this.espece = espece;
@@ -54,8 +54,6 @@ public class AfficheObsHippocampes {
         this.heureObs = heureObs;
         this.lieu_Lambert_X = lieu_Lambert_X;
         this.lieu_Lambert_Y = lieu_Lambert_Y;
-        this.lobservateur = lobservateur;
-        this.lobservation = lobservation;
         this.idObservateur = idObservateur;
         this.nom = nom;
         this.prenom = prenom;

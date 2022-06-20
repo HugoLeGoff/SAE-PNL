@@ -34,6 +34,9 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -42,9 +45,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.SelectionInteraction">
-  <children>
-      <VBox prefWidth="900.0">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.ExportationController">
+   <top>
+      <VBox>
          <children>
             <HBox prefHeight="48.0" prefWidth="586.0" VBox.vgrow="ALWAYS">
                <children>
@@ -59,22 +62,21 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="48.0" prefWidth="426.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <Label fx:id="nom" layoutX="14.0" layoutY="15.0" text=" ">
+                        <Label layoutX="14.0" layoutY="15.0" text="Observateur - Hugo Le Goff">
                            <font>
                               <Font size="14.0" />
-                           </font>
-                        </Label>
+                           </font></Label>
                      </children>
                   </AnchorPane>
-                  <Label fx:id="espece" prefHeight="48.0" prefWidth="432.0" text=" ">
+                  <Label prefHeight="48.0" prefWidth="432.0" text="Hippocampes">
                      <font>
                         <Font size="14.0" />
-                     </font>
-                  </Label>
+                     </font></Label>
+                  <AnchorPane />
                   <AnchorPane>
                      <children>
-                        <Button fx:id="deconnexion" layoutX="4.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="48.0" prefWidth="34.0" text="Button" />
-                        <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="-3.0" layoutY="7.0" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="7.0">
+                        <Button fx:id="deconnexion" layoutX="5.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="46.0" prefWidth="29.0" text="Button" />
+                        <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="6.0" layoutY="9.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="9.0">
                            <image>
                               <Image url="@32205.png" />
                            </image>
@@ -93,64 +95,43 @@
                </children>
             </HBox>
             <AnchorPane prefHeight="9.0" prefWidth="600.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" VBox.vgrow="ALWAYS" />
-            <AnchorPane prefHeight="107.0" prefWidth="900.0">
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="63.0" prefWidth="600.0">
                <children>
-                  <Label alignment="CENTER" layoutX="313.0" layoutY="49.0" prefHeight="46.0" prefWidth="325.0" text="Sélectionnez une interaction" textFill="#008967">
+                  <ImageView fitHeight="42.0" fitWidth="42.0">
+                     <image>
+                        <Image url="@17319.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="27.0" layoutY="42.0" text="Tables hippocampes :" textFill="#008967">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font size="18.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
+            <AnchorPane prefHeight="196.0" prefWidth="600.0">
+               <children>
+                  <TableView fx:id="tableView" layoutX="24.0" layoutY="18.0" prefHeight="178.0" prefWidth="358.0">
+                     <columns>
+                        <TableColumn fx:id="tabColumn" prefWidth="357.6000122070312" text="Table" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="exporter" layoutX="339.0" layoutY="34.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Exporter" textFill="WHITE" />
+                  <Label layoutX="24.0" layoutY="14.0" text="Indiquez l'année de la table que vous souhaitez exporter :" />
+                  <TextField layoutX="24.0" layoutY="34.0" prefHeight="16.0" prefWidth="152.0" />
+               </children>
+            </AnchorPane>
          </children>
       </VBox>
-      <BorderPane prefHeight="325.0" prefWidth="900.0">
-         <right>
-            <AnchorPane prefHeight="326.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
-         </right>
-         <left>
-            <AnchorPane prefHeight="326.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
-         </left>
-         <center>
-            <VBox prefHeight="265.0" prefWidth="700.0" style="-fx-border-color: #008967; -fx-border-width: 5;" BorderPane.alignment="CENTER">
-               <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="467.0">
-                           <children>
-                            <Button fx:id="gestionDo" alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="40.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Gestion des données" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="478.0">
-                           <children>
-                            <Button fx:id="consultation" alignment="CENTER" layoutX="57.0" layoutY="40.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Consultation des données" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </HBox>
-                  <AnchorPane prefHeight="30.0" prefWidth="449.0">
-                     <children>
-                      <Button fx:id="exportation" alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="55.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Exportation des données" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </VBox>
-         </center>
-         <bottom>
-            <AnchorPane prefHeight="71.0" prefWidth="900.0" BorderPane.alignment="CENTER" />
-         </bottom>
-      </BorderPane>
-  </children>
-</VBox>
+   </center>
+</BorderPane>

@@ -26,6 +26,8 @@ public class SelectionInteraction {
 
     @FXML Button consultation;
 
+    @FXML Button exportation;
+
     @FXML Label espece = new Label();
 
 
@@ -67,6 +69,12 @@ public class SelectionInteraction {
         else if(event.getSource() == this.consultation){
             Scene scene = gestionDo.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
+            scene.setRoot(root);
+        }
+
+        else if(event.getSource() == this.exportation){
+            Scene scene = exportation.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("Exportation.fxml"));
             scene.setRoot(root);
         }
     }

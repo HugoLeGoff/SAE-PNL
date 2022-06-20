@@ -115,10 +115,8 @@ public class HippoController {
 
 
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
-        System.out.println("2");
 
         if(event.getSource() == retour){
-            System.out.println("2");
             Scene scene = retour.getScene();
             Stage stage = new Stage(); 
             Parent root = FXMLLoader.load(getClass().getResource("Lucas.fxml"));

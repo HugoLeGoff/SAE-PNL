@@ -124,7 +124,7 @@
                   <Button fx:id="supprimmer" layoutX="346.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Supprimmer" textFill="WHITE" />
                   <TableView fx:id="tableView" layoutX="24.0" layoutY="53.0" prefHeight="178.0" prefWidth="318.0">
                      <columns>
-                        <TableColumn fx:id="tabColumn" prefWidth="75.0" text="Table" />
+                        <TableColumn fx:id="tabColumn" prefWidth="317.6000122070312" text="Table" />
                      </columns>
                   </TableView>
                </children>

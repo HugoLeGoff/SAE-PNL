@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import connexion.Compte;
 import donnee.*;
+import data.*;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -44,13 +45,16 @@ public class HippoTables {
 
 
     @FXML
-    private void initialize() {
+    private void initialize() throws SQLException {
         tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
-        List<Table> table = new ArrayList<Table>();
-        Table table1 = new Table("hippocampes 2018");        
-        table.add(table1);
-        tableView.getItems().setAll(table);
+        AllData ad = new AllData();
+        ArrayList<Table> tables = ad.table();
+        
+        tableView.getItems().setAll(tables);
     }
+
+
+
 
 
     @FXML

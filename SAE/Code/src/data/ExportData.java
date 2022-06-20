@@ -6,11 +6,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+
 
 public class ExportData {
 
@@ -37,7 +34,6 @@ public class ExportData {
 
         this.fileDirectory="C:\\Users\\public\\Downloads\\";//directory de base vers Utilisateur/public/telechargements
 
-        this.fileDirectory= "" ;
 
 
         

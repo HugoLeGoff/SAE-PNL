@@ -59,11 +59,11 @@ public class AllData {
       while(res.next()){
         
           ret = Integer.valueOf(res.getString(1));
-        
 
       }
     c.close();
 
+    
     return ret;
   }
 

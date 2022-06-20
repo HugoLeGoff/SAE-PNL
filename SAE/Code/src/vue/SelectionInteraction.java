@@ -82,7 +82,7 @@ public class SelectionInteraction {
 
         else if(event.getSource() == this.retour){
             Scene scene = retour.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("SelectionEspece.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Selection.fxml"));
             scene.setRoot(root);
         }
     }

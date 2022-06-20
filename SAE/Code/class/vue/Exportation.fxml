@@ -141,6 +141,7 @@
                   <TextField fx:id="annee" layoutX="24.0" layoutY="34.0" prefHeight="16.0" prefWidth="152.0" />
                   <Label layoutX="24.0" layoutY="66.0" text="Nom du fichier :" />
                   <TextField fx:id="nomFichier" layoutX="24.0" layoutY="84.0" onAction="#handleSubmitButtonAction" prefHeight="16.0" prefWidth="152.0" />
+                  <Label fx:id="msgImport" layoutX="329.0" layoutY="83.0" prefHeight="26.0" prefWidth="231.0" />
                </children>
             </AnchorPane>
          </children>

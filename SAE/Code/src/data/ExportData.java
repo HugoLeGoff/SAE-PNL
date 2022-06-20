@@ -77,7 +77,7 @@ public class ExportData {
             Statement stmt2 = c.createStatement();
        
             ResultSet res2 = stmt2.executeQuery(requete());
-            PrintWriter writer = new PrintWriter(new File(fileName));
+            PrintWriter writer = new PrintWriter(new File(fileDirectory+fileName));
             writer.print(printColonnes());
             writer.print("\n");
             while(res2.next()) {

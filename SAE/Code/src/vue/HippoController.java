@@ -44,6 +44,9 @@ public class HippoController {
     @FXML
     private TextField zoneGestant;
 
+    @FXML
+    private TableView tableau;
+
 
     @FXML
 

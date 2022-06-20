@@ -86,7 +86,7 @@
                     </rowConstraints>
                      <children>
                         <Label text="obsL : " />
-                        <TextField fx:id="obsL" GridPane.columnIndex="1" />
+                        <TextField fx:id="zoneObsL" GridPane.columnIndex="1" />
                         <TextField fx:id="zoneLieuDit" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField fx:id="zoneIndice" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="lieuDit : " GridPane.rowIndex="1" />
@@ -112,12 +112,12 @@
                      <children>
                         <Label text="lieu_Lambert_X : " GridPane.rowIndex="1" />
                         <TextField fx:id="zoneLieu_Lambert_X" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="zoneLieu_Lambert_X" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField fx:id="idObservateur" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="zoneLieu_Lambert_Y" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="zoneIdObservateur" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Label text="lieu_Lambert_Y :" GridPane.rowIndex="2" />
                         <Label text="idObservateur :" GridPane.rowIndex="3" />
                         <Label text="heureObs : " />
-                        <TextField fx:id="zoneheureObs" GridPane.columnIndex="1" />
+                        <TextField fx:id="zoneHeureObs" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
                </children>

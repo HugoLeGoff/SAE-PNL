@@ -138,18 +138,20 @@
    <center>
       <TableView prefHeight="269.0" prefWidth="600.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn fx:id="protocole" prefWidth="27.999999225139618" text="protocole" />
-          <TableColumn fx:id="typeObs" prefWidth="28.0" text="typeObs" />
-            <TableColumn fx:id="leNumIndividu" minWidth="0.0" prefWidth="48.000003814697266" text="leNumIndividu" />
-            <TableColumn fx:id="numObs" prefWidth="53.5999755859375" text="numObs" />
-            <TableColumn fx:id="espece" minWidth="0.0" prefWidth="99.19999694824219" text="espece" />
-            <TableColumn fx:id="sexe" prefWidth="31.20001220703125" text="sexe" />
-            <TableColumn fx:id="idObs" minWidth="0.0" prefWidth="42.4000244140625" text="idObs" />
-            <TableColumn fx:id="dateObs" minWidth="0.0" prefWidth="37.60003662109375" text="dateObs" />
-            <TableColumn fx:id="heureObs" minWidth="0.0" prefWidth="45.5999755859375" text="heureObs" />
-            <TableColumn fx:id="lieu_Lambert_X" minWidth="0.0" prefWidth="20.79998779296875" text="lieu_Lambert_X" />
-            <TableColumn fx:id="lieu_Lambert_Y" minWidth="0.0" prefWidth="21.5999755859375" text="lieu_Lambert_Y" />
-            <TableColumn fx:id="idObservateur" minWidth="0.0" prefWidth="20.0" text="idObservateur" />
+          <TableColumn fx:id="protocole" prefWidth="66.40003126859665" text="protocole" />
+          <TableColumn fx:id="typeObs" prefWidth="57.5999755859375" text="typeObs" />
+            <TableColumn fx:id="leNumIndividu" minWidth="0.0" prefWidth="96.0" text="leNumIndividu" />
+            <TableColumn fx:id="numObs" prefWidth="55.99998474121094" text="numObs" />
+            <TableColumn fx:id="espece" minWidth="0.0" prefWidth="46.4000244140625" text="espece" />
+            <TableColumn fx:id="sexe" prefWidth="36.0" text="sexe" />
+            <TableColumn fx:id="idObs" minWidth="0.0" prefWidth="44.0" text="idObs" />
+            <TableColumn fx:id="dateObs" minWidth="0.0" prefWidth="35.20001220703125" text="dateObs" />
+            <TableColumn fx:id="heureObs" minWidth="0.0" prefWidth="22.39996337890625" text="heureObs" />
+            <TableColumn fx:id="lieu_Lambert_X" minWidth="0.0" prefWidth="17.60003662109375" text="lieu_Lambert_X" />
+            <TableColumn fx:id="lieu_Lambert_Y" minWidth="0.0" prefWidth="16.800048828125" text="lieu_Lambert_Y" />
+            <TableColumn fx:id="idObservateur" minWidth="0.0" prefWidth="15.20001220703125" text="idObservateur" />
+            <TableColumn fx:id="nom" minWidth="0.0" prefWidth="15.199951171875" text="nom" />
+            <TableColumn fx:id="prenom" minWidth="0.0" prefWidth="16.0" text="prenom" />
         </columns>
       </TableView>
    </center>

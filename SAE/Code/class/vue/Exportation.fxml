@@ -81,6 +81,11 @@
                               <Image url="@32205.png" />
                            </image>
                         </ImageView>
+                        <AnchorPane layoutY="2.0">
+                           <children>
+                              <Button fx:id="deconnexion" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="46.0" prefWidth="37.0" text="Button" />
+                           </children>
+                        </AnchorPane>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="50.0" prefWidth="34.0">
@@ -113,6 +118,11 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
+                  <AnchorPane prefHeight="35.0" prefWidth="52.0">
+                     <children>
+                        <Button fx:id="retour" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="37.0" prefWidth="52.0" text="Button" />
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="196.0" prefWidth="600.0">

@@ -81,7 +81,7 @@ public class GestionCompteController implements Initializable{
             pst = conn.prepareStatement(sql);
             pst.setString(1, col_login.getText());
             pst.setString(2, col_mdp.getText());
-            pst.setInt(5, index);
+            pst.setInt(3, index);
             pst.executeUpdate();
             conn.close();
             System.out.println("Modification réussi");

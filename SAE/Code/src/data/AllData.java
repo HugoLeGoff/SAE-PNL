@@ -12,7 +12,7 @@ public class AllData {
 
     Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
     Statement stmt = c.createStatement();
-    ResultSet res = stmt.executeQuery("SHOW TABLES;");
+    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_hippocampe JOIN Observation ON obsH = idObs;");
 
       while(res.next()){
         Table t = new Table(res.getString(1));
@@ -26,7 +26,7 @@ public class AllData {
     return ret;
   }
 
-  public ArrayList<ObsHippocampes> hippocampe() throws SQLException{
+  /*public ArrayList<ObsHippocampes> hippocampe() throws SQLException{
 
     ArrayList<ObsHippocampes> ret = new ArrayList<ObsHippocampes>();
 
@@ -44,7 +44,7 @@ public class AllData {
     c.close();
 
     return ret;
-  }
+  }*/
 
 
 }

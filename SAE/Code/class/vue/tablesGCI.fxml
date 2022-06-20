@@ -68,7 +68,7 @@
                            </font></Label>
                      </children>
                   </AnchorPane>
-                  <Label prefHeight="48.0" prefWidth="432.0" text="Chouettes">
+                  <Label prefHeight="48.0" prefWidth="432.0" text="GCI">
                      <font>
                         <Font size="14.0" />
                      </font></Label>
@@ -138,23 +138,23 @@
    <center>
       <TableView prefHeight="269.0" prefWidth="600.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn fx:id="obsG" prefWidth="34.0" text="obsG" />
-          <TableColumn fx:id="nature" minWidth="4.0" prefWidth="53.0" text="nature" />
-            <TableColumn fx:id="nombre" minWidth="0.0" prefWidth="54.0" text="nombre" />
-            <TableColumn fx:id="presentMaisNonObs" prefWidth="128.0" text="presentMaisNonObs" />
-            <TableColumn fx:id="idNid" minWidth="0.0" prefWidth="41.0" text="idNid" />
-            <TableColumn fx:id="nomPlage" minWidth="0.0" prefWidth="66.0" text="nomPlage" />
-            <TableColumn fx:id="idObs" minWidth="0.0" prefWidth="41.0" text="idObs" />
-            <TableColumn fx:id="raisonArretObservation" minWidth="0.0" prefWidth="66.0" text="raisonArretObservation" />
-            <TableColumn fx:id="nbEnvol" minWidth="0.0" prefWidth="0.0" text="nbEnvol" />
-            <TableColumn fx:id="protection" minWidth="0.0" prefWidth="21.0" text="protection" />
-            <TableColumn fx:id="bagueMale" minWidth="0.0" prefWidth="0.0" text="bagueMale" />
-            <TableColumn fx:id="bagueFemelle" minWidth="0.0" prefWidth="15.0" text="bagueFemelle" />
-            <TableColumn fx:id="dateObs" minWidth="0.0" prefWidth="13.0" text="dateObs" />
-            <TableColumn fx:id="heureObs" minWidth="0.0" prefWidth="33.0" text="heureObs" />
-            <TableColumn fx:id="lieu_Lambert_X" minWidth="0.0" prefWidth="20.79998779296875" text="lieu_Lambert_X" />
-            <TableColumn fx:id="lieu_Lambert_Y" minWidth="0.0" prefWidth="21.5999755859375" text="lieu_Lambert_Y" />
-            <TableColumn fx:id="idObservateur" minWidth="0.0" prefWidth="20.0" text="idObservateur" />
+          <TableColumn fx:id="obsG" prefWidth="40.79992979764938" text="obsG" />
+          <TableColumn fx:id="nature" minWidth="4.0" prefWidth="46.399967193603516" text="nature" />
+            <TableColumn fx:id="nombre" minWidth="0.0" prefWidth="53.5999755859375" text="nombre" />
+            <TableColumn fx:id="presentMaisNonObs" minWidth="8.000003814697266" prefWidth="123.19998168945312" text="presentMaisNonObs" />
+            <TableColumn fx:id="idNid" minWidth="0.0" prefWidth="39.20001220703125" text="idNid" />
+            <TableColumn fx:id="nomPlage" minWidth="0.0" prefWidth="42.39996337890625" text="nomPlage" />
+            <TableColumn fx:id="idObs" minWidth="0.0" prefWidth="16.79998779296875" text="idObs" />
+            <TableColumn fx:id="raisonArretObservation" minWidth="0.0" prefWidth="14.4000244140625" text="raisonArretObservation" />
+            <TableColumn fx:id="nbEnvol" minWidth="0.0" prefWidth="20.0" text="nbEnvol" />
+            <TableColumn fx:id="protection" minWidth="0.0" prefWidth="20.00006103515625" text="protection" />
+            <TableColumn fx:id="bagueMale" minWidth="0.0" prefWidth="19.20001220703125" text="bagueMale" />
+            <TableColumn fx:id="bagueFemelle" minWidth="0.0" prefWidth="16.0" text="bagueFemelle" />
+            <TableColumn fx:id="dateObs" minWidth="0.0" prefWidth="16.7999267578125" text="dateObs" />
+            <TableColumn fx:id="heureObs" minWidth="0.0" prefWidth="16.0" text="heureObs" />
+            <TableColumn fx:id="lieu_Lambert_X" minWidth="0.0" prefWidth="16.800048828125" text="lieu_Lambert_X" />
+            <TableColumn fx:id="lieu_Lambert_Y" minWidth="0.0" prefWidth="18.39996337890625" text="lieu_Lambert_Y" />
+            <TableColumn fx:id="idObservateur" minWidth="0.0" prefWidth="16.79998779296875" text="idObservateur" />
         </columns>
       </TableView>
    </center>

@@ -80,7 +80,7 @@ public class HippoController {
         heureObs.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("heureObs"));
         CooX.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("lieu_Lambert_X"));
         CooY.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("lieu_Lambert_Y"));
-        idObservateur.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("lobservation"));
+        idObservateur.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("idObservateur"));
         nom.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("nom"));
         prenom.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("prenom"));
 
@@ -115,28 +115,19 @@ public class HippoController {
 
 
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
-        if (event.getSource() == pop){
-           
-        } else if (event.getSource() == buttonAdd) {
-            ajouterTuple();
+        System.out.println("2");
+
+        if(event.getSource() == retour){
+            System.out.println("2");
+            Scene scene = retour.getScene();
+            Stage stage = new Stage(); 
+            Parent root = FXMLLoader.load(getClass().getResource("Lucas.fxml"));
+            scene.setRoot(root); 
         }
-        else if(event.getSource() == retour){
-
-        }
     }
 
-    protected void popUp () throws IOException{
-        Scene scene = pop.getScene();
-        Stage stage = new Stage(); 
-        Parent root = FXMLLoader.load(getClass().getResource("addHippo.fxml"));
-        scene.setRoot(root);
-        stage.setScene(scene);
-        stage.setTitle("Ajout de tuples");
-        stage.show();
-    }
 
-    protected void ajouterTuple () throws IOException{
-        zoneObsH.setText("test");
-    }
+
+
 
 } 

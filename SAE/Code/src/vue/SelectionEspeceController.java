@@ -24,6 +24,14 @@ public class SelectionEspeceController {
 
     @FXML Button hippo;
 
+    @FXML Button gci;
+
+    @FXML Button loutres;
+
+    @FXML Button chouettes;
+
+    @FXML Button batraciens;
+
     @FXML Label nom = new Label(" ");
 
 
@@ -52,7 +60,34 @@ public class SelectionEspeceController {
             Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
             scene.setRoot(root);   
         }
-        
+        else if(event.getSource() == this.batraciens){
+            ChoixEspece espece = new ChoixEspece("Batraciens");
+
+            Scene scene = deconnexion.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
+            scene.setRoot(root);   
+        }
+        else if(event.getSource() == this.loutres){
+            ChoixEspece espece = new ChoixEspece("Loutres");
+
+            Scene scene = deconnexion.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
+            scene.setRoot(root);   
+        }
+        else if(event.getSource() == this.gci){
+            ChoixEspece espece = new ChoixEspece("GCI");
+
+            Scene scene = deconnexion.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
+            scene.setRoot(root);   
+        }
+        else if(event.getSource() == this.chouettes){
+            ChoixEspece espece = new ChoixEspece("Chouettes");
+
+            Scene scene = deconnexion.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
+            scene.setRoot(root);   
+        }
     }
 
 

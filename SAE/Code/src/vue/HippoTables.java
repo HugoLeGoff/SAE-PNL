@@ -45,7 +45,7 @@ public class HippoTables {
     private void initialize() throws SQLException {
         tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
         AllData ad = new AllData();
-        ArrayList<Table> tables = ad.table();
+        ArrayList<Table> tables = ad.tableHippo();
         
         tableView.getItems().setAll(tables);
     }

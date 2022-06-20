@@ -50,7 +50,7 @@ public class ChoixTables {
     @FXML
     private void initialize() throws SQLException {
     
-            Compte compte = new Compte();
+            /*Compte compte = new Compte();
             String log = compte.getLogin();
             nom.setText(log);
     
@@ -60,13 +60,13 @@ public class ChoixTables {
             especeTMP = espece;
 
             
-        if(espece.equals("hippocampe")){
+        if(espece.equals("hippocampe")){*/
             tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
             AllData ad = new AllData();
             ArrayList<Table> tables = ad.tableHippo();
             
             tableView.getItems().setAll(tables);
-        }
+        //}
     }
 
 

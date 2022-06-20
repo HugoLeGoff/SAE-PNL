@@ -72,15 +72,7 @@
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <AnchorPane accessibleRole="BUTTON">
-                     <children>
-                        <ImageView fitHeight="31.0" fitWidth="39.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="8.0">
-                           <image>
-                              <Image url="@588a6aa3d06f6719692a2d23.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </AnchorPane>
+                  <AnchorPane accessibleRole="BUTTON" />
                   <AnchorPane>
                      <children>
                         <ImageView accessibleRole="BUTTON" fitHeight="34.0" fitWidth="35.0" layoutX="6.0" layoutY="9.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="9.0">
@@ -136,15 +128,22 @@
       </AnchorPane>
    </bottom>
    <center>
-      <TableView prefHeight="269.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="tableView" prefHeight="269.0" prefWidth="600.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="75.0" text="obsH" />
-          <TableColumn prefWidth="75.0" text="espece" />
-            <TableColumn prefWidth="75.0" text="sexe" />
-            <TableColumn prefWidth="103.19999694824219" text="temperatureEau" />
-            <TableColumn prefWidth="64.79998779296875" text="typePeche" />
-            <TableColumn prefWidth="58.4000244140625" text="taille" />
-            <TableColumn prefWidth="75.0" text="gestant" />
+          <TableColumn fx:id="idObs" prefWidth="27.999999225139618" text="obsH" />
+          <TableColumn fx:id="espece" prefWidth="28.0" text="espece" />
+            <TableColumn fx:id="sexe" minWidth="0.0" prefWidth="48.000003814697266" text="sexe" />
+            <TableColumn fx:id="temp" prefWidth="53.5999755859375" text="temperatureEau" />
+            <TableColumn fx:id="type" minWidth="0.0" prefWidth="99.19999694824219" text="typePeche" />
+            <TableColumn fx:id="taille" prefWidth="31.20001220703125" text="taille" />
+            <TableColumn fx:id="gestant" minWidth="0.0" prefWidth="42.4000244140625" text="gestant" />
+            <TableColumn fx:id="dateObs" minWidth="0.0" prefWidth="37.60003662109375" text="dateObs" />
+            <TableColumn fx:id="heureObs" minWidth="0.0" prefWidth="45.5999755859375" text="heureObs" />
+            <TableColumn fx:id="CooX" minWidth="0.0" prefWidth="20.79998779296875" text="CooX" />
+            <TableColumn fx:id="CooY" minWidth="0.0" prefWidth="21.5999755859375" text="CooY" />
+            <TableColumn fx:id="idObservateur" minWidth="0.0" prefWidth="20.0" text="idObservateur" />
+            <TableColumn fx:id="nom" minWidth="0.0" prefWidth="20.0" text="nom" />
+            <TableColumn fx:id="prenom" minWidth="0.0" prefWidth="20.0" text="prenom" />
         </columns>
       </TableView>
    </center>

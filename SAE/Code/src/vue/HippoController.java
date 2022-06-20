@@ -1,6 +1,9 @@
 package vue;
 import java.io.IOException;
 import java.sql.SQLException;
+
+import connexion.Compte;
+import donnee.ObsHippocampes;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -13,6 +16,9 @@ import javafx.fxml.*;
 
 
 public class HippoController {
+
+    @FXML
+    private Stage stageRetour;
 
     @FXML
     private Button pop;
@@ -45,25 +51,41 @@ public class HippoController {
     private TextField zoneGestant;
 
     @FXML
-    private TableView tableau;
-
+    private TableView<ObsHippocampes> tableau;
 
     @FXML
+    private TableColumn<ObsHippocampes, String> colObsH;
 
+    /*
+    public HippoController (Stage stageRetour){
+        try{
+			if(stageRetour==null){
+				throw new IllegalArgumentException("L'indice est null");
+			}else{
+				this.stageRetour = stageRetour; 
+			}
 
+		}catch(IllegalArgumentException i){
+			i.printStackTrace();
+		}
+    }
+    */
+
+    @FXML
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
         if (event.getSource() == pop){
-            System.out.print("zatz");
+            popUp();
            
         } else if (event.getSource() == buttonAdd) {
             ajouterTuple();
         }
         else if(event.getSource() == retour){
-            System.out.print("szezaezze");
+            stageRetour.show();
 
         }
     }
 
+    @FXML
     protected void popUp () throws IOException{
         Scene scene = pop.getScene();
         Stage stage = new Stage(); 
@@ -74,8 +96,13 @@ public class HippoController {
         stage.show();
     }
 
+    @FXML
     protected void ajouterTuple () throws IOException{
         zoneObsH.setText("test");
+        tableau = new TableView<ObsHippocampes>();
+
+        colObsH 
+        = new TableColumn<ObsHippocampes, String>("test");
     }
 
 } 

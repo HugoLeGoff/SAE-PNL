@@ -33,7 +33,6 @@
 -->
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -102,20 +101,18 @@
                </children>
             </HBox>
             <AnchorPane prefHeight="9.0" prefWidth="600.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" VBox.vgrow="ALWAYS" />
-            <AnchorPane prefHeight="110.0" prefWidth="600.0">
+            <AnchorPane prefHeight="80.0" prefWidth="600.0">
                <children>
                   <Label layoutX="54.0" layoutY="37.0" prefHeight="35.0" prefWidth="319.0" text="Tables Loutres :" textFill="#008967">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <ComboBox layoutX="126.0" layoutY="79.0" prefWidth="150.0" promptText="Date la plus récente" />
                   <ImageView accessibleRole="BUTTON" fitHeight="46.0" fitWidth="40.0" layoutX="4.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@17319.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="72.0" layoutY="83.0" text="Trier par : " />
                   <Button fx:id="retour" layoutX="4.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="32.0" prefWidth="40.0" text="Button" />
                </children>
             </AnchorPane>
@@ -138,18 +135,18 @@
    <center>
       <TableView prefHeight="269.0" prefWidth="600.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn fx:id="protocole" prefWidth="27.999999225139618" text="protocole" />
-          <TableColumn fx:id="typeObs" prefWidth="28.0" text="typeObs" />
-            <TableColumn fx:id="leNumIndividu" minWidth="0.0" prefWidth="48.000003814697266" text="leNumIndividu" />
-            <TableColumn fx:id="numObs" prefWidth="53.5999755859375" text="numObs" />
-            <TableColumn fx:id="espece" minWidth="0.0" prefWidth="99.19999694824219" text="espece" />
-            <TableColumn fx:id="sexe" prefWidth="31.20001220703125" text="sexe" />
-            <TableColumn fx:id="idObs" minWidth="0.0" prefWidth="42.4000244140625" text="idObs" />
-            <TableColumn fx:id="dateObs" minWidth="0.0" prefWidth="37.60003662109375" text="dateObs" />
-            <TableColumn fx:id="heureObs" minWidth="0.0" prefWidth="45.5999755859375" text="heureObs" />
-            <TableColumn fx:id="lieu_Lambert_X" minWidth="0.0" prefWidth="20.79998779296875" text="lieu_Lambert_X" />
-            <TableColumn fx:id="lieu_Lambert_Y" minWidth="0.0" prefWidth="21.5999755859375" text="lieu_Lambert_Y" />
-            <TableColumn fx:id="idObservateur" minWidth="0.0" prefWidth="20.0" text="idObservateur" />
+          <TableColumn fx:id="protocole" minWidth="0.0" prefWidth="38.40003126859665" text="ObsL" />
+          <TableColumn fx:id="typeObs" minWidth="0.0" prefWidth="67.19995498657227" text="commune" />
+            <TableColumn fx:id="leNumIndividu" minWidth="0.0" prefWidth="43.199951171875" text="lieuDit" />
+            <TableColumn fx:id="numObs" prefWidth="38.40008544921875" text="indice" />
+            <TableColumn fx:id="espece" minWidth="0.0" prefWidth="37.59996032714844" text="idObs" />
+            <TableColumn fx:id="sexe" prefWidth="52.80003356933594" text="dateObs" />
+            <TableColumn fx:id="idObs" minWidth="0.0" prefWidth="63.199951171875" text="heureObs" />
+            <TableColumn fx:id="dateObs" minWidth="0.0" prefWidth="90.4000244140625" text="lieu_Lambert_X" />
+            <TableColumn fx:id="heureObs" minWidth="0.0" prefWidth="40.0" text="lieu_Lambert_Y" />
+            <TableColumn fx:id="lieu_Lambert_X" minWidth="0.0" prefWidth="18.4000244140625" text="idObservateur" />
+            <TableColumn fx:id="lieu_Lambert_Y" minWidth="0.0" prefWidth="21.5999755859375" text="nom" />
+            <TableColumn fx:id="idObservateur" minWidth="0.0" prefWidth="19.20001220703125" text="prenom" />
         </columns>
       </TableView>
    </center>

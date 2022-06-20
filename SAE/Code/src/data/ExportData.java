@@ -31,8 +31,8 @@ public class ExportData {
 
         
     }
-    public ExportData(String name, int annee, String espece) {
-        this.annee=annee;
+    public ExportData(String name, String annee, String espece) {
+        this.annee=Integer.valueOf(annee);
         this.espece=espece;
         this.fileName = name;
         this.fileDirectory="C:\\";

@@ -68,9 +68,9 @@
       <AnchorPane prefHeight="197.0" prefWidth="35.0" BorderPane.alignment="CENTER" />
    </right>
    <center>
-      <AnchorPane prefHeight="262.0" prefWidth="567.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="243.0" prefWidth="377.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox prefHeight="258.0" prefWidth="567.0">
+            <HBox prefHeight="248.0" prefWidth="567.0">
                <children>
                   <GridPane prefHeight="248.0" prefWidth="305.0">
                     <columnConstraints>
@@ -84,20 +84,26 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints />
                     </rowConstraints>
                      <children>
-                        <Label text="protocole : " />
-                        <TextField fx:id="zoneProtocole" prefHeight="26.0" prefWidth="230.0" GridPane.columnIndex="1" />
-                        <TextField fx:id="zoneTypeObs" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="zoneLeNumIndividu" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label text="typeObs : " GridPane.rowIndex="1" />
-                        <Label text="leNumIndividu : " GridPane.rowIndex="2" />
-                        <Label text="numObs : " GridPane.rowIndex="3" />
-                        <Label text="espece : " GridPane.rowIndex="4" />
-                        <Label text="sexe : " GridPane.rowIndex="5" />
-                        <TextField fx:id="zoneNumObs" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextField fx:id="zoneEspece" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <TextField fx:id="zoneSexe" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label text="obsG : " />
+                        <TextField fx:id="zoneObsG" GridPane.columnIndex="1" />
+                        <TextField fx:id="zoneNature" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="nature : " GridPane.rowIndex="1" />
+                        <Label text="nombre : " GridPane.rowIndex="2" />
+                        <Label text="presentMaisNonObs : " GridPane.rowIndex="3" />
+                        <Label text="idNid : " GridPane.rowIndex="4" />
+                        <Label text="nomPlage : " GridPane.rowIndex="5" />
+                        <TextField fx:id="zoneNombre" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="zonePresentMaisNonObs" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="zoneIdNid" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="zoneNomPlage" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label text="raisonArretObservation : " GridPane.rowIndex="6" />
+                        <Label text="nbEnvol :" GridPane.rowIndex="7" />
+                        <TextField fx:id="zoneRaisonArretObservation" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="zoneNbEnvol" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                      </children>
                   </GridPane>
                   <AnchorPane prefHeight="248.0" prefWidth="50.0" />
@@ -113,20 +119,26 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints />
                      </rowConstraints>
                      <children>
-                        <Label text="dateObs : " GridPane.rowIndex="1" />
-                        <TextField fx:id="zoneDateObs" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="zoneHeureObs" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField fx:id="zoneLieu_Lambert_X" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label text="heureObs :" GridPane.rowIndex="2" />
-                        <Label text="lieu_Lambert_X :" GridPane.rowIndex="3" />
-                        <Label text="lieu_Lambert_Y: " GridPane.rowIndex="4" />
-                        <Label text="idObservateur" GridPane.rowIndex="5" />
-                        <TextField fx:id="zoneLieu_Lambert_Y" prefHeight="26.0" prefWidth="251.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <TextField fx:id="zoneIdObservation" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <Label text="idObs : " />
-                        <TextField fx:id="zoneIdObs" GridPane.columnIndex="1" />
+                        <TextField fx:id="zoneProtection" GridPane.columnIndex="1" />
+                        <Label text="protection :" />
+                        <Label text="bagueMale : " GridPane.rowIndex="1" />
+                        <Label text="bagueFemelle : " GridPane.rowIndex="2" />
+                        <Label text="dateObs : " GridPane.rowIndex="3" />
+                        <TextField fx:id="zoneBagueMale" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="zoneBagueFemelle" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="zoneDateObs" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="zoneHeureObs" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="heureObs : " GridPane.rowIndex="4" />
+                        <Label text="lieu_Lambert_X : " GridPane.rowIndex="5" />
+                        <Label text="lieu_lambert_Y : " GridPane.rowIndex="6" />
+                        <Label text="idObservateur : " GridPane.rowIndex="7" />
+                        <TextField fx:id="zoneLieu_Lambert_X" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="zoneLieu_Lambert_Y" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="zoneIdObservateur" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                      </children>
                   </GridPane>
                </children>
@@ -135,9 +147,9 @@
       </AnchorPane>
    </center>
    <bottom>
-      <AnchorPane prefHeight="97.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="89.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="buttonAdd" layoutX="224.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="37.0" prefWidth="151.0" text="Ajouter">
+            <Button fx:id="buttonAdd" layoutX="224.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="37.0" prefWidth="151.0" text="Ajouter">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

@@ -34,7 +34,11 @@ public class ExportData {
         this.annee=Integer.valueOf(annee);
         this.espece=espece;
         this.fileName = name;
+<<<<<<< HEAD
         this.fileDirectory="C:\\Users\\public\\Downloads\\";//directory de base vers Utilisateur/public/telechargements
+=======
+        this.fileDirectory= "" ;
+>>>>>>> 984655898150158a34390fac54083d8b289e1e6c
 
         
     }

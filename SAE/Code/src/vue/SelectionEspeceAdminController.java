@@ -16,7 +16,7 @@ import javafx.scene.text.Text;
 import javafx.fxml.*;
 
 
-public class SelectionEspeceController {
+public class SelectionEspeceAdminController {
 
    
     
@@ -33,7 +33,7 @@ public class SelectionEspeceController {
     @FXML Button batraciens;
 
     @FXML Label nom = new Label(" ");
-
+    
 
 
 

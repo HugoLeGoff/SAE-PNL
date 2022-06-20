@@ -2,6 +2,7 @@ package vue;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import data.*;
 import connexion.Compte;
 import data.AccTest;
 import javafx.application.Application;
@@ -37,24 +38,42 @@ private Label msgErr ;
 
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException, SQLException{
         if(login != null && pw != null){
-        AccTest test = new AccTest();
-        boolean testLog = test.testMDP(this.login.getText(), this.pw.getText());
-        if(testLog == true){   
-            setCompteCo();
-            Scene scene = login.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("Selection.fxml"));
-            scene.setRoot(root);
-            
-            
-        }
-        else{
-            msgErr.setText("Identifiant ou mot de passe incorrect");
+            AccTest test = new AccTest();
+            boolean testLog = test.testMDP(this.login.getText(), this.pw.getText());
+            if(testLog == true){ 
+
+                setCompteCo();
+                int statut = getStatut();
+                if(statut==1){
+                    Scene scene = login.getScene();
+                    Parent root = FXMLLoader.load(getClass().getResource("SelectionEspeceAdmin.fxml"));
+                    scene.setRoot(root);
+                }
+                else if(statut == 2){
+                    Scene scene = login.getScene();
+                    Parent root = FXMLLoader.load(getClass().getResource("Selection.fxml"));
+                    scene.setRoot(root);
+
+                }
+                
+                
+            }
+            else{
+                msgErr.setText("Identifiant ou mot de passe incorrect");
+            }
         }
     }
+    
+
+    public void setCompteCo(){
+        this.compteCo = new Compte(this.login.getText(),  this.pw.getText());
     }
 
-    public void setCompteCo() {
-        this.compteCo = new Compte(this.login.getText(),  this.pw.getText());
+    public int getStatut() throws SQLException {
+        AllData ad = new AllData();
+        int ret = ad.getStatut(this.login.getText());
+        return ret;
+        
     }
 
     

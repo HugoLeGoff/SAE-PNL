@@ -3,7 +3,7 @@ package vue;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import connexion.Compte;
+import connexion.*;
 import donnee.*;
 import data.*;
 import javafx.application.Application;
@@ -22,7 +22,13 @@ import javafx.fxml.*;
 import java.util.*;
 
 
-public class HippoTables {
+public class ChoixTables {
+
+    private String especeTMP;
+
+    public void setEspece(String espece) {
+        this.especeTMP = espece;
+    }
 
     @FXML
     private Button modifier;
@@ -43,11 +49,24 @@ public class HippoTables {
 
     @FXML
     private void initialize() throws SQLException {
-        tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
-        AllData ad = new AllData();
-        ArrayList<Table> tables = ad.table();
-        
-        tableView.getItems().setAll(tables);
+    
+            /*Compte compte = new Compte();
+            String log = compte.getLogin();
+            nom.setText(log);
+    
+            ChoixEspece especeChoix = new ChoixEspece();
+            String nomEspece = especeChoix.getEspece();
+            espece.setText(nomEspece);
+            especeTMP = espece;
+
+            
+        if(espece.equals("hippocampe")){*/
+            tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
+            AllData ad = new AllData();
+            ArrayList<Table> tables = ad.tableHippo();
+            
+            tableView.getItems().setAll(tables);
+        //}
     }
 
 

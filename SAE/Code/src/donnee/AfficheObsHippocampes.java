@@ -6,41 +6,24 @@ import java.sql.Time;
  * crée une observation d'hippocampes
  */
 public class AfficheObsHippocampes {
-
-	/**
-	 * type de pêches
-	 */
-	private String typePeche;
-
-	/**
-	 * espece de l'hippocampes
-	 */
-	private String espece;
-
-	/**
-	 * sexe de l'hippocampe
-	 */
-	private String sexe;
-
-	/**
-	 * taille de l'hippocampe
-	 */
-	private String taille;
-
-	/**
-	 * définit si l'hippocampe est gestant
-	 */
-	private String estGestant;
-
-    private String id;
-
-    private String date;
     
-    private String heure;
-
-    private String lieu;
-
-    private String observateur;
+    private String obsH;
+    private String espece;
+    private String sexe;
+    private String temperatureEau;
+    private String typePeche;
+    private String taille;
+    private String gestant;
+    private String idObs;
+    private String dateObs;
+    private String heureObs;
+    private String lieu_Lambert_X;
+    private String lieu_Lambert_Y;
+    private String lobservateur;
+    private String idObservateur;
+    private String lobservation;
+    private String nom;
+    private String prenom;
 
 
 
@@ -57,122 +40,93 @@ public class AfficheObsHippocampes {
 	 * @param leSexe Sexe de l'individu
 	 * @param estGestant Indique si l'individu est gestant
 	 */
-	public AfficheObsHippocampes(String id, String date, String heure, String lieu,String observateurs, String laTaille, String leTypePeche, String lEspece, String leSexe, String estGestant) {
+	public AfficheObsHippocampes(String obsH, String espece, String sexe, String temperatureEau, String typePeche, String taille, String gestant, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String idObservateur, String nom, String prenom) {
         
+        this.obsH = obsH;
+        this.espece = espece;
+        this.sexe = sexe;
+        this.temperatureEau = temperatureEau;
+        this.typePeche = typePeche;
+        this.taille = taille;
+        this.gestant = gestant;
+        this.idObs = idObs;
+        this.dateObs = dateObs;
+        this.heureObs = heureObs;
+        this.lieu_Lambert_X = lieu_Lambert_X;
+        this.lieu_Lambert_Y = lieu_Lambert_Y;
+        this.idObservateur = idObservateur;
+        this.nom = nom;
+        this.prenom = prenom;
+
 		
 	}
 
-	/**
-	 * Renvoie l'espece de ObsHippocampe.
-	 * @return l'espece de ObsHippocampe
-	 */
-	public EspeceHippocampes getEspece() {
-		return this.espece;
-	}
+    public String getEspece() {
+        return this.espece;
+    }
 
-	/**
-	 * Renvoie le typePeche de ObsHippocampe.
-	 * @return le typePeche de ObsHippocampe
-	 */
-	public Peche getTypePeche() {
-		return this.typePeche;
-	}
+    public String getSexe() {
+        return this.sexe;
+    }
 
-	/**
-	 * Renvoie la taille de ObsHippocampe.
-	 * @return la taille de ObsHippocampe
-	 */
-	public double getTaille() {
-		return this.taille;
-	}
+    public String getTemperatureEau() {
+        return this.temperatureEau;
+    }
 
-	/**
-	 * Renvoie le sexe de ObsHippocampe.
-	 * @return le sexe de ObsHippocampe
-	 */
-	public Sexe getSexe() {
-		return this.sexe;
-	}
+    public String getTypePeche() {
+        return this.typePeche;
+    }
 
-	/**
-	 * Renvoie le booleen estGestant de ObsHippocampe.
-	 * @return le booleen estGestant de ObsHippocampe
-	 */
-	public boolean getEstGestant() {
-		return this.estGestant;
-	}
+    public String getTaille() {
+        return this.taille;
+    }
 
+    public String getGestant() {
+        return this.gestant;
+    }
 
-	/**
-	 * Définit l'espece de ObsHippocampe.
-	 * @param espece espece à définir
-	 */
-	public void setEspece(EspeceHippocampes espece){
-		if(espece!=null){
-			this.espece = espece;
-		}else{
-			System.err.println("setEspece : espece ne peut pas être null");
-		}
-	}
+    public String getIdObs() {
+        return this.idObs;
+    }
 
-	/**
-	 * Définit le typePeche de ObsHippocampe.
-	 * @param typePeche typePeche à définir
-	 */
-	public void setTypePeche(Peche typePeche){
-		if(typePeche!=null){
-			this.typePeche = typePeche;
-		}else{
-			System.err.println("setTypePeche : espece ne peut pas être null");
-		}
-	}
+    public String getDateObs() {
+        return this.dateObs;
+    }
 
-	/**
-	 * Définit la taille de ObsHippocampe.
-	 * @param taille taille à définir
-	 */
-	public void setTaille(double taille){
-		if(taille>0){
-			this.taille = taille;
-		}else{
-			System.err.println("setTaille : taille ne peut pas être <0");
-		}
-	}
+    public String getHeureObs() {
+        return this.heureObs;
+    }
 
-	/**
-	 * Définit le sexe de ObsHippocampe.
-	 * @param sexe sexe à définir
-	 */
-	public void setSexe(Sexe sexe){
-		if(sexe!=null){
-			this.sexe = sexe;
-		}else{
-			System.err.println("setSexe : sexe ne peut pas être null");
-		}
-	}
+    public String getLieu_Lambert_X() {
+        return this.lieu_Lambert_X;
+    }
 
-	/**
-	 * Définit le booleen estGestant de ObsHippocampe.
-	 * @param estGestant booleen estGestant à définir
-	 */
-	public void setEstGestant(boolean estGestant){
-		if(this.sexe==Sexe.FEMELLE && estGestant==true){
-			System.err.println("Une femelle ne peut être gestant");
-		}
-		if(this.sexe==Sexe.INCONNU && estGestant==true){
-			this.sexe=Sexe.MALE;
-		}
-		if(this.sexe==Sexe.MALE){
-			this.estGestant=estGestant;
-		}
-	}
+    public String getLieu_Lambert_Y() {
+        return this.lieu_Lambert_Y;
+    }
+
+    public String getLobservateur() {
+        return this.lobservateur;
+    }
+
+    public String getLobservation() {
+        return this.lobservation;
+    }
+
+    public String getIdObservateur() {
+        return this.idObservateur;
+    }
+
+    public String getNom() {
+        return this.nom;
+    }
+
+    public String getPrenom() {
+        return this.prenom;
+    }
+
+    public String getObsH() {
+        return this.obsH;
+    }
 	
-	/**
-	 * retourne l'espece observée
-	 */
-	public EspeceObservee especeObs(){
-		
-		return EspeceObservee.HIPPOCAMPE;
-
-	}
 }

@@ -45,7 +45,7 @@ public class ChouetteTables {
 
         tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
         AllData ad = new AllData();
-        ArrayList<Table> tables = ad.tableChouette();
+        ArrayList<Table> tables = ad.tableHippo();
         
         tableView.getItems().setAll(tables);
     }

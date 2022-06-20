@@ -79,8 +79,8 @@ public class ExportationController {
         if(event.getSource() == exporter){
             ChoixEspece especeChoix = new ChoixEspece();
             String nomEspece = especeChoix.getEspece();
-            
-            ExportData fichier = new ExportData(this.nomFichier.getText(), this.annee.getText(), "Loutres" );
+            System.out.println(nomEspece);
+            ExportData fichier = new ExportData(this.nomFichier.getText(), this.annee.getText(), nomEspece );
             fichier.exportData();
             
         }

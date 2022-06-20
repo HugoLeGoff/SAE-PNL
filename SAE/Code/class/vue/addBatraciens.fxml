@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.HippoController">
+   <top>
+      <VBox>
+         <children>
+            <AnchorPane prefHeight="67.0" prefWidth="600.0">
+               <children>
+                  <Label layoutX="27.0" layoutY="19.0" prefHeight="35.0" prefWidth="319.0" text="Ajouter un tuple :" textFill="#008967">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane prefHeight="10.0" prefWidth="641.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <AnchorPane prefHeight="197.0" prefWidth="35.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <AnchorPane prefHeight="197.0" prefWidth="35.0" BorderPane.alignment="CENTER" />
+   </right>
+   <center>
+      <AnchorPane prefHeight="243.0" prefWidth="377.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="608.0" prefWidth="567.0">
+               <children>
+                  <GridPane prefHeight="374.0" prefWidth="254.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.79996337890626" minWidth="10.0" prefWidth="108.59998779296875" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="324.99998474121094" minWidth="10.0" prefWidth="145.40001220703124" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="obsB : " />
+                        <TextField fx:id="obsB" GridPane.columnIndex="1" />
+                        <TextField fx:id="espece" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="nombreAdultes" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="espece : " GridPane.rowIndex="1" />
+                        <Label text="nombreAdultes :" GridPane.rowIndex="2" />
+                        <Label text="nombreAmplexus : " GridPane.rowIndex="3" />
+                        <Label text="nombrePonte : " GridPane.rowIndex="4" />
+                        <Label text="nombreTetard : " GridPane.rowIndex="5" />
+                        <Label text="temperature : " GridPane.rowIndex="6" />
+                        <TextField fx:id="nombreAmplexus" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="nombrePonte" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="nombreTetard" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="temperature" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label text="meteo_ciel : " GridPane.rowIndex="7" />
+                        <TextField fx:id="meteo_ciel" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <TextField fx:id="meteo_temp" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <TextField fx:id="meteo_vent" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Label text="meteo_temp :" GridPane.rowIndex="8" />
+                        <Label text="meteo_vent :" GridPane.rowIndex="9" />
+                        <Label text="meteo_pluie : " GridPane.rowIndex="10" />
+                        <Label text="concerne_ZH :" GridPane.rowIndex="11" />
+                        <TextField fx:id="meteo_pluie" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <TextField fx:id="concerne_ZH" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <Label text="concernes_vege :" GridPane.rowIndex="12" />
+                        <Label text="dateObs :" GridPane.rowIndex="13" />
+                        <TextField fx:id="concernes_vege" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                        <TextField fx:id="dateObs" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                        <TextField fx:id="heureObs" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                        <Label text="heureObs" GridPane.rowIndex="14" />
+                     </children>
+                  </GridPane>
+                  <AnchorPane prefHeight="608.0" prefWidth="55.0" />
+                  <GridPane prefHeight="374.0" prefWidth="254.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.199951171875" minWidth="10.0" prefWidth="95.20001220703125" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="324.99998474121094" minWidth="10.0" prefWidth="159.99998779296874" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="lieu_Lambert_X" GridPane.columnIndex="1" />
+                        <Label text="lieu_Lambert_X :" />
+                        <Label text="lieu_Lambert_Y :" GridPane.rowIndex="1" />
+                        <Label text="lobservateur :" GridPane.rowIndex="2" />
+                        <Label text="idObservateur :" GridPane.rowIndex="3" />
+                        <Label text="zh_temporaire :" GridPane.rowIndex="4" />
+                        <TextField fx:id="lieu_Lambert_Y" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="lobservateur" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="idObservateur" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="zh_temporaire" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="zh_profondeur :" GridPane.rowIndex="5" />
+                        <TextField fx:id="zh_profondeur" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="zh_surface" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="zh_typeMare" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label text="zh_surface :" GridPane.rowIndex="6" />
+                        <Label text="zh_typeMare :" GridPane.rowIndex="7" />
+                        <Label text="zh_pente :" GridPane.rowIndex="8" />
+                        <Label text="zh_ouverture :" GridPane.rowIndex="9" />
+                        <TextField fx:id="zh_pente" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <TextField fx:id="zh_ouverture" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Label text="natureVege :" GridPane.rowIndex="10" />
+                        <Label text="decrit_LieuVege :" GridPane.rowIndex="12" />
+                        <TextField fx:id="natureVege" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <TextField fx:id="decrit_LieuVege" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                        <Label text="idVegeLieu :" GridPane.rowIndex="13" />
+                        <Label layoutX="10.0" layoutY="558.0" text="vegetation :" GridPane.rowIndex="11" />
+                        <TextField fx:id="idVegeLieu" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                        <TextField fx:id="vegetation" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <AnchorPane prefHeight="89.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="buttonAdd" layoutX="245.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="37.0" prefWidth="151.0" text="Ajouter">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

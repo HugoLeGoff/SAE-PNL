@@ -20,6 +20,8 @@ public class AfficheObsHippocampes {
     private String lieu_Lambert_X;
     private String lieu_Lambert_Y;
     private String lobservateur;
+    private String idObservateur;
+    private String lobservation;
     private String nom;
     private String prenom;
 
@@ -40,8 +42,93 @@ public class AfficheObsHippocampes {
 	 */
 	public AfficheObsHippocampes(String obsH, String espece, String sexe, String temperatureEau, String typePeche, String taille, String gestant, String idObs, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String lobservateur, String lobservation, String idObservateur, String nom, String prenom) {
         
+        this.obsH = obsH;
+        this.espece = espece;
+        this.sexe = sexe;
+        this.temperatureEau = temperatureEau;
+        this.typePeche = typePeche;
+        this.taille = taille;
+        this.gestant = gestant;
+        this.idObs = idObs;
+        this.dateObs = dateObs;
+        this.heureObs = heureObs;
+        this.lieu_Lambert_X = lieu_Lambert_X;
+        this.lieu_Lambert_Y = lieu_Lambert_Y;
+        this.lobservateur = lobservateur;
+        this.lobservation = lobservation;
+        this.idObservateur = idObservateur;
+        this.nom = nom;
+        this.prenom = prenom;
+
 		
 	}
 
+    public String getEspece() {
+        return this.espece;
+    }
+
+    public String getSexe() {
+        return this.sexe;
+    }
+
+    public String getTemperatureEau() {
+        return this.temperatureEau;
+    }
+
+    public String getTypePeche() {
+        return this.typePeche;
+    }
+
+    public String getTaille() {
+        return this.taille;
+    }
+
+    public String getGestant() {
+        return this.gestant;
+    }
+
+    public String getIdObs() {
+        return this.idObs;
+    }
+
+    public String getDateObs() {
+        return this.dateObs;
+    }
+
+    public String getHeureObs() {
+        return this.heureObs;
+    }
+
+    public String getLieu_Lambert_X() {
+        return this.lieu_Lambert_X;
+    }
+
+    public String getLieu_Lambert_Y() {
+        return this.lieu_Lambert_Y;
+    }
+
+    public String getLobservateur() {
+        return this.lobservateur;
+    }
+
+    public String getLobservation() {
+        return this.lobservation;
+    }
+
+    public String getIdObservateur() {
+        return this.idObservateur;
+    }
+
+    public String getNom() {
+        return this.nom;
+    }
+
+    public String getPrenom() {
+        return this.prenom;
+    }
+
+    public String getObsH() {
+        return this.obsH;
+    }
 	
 }

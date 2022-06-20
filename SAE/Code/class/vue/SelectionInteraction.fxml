@@ -138,7 +138,7 @@
                   </HBox>
                   <AnchorPane prefHeight="30.0" prefWidth="449.0">
                      <children>
-                      <Button fx:id="exportation" alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="55.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Exportation des données" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+                      <Button fx:id="exportation" alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="55.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Exportation des données" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>

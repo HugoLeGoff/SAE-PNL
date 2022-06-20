@@ -32,6 +32,12 @@ public class ExportationController {
 
     @FXML
     private Button exporter;
+
+    @FXML
+    private Button retour;
+
+    @FXML
+    private Button deconnexion;
     
     @FXML 
     private TextField annee;
@@ -74,10 +80,23 @@ public class ExportationController {
             ChoixEspece especeChoix = new ChoixEspece();
             String nomEspece = especeChoix.getEspece();
             
-            ExportData fichier = new ExportData(this.nomFichier.getText(), this.annee.getText(), "Batracien" );
+            ExportData fichier = new ExportData(this.nomFichier.getText(), this.annee.getText(), "Loutres" );
             fichier.exportData();
             
         }
+
+        else if(event.getSource() == this.deconnexion){
+            Scene scene = deconnexion.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("connexion.fxml"));
+            scene.setRoot(root);
+        }
+
+        else if(event.getSource() == this.retour){
+            Scene scene = retour.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
+            scene.setRoot(root);
+        }
+
 
     }
 }

@@ -37,6 +37,9 @@ public class ChoixTables {
     private Button supprimmer;
 
     @FXML
+    private Button retour;
+
+    @FXML
     private Button plus;
 
     @FXML
@@ -94,6 +97,12 @@ public class ChoixTables {
         else if(event.getSource() == deconnexion){
             Scene scene = deconnexion.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
+            scene.setRoot(root);
+        }
+
+        else if(event.getSource() == this.retour){
+            Scene scene = retour.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
             scene.setRoot(root);
         }
     }

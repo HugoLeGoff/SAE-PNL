@@ -75,7 +75,11 @@
                   <AnchorPane />
                   <AnchorPane>
                      <children>
-                        <Button fx:id="deconnexion" layoutX="5.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="46.0" prefWidth="29.0" text="Button" />
+                        <AnchorPane layoutX="5.0" layoutY="1.0">
+                           <children>
+                              <Button fx:id="deconnexion" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="46.0" prefWidth="29.0" text="Button" />
+                           </children>
+                        </AnchorPane>
                         <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="6.0" layoutY="9.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="9.0">
                            <image>
                               <Image url="@32205.png" />
@@ -108,6 +112,7 @@
                         <Image url="@17319.png" />
                      </image>
                   </ImageView>
+                  <Button fx:id="retour" layoutY="2.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="38.0" prefWidth="52.0" text="Button" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -143,6 +148,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
+            <AnchorPane />
          </children>
       </VBox>
    </center>

@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 import connexion.Compte;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+//import javafx.collections.FXCollections;
+//import javafx.collections.ObservableList;
 
 
 public class Database {
@@ -34,7 +34,7 @@ public class Database {
     }
   }
 
-  public static ObservableList<Compte> getComptes() {
+  /*public static ObservableList<Compte> getComptes() {
 
     ObservableList<Compte> comptes = FXCollections.observableArrayList();
     try {
@@ -49,6 +49,6 @@ public class Database {
       System.out.println(e);
     }
     return comptes;
-  }
+  }*/
 
 }

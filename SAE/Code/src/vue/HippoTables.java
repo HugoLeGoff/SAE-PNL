@@ -1,17 +1,25 @@
+package vue;
+
 import java.io.IOException;
 import java.sql.SQLException;
 
+import connexion.Compte;
+import donnee.*;
+import data.*;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
 import javafx.fxml.*;
+
+import java.util.*;
 
 
 public class HippoTables {
@@ -30,6 +38,24 @@ public class HippoTables {
 
     @FXML
     private Button deconnexion;
+
+    @FXML private TableView<Table> tableView;
+    @FXML private TableColumn<Table, String> tabColumn;
+
+
+
+    @FXML
+    private void initialize() throws SQLException {
+        tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
+        AllData ad = new AllData();
+        ArrayList<Table> tables = ad.table();
+        
+        tableView.getItems().setAll(tables);
+    }
+
+
+
+
 
     @FXML
 

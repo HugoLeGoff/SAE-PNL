@@ -15,7 +15,10 @@ import javafx.fxml.*;
 public class HippoController {
 
     @FXML
-    private Button buttonPopUp;
+    private Button pop;
+
+    @FXML
+    private Button retour;
 
     @FXML
     private Button buttonAdd;
@@ -41,20 +44,28 @@ public class HippoController {
     @FXML
     private TextField zoneGestant;
 
+    @FXML
+    private TableView tableau;
+
 
     @FXML
 
 
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
-        if (event.getSource() == buttonPopUp){
-            popUp();
+        if (event.getSource() == pop){
+            System.out.print("zatz");
+           
         } else if (event.getSource() == buttonAdd) {
             ajouterTuple();
+        }
+        else if(event.getSource() == retour){
+            System.out.print("szezaezze");
+
         }
     }
 
     protected void popUp () throws IOException{
-        Scene scene = buttonPopUp.getScene();
+        Scene scene = pop.getScene();
         Stage stage = new Stage(); 
         Parent root = FXMLLoader.load(getClass().getResource("addHippo.fxml"));
         scene.setRoot(root);

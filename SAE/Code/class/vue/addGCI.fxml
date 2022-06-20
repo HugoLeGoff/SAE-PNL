@@ -88,7 +88,7 @@
                     </rowConstraints>
                      <children>
                         <Label text="obsG : " />
-                        <TextField fx:id="obsG" prefHeight="26.0" prefWidth="230.0" GridPane.columnIndex="1"/>
+                        <TextField fx:id="zoneObsG" prefHeight="26.0" prefWidth="230.0" GridPane.columnIndex="1"/>
                         <TextField fx:id="zoneNature" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label text="nature : " GridPane.rowIndex="1" />
                         <Label text="nombre : " GridPane.rowIndex="2" />

@@ -23,11 +23,10 @@ public class ExportData {
 
 
 
-    public ExportData(String name, int annee, String espece,String directory) {
-        this.annee=annee;
+    public ExportData(String name, String annee, String espece,String directory) {
+        this.annee=Integer.valueOf(annee);
         this.espece=espece;
         this.fileName = name;
-        this.tableName=choixTable();
         this.fileDirectory+=directory;
 
         
@@ -36,26 +35,11 @@ public class ExportData {
         this.annee=annee;
         this.espece=espece;
         this.fileName = name;
-        this.tableName=choixTable();
-        this.fileDirectory="C:\\Utilisateurs\\enzol\\Document\\";
+        this.fileDirectory="C:\\";
 
         
     }
-    public String choixTable(){
-        String ret="";
-        if(espece=="Hippocampe"){
-            ret="Obs_hippocampe";
-        }else if(espece=="GCI"){
-            ret="Obs_gci";
-        }else if(espece=="Loutre"){
-            ret="Obs_loutre";
-        }else if(espece=="Batracien"){
-            ret="Obs_batracien";
-        }else if(espece=="Chouette"){
-            ret="Obs_chouette";
-        }
-        return ret;
-    }
+    
     public String requete(){
         String ret="";
         if(espece=="Hippocampe"){

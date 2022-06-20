@@ -51,12 +51,7 @@ public class HippoTables {
     }
 
 
-
-
-
     @FXML
-
-
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
 
         if(event.getSource() == modifier){

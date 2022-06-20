@@ -50,10 +50,9 @@ public class SelectionEspeceController {
 
             Scene scene = deconnexion.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
-            scene.setRoot(root);
-
-            
+            scene.setRoot(root);   
         }
+        
     }
 
 

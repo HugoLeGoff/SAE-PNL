@@ -33,10 +33,10 @@
 -->
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -105,7 +105,7 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="67.0" prefWidth="205.0">
+            <AnchorPane prefHeight="48.0" prefWidth="600.0">
                <children>
                   <ImageView fitHeight="42.0" fitWidth="42.0">
                      <image>
@@ -117,35 +117,19 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Label layoutX="50.0" layoutY="-14.0" text="Tables hippocampes :" textFill="#008967">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="50.0" layoutY="23.0" text="Trier par : " />
-                  <ComboBox layoutX="104.0" layoutY="18.0" prefHeight="26.0" prefWidth="158.0" promptText="Date la plus récente" />
-                  <Button fx:id="modifier" layoutX="346.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Modifier" textFill="WHITE" />
-                  <Button fx:id="supprimmer" layoutX="346.0" layoutY="103.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Supprimmer" textFill="WHITE" />
-                  <TableView fx:id="tableView" layoutX="24.0" layoutY="53.0" prefHeight="178.0" prefWidth="318.0">
+                  <Button fx:id="modifier" layoutX="483.0" layoutY="125.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Modifier" textFill="WHITE" />
+                  <TableView fx:id="tableView" layoutX="24.0" layoutY="53.0" prefHeight="170.0" prefWidth="294.0">
                      <columns>
                         <TableColumn fx:id="tabColumn" prefWidth="317.6000122070312" text="Table" />
                      </columns>
                   </TableView>
-               </children>
-            </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <Label layoutX="50.0" layoutY="14.0" style="-fx-font-weight: BOLD;" text="Ajouter une table">
+                  <Label layoutX="92.0" layoutY="16.0" text="Tables hippocampes :" textFill="#008967">
                      <font>
-                        <Font size="13.0" />
+                        <Font size="18.0" />
                      </font>
                   </Label>
-                  <Button fx:id="plus" graphicTextGap="3.0" layoutX="164.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="20.0" prefWidth="22.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="+" textFill="WHITE" />
-                  <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="164.0" layoutY="10.0">
-                     <image>
-                        <Image url="@+.png" />
-                     </image>
-                  </ImageView>
+                  <Label layoutX="328.0" layoutY="82.0" text="Choisissez l'année que vous  souhaitez modifier :" />
+                  <TextField fx:id="annee" layoutX="328.0" layoutY="126.0" />
                </children>
             </AnchorPane>
             <AnchorPane />

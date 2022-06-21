@@ -30,8 +30,19 @@ public class ExportationController {
         this.especeTMP = espece;
     }
 
+
+    @FXML
+    private Label nom;
+
+    
+    @FXML
+    private Label espece;
+
+
+
     @FXML
     private Button exporter;
+
 
     @FXML
     private Button retour;
@@ -48,28 +59,58 @@ public class ExportationController {
     @FXML private TableView<Table> tableView;
     @FXML private TableColumn<Table, String> tabColumn;
 
+    @FXML private Label msgImport;
 
 
     @FXML
     private void initialize() throws SQLException {
     
-            /*Compte compte = new Compte();
-            String log = compte.getLogin();
-            nom.setText(log);
-    
-            ChoixEspece especeChoix = new ChoixEspece();
-            String nomEspece = especeChoix.getEspece();
-            espece.setText(nomEspece);
-            especeTMP = espece;
+        Compte compte = new Compte();
+        String log = compte.getLogin();
+        nom.setText(log);
 
-            
-        if(espece.equals("hippocampe")){*/
+        ChoixEspece especeChoix = new ChoixEspece();
+        String nomEspece = especeChoix.getEspece();
+        espece.setText(nomEspece);
+        
+
+        
+        if(espece.equals("Hippocampes")){
             tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
             AllData ad = new AllData();
             ArrayList<Table> tables = ad.tableHippo();
             
             tableView.getItems().setAll(tables);
-        //}
+        }
+        else if(espece.equals("Batraciens")){
+            tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
+            AllData ad = new AllData();
+            ArrayList<Table> tables = ad.tableBatraciens();
+            
+            tableView.getItems().setAll(tables);
+        }
+        else if(espece.equals("GCI")){
+            tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
+            AllData ad = new AllData();
+            ArrayList<Table> tables = ad.tableGCI();
+            
+            tableView.getItems().setAll(tables);
+        }
+        else if(espece.equals("Chouettes")){
+            tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
+            AllData ad = new AllData();
+            ArrayList<Table> tables = ad.tableChouettes();
+            
+            tableView.getItems().setAll(tables);
+        }
+        else if(espece.equals("Loutres")){
+            tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
+            AllData ad = new AllData();
+            ArrayList<Table> tables = ad.tableLoutres();
+            
+            tableView.getItems().setAll(tables);
+            }
+        
     }
 
 
@@ -79,9 +120,14 @@ public class ExportationController {
         if(event.getSource() == exporter){
             ChoixEspece especeChoix = new ChoixEspece();
             String nomEspece = especeChoix.getEspece();
+
             System.out.println(nomEspece);
-            ExportData fichier = new ExportData(this.nomFichier.getText(), this.annee.getText(), nomEspece );
+
+            ExportData fichier = new ExportData(this.nomFichier.getText(), this.annee.getText(), nomEspece);
             fichier.exportData();
+
+            msgImport.setText("Le fichier à été exporter à l'adresse \n C:/Users/Public/Downloads");
+
             
         }
 

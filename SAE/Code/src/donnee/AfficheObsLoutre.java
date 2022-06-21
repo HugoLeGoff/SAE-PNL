@@ -2,53 +2,28 @@ package donnee;
 import java.util.*;
 import java.sql.Time;
 
-/**
- * crée une observation d'hippocampes
- */
 public class AfficheObsLoutre {
     
-    private String obsH;
-    private String espece;
-    private String sexe;
-    private String temperatureEau;
-    private String typePeche;
-    private String taille;
-    private String gestant;
+    private String obsL;
+    private String commune;
+    private String lieuDit;
+    private String indice;
     private String idObs;
     private String dateObs;
     private String heureObs;
     private String lieu_Lambert_X;
     private String lieu_Lambert_Y;
-    private String lobservateur;
     private String idObservateur;
-    private String lobservation;
     private String nom;
     private String prenom;
 
 
-
-	/**
-	 * Constructeur de ObsHippocampes.
-	 * @param id numéro d'identification de la chouette
-	 * @param date Date de l'observation 
-	 * @param heure Heure de l'observation
-	 * @param lieu Lieu de l'observation
-	 * @param observateurs Liste des observateurs
-	 * @param laTaille Taille de l'individu
-	 * @param leTypePeche Type de peche
-	 * @param lEspece Espece observée
-	 * @param leSexe Sexe de l'individu
-	 * @param estGestant Indique si l'individu est gestant
-	 */
-	public AfficheObsHippocampes(String obsH, String espece, String sexe, String temperatureEau, String typePeche, String taille, String gestant, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String idObservateur, String nom, String prenom) {
+	public AfficheObsLoutre(String obsL, String commune, String lieuDit, String indice, String idObs, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String idObservateur, String nom, String prenom) {
         
-        this.obsH = obsH;
-        this.espece = espece;
-        this.sexe = sexe;
-        this.temperatureEau = temperatureEau;
-        this.typePeche = typePeche;
-        this.taille = taille;
-        this.gestant = gestant;
+        this.obsL = obsL;
+        this.commune = commune;
+        this.lieuDit = lieuDit;
+        this.indice = indice;
         this.idObs = idObs;
         this.dateObs = dateObs;
         this.heureObs = heureObs;
@@ -56,33 +31,23 @@ public class AfficheObsLoutre {
         this.lieu_Lambert_Y = lieu_Lambert_Y;
         this.idObservateur = idObservateur;
         this.nom = nom;
-        this.prenom = prenom;
-
-		
+        this.prenom = prenom;	
 	}
 
-    public String getEspece() {
-        return this.espece;
+    public String getObsL() {
+        return obsL;
     }
 
-    public String getSexe() {
-        return this.sexe;
+    public String getCommune() {
+        return commune;
     }
 
-    public String getTemperatureEau() {
-        return this.temperatureEau;
+    public String getLieuDit() {
+        return lieuDit;
     }
 
-    public String getTypePeche() {
-        return this.typePeche;
-    }
-
-    public String getTaille() {
-        return this.taille;
-    }
-
-    public String getGestant() {
-        return this.gestant;
+    public String getIndice() {
+        return indice;
     }
 
     public String getIdObs() {
@@ -105,14 +70,6 @@ public class AfficheObsLoutre {
         return this.lieu_Lambert_Y;
     }
 
-    public String getLobservateur() {
-        return this.lobservateur;
-    }
-
-    public String getLobservation() {
-        return this.lobservation;
-    }
-
     public String getIdObservateur() {
         return this.idObservateur;
     }
@@ -123,10 +80,6 @@ public class AfficheObsLoutre {
 
     public String getPrenom() {
         return this.prenom;
-    }
-
-    public String getObsH() {
-        return this.obsH;
     }
 	
 }

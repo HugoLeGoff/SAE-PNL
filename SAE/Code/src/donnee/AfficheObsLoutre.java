@@ -2,13 +2,12 @@ package donnee;
 import java.util.*;
 import java.sql.Time;
 
-
-public class AfficheObsChouette {
+public class AfficheObsLoutre {
     
-    private String protocole;
-    private String typeObs;
-    private String leNumIndividu;
-    private String numObs;
+    private String obsL;
+    private String commune;
+    private String lieuDit;
+    private String indice;
     private String dateObs;
     private String heureObs;
     private String lieu_Lambert_X;
@@ -18,41 +17,37 @@ public class AfficheObsChouette {
     private String prenom;
 
 
-	public AfficheObsChouette(String protocole, String typeObs, String leNumIndividu, String numObs, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String idObservateur,String nom, String prenom) {
+	public AfficheObsLoutre(String obsL, String commune, String lieuDit, String indice, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String idObservateur, String nom, String prenom) {
         
-        this.protocole = protocole;
-        this.typeObs = typeObs;
-        this.numObs = numObs;
+        this.obsL = obsL;
+        this.commune = commune;
+        this.lieuDit = lieuDit;
+        this.indice = indice;
         this.dateObs = dateObs;
         this.heureObs = heureObs;
         this.lieu_Lambert_X = lieu_Lambert_X;
         this.lieu_Lambert_Y = lieu_Lambert_Y;
         this.idObservateur = idObservateur;
         this.nom = nom;
-        this.prenom = prenom;
-
-		
+        this.prenom = prenom;	
 	}
 
-    public String getLeNumIndividu() {
-        return leNumIndividu;
+    public String getObsL() {
+        return obsL;
     }
 
-    public String getNom() {
-        return nom;
+    public String getCommune() {
+        return commune;
     }
-    public String getNumObs() {
-        return numObs;
+
+    public String getLieuDit() {
+        return lieuDit;
     }
-    public String getPrenom() {
-        return prenom;
+
+    public String getIndice() {
+        return indice;
     }
-    public String getProtocole() {
-        return protocole;
-    }
-    public String getTypeObs() {
-        return typeObs;
-    }
+
     public String getDateObs() {
         return this.dateObs;
     }
@@ -71,6 +66,14 @@ public class AfficheObsChouette {
 
     public String getIdObservateur() {
         return this.idObservateur;
+    }
+
+    public String getNom() {
+        return this.nom;
+    }
+
+    public String getPrenom() {
+        return this.prenom;
     }
 	
 }

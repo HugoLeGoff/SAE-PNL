@@ -88,15 +88,6 @@
                         </AnchorPane>
                      </children>
                   </AnchorPane>
-                  <AnchorPane prefHeight="50.0" prefWidth="34.0">
-                     <children>
-                        <ImageView fitHeight="34.0" fitWidth="46.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="10.0">
-                           <image>
-                              <Image url="@58308.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </AnchorPane>
                </children>
             </HBox>
             <AnchorPane prefHeight="9.0" prefWidth="600.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" VBox.vgrow="ALWAYS" />
@@ -123,6 +114,11 @@
                         <Button fx:id="retour" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="37.0" prefWidth="52.0" text="Button" />
                      </children>
                   </AnchorPane>
+                  <Label layoutX="52.0" layoutY="12.0" prefHeight="51.0" prefWidth="258.0" text="Exporter les données" textFill="#008967">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="196.0" prefWidth="600.0">

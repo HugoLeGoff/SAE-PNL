@@ -155,6 +155,8 @@
             <TableColumn fx:id="lieu_Lambert_X" minWidth="0.0" prefWidth="16.800048828125" text="lieu_Lambert_X" />
             <TableColumn fx:id="lieu_Lambert_Y" minWidth="0.0" prefWidth="18.39996337890625" text="lieu_Lambert_Y" />
             <TableColumn fx:id="idObservateur" minWidth="0.0" prefWidth="16.79998779296875" text="idObservateur" />
+            <TableColumn fx:id="nom" minWidth="0.0" prefWidth="16.79998779296875" text="nom" />
+            <TableColumn fx:id="prenom" minWidth="0.0" prefWidth="16.79998779296875" text="prenom" />
         </columns>
       </TableView>
    </center>

@@ -139,6 +139,10 @@
                         <TextField fx:id="zoneLieu_Lambert_X" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <TextField fx:id="zoneLieu_Lambert_Y" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <TextField fx:id="zoneIdObservateur" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label text="nom : " GridPane.rowIndex="8" />
+                        <Label text="prenom : " GridPane.rowIndex="9" />
+                        <TextField fx:id="zoneNom" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <TextField fx:id="zonePrenom" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                      </children>
                   </GridPane>
                </children>

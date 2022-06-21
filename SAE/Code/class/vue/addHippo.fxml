@@ -120,7 +120,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <TextField fx:id="zoneHeureObs" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="zoneHeureObs" text="HHMM" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField fx:id="zoneLieu_Lambert_X" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="heureObs :" GridPane.rowIndex="1" />
                         <Label text="lieu_Lambert_X :" GridPane.rowIndex="2" />
@@ -132,7 +132,7 @@
                         <TextField fx:id="zoneLObservation" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <TextField fx:id="zoneNom" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <TextField fx:id="zonePrenom" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                        <TextField fx:id="zoneDateObs" GridPane.columnIndex="1" />
+                        <TextField fx:id="zoneDateObs" text="AAAA-MM-JJ" GridPane.columnIndex="1" />
                         <Label text="dateObs" />
                      </children>
                   </GridPane>

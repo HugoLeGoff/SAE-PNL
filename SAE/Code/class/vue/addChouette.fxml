@@ -115,8 +115,8 @@
                      </rowConstraints>
                      <children>
                         <Label text="dateObs : " />
-                        <TextField fx:id="zoneDateObs" GridPane.columnIndex="1" />
-                        <TextField fx:id="zoneHeureObs" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="zoneDateObs" GridPane.columnIndex="1" text="AAAA-MM-JJ"/>
+                        <TextField fx:id="zoneHeureObs" GridPane.columnIndex="1" GridPane.rowIndex="1" text="HHMM"/>
                         <TextField fx:id="zoneLieu_Lambert_X" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="heureObs :" GridPane.rowIndex="1" />
                         <Label text="lieu_Lambert_X :" GridPane.rowIndex="2" />

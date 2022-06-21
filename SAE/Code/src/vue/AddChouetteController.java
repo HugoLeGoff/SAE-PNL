@@ -20,23 +20,21 @@ import javafx.fxml.*;
 
 
 
-public class AddHippoController {
+public class AddChouetteController {
 
     
     @FXML
-    private TextField zoneObsH;
+    private TextField zoneProtocole;
     @FXML
-    private TextField zoneEspece;
+    private ComboBox<String> zoneTypeObs;
+    @FXML
+    private TextField zoneLeNumIndividu;
+    @FXML
+    private TextField zoneNumObs;
+    @FXML
+    private ComboBox<String> zoneEspece;
     @FXML
     private ComboBox<String> zoneSexe;
-    @FXML
-    private TextField zoneTemperatureEau;
-    @FXML
-    private TextField zoneTypePeche;
-    @FXML
-    private TextField zoneTaille;
-    @FXML
-    private TextField zoneGestant;
     @FXML
     private TextField zoneDateObs;
     @FXML
@@ -46,12 +44,7 @@ public class AddHippoController {
     @FXML
     private TextField zoneLieu_Lambert_Y;
     @FXML
-    private TextField zoneLObservation;
-    @FXML
-    private TextField zoneNom;
-    @FXML
-    private TextField zonePrenom;
-
+    private TextField zoneIdObservation;
     @FXML
     private Button buttonAdd;
 
@@ -60,54 +53,38 @@ public class AddHippoController {
 
     ObservableList<String> liste;
     
-
-    
     @FXML
     private void initialize() throws SQLException {
+        liste = FXCollections.observableArrayList("SONORE","VISUELLE","SONORE_VISUELLE");
+        zoneTypeObs.setItems(liste);
+
+        liste = FXCollections.observableArrayList("EFFRAIE","HULOTTE","CHEVECHE");
+        zoneEspece.setItems(liste);
+
         liste = FXCollections.observableArrayList("MALE","FEMELLE","INCONNU");
         zoneSexe.setItems(liste);
-
-        AllData ad = new AllData();
-        zoneObsH.setText(ad.getID());
     }
 
-
-
-
-
-
-
     @FXML
-
-
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
         if(event.getSource() == buttonAdd){
             HashMap<String,String> values = new HashMap<String,String>();
-            values.put("obsH",zoneObsH.getText());
-            values.put("espece",zoneEspece.getText());
+            values.put("protocole",zoneProtocole.getText());
+            values.put("typeObs",zoneTypeObs.getValue());
+            values.put("leNumIndividu",zoneLeNumIndividu.getText());
+            values.put("numObs",zoneNumObs.getText());
+            values.put("espece",zoneEspece.getValue());
             values.put("sexe",zoneSexe.getValue());
-            values.put("temperatureEau",zoneTemperatureEau.getText());
-            values.put("typePeche",zoneTypePeche.getText());
-            values.put("taille",zoneTaille.getText());
-            values.put("gestant",zoneGestant.getText());
             values.put("dateObs",zoneDateObs.getText());
             values.put("heureObs",zoneHeureObs.getText());
             values.put("lieu_Lambert_X",zoneLieu_Lambert_X.getText());
             values.put("lieu_Lambert_Y",zoneLieu_Lambert_Y.getText());
-            values.put("lObservateur",zoneLObservation.getText());
-            values.put("nom",zoneNom.getText());
-            values.put("prenom",zonePrenom.getText());
+            values.put("idObservation",zoneIdObservation.getText());
 
 
-            ChoixVal val = new ChoixVal("Hippocampes", values);
+            ChoixVal val = new ChoixVal("Chouettes", values);
 
-        }
-        if(event.getSource() == annuler){
-            Scene scene = annuler.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
-            scene.setRoot(root);
         }
     }
-    
 
 }

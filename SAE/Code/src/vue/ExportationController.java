@@ -32,11 +32,14 @@ public class ExportationController {
 
 
     @FXML
-    private Label nom;
+    private Label nom = new Label();
 
     
     @FXML
-    private Label espece;
+    private Label espece = new Label();
+
+    @FXML
+    private Label tables = new Label();
 
 
 
@@ -72,38 +75,40 @@ public class ExportationController {
         ChoixEspece especeChoix = new ChoixEspece();
         String nomEspece = especeChoix.getEspece();
         espece.setText(nomEspece);
+        tables.setText("Tables "+nomEspece+" : ");
+        
         
 
         
-        if(espece.equals("Hippocampes")){
+        if(nomEspece.equals("Hippocampes")){
             tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
             AllData ad = new AllData();
             ArrayList<Table> tables = ad.tableHippo();
             
             tableView.getItems().setAll(tables);
         }
-        else if(espece.equals("Batraciens")){
+        else if(nomEspece.equals("Batraciens")){
             tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
             AllData ad = new AllData();
             ArrayList<Table> tables = ad.tableBatraciens();
             
             tableView.getItems().setAll(tables);
         }
-        else if(espece.equals("GCI")){
+        else if(nomEspece.equals("GCI")){
             tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
             AllData ad = new AllData();
             ArrayList<Table> tables = ad.tableGCI();
             
             tableView.getItems().setAll(tables);
         }
-        else if(espece.equals("Chouettes")){
+        else if(nomEspece.equals("Chouettes")){
             tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
             AllData ad = new AllData();
             ArrayList<Table> tables = ad.tableChouettes();
             
             tableView.getItems().setAll(tables);
         }
-        else if(espece.equals("Loutres")){
+        else if(nomEspece.equals("Loutres")){
             tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
             AllData ad = new AllData();
             ArrayList<Table> tables = ad.tableLoutres();
@@ -118,16 +123,20 @@ public class ExportationController {
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
 
         if(event.getSource() == exporter){
-            ChoixEspece especeChoix = new ChoixEspece();
-            String nomEspece = especeChoix.getEspece();
+            try{
+                ChoixEspece especeChoix = new ChoixEspece();
+                String nomEspece = especeChoix.getEspece();
 
-            System.out.println(nomEspece);
+                System.out.println(nomEspece);
 
-            ExportData fichier = new ExportData(this.nomFichier.getText(), this.annee.getText(), nomEspece);
-            fichier.exportData();
+                ExportData fichier = new ExportData(this.nomFichier.getText(), this.annee.getText(), nomEspece);
+                fichier.exportData();
 
-            msgImport.setText("Le fichier à été exporter à l'adresse \n C:/Users/Public/Downloads");
-
+                msgImport.setText("Le fichier à été exporter à l'adresse \n C:/Users/Public/Downloads");
+            
+            }catch(NumberFormatException nfe){
+                msgImport.setText("Le numéro de l'année doit être valide");
+            }
             
         }
 

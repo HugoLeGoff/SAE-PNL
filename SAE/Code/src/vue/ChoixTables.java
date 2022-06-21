@@ -31,6 +31,15 @@ public class ChoixTables {
     }
 
     @FXML
+    private Label nom = new Label();
+
+    @FXML
+    private Label espece = new Label();
+
+    @FXML
+    private Label table = new Label();
+
+    @FXML
     private Button modifier;
 
     @FXML
@@ -53,23 +62,54 @@ public class ChoixTables {
     @FXML
     private void initialize() throws SQLException {
     
-            /*Compte compte = new Compte();
-            String log = compte.getLogin();
-            nom.setText(log);
-    
-            ChoixEspece especeChoix = new ChoixEspece();
-            String nomEspece = especeChoix.getEspece();
-            espece.setText(nomEspece);
-            especeTMP = espece;
+        Compte compte = new Compte();
+        String log = compte.getLogin();
+        nom.setText(log);
 
-            
-        if(espece.equals("hippocampe")){*/
+        ChoixEspece especeChoix = new ChoixEspece();
+        String nomEspece = especeChoix.getEspece();
+        espece.setText(nomEspece);
+        table.setText("Tables "+nomEspece+" : ");
+        
+        
+
+        
+        if(nomEspece.equals("Hippocampes")){
             tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
             AllData ad = new AllData();
             ArrayList<Table> tables = ad.tableHippo();
             
             tableView.getItems().setAll(tables);
-        //}
+        }
+        else if(nomEspece.equals("Batraciens")){
+            tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
+            AllData ad = new AllData();
+            ArrayList<Table> tables = ad.tableBatraciens();
+            
+            tableView.getItems().setAll(tables);
+        }
+        else if(nomEspece.equals("GCI")){
+            tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
+            AllData ad = new AllData();
+            ArrayList<Table> tables = ad.tableGCI();
+            
+            tableView.getItems().setAll(tables);
+        }
+        else if(nomEspece.equals("Chouettes")){
+            tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
+            AllData ad = new AllData();
+            ArrayList<Table> tables = ad.tableChouettes();
+            
+            tableView.getItems().setAll(tables);
+        }
+        else if(nomEspece.equals("Loutres")){
+            tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
+            AllData ad = new AllData();
+            ArrayList<Table> tables = ad.tableLoutres();
+            
+            tableView.getItems().setAll(tables);
+            }
+        
     }
 
 

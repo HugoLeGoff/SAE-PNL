@@ -119,8 +119,6 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Label text="idObs : " />
-                        <TextField fx:id="zoneIdObs" GridPane.columnIndex="1" />
                         <TextField fx:id="zoneHeureObs" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField fx:id="zoneLieu_Lambert_X" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="heureObs :" GridPane.rowIndex="1" />

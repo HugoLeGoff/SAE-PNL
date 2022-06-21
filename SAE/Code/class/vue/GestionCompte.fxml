@@ -121,10 +121,9 @@
                <children>
                   <TableView fx:id="table_compte" layoutX="42.0" layoutY="-8.0" prefHeight="200.0" prefWidth="423.0">
                     <columns>
-                      <TableColumn fx:id="col_login" prefWidth="86.0" text="login" />
-                      <TableColumn fx:id="col_mdp" prefWidth="90.0" text="mot de passe" />
-                        <TableColumn fx:id="col_nom" prefWidth="75.0" text="nom" />
-                        <TableColumn fx:id="col_prenom" prefWidth="75.0" text="prenom" />
+                      <TableColumn fx:id="idUser" prefWidth="86.0" text="idUser" />
+                      <TableColumn fx:id="login" prefWidth="90.0" text="Login" />
+                        <TableColumn fx:id="passw" prefWidth="75.0" text="Mot de Passe" />
                     </columns>
                   </TableView>
                </children>

@@ -108,7 +108,7 @@ public class AddHippoController {
             ChoixVal val = new ChoixVal("Hippocampes", values);
 
         }
-        if(event.getSource() == buttonAnnuler){
+        else if(event.getSource() == buttonAnnuler){
             Scene scene = buttonAnnuler.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
             scene.setRoot(root);

@@ -130,7 +130,7 @@ public class ChoixTables {
                 Parent root = FXMLLoader.load(getClass().getResource("tableschouette.fxml"));
                 scene.setRoot(root);
             }
-            else if(especeTMP.equals("gci")){
+            else if(especeTMP.equals("GCI")){
                 Scene scene = modifier.getScene();
                 Parent root = FXMLLoader.load(getClass().getResource("tablesGCI.fxml"));
                 scene.setRoot(root);

@@ -190,17 +190,17 @@ public class AllData {
     return ret;
   }
 
-  public ArrayList<AfficheObsChouette> gci() throws SQLException{
+  public ArrayList<AfficheObsGCI> gci() throws SQLException{
       
-    ArrayList<AfficheObsChouette> ret = new ArrayList<AfficheObsChouette>();
+    ArrayList<AfficheObsGCI> ret = new ArrayList<AfficheObsGCI>();
 
     Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
     Statement stmt = c.createStatement();
     ResultSet res = stmt.executeQuery("SELECT * FROM Obs_GCI LEFT JOIN Nid_GCI ON idNid = leNid LEFT JOIN Observation ON obsG = idObs  LEFT JOIN Aobserve ON idObs = lobservation LEFT JOIN observateur ON lobservateur = idObservateur;");
 
       while(res.next()){
-        //AfficheObsChouette ch = new AfficheObsGCI(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(6),res.getString(7),res.getString(8),res.getString(9),res.getString(10), res.getString(11),res.getString(12),res.getString(14),res.getString(15),res.getString(16),res.getString(17),res.getString(20),res.getString(21s),res.getString(22));
-        //ret.add(ch);
+        AfficheObsGCI ch = new AfficheObsGCI(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(6),res.getString(7),res.getString(8),res.getString(9),res.getString(10), res.getString(11),res.getString(12),res.getString(14),res.getString(15),res.getString(16),res.getString(17),res.getString(20),res.getString(21),res.getString(22));
+        ret.add(ch);
           
       }
     c.close();

@@ -108,16 +108,19 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Label text="lieu_Lambert_X : " GridPane.rowIndex="1" />
-                        <TextField fx:id="zoneLieu_Lambert_X" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="zoneLieu_Lambert_Y" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField fx:id="zoneIdObservateur" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label text="lieu_Lambert_Y :" GridPane.rowIndex="2" />
-                        <Label text="idObservateur :" GridPane.rowIndex="3" />
-                        <Label text="heureObs : " />
-                        <TextField fx:id="zoneHeureObs" GridPane.columnIndex="1" />
+                        <Label text="lieu_Lambert_X : " GridPane.rowIndex="2" />
+                        <TextField fx:id="zoneLieu_Lambert_X" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="zoneLieu_Lambert_Y" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="zoneIdObservateur" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="lieu_Lambert_Y :" GridPane.rowIndex="3" />
+                        <Label text="idObservateur :" GridPane.rowIndex="4" />
+                        <Label text="heureObs : " GridPane.rowIndex="1" />
+                        <TextField fx:id="zoneHeureObs" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="commune" />
+                        <TextField fx:id="zoneCommune" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
                </children>

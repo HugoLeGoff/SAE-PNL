@@ -8,7 +8,15 @@ public class AfficheObsGCI {
     private String espece;
     private String nombreAdultes;
     private String nombresAmplexus;
-    private String idObs;
+    private String nombrePonte;
+    private String nombreTetard;
+    private String temperature;
+    private String meteo_ciel;
+    private String meteo_temp;
+    private String meteo_vent;
+    private String meteo_pluie;
+    private String concerne_ZH;
+    private String concerne_vege;
     private String dateObs;
     private String heureObs;
     private String lieu_Lambert_X;
@@ -16,42 +24,103 @@ public class AfficheObsGCI {
     private String idObservateur;
     private String nom;
     private String prenom;
+    private String zh_temporaire;
+    private String zh_profondeur;
+    private String zh_surface;
+    private String zh_typeMare;
+    private String zh_pente;
+    private String zh_ouverture;
+    private String natureVege;
+    private String vegetation;
+    private String decrit_LieuVege;
+    private String idVegeLieu;
 
 
-	public AfficheObsGCI(String obsL, String commune, String lieuDit, String indice, String idObs, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String idObservateur, String nom, String prenom) {
+	public AfficheObsGCI(String obsB, String espece, String nombreAdultes, String nombresAmplexus, String nombrePonte, String nombreTetard, String temperature, String meteo_ciel, String meteo_temp,  String meteo_vent, String meteo_pluie, String concerne_ZH, String concerne_vege, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String idObservateur, String nom, String prenom, String zh_temporaire, String zh_profondeur, String zh_surface, String zh_typeMare, String zh_pente, String zh_ouverture, String natureVege, String vegetation, String decrit_LieuVege, String idVegeLieu) {
         
-        this.obsL = obsL;
-        this.commune = commune;
-        this.lieuDit = lieuDit;
-        this.indice = indice;
-        this.idObs = idObs;
+        this.obsB = obsB;
+        this.espece = espece;
+        this.nombreAdultes = nombreAdultes;
+        this.nombresAmplexus = nombresAmplexus;
+        this.nombrePonte = nombrePonte;
+        this.nombreTetard = nombreTetard;
+        this.temperature = temperature;
+        this.meteo_ciel = meteo_ciel;
+        this.meteo_temp = meteo_temp;
+        this.meteo_vent = meteo_vent;
+        this.meteo_pluie = meteo_pluie;
+        this.concerne_ZH = concerne_ZH;
+        this.concerne_vege = concerne_vege;
         this.dateObs = dateObs;
         this.heureObs = heureObs;
         this.lieu_Lambert_X = lieu_Lambert_X;
         this.lieu_Lambert_Y = lieu_Lambert_Y;
         this.idObservateur = idObservateur;
         this.nom = nom;
-        this.prenom = prenom;	
+        this.prenom = prenom;
+        this.zh_temporaire = zh_temporaire;
+        this.zh_profondeur = zh_profondeur;
+        this.zh_surface = zh_surface;
+        this.zh_typeMare = zh_typeMare;
+        this.zh_pente = zh_pente;
+        this.zh_ouverture = zh_ouverture;
+        this.natureVege = natureVege;
+        this.vegetation = vegetation;
+        this.decrit_LieuVege = decrit_LieuVege;
+        this.idVegeLieu = idVegeLieu;
 	}
 
-    public String getObsL() {
-        return obsL;
+    public String getObsB() {
+        return obsB;
     }
 
-    public String getCommune() {
-        return commune;
+    public String getEspece() {
+        return espece;
     }
 
-    public String getLieuDit() {
-        return lieuDit;
+
+    public String getNombreAdultes() {
+        return nombreAdultes;
     }
 
-    public String getIndice() {
-        return indice;
+    public String getNombresAmplexus() {
+        return nombresAmplexus;
     }
 
-    public String getIdObs() {
-        return this.idObs;
+    public String getNombrePonte() {
+        return nombrePonte;
+    }
+
+    public String getNombreTetard() {
+        return nombreTetard;
+    }
+
+    public String getTemperature() {
+        return temperature;
+    }
+
+    public String getMeteo_ciel() {
+        return meteo_ciel;
+    }
+
+    public String getMeteo_temp() {
+        return meteo_temp;
+    }
+
+    public String getMeteo_vent() {
+        return meteo_vent;
+    }
+
+    public String getMeteo_pluie() {
+        return meteo_pluie;
+    }
+
+    public String getConcerne_ZH() {
+        return concerne_ZH;
+    }
+
+    public String getConcerne_vege() {
+        return concerne_vege;
     }
 
     public String getDateObs() {
@@ -81,5 +150,47 @@ public class AfficheObsGCI {
     public String getPrenom() {
         return this.prenom;
     }
+
+    public String getZh_temporaire() {
+        return this.zh_temporaire;
+    }
+
+    public String getZh_profondeur() {
+        return this.zh_profondeur;
+    }
+
+    public String getZh_surface() {
+        return this.zh_surface;
+    }
+
+    public String getZh_typeMare() {
+        return this.zh_typeMare;
+    }
+
+    public String getZh_pente() {
+        return this.zh_pente;
+    }
+
+    public String getZh_ouverture() {
+        return this.zh_ouverture;
+    }
+
+    public String getNatureVege() {
+        return this.natureVege;
+    }
+
+    public String getVegetation() {
+        return this.vegetation;
+    }
+
+    public String getDecrit_LieuVege() {
+        return this.decrit_LieuVege;
+    }
+
+    public String getIdVegeLieu() {
+        return this.idVegeLieu;
+    }
+
+
 	
 }

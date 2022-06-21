@@ -23,7 +23,6 @@ public class AfficheObsLoutre {
         this.commune = commune;
         this.lieuDit = lieuDit;
         this.indice = indice;
-        this.idObs = idObs;
         this.dateObs = dateObs;
         this.heureObs = heureObs;
         this.lieu_Lambert_X = lieu_Lambert_X;

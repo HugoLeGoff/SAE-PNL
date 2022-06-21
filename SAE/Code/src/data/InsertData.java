@@ -55,7 +55,7 @@ public class InsertData {
         try{
             Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
             Statement stmt = c.createStatement();
-            String query = requete(table, columns, values);
+            String query = requete();
             stmt.executeUpdate(query);
         }catch(Exception e){
             System.out.println(e);

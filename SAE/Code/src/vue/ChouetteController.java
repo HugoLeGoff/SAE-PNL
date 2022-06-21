@@ -20,6 +20,9 @@ import javafx.fxml.*;
 public class ChouetteController {
 
     @FXML
+    private TableView<AfficheObsChouette> tableView;
+
+    @FXML
     private TableColumn<AfficheObsChouette, String> dateObs;
 
     @FXML
@@ -67,8 +70,7 @@ public class ChouetteController {
     @FXML
     private TableColumn<AfficheObsChouette, String> typeObs;
 
-    @FXML
-    private TableView<AfficheObsChouette> tableView;
+
     
 
     @FXML

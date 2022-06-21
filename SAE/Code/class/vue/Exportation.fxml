@@ -33,6 +33,7 @@
 -->
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -134,7 +135,7 @@
                <children>
                   <Button fx:id="exporter" layoutX="232.0" layoutY="75.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefWidth="86.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Exporter" textFill="WHITE" />
                   <Label layoutX="24.0" layoutY="14.0" text="Indiquez l'année de la table que vous souhaitez exporter :" />
-                  <TextField fx:id="annee" layoutX="24.0" layoutY="34.0" prefHeight="16.0" prefWidth="152.0" />
+                  <ComboBox fx:id="annee" layoutX="24.0" layoutY="34.0" prefHeight="16.0" prefWidth="152.0" />
                   <Label layoutX="24.0" layoutY="66.0" text="Nom du fichier :" />
                   <TextField fx:id="nomFichier" layoutX="24.0" layoutY="84.0" onAction="#handleSubmitButtonAction" prefHeight="16.0" prefWidth="152.0" text=".csv" />
                   <Label fx:id="msgImport" layoutX="329.0" layoutY="67.0" prefHeight="42.0" prefWidth="231.0" />

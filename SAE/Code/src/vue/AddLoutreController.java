@@ -27,7 +27,7 @@ public class AddLoutreController {
     @FXML
     private TextField zoneLieuDit;
     @FXML
-    private ComboBox zoneIndice;
+    private ComboBox<String> zoneIndice;
     @FXML
     private TextField zoneIdObs;
     @FXML

@@ -23,7 +23,7 @@ public class ExportData {
         this.annee=Integer.valueOf(annee);
         this.espece=espece;
         this.fileName = name;
-        this.fileDirectory+=directory;
+        this.fileDirectory=directory;
 
         
     }

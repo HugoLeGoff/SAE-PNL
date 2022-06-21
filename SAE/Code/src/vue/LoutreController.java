@@ -137,7 +137,7 @@ public class LoutreController {
         }
         else if(event.getSource() == buttonAdd){
             Scene scene = buttonAdd.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("addChouette.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("addLoutre.fxml"));
             scene.setRoot(root);
         }
     }

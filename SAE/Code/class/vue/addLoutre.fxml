@@ -115,7 +115,7 @@
                         <Label text="lieu_Lambert_Y :" GridPane.rowIndex="2" />
                         <Label text="idObservateur :" GridPane.rowIndex="3" />
                         <Label text="heureObs : " />
-                        <TextField fx:id="zoneHeureObs" text="HH-MM" GridPane.columnIndex="1" />
+                        <TextField fx:id="zoneHeureObs" text="HH-MM-SS" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
                </children>

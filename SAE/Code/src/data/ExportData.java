@@ -47,7 +47,7 @@ public class ExportData {
         }else if(espece.equals("Batraciens")){
             ret="SELECT obsB,espece,nombreAdultes,nombreAmplexus,nombrePonte,nombreTetard,temperature,meteo_ciel,meteo_temp,meteo_vent,meteo_pluie,concerne_ZH,concernes_vege,dateObs,heureObs,lieu_Lambert_X,lieu_Lambert_Y,idObservateur,nom,prenom,zh_temporaire,zh_surface,zh_typeMare,zh_pente,zh_ouverture,natureVege,vegetation,decrit_LieuVege,idVegeLieu FROM Obs_Batracien JOIN Observation ON obsB = idObs JOIN Aobserve ON idObs = lobservation JOIN observateur ON lobservateur = idObservateur JOIN ZoneHumide ON concerne_ZH = zh_id JOIN Vegetation ON concernes_vege = idVege JOIN Lieu_Vegetation ON idVegeLieu = decrit_LieuVege WHERE YEAR (dateObs) = "+annee+";";
         }else if(espece.equals("Chouettes")){
-            ret="SELECT idObs,protocole,typeObs,leNumIndividu,numObs,numIndividu,espece,sexe,dateObs,heureObs,lieu_Lambert_X,lieu_Lambert_Y,idObservateur,nom,prenom FROM Obs_Chouette JOIN Chouette ON numIndividu=leNumIndividu JOIN Observation ON numObs=idObs JOIN Lieu ON (lieu_Lambert_X,lieu_Lambert_Y)=(coord_Lambert_X,coord_Lambert_Y) LEFT JOIN Aobserve ON idObs =lobservation LEFT JOIN observateur ON lobservateur = idObservateur WHERE YEAR (dateObs) = "+annee+";";
+            ret="SELECT idObs,protocole,typeObs,leNumIndividu,numObs,numIndividu,espece,sexe,dateObs,heureObs,lieu_Lambert_X,lieu_Lambert_Y,idObservateur,nom,prenom FROM Obs_Chouette JOIN Chouette ON numIndividu=leNumIndividu JOIN Observation ON numObs=idObs JOIN Lieu ON (lieu_Lambert_X,lieu_Lambert_Y)=(coord_Lambert_X,coord_Lambert_Y) LEFT JOIN Aobserve ON idObs =lobservation LEFT JOIN observateur ON lobservateur = idObservateur ";
         }
         return ret;
     }

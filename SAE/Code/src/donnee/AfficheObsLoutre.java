@@ -2,13 +2,12 @@ package donnee;
 import java.util.*;
 import java.sql.Time;
 
-
-public class AfficheObsChouette {
+public class AfficheObsLoutre {
     
-    private String protocole;
-    private String obsC;
-    private String espece;
-    private String sexe;
+    private String obsL;
+    private String commune;
+    private String lieuDit;
+    private String indice;
     private String idObs;
     private String dateObs;
     private String heureObs;
@@ -19,28 +18,36 @@ public class AfficheObsChouette {
     private String prenom;
 
 
-	public AfficheObsChouette(String protocole, String typeObs, String leNumIndividu, String obsC, String espece, String sexe, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String idObservateur,String nom, String prenom) {
+	public AfficheObsLoutre(String obsL, String commune, String lieuDit, String indice, String idObs, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String idObservateur, String nom, String prenom) {
         
-        this.obsC = obsC;
-        this.espece = espece;
-        this.sexe = sexe;
+        this.obsL = obsL;
+        this.commune = commune;
+        this.lieuDit = lieuDit;
+        this.indice = indice;
+        this.idObs = idObs;
         this.dateObs = dateObs;
         this.heureObs = heureObs;
         this.lieu_Lambert_X = lieu_Lambert_X;
         this.lieu_Lambert_Y = lieu_Lambert_Y;
         this.idObservateur = idObservateur;
         this.nom = nom;
-        this.prenom = prenom;
-
-		
+        this.prenom = prenom;	
 	}
 
-    public String getEspece() {
-        return this.espece;
+    public String getObsL() {
+        return obsL;
     }
 
-    public String getSexe() {
-        return this.sexe;
+    public String getCommune() {
+        return commune;
+    }
+
+    public String getLieuDit() {
+        return lieuDit;
+    }
+
+    public String getIndice() {
+        return indice;
     }
 
     public String getIdObs() {
@@ -65,6 +72,14 @@ public class AfficheObsChouette {
 
     public String getIdObservateur() {
         return this.idObservateur;
+    }
+
+    public String getNom() {
+        return this.nom;
+    }
+
+    public String getPrenom() {
+        return this.prenom;
     }
 	
 }

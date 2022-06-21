@@ -112,21 +112,18 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Label text="dateObs : " GridPane.rowIndex="1" />
-                        <TextField fx:id="zoneDateObs" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="zoneHeureObs" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField fx:id="zoneLieu_Lambert_X" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label text="heureObs :" GridPane.rowIndex="2" />
-                        <Label text="lieu_Lambert_X :" GridPane.rowIndex="3" />
-                        <Label text="lieu_Lambert_Y: " GridPane.rowIndex="4" />
-                        <Label text="idObservateur" GridPane.rowIndex="5" />
-                        <TextField fx:id="zoneLieu_Lambert_Y" prefHeight="26.0" prefWidth="251.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <TextField fx:id="zoneIdObservation" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <Label text="idObs : " />
-                        <TextField fx:id="zoneIdObs" GridPane.columnIndex="1" />
+                        <Label text="dateObs : " />
+                        <TextField fx:id="zoneDateObs" GridPane.columnIndex="1" />
+                        <TextField fx:id="zoneHeureObs" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="zoneLieu_Lambert_X" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="heureObs :" GridPane.rowIndex="1" />
+                        <Label text="lieu_Lambert_X :" GridPane.rowIndex="2" />
+                        <Label text="lieu_Lambert_Y: " GridPane.rowIndex="3" />
+                        <Label text="idObservateur" GridPane.rowIndex="4" />
+                        <TextField fx:id="zoneLieu_Lambert_Y" prefHeight="26.0" prefWidth="251.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="zoneIdObservation" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                      </children>
                   </GridPane>
                </children>

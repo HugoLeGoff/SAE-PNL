@@ -26,15 +26,15 @@ public class AddChouetteController {
     @FXML
     private TextField zoneProtocole;
     @FXML
-    private ComboBox zoneTypeObs;
+    private ComboBox<String> zoneTypeObs;
     @FXML
     private TextField zoneLeNumIndividu;
     @FXML
     private TextField zoneNumObs;
     @FXML
-    private ComboBox zoneEspece;
+    private ComboBox<String> zoneEspece;
     @FXML
-    private ComboBox zoneSexe;
+    private ComboBox<String> zoneSexe;
     @FXML
     private TextField zoneDateObs;
     @FXML
@@ -70,11 +70,11 @@ public class AddChouetteController {
         if(event.getSource() == buttonAdd){
             HashMap<String,String> values = new HashMap<String,String>();
             values.put("protocole",zoneProtocole.getText());
-            values.put("typeObs",(String) zoneTypeObs.getValue());
+            values.put("typeObs",zoneTypeObs.getValue());
             values.put("leNumIndividu",zoneLeNumIndividu.getText());
             values.put("numObs",zoneNumObs.getText());
-            values.put("espece",(String) zoneEspece.getValue());
-            values.put("sexe",(String) zoneSexe.getValue());
+            values.put("espece",zoneEspece.getValue());
+            values.put("sexe",zoneSexe.getValue());
             values.put("dateObs",zoneDateObs.getText());
             values.put("heureObs",zoneHeureObs.getText());
             values.put("lieu_Lambert_X",zoneLieu_Lambert_X.getText());

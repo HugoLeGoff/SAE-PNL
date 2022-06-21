@@ -74,6 +74,11 @@
                   <AnchorPane />
                   <AnchorPane prefHeight="48.0" prefWidth="92.0">
                      <children>
+                        <AnchorPane layoutX="22.0" layoutY="3.0">
+                           <children>
+                              <Button fx:id="buttonAdmin" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="41.0" prefWidth="45.0" />
+                           </children>
+                        </AnchorPane>
                         <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="28.0" layoutY="7.0">
                            <image>
                               <Image url="@588a6aa3d06f6719692a2d23.png" />

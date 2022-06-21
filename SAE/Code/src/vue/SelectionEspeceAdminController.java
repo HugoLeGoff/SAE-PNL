@@ -23,6 +23,8 @@ public class SelectionEspeceAdminController {
     
     @FXML Button deconnexion;
 
+    @FXML Button buttonAdmin;
+
     @FXML Button hippo;
 
     @FXML Button gci;
@@ -60,6 +62,11 @@ public class SelectionEspeceAdminController {
             Scene scene = deconnexion.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
             scene.setRoot(root);   
+        }
+        else if(event.getSource() == this.buttonAdmin){
+            Scene scene = buttonAdmin.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("SelectionActionAdmin.fxml"));
+            scene.setRoot(root);
         }
         else if(event.getSource() == this.batraciens){
             ChoixEspece espece = new ChoixEspece("Batraciens");

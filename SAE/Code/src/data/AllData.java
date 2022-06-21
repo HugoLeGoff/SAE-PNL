@@ -190,6 +190,24 @@ public class AllData {
     return ret;
   }
 
+  public ArrayList<AfficheObsLoutre> loutre() throws SQLException{
+      
+    ArrayList<AfficheObsLoutre> ret = new ArrayList<AfficheObsLoutre>();
+
+    Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+    Statement stmt = c.createStatement();
+    ResultSet res = stmt.executeQuery("SELECT * FROM Obs_Loutre LEFT JOIN Observation ON ObsL = idObs LEFT JOIN Aobserve ON idObs = lobservation LEFT JOIN observateur ON lobservateur = idObservateur;");
+
+      while(res.next()){
+        AfficheObsLoutre ch = new AfficheObsLoutre(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(6),res.getString(7),res.getString(8),res.getString(9),res.getString(12),res.getString(13),res.getString(14));
+        ret.add(ch);
+          
+      }
+    c.close();
+
+    return ret;
+  }
+
   public ArrayList<AfficheObsGCI> gci() throws SQLException{
       
     ArrayList<AfficheObsGCI> ret = new ArrayList<AfficheObsGCI>();

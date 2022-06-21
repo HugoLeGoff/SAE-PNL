@@ -2,7 +2,7 @@ package donnee;
 import java.util.*;
 import java.sql.Time;
 
-public class AfficheObsGCI {
+public class AfficheObsBatracien {
     
     private String obsB;
     private String espece;
@@ -36,7 +36,7 @@ public class AfficheObsGCI {
     private String idVegeLieu;
 
 
-	public AfficheObsGCI(String obsB, String espece, String nombreAdultes, String nombresAmplexus, String nombrePonte, String nombreTetard, String temperature, String meteo_ciel, String meteo_temp,  String meteo_vent, String meteo_pluie, String concerne_ZH, String concerne_vege, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String idObservateur, String nom, String prenom, String zh_temporaire, String zh_profondeur, String zh_surface, String zh_typeMare, String zh_pente, String zh_ouverture, String natureVege, String vegetation, String decrit_LieuVege, String idVegeLieu) {
+	public AfficheObsBatracien(String obsB, String espece, String nombreAdultes, String nombresAmplexus, String nombrePonte, String nombreTetard, String temperature, String meteo_ciel, String meteo_temp,  String meteo_vent, String meteo_pluie, String concerne_ZH, String concerne_vege, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String idObservateur, String nom, String prenom, String zh_temporaire, String zh_profondeur, String zh_surface, String zh_typeMare, String zh_pente, String zh_ouverture, String natureVege, String vegetation, String decrit_LieuVege, String idVegeLieu) {
         
         this.obsB = obsB;
         this.espece = espece;

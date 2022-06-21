@@ -123,7 +123,7 @@
                         <Label text="dateObs :" GridPane.rowIndex="13" />
                         <TextField fx:id="zoneConcernes_vege" GridPane.columnIndex="1" GridPane.rowIndex="12" />
                         <TextField fx:id="zoneDateObs" text="AAAA-MM-JJ" GridPane.columnIndex="1" GridPane.rowIndex="13" />
-                        <TextField fx:id="zoneHeureObs" text="HHMM" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                        <TextField fx:id="zoneHeureObs" text="HH:MM:SS" GridPane.columnIndex="1" GridPane.rowIndex="14" />
                         <Label text="heureObs" GridPane.rowIndex="14" />
                         <ComboBox fx:id="zoneEspece" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>

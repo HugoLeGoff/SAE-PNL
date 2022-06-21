@@ -181,7 +181,7 @@ public class AllData {
     ResultSet res = stmt.executeQuery("SELECT * FROM obs_chouette JOIN Observation ON numObs = idObs LEFT JOIN Aobserve ON idObs = lobservation LEFT JOIN observateur ON lobservateur = idObservateur;");
 
       while(res.next()){
-        AfficheObsChouette ch = new AfficheObsChouette(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(6),res.getString(7),res.getString(8),res.getString(9),res.getString(13),res.getString(14));
+        AfficheObsChouette ch = new AfficheObsChouette(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(6),res.getString(7),res.getString(8),res.getString(9),res.getString(11),res.getString(12),res.getString(13));
         ret.add(ch);
           
       }

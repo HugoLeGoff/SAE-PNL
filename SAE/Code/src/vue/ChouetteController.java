@@ -25,14 +25,10 @@ public class ChouetteController {
     @FXML
     private TableColumn<AfficheObsChouette, String> dateObs;
 
-    @FXML
-    private TableColumn<AfficheObsChouette, String> espece;
-
+    
     @FXML
     private TableColumn<AfficheObsChouette, String> heureObs;
 
-    @FXML
-    private TableColumn<AfficheObsChouette, String> idObs;
 
     @FXML
     private TableColumn<AfficheObsChouette, String> idObservateur;
@@ -64,9 +60,7 @@ public class ChouetteController {
     @FXML
     private Button retour;
 
-    @FXML
-    private TableColumn<AfficheObsChouette, String> sexe;
-
+    
     @FXML
     private TableColumn<AfficheObsChouette, String> typeObs;
 
@@ -77,9 +71,7 @@ public class ChouetteController {
     private void initialize() throws SQLException {
 
         dateObs.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("dateObs"));
-        espece.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("espece"));
         heureObs.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("heureObs"));
-        idObs.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("idObs"));
         idObservateur.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("idObservateur"));
         leNumIndividu.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("leNumIndividu"));
         lieu_Lambert_X.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("lieu_Lambert_X"));
@@ -88,7 +80,6 @@ public class ChouetteController {
         numObs.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("numObs"));
         prenom.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("prenom"));
         protocole.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("protocole"));
-        sexe.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("sexe"));
         typeObs.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("typeObs"));
 
 
@@ -110,9 +101,6 @@ public class ChouetteController {
         tableView.getColumns().get(8).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07)); 
         tableView.getColumns().get(9).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07)); 
         tableView.getColumns().get(10).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));
-        tableView.getColumns().get(11).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07)); 
-        tableView.getColumns().get(12).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07)); 
-        tableView.getColumns().get(13).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07)); 
 
 
 

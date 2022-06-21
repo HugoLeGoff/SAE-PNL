@@ -6,10 +6,9 @@ import java.sql.Time;
 public class AfficheObsChouette {
     
     private String protocole;
-    private String obsC;
-    private String espece;
-    private String sexe;
-    private String idObs;
+    private String typeObs;
+    private String leNumIndividu;
+    private String numObs;
     private String dateObs;
     private String heureObs;
     private String lieu_Lambert_X;
@@ -19,11 +18,11 @@ public class AfficheObsChouette {
     private String prenom;
 
 
-	public AfficheObsChouette(String protocole, String typeObs, String leNumIndividu, String obsC, String espece, String sexe, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String idObservateur,String nom, String prenom) {
+	public AfficheObsChouette(String protocole, String typeObs, String leNumIndividu, String numObs, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String idObservateur,String nom, String prenom) {
         
-        this.obsC = obsC;
-        this.espece = espece;
-        this.sexe = sexe;
+        this.protocole = protocole;
+        this.typeObs = typeObs;
+        this.numObs = numObs;
         this.dateObs = dateObs;
         this.heureObs = heureObs;
         this.lieu_Lambert_X = lieu_Lambert_X;
@@ -35,18 +34,25 @@ public class AfficheObsChouette {
 		
 	}
 
-    public String getEspece() {
-        return this.espece;
+    public String getLeNumIndividu() {
+        return leNumIndividu;
     }
 
-    public String getSexe() {
-        return this.sexe;
+    public String getNom() {
+        return nom;
     }
-
-    public String getIdObs() {
-        return this.idObs;
+    public String getNumObs() {
+        return numObs;
     }
-
+    public String getPrenom() {
+        return prenom;
+    }
+    public String getProtocole() {
+        return protocole;
+    }
+    public String getTypeObs() {
+        return typeObs;
+    }
     public String getDateObs() {
         return this.dateObs;
     }

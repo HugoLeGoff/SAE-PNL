@@ -57,6 +57,9 @@ public class AddLoutreController {
     private void initialize() throws SQLException {
         liste = FXCollections.observableArrayList("Positif","Negatif","Non prospection");
         zoneIndice.setItems(liste);
+
+        AllData ad = new AllData();
+        zoneObsL.setText(ad.getID());
     }
 
 

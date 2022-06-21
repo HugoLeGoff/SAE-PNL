@@ -143,7 +143,12 @@
    <bottom>
       <AnchorPane prefHeight="89.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="buttonAdd" layoutX="224.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="37.0" prefWidth="151.0" text="Ajouter">
+            <Button fx:id="buttonAdd" layoutX="434.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="37.0" prefWidth="151.0" text="Ajouter">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonAnnuler" layoutX="14.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="37.0" prefWidth="151.0" text="Annuler">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

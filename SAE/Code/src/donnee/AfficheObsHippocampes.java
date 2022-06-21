@@ -49,7 +49,6 @@ public class AfficheObsHippocampes {
         this.typePeche = typePeche;
         this.taille = taille;
         this.gestant = gestant;
-        this.idObs = idObs;
         this.dateObs = dateObs;
         this.heureObs = heureObs;
         this.lieu_Lambert_X = lieu_Lambert_X;

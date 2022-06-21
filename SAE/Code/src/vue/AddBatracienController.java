@@ -20,7 +20,7 @@ import javafx.fxml.*;
 
 
 
-public class AddChouetteController {
+public class AddBatracienController {
 
     
     @FXML
@@ -63,9 +63,6 @@ public class AddChouetteController {
 
         liste = FXCollections.observableArrayList("MALE","FEMELLE","INCONNU");
         zoneSexe.setItems(liste);
-
-        AllData ad = new AllData();
-        zoneNumObs.setText(ad.getID());
     }
 
     @FXML

@@ -190,5 +190,33 @@ public ArrayList<AfficheObsChouette> chouette() throws SQLException{
   return ret;
 }
 
+/*
+public ArrayList<AfficheCompte> getAllCompte() {
+    
+  ArrayList<AfficheCompte> ret = new ArrayList<AfficheCompte>();
+
+  try {
+      Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+      Statement stmt = c.createStatement();
+      ResultSet res = stmt.executeQuery("SELECT * FROM Connexion");
+
+      AfficheCompte ch = null;
+      while (res.next()) {
+        
+        ch = new AfficheCompte(res.getString(1),res.getString(2),res.getString(3));
+        ret.add(ch);
+      }
+
+      c.close();
+
+  } catch (SQLException e) {
+
+      e.printStackTrace();
+  }
+
+  return ret;
+
+}*/
+
 
 }

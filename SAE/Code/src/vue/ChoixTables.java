@@ -42,14 +42,11 @@ public class ChoixTables {
     @FXML
     private Button modifier;
 
-    @FXML
-    private Button supprimmer;
 
     @FXML
     private Button retour;
 
-    @FXML
-    private Button plus;
+
 
     @FXML
     private Button deconnexion;
@@ -70,6 +67,7 @@ public class ChoixTables {
         String nomEspece = especeChoix.getEspece();
         espece.setText(nomEspece);
         table.setText("Tables "+nomEspece+" : ");
+        setEspece(nomEspece);
         
         
 
@@ -117,22 +115,34 @@ public class ChoixTables {
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
 
         if(event.getSource() == modifier){
-            Scene scene = modifier.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
-            scene.setRoot(root);
+            if(especeTMP.equals("Hippocampes")){
+                Scene scene = modifier.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
+                scene.setRoot(root);
+            }
+            else if(especeTMP.equals("Batraciens")){
+                Scene scene = modifier.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("tablesBatraciens.fxml"));
+                scene.setRoot(root);
+            }
+            else if(especeTMP.equals("Chouettes")){
+                Scene scene = modifier.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("tableschouette.fxml"));
+                scene.setRoot(root);
+            }
+            else if(especeTMP.equals("gci")){
+                Scene scene = modifier.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("tablesGCI.fxml"));
+                scene.setRoot(root);
+            }
+            else if(especeTMP.equals("Loutres")){
+                Scene scene = modifier.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("tablesLoutre.fxml"));
+                scene.setRoot(root);
+            }
         }
         
-        else if(event.getSource() == supprimmer){
-            Scene scene = modifier.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
-            scene.setRoot(root);
-        }
 
-        else if(event.getSource() == plus){
-            Scene scene = modifier.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
-            scene.setRoot(root);
-        }
 
         else if(event.getSource() == deconnexion){
             Scene scene = deconnexion.getScene();

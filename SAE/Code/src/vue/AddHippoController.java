@@ -56,7 +56,7 @@ public class AddHippoController {
     private Button buttonAdd;
 
     @FXML
-    private Button annuler;
+    private Button buttonAnnuler;
 
     ObservableList<String> liste;
     
@@ -108,8 +108,8 @@ public class AddHippoController {
             ChoixVal val = new ChoixVal("Hippocampes", values);
 
         }
-        if(event.getSource() == annuler){
-            Scene scene = annuler.getScene();
+        if(event.getSource() == buttonAnnuler){
+            Scene scene = buttonAnnuler.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
             scene.setRoot(root);
         }

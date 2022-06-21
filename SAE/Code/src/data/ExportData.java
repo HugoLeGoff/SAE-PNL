@@ -19,11 +19,11 @@ public class ExportData {
 
 
 
-    public ExportData(String name, String annee, String espece,String directory) {
-        this.annee=Integer.valueOf(annee);
+    public ExportData(String name, String espece) {
+        this.annee=0;
         this.espece=espece;
         this.fileName = name;
-        this.fileDirectory=directory;
+        this.fileDirectory="C:\\Users\\public\\Downloads\\";//directory de base vers Utilisateur/public/telechargements;
 
         
     }

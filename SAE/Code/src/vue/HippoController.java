@@ -118,16 +118,15 @@ public class HippoController {
 
         if(event.getSource() == retour){
             Scene scene = retour.getScene();
-            Stage stage = new Stage(); 
-            Parent root = FXMLLoader.load(getClass().getResource("Lucas.fxml"));
-            scene.setRoot(root); 
+            Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
+            scene.setRoot(root);
         }
         
         else if(event.getSource() == buttonAdd){
             Scene scene = buttonAdd.getScene();
             Stage stage = new Stage(); 
             Parent root = FXMLLoader.load(getClass().getResource("addHippo.fxml"));
-            scene.setRoot(root); 
+            scene.setRoot(root);
         }
     }
 

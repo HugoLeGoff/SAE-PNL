@@ -128,7 +128,7 @@ public class ChouetteController {
         if(event.getSource() == retour){
             Scene scene = retour.getScene();
             Stage stage = new Stage(); 
-            Parent root = FXMLLoader.load(getClass().getResource("Lucas.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
             scene.setRoot(root); 
         }
     }

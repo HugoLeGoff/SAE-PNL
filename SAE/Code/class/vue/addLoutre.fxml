@@ -91,9 +91,7 @@
                         <TextField fx:id="zoneIndice" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="lieuDit : " GridPane.rowIndex="1" />
                         <Label text="indice : " GridPane.rowIndex="2" />
-                        <Label text="idObs : " GridPane.rowIndex="3" />
                         <Label text="dateObs : " GridPane.rowIndex="4" />
-                        <TextField fx:id="zoneIdObs" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <TextField fx:id="zoneDateObs" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                      </children>
                   </GridPane>

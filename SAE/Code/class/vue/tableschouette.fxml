@@ -33,7 +33,6 @@
 -->
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -102,20 +101,18 @@
                </children>
             </HBox>
             <AnchorPane prefHeight="9.0" prefWidth="600.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" VBox.vgrow="ALWAYS" />
-            <AnchorPane prefHeight="110.0" prefWidth="600.0">
+            <AnchorPane prefHeight="83.0" prefWidth="600.0">
                <children>
                   <Label layoutX="54.0" layoutY="37.0" prefHeight="35.0" prefWidth="319.0" text="Tables Chouettes :" textFill="#008967">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <ComboBox layoutX="126.0" layoutY="79.0" prefWidth="150.0" promptText="Date la plus récente" />
                   <ImageView accessibleRole="BUTTON" fitHeight="46.0" fitWidth="40.0" layoutX="4.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@17319.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="72.0" layoutY="83.0" text="Trier par : " />
                   <Button fx:id="retour" layoutX="4.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="32.0" prefWidth="40.0" text="Button" />
                </children>
             </AnchorPane>
@@ -136,7 +133,7 @@
       </AnchorPane>
    </bottom>
    <center>
-      <TableView prefHeight="269.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="tableView" prefHeight="216.0" prefWidth="530.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="protocole" prefWidth="66.40003126859665" text="protocole" />
           <TableColumn fx:id="typeObs" prefWidth="57.5999755859375" text="typeObs" />

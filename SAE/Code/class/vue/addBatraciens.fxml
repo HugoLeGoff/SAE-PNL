@@ -122,8 +122,8 @@
                         <Label text="concernes_vege :" GridPane.rowIndex="12" />
                         <Label text="dateObs :" GridPane.rowIndex="13" />
                         <TextField fx:id="zoneConcernes_vege" GridPane.columnIndex="1" GridPane.rowIndex="12" />
-                        <TextField fx:id="zoneDateObs" GridPane.columnIndex="1" GridPane.rowIndex="13" />
-                        <TextField fx:id="zoneHeureObs" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                        <TextField fx:id="zoneDateObs" GridPane.columnIndex="1" GridPane.rowIndex="13" text="AAAA-MM-JJ"/>
+                        <TextField fx:id="zoneHeureObs" GridPane.columnIndex="1" GridPane.rowIndex="14" text="HHMM"/>
                         <Label text="heureObs" GridPane.rowIndex="14" />
                      </children>
                   </GridPane>

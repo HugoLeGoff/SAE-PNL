@@ -33,7 +33,7 @@ public class AllData {
 
     Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
     Statement stmt = c.createStatement();
-    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_chouette JOIN Observation ON obsH = idObs;");
+    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_chouette JOIN Observation ON numObs = idObs;");
 
       while(res.next()){
         Table t = new Table(res.getString(1));
@@ -54,7 +54,7 @@ public class AllData {
 
     Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
     Statement stmt = c.createStatement();
-    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_loutre JOIN Observation ON obsH = idObs;");
+    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_loutre JOIN Observation ON obsL = idObs;");
 
       while(res.next()){
         Table t = new Table(res.getString(1));
@@ -74,7 +74,7 @@ public class AllData {
 
     Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
     Statement stmt = c.createStatement();
-    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_gci JOIN Observation ON obsH = idObs;");
+    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_gci JOIN Observation ON leNid = idObs;");
 
       while(res.next()){
         Table t = new Table(res.getString(1));
@@ -94,7 +94,7 @@ public class AllData {
 
     Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
     Statement stmt = c.createStatement();
-    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_batraciens JOIN Observation ON obsH = idObs;");
+    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_batracien JOIN Observation ON obsB = idObs;");
 
       while(res.next()){
         Table t = new Table(res.getString(1));
@@ -189,6 +189,34 @@ public ArrayList<AfficheObsChouette> chouette() throws SQLException{
 
   return ret;
 }
+
+/*
+public ArrayList<AfficheCompte> getAllCompte() {
+    
+  ArrayList<AfficheCompte> ret = new ArrayList<AfficheCompte>();
+
+  try {
+      Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+      Statement stmt = c.createStatement();
+      ResultSet res = stmt.executeQuery("SELECT * FROM Connexion");
+
+      AfficheCompte ch = null;
+      while (res.next()) {
+        
+        ch = new AfficheCompte(res.getString(1),res.getString(2),res.getString(3));
+        ret.add(ch);
+      }
+
+      c.close();
+
+  } catch (SQLException e) {
+
+      e.printStackTrace();
+  }
+
+  return ret;
+
+}*/
 
 
 }

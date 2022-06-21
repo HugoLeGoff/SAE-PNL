@@ -31,16 +31,22 @@ public class ChoixTables {
     }
 
     @FXML
-    private Button modifier;
+    private Label nom = new Label();
 
     @FXML
-    private Button supprimmer;
+    private Label espece = new Label();
+
+    @FXML
+    private Label table = new Label();
+
+    @FXML
+    private Button modifier;
+
 
     @FXML
     private Button retour;
 
-    @FXML
-    private Button plus;
+
 
     @FXML
     private Button deconnexion;
@@ -53,23 +59,55 @@ public class ChoixTables {
     @FXML
     private void initialize() throws SQLException {
     
-            /*Compte compte = new Compte();
-            String log = compte.getLogin();
-            nom.setText(log);
-    
-            ChoixEspece especeChoix = new ChoixEspece();
-            String nomEspece = especeChoix.getEspece();
-            espece.setText(nomEspece);
-            especeTMP = espece;
+        Compte compte = new Compte();
+        String log = compte.getLogin();
+        nom.setText(log);
 
-            
-        if(espece.equals("hippocampe")){*/
+        ChoixEspece especeChoix = new ChoixEspece();
+        String nomEspece = especeChoix.getEspece();
+        espece.setText(nomEspece);
+        table.setText("Tables "+nomEspece+" : ");
+        setEspece(nomEspece);
+        
+        
+
+        
+        if(nomEspece.equals("Hippocampes")){
             tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
             AllData ad = new AllData();
             ArrayList<Table> tables = ad.tableHippo();
             
             tableView.getItems().setAll(tables);
-        //}
+        }
+        else if(nomEspece.equals("Batraciens")){
+            tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
+            AllData ad = new AllData();
+            ArrayList<Table> tables = ad.tableBatraciens();
+            
+            tableView.getItems().setAll(tables);
+        }
+        else if(nomEspece.equals("GCI")){
+            tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
+            AllData ad = new AllData();
+            ArrayList<Table> tables = ad.tableGCI();
+            
+            tableView.getItems().setAll(tables);
+        }
+        else if(nomEspece.equals("Chouettes")){
+            tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
+            AllData ad = new AllData();
+            ArrayList<Table> tables = ad.tableChouettes();
+            
+            tableView.getItems().setAll(tables);
+        }
+        else if(nomEspece.equals("Loutres")){
+            tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
+            AllData ad = new AllData();
+            ArrayList<Table> tables = ad.tableLoutres();
+            
+            tableView.getItems().setAll(tables);
+            }
+        
     }
 
 
@@ -77,22 +115,34 @@ public class ChoixTables {
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
 
         if(event.getSource() == modifier){
-            Scene scene = modifier.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
-            scene.setRoot(root);
+            if(especeTMP.equals("Hippocampes")){
+                Scene scene = modifier.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
+                scene.setRoot(root);
+            }
+            else if(especeTMP.equals("Batraciens")){
+                Scene scene = modifier.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("tablesBatraciens.fxml"));
+                scene.setRoot(root);
+            }
+            else if(especeTMP.equals("Chouettes")){
+                Scene scene = modifier.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("tableschouette.fxml"));
+                scene.setRoot(root);
+            }
+            else if(especeTMP.equals("gci")){
+                Scene scene = modifier.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("tablesGCI.fxml"));
+                scene.setRoot(root);
+            }
+            else if(especeTMP.equals("Loutres")){
+                Scene scene = modifier.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("tablesLoutre.fxml"));
+                scene.setRoot(root);
+            }
         }
         
-        else if(event.getSource() == supprimmer){
-            Scene scene = modifier.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
-            scene.setRoot(root);
-        }
 
-        else if(event.getSource() == plus){
-            Scene scene = modifier.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
-            scene.setRoot(root);
-        }
 
         else if(event.getSource() == deconnexion){
             Scene scene = deconnexion.getScene();

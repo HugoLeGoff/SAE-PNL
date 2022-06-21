@@ -34,7 +34,7 @@ public class SelectionInteraction {
 
 
 
-    @FXML Label nom = new Label(" ");
+    @FXML Label nom = new Label();
 
 
 

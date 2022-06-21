@@ -1,116 +1,73 @@
 /*package vue;
 
-import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ResourceBundle;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
-import com.mysql.cj.MysqlConnection;
-
-import connexion.Compte;
-import javafx.application.Application;
-import javafx.collections.ObservableList;
+import data.AllData;
+import donnee.AfficheCompte;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-public class GestionCompteController implements Initializable{
+public class GestionCompteController{
 
     @FXML
-    private TableView<Compte> table_compte;
+    private TableView<AfficheCompte> tableView;
 
     @FXML
-    private TableColumn<Compte, String> col_login;
+    private TableColumn<AfficheCompte, String> idUser;
 
     @FXML
-    private TableColumn<Compte, String> col_mdp;
+    private TableColumn<AfficheCompte, String> login;
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-    
-        col_login.setCellValueFactory(new PropertyValueFactory<>("login"));
-        col_mdp.setCellValueFactory(new PropertyValueFactory<>("mdp"));
+    @FXML
+    private TableColumn<AfficheCompte, String> passw;
 
-        ObservableList<Compte> comptes = data.Database.getComptes();
-        table_compte.setItems(comptes);
+    @FXML
+    private Button retour;
 
-    }
+    @FXML
+    private Button pop;
 
-    ObservableList<Compte> listM;
-    ObservableList<Compte> dataList;
-    
-   
-    
-    int index = -1;
-    
-    Connection conn =null;
-    ResultSet rs = null;
-    PreparedStatement pst = null;
-    
-     
-    public void Add_users (){    
+    @FXML
+    private void initialize() throws SQLException {
 
-        try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
-            String sql = "INSERT INTO Connexion (login, mdp) VALUES (?,?,?,?)";
-            pst = conn.prepareStatement(sql);
-            pst.setString(1, col_login.getText());
-            pst.setString(2, col_mdp.getText());
-            pst.executeUpdate();
-            conn.close();
-            System.out.println("Ajout réussi");
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        idUser.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("idUser"));
+        login.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("login"));
+        passw.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("passw"));
 
-    }
-    
-    public void Edit (){   
-
-        try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
-            String sql = "UPDATE Connexion SET login=?, mdp=? WHERE login=?";
-            pst = conn.prepareStatement(sql);
-            pst.setString(1, col_login.getText());
-            pst.setString(2, col_mdp.getText());
-            pst.setInt(3, index);
-            pst.executeUpdate();
-            conn.close();
-            System.out.println("Modification réussi");
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        AllData ad = new AllData();
+        ArrayList<AfficheCompte> comptes = ad.getAllCompte();
         
+        
+        tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        tableView.getColumns().get(0).prefWidthProperty().bind(tableView.widthProperty().multiply(0.33));
+        tableView.getColumns().get(1).prefWidthProperty().bind(tableView.widthProperty().multiply(0.33));
+        tableView.getColumns().get(2).prefWidthProperty().bind(tableView.widthProperty().multiply(0.33));
+
+
+        tableView.getItems().setAll(comptes);
     }
-    
-    public void Delete(){
 
 
-        try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
-            String sql = "DELETE FROM Connexion WHERE id=?";
-            pst = conn.prepareStatement(sql);
-            pst.setInt(1, index);
-            pst.executeUpdate();
-            conn.close();
-            System.out.println("Suppression réussi");
-        } catch (Exception e) {
-            System.out.println(e);
+    @FXML
+    protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
+
+        if(event.getSource() == retour){
+            Scene scene = retour.getScene();
+            Stage stage = new Stage(); 
+            Parent root = FXMLLoader.load(getClass().getResource("Lucas.fxml"));
+            scene.setRoot(root); 
         }
     }
 
-    
-    public void UpdateTable(){
 
-        listM = data.Database.getComptes();
-        table_compte.setItems(listM);
-    }
 }*/

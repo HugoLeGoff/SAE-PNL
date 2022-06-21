@@ -226,6 +226,25 @@ public class AllData {
     return ret;
   }
 
+  public String getID() throws SQLException{
+      
+    String ret = "";
+
+    Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+    Statement stmt = c.createStatement();
+    ResultSet res = stmt.executeQuery("SELECT idObs FROM Observation ORDER BY idObs DESC LIMIT 1;");
+
+      while(res.next()){
+        ret = Integer.toString(res.getInt(1)+1);
+        
+          
+      }
+    c.close();
+
+    return ret;
+  }
+
+
 
 /*
 public ArrayList<AfficheCompte> getAllCompte() {

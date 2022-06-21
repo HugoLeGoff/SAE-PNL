@@ -28,7 +28,7 @@ public class AddHippoController {
     @FXML
     private TextField zoneEspece;
     @FXML
-    private ComboBox zoneSexe;
+    private ComboBox<String> zoneSexe;
     @FXML
     private TextField zoneTemperatureEau;
     @FXML
@@ -66,7 +66,11 @@ public class AddHippoController {
     private void initialize() throws SQLException {
         liste = FXCollections.observableArrayList("MALE","FEMELLE","INCONNU");
         zoneSexe.setItems(liste);
+
+        AllData ad = new AllData();
+        zoneObsH.setText(ad.getID());
     }
+
 
 
 
@@ -98,6 +102,12 @@ public class AddHippoController {
             ChoixVal val = new ChoixVal("Hippocampes", values);
 
         }
+        if(event.getSource() == annuler){
+            Scene scene = annuler.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
+            scene.setRoot(root);
+        }
     }
+    
 
 }

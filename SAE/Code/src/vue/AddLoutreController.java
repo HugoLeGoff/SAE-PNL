@@ -19,22 +19,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
 
-
-public class AddChouetteController {
+public class AddLoutreController {
 
     
     @FXML
-    private TextField zoneProtocole;
+    private TextField zoneObsL;
     @FXML
-    private ComboBox<String> zoneTypeObs;
+    private TextField zoneLieuDit;
     @FXML
-    private TextField zoneLeNumIndividu;
+    private ComboBox zoneIndice;
     @FXML
-    private TextField zoneNumObs;
-    @FXML
-    private ComboBox<String> zoneEspece;
-    @FXML
-    private ComboBox<String> zoneSexe;
+    private TextField zoneIdObs;
     @FXML
     private TextField zoneDateObs;
     @FXML
@@ -44,7 +39,10 @@ public class AddChouetteController {
     @FXML
     private TextField zoneLieu_Lambert_Y;
     @FXML
-    private TextField zoneIdObservation;
+    private TextField zoneLObservation;
+    @FXML
+    private TextField zoneIdObservateur;
+
     @FXML
     private Button buttonAdd;
 
@@ -53,39 +51,40 @@ public class AddChouetteController {
 
     ObservableList<String> liste;
     
+
+    
     @FXML
     private void initialize() throws SQLException {
-        liste = FXCollections.observableArrayList("SONORE","VISUELLE","SONORE_VISUELLE");
-        zoneTypeObs.setItems(liste);
-
-        liste = FXCollections.observableArrayList("EFFRAIE","HULOTTE","CHEVECHE");
-        zoneEspece.setItems(liste);
-
-        liste = FXCollections.observableArrayList("MALE","FEMELLE","INCONNU");
-        zoneSexe.setItems(liste);
+        liste = FXCollections.observableArrayList("Positif","Negatif","Non prospection");
+        zoneIndice.setItems(liste);
 
         AllData ad = new AllData();
-        zoneNumObs.setText(ad.getID());
+        zoneObsL.setText(ad.getID());
     }
 
+
+
+
+
+
     @FXML
+
+
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
         if(event.getSource() == buttonAdd){
             HashMap<String,String> values = new HashMap<String,String>();
-            values.put("protocole",zoneProtocole.getText());
-            values.put("typeObs",zoneTypeObs.getValue());
-            values.put("leNumIndividu",zoneLeNumIndividu.getText());
-            values.put("numObs",zoneNumObs.getText());
-            values.put("espece",zoneEspece.getValue());
-            values.put("sexe",zoneSexe.getValue());
+            values.put("obsL",zoneObsL.getText());
+            values.put("lieuDit",zoneLieuDit.getText());
+            values.put("indice",zoneIndice.getValue());
             values.put("dateObs",zoneDateObs.getText());
             values.put("heureObs",zoneHeureObs.getText());
             values.put("lieu_Lambert_X",zoneLieu_Lambert_X.getText());
             values.put("lieu_Lambert_Y",zoneLieu_Lambert_Y.getText());
-            values.put("idObservation",zoneIdObservation.getText());
+            values.put("lObservateur",zoneIdObservateur.getText());
 
 
-            ChoixVal val = new ChoixVal("Chouettes", values);
+
+            ChoixVal val = new ChoixVal("Hippocampes", values);
 
         }
     }

@@ -26,13 +26,13 @@ public class AddHippoController {
     @FXML
     private TextField zoneObsH;
     @FXML
-    private TextField zoneEspece;
+    private ComboBox<String> zoneEspece;
     @FXML
     private ComboBox<String> zoneSexe;
     @FXML
     private TextField zoneTemperatureEau;
     @FXML
-    private TextField zoneTypePeche;
+    private ComboBox<String> zoneTypePeche;
     @FXML
     private TextField zoneTaille;
     @FXML
@@ -67,6 +67,12 @@ public class AddHippoController {
         liste = FXCollections.observableArrayList("MALE","FEMELLE","INCONNU");
         zoneSexe.setItems(liste);
 
+        liste = FXCollections.observableArrayList("Syngnathus acus","Hippocampus guttulatus","Hippocampus Hippocampus","Entelurus aequoreus");
+        zoneEspece.setItems(liste);
+
+        liste = FXCollections.observableArrayList("casierCrevettes","casierMorgates","PetitFilet","verveuxAnguilles");
+        zoneTypePeche.setItems(liste);
+
         AllData ad = new AllData();
         zoneObsH.setText(ad.getID());
     }
@@ -84,10 +90,10 @@ public class AddHippoController {
         if(event.getSource() == buttonAdd){
             HashMap<String,String> values = new HashMap<String,String>();
             values.put("obsH",zoneObsH.getText());
-            values.put("espece",zoneEspece.getText());
+            values.put("espece",zoneEspece.getValue());
             values.put("sexe",zoneSexe.getValue());
             values.put("temperatureEau",zoneTemperatureEau.getText());
-            values.put("typePeche",zoneTypePeche.getText());
+            values.put("typePeche",zoneTypePeche.getValue());
             values.put("taille",zoneTaille.getText());
             values.put("gestant",zoneGestant.getText());
             values.put("dateObs",zoneDateObs.getText());

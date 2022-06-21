@@ -15,6 +15,47 @@ public class AllData {
     Statement stmt = c.createStatement();
     ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_hippocampe JOIN Observation ON obsH = idObs;");
 
+    while(res.next()){
+        Table t = new Table(res.getString(1));
+        ret.add(t);
+        
+        
+
+    }
+    c.close();
+
+    return ret;
+  }
+
+  public ArrayList<Table> tableChouettes() throws SQLException{
+
+    ArrayList<Table> ret = new ArrayList<Table>();
+
+    Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+    Statement stmt = c.createStatement();
+    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_chouette JOIN Observation ON obsH = idObs;");
+
+      while(res.next()){
+        Table t = new Table(res.getString(1));
+        ret.add(t);
+          
+        
+
+      }
+    c.close();
+
+    return ret;
+
+  }
+
+  public ArrayList<Table> tableLoutres() throws SQLException{
+
+    ArrayList<Table> ret = new ArrayList<Table>();
+
+    Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+    Statement stmt = c.createStatement();
+    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_loutre JOIN Observation ON obsH = idObs;");
+
       while(res.next()){
         Table t = new Table(res.getString(1));
         ret.add(t);
@@ -26,6 +67,47 @@ public class AllData {
 
     return ret;
   }
+
+  public ArrayList<Table> tableGCI() throws SQLException{
+
+    ArrayList<Table> ret = new ArrayList<Table>();
+
+    Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+    Statement stmt = c.createStatement();
+    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_gci JOIN Observation ON obsH = idObs;");
+
+      while(res.next()){
+        Table t = new Table(res.getString(1));
+        ret.add(t);
+          
+        
+
+      }
+    c.close();
+
+    return ret;
+  }
+
+  public ArrayList<Table> tableBatraciens() throws SQLException{
+
+    ArrayList<Table> ret = new ArrayList<Table>();
+
+    Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+    Statement stmt = c.createStatement();
+    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_batraciens JOIN Observation ON obsH = idObs;");
+
+      while(res.next()){
+        Table t = new Table(res.getString(1));
+        ret.add(t);
+          
+        
+
+      }
+    c.close();
+
+    return ret;
+  }
+
 
   
 

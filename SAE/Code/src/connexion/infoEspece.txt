@@ -1,9 +1,1 @@
-<<<<<<< HEAD
 Chouettes
-=======
-<<<<<<< HEAD
-Chouettes
-=======
-Batraciens
->>>>>>> d485ecfb7cacd971ac538bb8fad1a13c68709700
->>>>>>> b71bbba2c6e5d29b995d9eba9b512e1f40495918

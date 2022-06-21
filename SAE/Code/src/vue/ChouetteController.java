@@ -2,6 +2,7 @@ package vue;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import connexion.*;
 import data.*;
 import java.util.*;
 import donnee.AfficheObsChouette;
@@ -18,6 +19,10 @@ import javafx.fxml.*;
 
 
 public class ChouetteController {
+
+
+    @FXML
+    private Label nomObservateur = new Label();
 
     @FXML
     private TableView<AfficheObsChouette> tableView;
@@ -69,6 +74,13 @@ public class ChouetteController {
 
     @FXML
     private void initialize() throws SQLException {
+
+
+        Compte compte = new Compte();
+        String log = compte.getLogin();
+        nomObservateur.setText(log);
+
+
 
         dateObs.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("dateObs"));
         heureObs.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("heureObs"));

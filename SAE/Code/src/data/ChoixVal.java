@@ -10,6 +10,7 @@ public class ChoixVal {
     private ArrayList<String> columns;
     private String espece;
     private InsertData insertData;
+
     public ChoixVal(String espece, HashMap<String,String> values) {
         this.valuesTotal = values;
         this.espece = espece;
@@ -335,7 +336,7 @@ public class ChoixVal {
             values=new ArrayList<String>();
             columns.add("lObservation");
             columns.add("lObservateur");
-            values.add(valuesTotal.get("obsC"));
+            values.add(valuesTotal.get("numObs"));
             values.add(valuesTotal.get("lObservateur"));
             insertData.setTable("AObserve");
             insertData.setColumns(columns);

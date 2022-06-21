@@ -82,7 +82,7 @@ public class AddChouetteController {
             values.put("heureObs",zoneHeureObs.getText());
             values.put("lieu_Lambert_X",zoneLieu_Lambert_X.getText());
             values.put("lieu_Lambert_Y",zoneLieu_Lambert_Y.getText());
-            values.put("idObservation",zoneIdObservation.getText());
+            values.put("lObservateur",zoneIdObservation.getText());
 
 
             ChoixVal val = new ChoixVal("Chouettes", values);

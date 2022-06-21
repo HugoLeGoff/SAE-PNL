@@ -65,6 +65,9 @@ public class ChouetteController {
     @FXML
     private Button retour;
 
+    @FXML
+    private Button buttonAdd;
+
     
     @FXML
     private TableColumn<AfficheObsChouette, String> typeObs;
@@ -132,6 +135,11 @@ public class ChouetteController {
             Stage stage = new Stage(); 
             Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
             scene.setRoot(root); 
+        }
+        else if(event.getSource() == buttonAdd){
+            Scene scene = buttonAdd.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("addChouette.fxml"));
+            scene.setRoot(root);
         }
     }
 

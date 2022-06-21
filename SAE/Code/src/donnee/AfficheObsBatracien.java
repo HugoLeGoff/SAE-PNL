@@ -33,10 +33,9 @@ public class AfficheObsBatracien {
     private String natureVege;
     private String vegetation;
     private String decrit_LieuVege;
-    private String idVegeLieu;
 
 
-	public AfficheObsBatracien(String obsB, String espece, String nombreAdultes, String nombresAmplexus, String nombrePonte, String nombreTetard, String temperature, String meteo_ciel, String meteo_temp,  String meteo_vent, String meteo_pluie, String concerne_ZH, String concerne_vege, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String idObservateur, String nom, String prenom, String zh_temporaire, String zh_profondeur, String zh_surface, String zh_typeMare, String zh_pente, String zh_ouverture, String natureVege, String vegetation, String decrit_LieuVege, String idVegeLieu) {
+	public AfficheObsBatracien(String obsB, String espece, String nombreAdultes, String nombresAmplexus, String nombrePonte, String nombreTetard, String temperature, String meteo_ciel, String meteo_temp,  String meteo_vent, String meteo_pluie, String concerne_ZH, String concerne_vege, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String idObservateur, String nom, String prenom, String zh_temporaire, String zh_profondeur, String zh_surface, String zh_typeMare, String zh_pente, String zh_ouverture, String natureVege, String vegetation, String decrit_LieuVege) {
         
         this.obsB = obsB;
         this.espece = espece;
@@ -67,7 +66,6 @@ public class AfficheObsBatracien {
         this.natureVege = natureVege;
         this.vegetation = vegetation;
         this.decrit_LieuVege = decrit_LieuVege;
-        this.idVegeLieu = idVegeLieu;
 	}
 
     public String getObsB() {
@@ -186,11 +184,5 @@ public class AfficheObsBatracien {
     public String getDecrit_LieuVege() {
         return this.decrit_LieuVege;
     }
-
-    public String getIdVegeLieu() {
-        return this.idVegeLieu;
-    }
-
-
 	
 }

@@ -33,6 +33,7 @@
 -->
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -97,7 +98,6 @@
                      <children>
                         <Label text="obsB : " />
                         <TextField fx:id="zoneObsB" GridPane.columnIndex="1" />
-                        <TextField fx:id="zoneEspece" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField fx:id="zoneNombreAdultes" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="espece : " GridPane.rowIndex="1" />
                         <Label text="nombreAdultes :" GridPane.rowIndex="2" />
@@ -122,9 +122,10 @@
                         <Label text="concernes_vege :" GridPane.rowIndex="12" />
                         <Label text="dateObs :" GridPane.rowIndex="13" />
                         <TextField fx:id="zoneConcernes_vege" GridPane.columnIndex="1" GridPane.rowIndex="12" />
-                        <TextField fx:id="zoneDateObs" GridPane.columnIndex="1" GridPane.rowIndex="13" text="AAAA-MM-JJ"/>
-                        <TextField fx:id="zoneHeureObs" GridPane.columnIndex="1" GridPane.rowIndex="14" text="HHMM"/>
+                        <TextField fx:id="zoneDateObs" text="AAAA-MM-JJ" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                        <TextField fx:id="zoneHeureObs" text="HHMM" GridPane.columnIndex="1" GridPane.rowIndex="14" />
                         <Label text="heureObs" GridPane.rowIndex="14" />
+                        <ComboBox fx:id="zoneEspece" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                   <AnchorPane prefHeight="608.0" prefWidth="55.0" />

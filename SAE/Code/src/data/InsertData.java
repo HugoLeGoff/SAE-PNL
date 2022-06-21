@@ -7,40 +7,29 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class InsertData {
-    private String espece;
+
     private ArrayList<String> values;
     private ArrayList<String> columns;
     private String table;
 
-    public InsertData(String espece, ArrayList<String> values) {
-        this.espece = espece;
+    public InsertData(String table) {
+        this.values = new ArrayList<String>();
+        this.columns=new ArrayList<String>();
+        this.table = table;
+    }
+
+
+    public void setColumns(ArrayList<String> columns) {
+        this.columns = columns;
+    }
+    public void setValues(ArrayList<String> values) {
         this.values = values;
-        createColumns();
-        this.table = choiceTable(espece);
+    }
+    public void setTable(String table) {
+        this.table = table;
     }
 
-
-    public String choiceTable(String espece){
-        String ret="";
-        if(espece.equals("Hippocampes")){
-            ret="obs_hippocampe";
-        }else if(espece.equals("GCI")){
-            ret="obs_gci";
-        }else if(espece.equals("Loutres")){
-            ret="obs_loutre";
-        }else if(espece.equals("Batraciens")){
-            ret="obs_batracien";
-        }else if(espece.equals("Chouettes")){
-            ret="obs_chouette";
-        }
-        return ret;
-    }
-    public void createColumns(){
-        ArrayList<String> columns = new ArrayList<String>();
-        columns.add("espece");
-    }
-
-    public String requete(String table, ArrayList<String> columns,ArrayList<String> values) {
+    public String requete() {
         int i=0;
         String query = "INSERT INTO " + table + " (";
         for (String s : columns) {
@@ -62,7 +51,7 @@ public class InsertData {
         query += ");";
         return query;
     }
-    public void insert(String table,ArrayList<String> columns,ArrayList<String> values){
+    public void insert(){
         try{
             Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
             Statement stmt = c.createStatement();

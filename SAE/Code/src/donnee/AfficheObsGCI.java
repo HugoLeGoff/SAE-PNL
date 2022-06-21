@@ -2,12 +2,13 @@ package donnee;
 import java.util.*;
 import java.sql.Time;
 
-public class AfficheObsLoutre {
+public class AfficheObsGCI {
     
-    private String obsL;
-    private String commune;
-    private String lieuDit;
-    private String indice;
+    private String obsB;
+    private String espece;
+    private String nombreAdultes;
+    private String nombresAmplexus;
+    private String idObs;
     private String dateObs;
     private String heureObs;
     private String lieu_Lambert_X;
@@ -17,7 +18,7 @@ public class AfficheObsLoutre {
     private String prenom;
 
 
-	public AfficheObsLoutre(String obsL, String commune, String lieuDit, String indice, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String idObservateur, String nom, String prenom) {
+	public AfficheObsGCI(String obsL, String commune, String lieuDit, String indice, String idObs, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String idObservateur, String nom, String prenom) {
         
         this.obsL = obsL;
         this.commune = commune;
@@ -47,6 +48,10 @@ public class AfficheObsLoutre {
 
     public String getIndice() {
         return indice;
+    }
+
+    public String getIdObs() {
+        return this.idObs;
     }
 
     public String getDateObs() {

@@ -90,18 +90,16 @@
                      <children>
                         <Label text="obsH : " />
                         <TextField fx:id="zoneObsH" prefHeight="26.0" prefWidth="230.0" GridPane.columnIndex="1" />
-                        <TextField fx:id="zoneEspece" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label text="espece : " GridPane.rowIndex="1" />
                         <Label text="sexe : " GridPane.rowIndex="2" />
                         <Label text="temperatureEau : " GridPane.rowIndex="3" />
                         <Label text="typePeche : " GridPane.rowIndex="4" />
                         <Label text="taille : " GridPane.rowIndex="5" />
-                        <Label text="gestant : " GridPane.rowIndex="6" />
                         <TextField fx:id="zoneTemperatureEau" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextField fx:id="zoneTypePeche" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <TextField fx:id="zoneTaille" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <TextField fx:id="zoneGestant" prefHeight="86.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                        <ComboBox fx:id="zoneSexe" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="zoneSexe" prefHeight="26.0" prefWidth="192.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="zoneEspece" prefHeight="26.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="zoneTypePeche" prefHeight="26.0" prefWidth="209.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                      </children>
                   </GridPane>
                   <AnchorPane prefHeight="248.0" prefWidth="50.0" />
@@ -126,14 +124,12 @@
                         <Label text="lieu_Lambert_X :" GridPane.rowIndex="2" />
                         <Label text="lieu_Lambert_Y: " GridPane.rowIndex="3" />
                         <Label text="lObservateur" GridPane.rowIndex="4" />
-                        <Label text="nom" GridPane.rowIndex="5" />
-                        <Label text="prenom" GridPane.rowIndex="6" />
                         <TextField fx:id="zoneLieu_Lambert_Y" prefHeight="26.0" prefWidth="251.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <TextField fx:id="zoneLObservation" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <TextField fx:id="zoneNom" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <TextField fx:id="zonePrenom" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <TextField fx:id="zoneDateObs" text="AAAA-MM-JJ" GridPane.columnIndex="1" />
                         <Label text="dateObs" />
+                        <TextField fx:id="zoneGestant" prefHeight="23.0" prefWidth="182.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label text="gestant : " GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
                </children>

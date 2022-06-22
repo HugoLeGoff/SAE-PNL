@@ -97,7 +97,7 @@
                         <TextField fx:id="zonePrenom" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <TextField fx:id="zoneLogin" prefHeight="26.0" prefWidth="191.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <TextField fx:id="zonePassw" prefHeight="26.0" prefWidth="191.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label text="statut : " GridPane.rowIndex="4" />
+                        <Label text="statut : " GridPane.rowIndex="5" />
                         <ComboBox fx:id="zoneStatut" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>

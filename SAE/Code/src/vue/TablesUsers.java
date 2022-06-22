@@ -81,8 +81,7 @@ public class TablesUsers {
 
         if(event.getSource() == retour){
             Scene scene = retour.getScene();
-            Stage stage = new Stage(); 
-            Parent root = FXMLLoader.load(getClass().getResource("SelectionEspece.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Selection.fxml"));
             scene.setRoot(root); 
         }
         else if(event.getSource() == buttonAdd){

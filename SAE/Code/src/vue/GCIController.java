@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import donnee.*;
 import data.*;
 import java.util.*;
+
+import connexion.Compte;
 import donnee.AfficheObsHippocampes;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,6 +22,8 @@ import javafx.fxml.*;
 
 public class GCIController {
 
+    @FXML
+    private Label nomObservateur = new Label();
     @FXML
     private Button supprimer;
 
@@ -77,6 +81,12 @@ public class GCIController {
 
     @FXML
     private void initialize() throws SQLException {
+
+        
+        Compte compte = new Compte();
+        String log = compte.getLogin();
+        nomObservateur.setText(log);
+
         obsG.setCellValueFactory(new PropertyValueFactory<AfficheObsGCI, String>("obsG"));
         nature.setCellValueFactory(new PropertyValueFactory<AfficheObsGCI, String>("nature"));
         nombre.setCellValueFactory(new PropertyValueFactory<AfficheObsGCI, String>("nombre"));

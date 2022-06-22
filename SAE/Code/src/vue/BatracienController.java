@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import data.*;
 import java.util.*;
 
+import connexion.Compte;
 import donnee.AfficheObsBatracien;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,14 +21,17 @@ import javafx.fxml.*;
 
 public class BatracienController {
 
-    
+    @FXML
+    private Label nomObservateur = new Label();
     @FXML
     private Button retour;
 
     @FXML
     private Button buttonAdd;
 
-
+    @FXML
+    private Button supprimer;
+    @FXML private Label id
 
     @FXML private TableView<AfficheObsBatracien> tableView;
     @FXML private TableColumn<AfficheObsBatracien, String> obsB;
@@ -69,6 +73,12 @@ public class BatracienController {
 
     @FXML
     private void initialize() throws SQLException {
+
+        
+        Compte compte = new Compte();
+        String log = compte.getLogin();
+        nomObservateur.setText(log);
+
         obsB.setCellValueFactory(new PropertyValueFactory<AfficheObsBatracien, String>("obsB"));
         espece.setCellValueFactory(new PropertyValueFactory<AfficheObsBatracien, String>("espece"));
         nombreAdultes.setCellValueFactory(new PropertyValueFactory<AfficheObsBatracien, String>("nombreAdultes"));
@@ -157,6 +167,10 @@ public class BatracienController {
             Scene scene = buttonAdd.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("addHippo.fxml"));
             scene.setRoot(root);
+        }
+        else if(event.getSource() == supprimer){
+            Delete dl = new Delete("Batraciens",id.getText());
+            dl.deleteTuple();
         }
     }
 

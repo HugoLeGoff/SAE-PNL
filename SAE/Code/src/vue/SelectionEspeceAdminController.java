@@ -19,7 +19,7 @@ import javafx.fxml.*;
 
 public class SelectionEspeceAdminController {
 
-   
+    @FXML Button observateur;
     
     @FXML Button deconnexion;
 
@@ -94,6 +94,12 @@ public class SelectionEspeceAdminController {
 
             Scene scene = deconnexion.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
+            scene.setRoot(root);   
+        }
+        else if(event.getSource() == this.observateur){
+
+            Scene scene = observateur.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("TableObservateur.fxml"));
             scene.setRoot(root);   
         }
     }

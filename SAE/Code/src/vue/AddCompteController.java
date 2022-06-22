@@ -19,7 +19,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
 
-
+/**
+ * This class is the controller of the AddChouette page. It gets the page interactive.
+ */
 public class AddCompteController {
 
     @FXML
@@ -38,23 +40,37 @@ public class AddCompteController {
     private ComboBox<String> zoneStatut;
     @FXML
     private Button buttonAdd;
+    @FXML
+    private Label id;
 
     @FXML
     private Button buttonAnnuler;
 
+    @FXML
+    private Button supprimer;
+
     ObservableList<String> liste;
     
     @FXML
+    /**
+     * Initializes the data already on the page.
+     * @throws SQLException SQLException
+     */
     private void initialize() throws SQLException {
 
-        liste = FXCollections.observableArrayList("OBSERVATEUR","ADMINISTRATEUR");
+        liste = FXCollections.observableArrayList("1","2");
         zoneStatut.setItems(liste);
 
         AllData ad = new AllData();
-        zoneIdUser.setText(ad.getID());
+        zoneIdUser.setText(ad.getIDUser());
     }
 
     @FXML
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
 
         if(event.getSource() == buttonAdd){
@@ -64,7 +80,7 @@ public class AddCompteController {
             values.put("prenom",zonePassw.getText());
             values.put("login",zoneNom.getText());
             values.put("passw",zonePrenom.getText());
-            values.put("nomStatut",zoneStatut.getValue());
+            values.put("idStatut",zoneStatut.getValue());
 
 
             ChoixVal val = new ChoixVal("Comptes", values);
@@ -80,6 +96,10 @@ public class AddCompteController {
             Scene scene = buttonAnnuler.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("GestionCompte.fxml"));
             scene.setRoot(root);
+        }
+        else if(event.getSource() == supprimer){
+            Delete dl = new Delete("Comptes",id.getText());
+            dl.deleteTuple();
         }
     }
 

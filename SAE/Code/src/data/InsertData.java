@@ -51,6 +51,7 @@ public class InsertData {
             i++;
         }
         query += ");";
+
         return query;
     }
     public void insert(){

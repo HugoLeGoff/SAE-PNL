@@ -17,10 +17,14 @@ import javafx.scene.text.Text;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
-
+/**
+ * This class is the controller of the Accueil page. It gets the page interactive.
+ */
 public class ChouetteController {
 
-
+    @FXML
+    private Button supprimer;
+    @FXML private TextField id;
     @FXML
     private Label nomObservateur = new Label();
 
@@ -76,6 +80,10 @@ public class ChouetteController {
     
 
     @FXML
+    /**
+     * Initializes the data already on the page.
+     * @throws SQLException SQLException
+     */
     private void initialize() throws SQLException {
 
 
@@ -127,7 +135,11 @@ public class ChouetteController {
 
     @FXML
 
-
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
 
         if(event.getSource() == retour){
@@ -139,6 +151,13 @@ public class ChouetteController {
         else if(event.getSource() == buttonAdd){
             Scene scene = buttonAdd.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("addChouette.fxml"));
+            scene.setRoot(root);
+        }
+        else if(event.getSource() == supprimer){
+            Delete dl = new Delete("Chouettes",id.getText());
+            dl.deleteTuple();
+            Scene scene = buttonAdd.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("tableschouette.fxml"));
             scene.setRoot(root);
         }
     }

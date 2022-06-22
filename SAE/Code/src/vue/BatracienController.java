@@ -18,11 +18,14 @@ import javafx.scene.text.Text;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
-
+/**
+ * This class is the controller of the Batracien page. It gets the page interactive.
+ */
 public class BatracienController {
 
     @FXML
     private Label nomObservateur = new Label();
+
 
     @FXML
     private Button retour;
@@ -30,7 +33,9 @@ public class BatracienController {
     @FXML
     private Button buttonAdd;
 
-
+    @FXML
+    private Button supprimer;
+    @FXML private TextField id;
 
     @FXML private TableView<AfficheObsBatracien> tableView;
     @FXML private TableColumn<AfficheObsBatracien, String> obsB;
@@ -71,7 +76,12 @@ public class BatracienController {
     
 
     @FXML
+    /**
+     * Initializes the data already on the page.
+     * @throws SQLException SQLException
+     */
     private void initialize() throws SQLException {
+
         Compte compte = new Compte();
         String log = compte.getLogin();
         nomObservateur.setText(log);
@@ -151,7 +161,11 @@ public class BatracienController {
 
     @FXML
 
-
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
 
         if(event.getSource() == retour){
@@ -164,6 +178,10 @@ public class BatracienController {
             Scene scene = buttonAdd.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("addHippo.fxml"));
             scene.setRoot(root);
+        }
+        else if(event.getSource() == supprimer){
+            Delete dl = new Delete("Batraciens",id.getText());
+            dl.deleteTuple();
         }
     }
 

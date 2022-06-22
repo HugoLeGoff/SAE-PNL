@@ -7,7 +7,9 @@ import javax.naming.directory.NoSuchAttributeException;
 import java.sql.Time;
 import java.sql.Date;
 
-
+/**
+ * This class tests the package donnee.
+ */
 public class ScenarioDonnee {
     public static void main(String[] args){
         testConstructeur();
@@ -35,7 +37,9 @@ public class ScenarioDonnee {
         testChouette(d, t, l, listeObs, TypeObservation.VISUELLE);
 
     }
-
+    /**
+     * Tests the builder.
+     */
     public static void testConstructeur(){
 
         java.sql.Date d = new java.sql.Date(0);
@@ -142,6 +146,14 @@ public class ScenarioDonnee {
     
     }
 
+    /**
+     * Tests observation.
+     * @param d date
+     * @param t time
+     * @param l lieu
+     * @param obs observateur
+     * @param lIndice indice
+     */
     public static void testObservation(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs,IndiceLoutre lIndice){
         System.out.println();
         System.out.println("*** Test de la classe Observation");
@@ -191,6 +203,14 @@ public class ScenarioDonnee {
         }
     }
 
+    /**
+     * Tests chouette.
+     * @param d date
+     * @param t time
+     * @param l lieu
+     * @param obs observateur
+     * @param type type
+     */
     public static void testChouette(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, TypeObservation type){
         System.out.println();
         System.out.println("*** Test de la classe Chouette");
@@ -261,6 +281,11 @@ public class ScenarioDonnee {
 
     }
 
+    /**
+     * Tests lieu.
+     * @param x x
+     * @param y y
+     */
     public static void testLieu(double x, double y){
         System.out.println();
         System.out.println("*** Test de la classe Lieu");
@@ -286,6 +311,15 @@ public class ScenarioDonnee {
         
     }
 
+    /**
+     * Tests nidGCI.
+     * @param d date
+     * @param t time
+     * @param l lieu
+     * @param obs observateur
+     * @param nature contenunid
+     * @param nb nombre
+     */
     public static void testNidGCI(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, ContenuNid nature, int nb){
         System.out.println();
         System.out.println("*** Test de la classe NidGCI");
@@ -374,7 +408,15 @@ public class ScenarioDonnee {
         
     }
 
-
+    /**
+     * Tests obsBatracien.
+     * @param d date
+     * @param t time
+     * @param l lieu
+     * @param obs observateur
+     * @param tab tableau
+     * @param espece espece batracien
+     */
     public static void testObsBatracien(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, int[] tab, EspeceBatracien espece){
         System.out.println();
         System.out.println("*** Test de la classe Obsbatracien");
@@ -427,7 +469,14 @@ public class ScenarioDonnee {
     }
 
 
-
+    /**
+     * Tests obsChouette.
+     * @param d date
+     * @param t time
+     * @param l lieu
+     * @param obs observateur
+     * @param type type observation
+     */
     public static void testObsChouette(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, TypeObservation type){
         System.out.println();
         System.out.println("*** Test de la classe ObsChouettes");
@@ -445,7 +494,12 @@ public class ScenarioDonnee {
     }
 
 
-
+    /**
+     * Tests observateur.
+     * @param id indice
+     * @param prenom prenom
+     * @param nom nom
+     */
     public static void testObservateur(int id, String prenom, String nom){
         System.out.println();
         System.out.println("*** Test cas normaux de Observateur");
@@ -484,7 +538,15 @@ public class ScenarioDonnee {
 
     }
 
-
+    /**
+     * Tests obsGCI.
+     * @param d date
+     * @param t time
+     * @param l lieu
+     * @param obs observateur
+     * @param nature contenu nid
+     * @param nb nombre
+     */
     public static void testObsGCI(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, ContenuNid nature, int nb){
         System.out.println();
         System.out.println("*** Test de la classeObsGCI");
@@ -508,6 +570,18 @@ public class ScenarioDonnee {
         }  
     }
 
+    /**
+     * Tests obsHippocampes.
+     * @param d date
+     * @param t time
+     * @param l lieu
+     * @param obs observateur
+     * @param laTaille taille
+     * @param leTypePeche typePeche
+     * @param lEspece espece
+     * @param leSexe sexe
+     * @param estGestant estgestant
+     */
     public static void testObsHippocampes(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs, double laTaille, Peche leTypePeche, EspeceHippocampes lEspece, Sexe leSexe, boolean estGestant){
         System.out.println();
         System.out.println("*** Test de la classe ObsHippocampes");
@@ -557,6 +631,14 @@ public class ScenarioDonnee {
         }
     }
 
+    /**
+     * Tests obsLoutre.
+     * @param d date
+     * @param t time
+     * @param l lieu
+     * @param obs observateur
+     * @param lIndice indice
+     */
     public static void testObsLoutre(java.sql.Date d, java.sql.Time t, Lieu l, ArrayList<Observateur> obs,IndiceLoutre lIndice){
         System.out.println("*** Test de la classe ObsLoutre");
 

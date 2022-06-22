@@ -1,12 +1,16 @@
 package vue;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import data.*;
 import java.util.*;
 
 import connexion.Compte;
 import donnee.AfficheObsHippocampes;
+import donnee.Table;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -15,14 +19,20 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
-
+/**
+ * This class is the controller of the Hippocampe page. It gets the page interactive.
+ */
 public class HippoController {
+    
     @FXML
     private Label nomObservateur = new Label();
-    
+    @FXML
+    private ComboBox<String> choixAnnee;
     @FXML
     private Button supprimer;
 
@@ -34,6 +44,9 @@ public class HippoController {
 
     @FXML
     private Button buttonAdd;
+
+    @FXML
+    private Button recharger;
 
     @FXML
     private TextField zoneObsH;
@@ -56,6 +69,8 @@ public class HippoController {
     @FXML
     private TextField zoneGestant;
 
+    ObservableList<String> liste;
+
     @FXML private TableView<AfficheObsHippocampes> tableView;
     @FXML private TableColumn<AfficheObsHippocampes, String> idObs;
     @FXML private TableColumn<AfficheObsHippocampes, String> espece;
@@ -75,7 +90,13 @@ public class HippoController {
     
 
     @FXML
+    /**
+     * Initializes the data already created on the page.
+     * @throws SQLException SQLException
+     */
     private void initialize() throws SQLException {
+
+        
         Compte compte = new Compte();
         String log = compte.getLogin();
         nomObservateur.setText(log);
@@ -97,6 +118,15 @@ public class HippoController {
 
         AllData ad = new AllData();
         ArrayList<AfficheObsHippocampes> obsHippo = ad.hippocampe();
+        try{
+            if (choixAnnee.getValue()=="toute"){
+                obsHippo = ad.hippocampe();
+            }else{
+                
+                obsHippo = ad.hippocampeAnnee(choixAnnee.getValue());
+            }
+        }catch(Exception e){
+        }
         
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         tableView.getColumns().get(0).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));    //33% for id column size
@@ -119,13 +149,27 @@ public class HippoController {
  
 
         tableView.getItems().setAll(obsHippo);
+        
+        
+        ArrayList<Table> tables = ad.tableHippo();
+        liste = FXCollections.observableArrayList();
+        for(Table t :tables){
+            liste.add(t.getTable());
+        }
+        liste.add("toute");
+        choixAnnee.setItems(liste);
     }
 
 
     @FXML
 
-    
-    protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     * @throws SQLException SQLException
+     */   
+    protected void handleSubmitButtonAction(ActionEvent event) throws IOException, SQLException{
 
         if(event.getSource() == retour){
             Scene scene = retour.getScene();
@@ -142,10 +186,18 @@ public class HippoController {
             Delete dl = new Delete("Hippocampes",id.getText());
             dl.deleteTuple();
         }
+        else if(event.getSource() == recharger){
+            try{
+                Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+            }
+            catch(Exception e){
+                System.out.println(e);
+            }
+        }
     }
 
 
 
 
 
-} 
+}

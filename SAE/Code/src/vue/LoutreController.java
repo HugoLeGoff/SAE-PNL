@@ -17,10 +17,14 @@ import javafx.scene.text.Text;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
-
+/**
+ * This class is the controller of the Loutre page. It gets the page interactive.
+ */
 public class LoutreController {
 
-
+    @FXML
+    private Button supprimer;
+    @FXML private TextField id;
     @FXML
     private Label nomObservateur = new Label();
 
@@ -75,8 +79,11 @@ public class LoutreController {
     
 
     @FXML
+    /**
+     * Initializes the data already created on the page.
+     * @throws SQLException SQLException
+     */
     private void initialize() throws SQLException {
-
 
         Compte compte = new Compte();
         String log = compte.getLogin();
@@ -126,7 +133,11 @@ public class LoutreController {
 
     @FXML
 
-
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
 
         if(event.getSource() == retour){
@@ -139,6 +150,10 @@ public class LoutreController {
             Scene scene = buttonAdd.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("addLoutre.fxml"));
             scene.setRoot(root);
+        }
+        else if(event.getSource() == supprimer){
+            Delete dl = new Delete("Loutres",id.getText());
+            dl.deleteTuple();
         }
     }
 

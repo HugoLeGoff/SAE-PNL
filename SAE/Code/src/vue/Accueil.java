@@ -6,11 +6,16 @@ import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+/**
+ * This class launches the whole application (this is the main class) and displays the Accueil page.
+ */
 public class Accueil extends Application {
 
-@Override
-    public void start(Stage stage)
-    throws Exception {
+    @Override
+    /**
+     * Starts the application and displays the Accueil page..
+     */
+    public void start(Stage stage)throws Exception {
         
         Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
         stage.setTitle("PNR");
@@ -18,6 +23,10 @@ public class Accueil extends Application {
         stage.show();
     }
 
+    /**
+     * Main method.
+     * @param args args of the main
+     */
     public static void main(String[] args) {
         Application.launch(Accueil.class, args);
     }

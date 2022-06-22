@@ -16,7 +16,9 @@ import javafx.scene.text.Text;
 import javafx.fxml.*;
 
 
-
+/**
+ * This class is the controller of the SelectionActionAdmin page. It gets the page interactive.
+ */
 public class SelectionActionAdminController {
 
    
@@ -34,6 +36,9 @@ public class SelectionActionAdminController {
 
 
     @FXML
+    /**
+     * Initializes the data already here on the page.
+     */
     private void initialize() {
 
         Compte compte = new Compte();
@@ -43,7 +48,11 @@ public class SelectionActionAdminController {
 
     @FXML
 
-
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
         if(event.getSource() == this.deconnexion){
             Scene scene = deconnexion.getScene();

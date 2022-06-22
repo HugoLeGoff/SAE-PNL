@@ -63,7 +63,7 @@ public class AddCompteController {
             values.put("passw",zonePassw.getText());
             values.put("nom",zoneNom.getText());
             values.put("prenom",zonePrenom.getText());
-            values.put("statut",zoneStatut.getText());
+            values.put("statut",zoneStatut.getValue());
 
 
             ChoixVal val = new ChoixVal("Comptes", values);

@@ -193,6 +193,7 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
+            <Label fx:id="msgLab" layoutX="191.0" layoutY="-93.0" prefHeight="137.0" prefWidth="390.0" />
          </children>
       </AnchorPane>
    </bottom>

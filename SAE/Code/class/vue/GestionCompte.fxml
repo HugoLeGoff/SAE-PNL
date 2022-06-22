@@ -136,10 +136,10 @@
       <TableView fx:id="tableView" prefHeight="247.0" prefWidth="530.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="idUser" minWidth="4.800018489360809" prefWidth="57.0" text="idUser" />
-            <TableColumn fx:id="login" minWidth="0.0" prefWidth="60.0" text="login" />
-            <TableColumn fx:id="passw" prefWidth="102.0" text="mot de passe" />
-            <TableColumn fx:id="nom" prefWidth="48.0" text="nom" />
-            <TableColumn fx:id="prenom" prefWidth="88.0" text="prenom" />
+            <TableColumn fx:id="nom" minWidth="0.0" prefWidth="60.0" text="nom" />
+            <TableColumn fx:id="prenom" prefWidth="102.0" text="prenom" />
+            <TableColumn fx:id="login" prefWidth="48.0" text="login" />
+            <TableColumn fx:id="passw" prefWidth="88.0" text="mot de passe" />
             <TableColumn fx:id="statut" prefWidth="88.0" text="statut" />
         </columns>
       </TableView>

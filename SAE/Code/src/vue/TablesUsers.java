@@ -48,40 +48,31 @@ public class TablesUsers {
     @FXML
     private void initialize() throws SQLException {
 
-
         Compte compte = new Compte();
         String log = compte.getLogin();
         nomObservateur.setText(log);
 
-
-
         id.setCellValueFactory(new PropertyValueFactory<AfficheUsers, String>("idU"));
         nom.setCellValueFactory(new PropertyValueFactory<AfficheUsers, String>("nom"));
-        prenom.setCellValueFactory(new PropertyValueFactory<AfficheUsers, String>("prenom"));
-        
+        prenom.setCellValueFactory(new PropertyValueFactory<AfficheUsers, String>("prenom"));        
 
         AllData ad = new AllData();
         ArrayList<AfficheUsers> users = ad.getAllObs();
 
-        
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         tableView.getColumns().get(0).prefWidthProperty().bind(tableView.widthProperty().multiply(0.33));   //33% for dt column size
         tableView.getColumns().get(1).prefWidthProperty().bind(tableView.widthProperty().multiply(0.33));
         tableView.getColumns().get(2).prefWidthProperty().bind(tableView.widthProperty().multiply(0.33));
-
 
         tableView.getItems().setAll(users);
     }
 
 
     @FXML
-
-
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
 
         if(event.getSource() == retour){
             Scene scene = retour.getScene();
-            Stage stage = new Stage(); 
             Parent root = FXMLLoader.load(getClass().getResource("SelectionEspece.fxml"));
             scene.setRoot(root); 
         }

@@ -22,7 +22,8 @@ import javafx.fxml.*;
 
 public class AddHippoController {
 
-    
+    @FXML
+    private Label msgLab = new Label(" ");
     @FXML
     private TextField zoneObsH;
     @FXML
@@ -47,10 +48,7 @@ public class AddHippoController {
     private TextField zoneLieu_Lambert_Y;
     @FXML
     private TextField zoneLObservation;
-    @FXML
-    private TextField zoneNom;
-    @FXML
-    private TextField zonePrenom;
+    
 
     @FXML
     private Button buttonAdd;
@@ -101,11 +99,18 @@ public class AddHippoController {
             values.put("lieu_Lambert_X",zoneLieu_Lambert_X.getText());
             values.put("lieu_Lambert_Y",zoneLieu_Lambert_Y.getText());
             values.put("lObservateur",zoneLObservation.getText());
-            values.put("nom",zoneNom.getText());
-            values.put("prenom",zonePrenom.getText());
 
 
             ChoixVal val = new ChoixVal("Hippocampes", values);
+
+            ArrayList<String> message = val.getMsg();
+            msgLab.setText("");
+            for(int i=0; i<message.size(); i++){
+                msgLab.setText(msgLab.getText()+ " \n"+message.get(i));
+            }
+            
+
+
 
         }
         else if(event.getSource() == buttonAnnuler){

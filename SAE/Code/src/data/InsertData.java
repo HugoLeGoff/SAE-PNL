@@ -11,6 +11,8 @@ public class InsertData {
     private ArrayList<String> values;
     private ArrayList<String> columns;
     private String table;
+    private String message = new String("Ajout réussi");
+
 
     public InsertData(String table) {
         this.values = new ArrayList<String>();
@@ -59,6 +61,10 @@ public class InsertData {
             stmt.executeUpdate(query);
         }catch(Exception e){
             System.out.println(e);
+            this.message = e.getMessage();
         }
+    }
+    public String getMsg() {
+        return message;
     }
 }

@@ -73,6 +73,10 @@
             <AnchorPane prefHeight="9.0" prefWidth="600.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" VBox.vgrow="ALWAYS" />
             <AnchorPane prefHeight="53.0" prefWidth="900.0">
                <children>
+<<<<<<< HEAD
+=======
+                  <Button fx:id="retour" layoutX="4.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="32.0" prefWidth="40.0" text="Button" />
+>>>>>>> 208e5140e5fb817fd536a0f04cdcd9ed063aa26d
                   <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="12.0" layoutY="6.0">
                      <image>
                         <Image url="@17319.png" />

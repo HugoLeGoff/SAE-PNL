@@ -25,7 +25,7 @@ public class AfficheUsers {
         return prenom;
     }
 
-    public String getIdObservateur() {
+    public String getIdU() {
         return this.idU;
     }
 }

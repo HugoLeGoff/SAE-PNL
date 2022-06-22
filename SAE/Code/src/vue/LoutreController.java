@@ -20,7 +20,9 @@ import javafx.fxml.*;
 
 public class LoutreController {
 
-
+    @FXML
+    private Button supprimer;
+    @FXML private TextField id;
     @FXML
     private Label nomObservateur = new Label();
 
@@ -139,6 +141,10 @@ public class LoutreController {
             Scene scene = buttonAdd.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("addLoutre.fxml"));
             scene.setRoot(root);
+        }
+        else if(event.getSource() == supprimer){
+            Delete dl = new Delete("Loutres",id.getText());
+            dl.deleteTuple();
         }
     }
 

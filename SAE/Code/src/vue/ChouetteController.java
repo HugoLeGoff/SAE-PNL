@@ -22,7 +22,7 @@ public class ChouetteController {
 
     @FXML
     private Button supprimer;
-    @FXML private Label id;
+    @FXML private TextField id;
     @FXML
     private Label nomObservateur = new Label();
 

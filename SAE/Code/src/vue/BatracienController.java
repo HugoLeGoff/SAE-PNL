@@ -31,7 +31,7 @@ public class BatracienController {
 
     @FXML
     private Button supprimer;
-    @FXML private Label id;
+    @FXML private TextField id;
 
     @FXML private TableView<AfficheObsBatracien> tableView;
     @FXML private TableColumn<AfficheObsBatracien, String> obsB;

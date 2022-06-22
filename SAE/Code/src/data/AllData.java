@@ -74,7 +74,7 @@ public class AllData {
 
     Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
     Statement stmt = c.createStatement();
-    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_gci JOIN Observation ON leNid = idObs;");
+    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_gci JOIN Observation ON obsG = idObs;");
 
       while(res.next()){
         Table t = new Table(res.getString(1));
@@ -132,7 +132,9 @@ public class AllData {
 
     Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
     Statement stmt = c.createStatement();
-    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_Chouette JOIN Observation ON obsH = idObs;");
+    ResultSet res;
+
+    res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_Chouette JOIN Observation ON numObs = idObs;");
 
       while(res.next()){
         Table t = new Table(res.getString(1));
@@ -147,12 +149,11 @@ public class AllData {
 
   }
   public ArrayList<AfficheObsHippocampes> hippocampeAnnee(String annee) throws SQLException{
-
     ArrayList<AfficheObsHippocampes> ret = new ArrayList<AfficheObsHippocampes>();
 
     Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
     Statement stmt = c.createStatement();
-    ResultSet res = stmt.executeQuery("SELECT * FROM obs_hippocampe JOIN Observation ON obsH = idObs LEFT JOIN Aobserve ON idObs = lobservation LEFT JOIN observateur ON lobservateur = idObservateurWHERE YEAR (dateObs) = "+annee+";");
+    ResultSet res = stmt.executeQuery("SELECT * FROM obs_hippocampe JOIN Observation ON obsH = idObs LEFT JOIN Aobserve ON idObs = lobservation LEFT JOIN observateur ON lobservateur = idObservateur WHERE YEAR (dateObs) = "+annee+";");
 
       while(res.next()){
         AfficheObsHippocampes ch = new AfficheObsHippocampes(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getString(7),res.getString(9),res.getString(10),res.getString(11),res.getString(12),res.getString(13),res.getString(16),res.getString(17));

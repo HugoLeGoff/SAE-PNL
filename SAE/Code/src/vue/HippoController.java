@@ -43,6 +43,9 @@ public class HippoController {
     private Button retour;
 
     @FXML
+    private Button carte;
+
+    @FXML
     private Button buttonAdd;
 
     @FXML
@@ -70,6 +73,10 @@ public class HippoController {
     private TextField zoneGestant;
 
     ObservableList<String> liste;
+
+    AllData ad ;
+
+    ArrayList<AfficheObsHippocampes> obsHippo;
 
     @FXML private TableView<AfficheObsHippocampes> tableView;
     @FXML private TableColumn<AfficheObsHippocampes, String> idObs;
@@ -116,17 +123,9 @@ public class HippoController {
         nom.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("nom"));
         prenom.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("prenom"));
 
-        AllData ad = new AllData();
-        ArrayList<AfficheObsHippocampes> obsHippo = ad.hippocampe();
-        try{
-            if (choixAnnee.getValue()=="toute"){
-                obsHippo = ad.hippocampe();
-            }else{
-                
-                obsHippo = ad.hippocampeAnnee(choixAnnee.getValue());
-            }
-        }catch(Exception e){
-        }
+        ad = new AllData();
+        obsHippo = ad.hippocampe();
+        
         
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         tableView.getColumns().get(0).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));    //33% for id column size
@@ -185,14 +184,36 @@ public class HippoController {
         else if(event.getSource() == supprimer){
             Delete dl = new Delete("Hippocampes",id.getText());
             dl.deleteTuple();
+            Scene scene = buttonAdd.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
+            scene.setRoot(root);
         }
         else if(event.getSource() == recharger){
-            try{
-                Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+            if(choixAnnee.getValue()!=null){
+                if (choixAnnee.getValue().equals("toute")){
+                    try {
+                        obsHippo = ad.hippocampe();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }else{
+                    
+                    try {
+                        obsHippo = ad.hippocampeAnnee(choixAnnee.getValue());
+                    } catch (SQLException e) {
+                        
+                        e.printStackTrace();
+                    }
+                }
+                tableView.getItems().setAll(obsHippo);
             }
-            catch(Exception e){
-                System.out.println(e);
-            }
+            
+            
+        }
+        else if(event.getSource() == carte){
+            Scene scene = carte.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
+            scene.setRoot(root);
         }
     }
 

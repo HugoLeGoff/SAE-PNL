@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import data.AllData;
+import data.Delete;
 import donnee.AfficheCompte;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,10 +13,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldListCell;
 import javafx.stage.Stage;
 
 /**
@@ -52,6 +56,12 @@ public class GestionCompteController{
 
     @FXML
     private Button buttonAdd;
+
+    @FXML
+    private Button supprimer;
+
+    @FXML
+    private TextField id;
 
     @FXML
     /**
@@ -101,6 +111,13 @@ public class GestionCompteController{
         else if(event.getSource() == buttonAdd){
             Scene scene = buttonAdd.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("addCompte.fxml"));
+            scene.setRoot(root);
+        }
+        else if(event.getSource() == supprimer){
+            Delete dl = new Delete("Comptes",id.getText());
+            dl.deleteTuple();
+            Scene scene = buttonAdd.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("GestionCompte.fxml"));
             scene.setRoot(root);
         }
     }

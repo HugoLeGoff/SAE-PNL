@@ -14,6 +14,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
@@ -28,7 +30,11 @@ public class LoutreController {
     @FXML
     private Label nomObservateur = new Label();
 
+    
     @FXML
+    private Button carte;
+
+    @FXML  
     private TableView<AfficheObsLoutre> tableView;
 
     @FXML
@@ -69,11 +75,23 @@ public class LoutreController {
     private Button retour;
 
     @FXML
+    private Button recharger;
+
+    @FXML
     private Button buttonAdd;
 
     
     @FXML
     private TableColumn<AfficheObsLoutre, String> typeObs;
+
+    @FXML
+    private ComboBox<String> choixAnnee;
+
+    ObservableList<String> liste;
+
+    AllData ad ;
+
+    ArrayList<AfficheObsLoutre> obsLoutre;
 
 
     
@@ -106,8 +124,8 @@ public class LoutreController {
 
         
 
-        AllData ad = new AllData();
-        ArrayList<AfficheObsLoutre> obsLoutre = ad.loutre();
+        ad = new AllData();
+        obsLoutre = ad.loutre();
         
         
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
@@ -128,6 +146,15 @@ public class LoutreController {
  
 
         tableView.getItems().setAll(obsLoutre);
+
+
+        ArrayList<Table> tables = ad.tableLoutres();
+        liste = FXCollections.observableArrayList();
+        for(Table t :tables){
+            liste.add(t.getTable());
+        }
+        liste.add("toute");
+        choixAnnee.setItems(liste);
     }
 
 
@@ -154,8 +181,41 @@ public class LoutreController {
         else if(event.getSource() == supprimer){
             Delete dl = new Delete("Loutres",id.getText());
             dl.deleteTuple();
+            Scene scene = buttonAdd.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("tablesLoutre.fxml"));
+            scene.setRoot(root);
+        }
+
+        else if(event.getSource() == recharger){
+            if(choixAnnee.getValue()!=null){
+                if (choixAnnee.getValue().equals("toute")){
+                    try {
+                        obsLoutre= ad.loutre();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }else{
+                    
+                    try {
+                        obsLoutre = ad.loutreAnnee(choixAnnee.getValue());
+                    } catch (SQLException e) {
+                        
+                        e.printStackTrace();
+                    }
+                }
+                tableView.getItems().setAll(obsLoutre);
+            }
+            
+
+
+        }else if(event.getSource() == carte){
+            Scene scene = carte.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
+            scene.setRoot(root);
+
         }
     }
+    
 
 
 

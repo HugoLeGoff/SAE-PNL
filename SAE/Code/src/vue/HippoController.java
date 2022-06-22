@@ -7,12 +7,9 @@ import java.sql.Statement;
 
 import data.*;
 import java.util.*;
-<<<<<<< HEAD
 
 
 import connexion.Compte;
-=======
->>>>>>> 6bcda495d6c57d4ccaa8c58c3912b72e771da7d0
 import donnee.AfficheObsHippocampes;
 import donnee.Table;
 import javafx.scene.Parent;
@@ -158,17 +155,20 @@ public class HippoController {
 
     @FXML
 
-<<<<<<< HEAD
     /**
      * Initializes the action to execute when pressing a button.
      * @param event the event
      * @throws IOException IOException
+<<<<<<< HEAD
      */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
 =======
     
+=======
+     * @throws SQLException SQLException
+     */   
+>>>>>>> 8606ec42af8c6aa7bf0142d59c70ed8cfa21fa25
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException, SQLException{
->>>>>>> 4f3a334462a0a44d0f94a19bd2507b3b082316cf
 
         if(event.getSource() == retour){
             Scene scene = retour.getScene();

@@ -17,7 +17,9 @@ import javafx.scene.text.Text;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
-
+/**
+ * This class is the controller of the Accueil page. It gets the page interactive.
+ */
 public class ChouetteController {
 
 

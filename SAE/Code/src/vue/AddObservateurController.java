@@ -19,7 +19,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
 
-
+/**
+ * This class is the controller of the AddObservateur page. It gets the page interactive.
+ */
 public class AddObservateurController {
 
     
@@ -41,6 +43,10 @@ public class AddObservateurController {
     ObservableList<String> liste;
     
     @FXML
+    /**
+     * Initializes the data already on the page.
+     * @throws SQLException SQLException
+     */
     private void initialize() throws SQLException {
 
         AllData ad = new AllData();
@@ -48,6 +54,11 @@ public class AddObservateurController {
     }
 
     @FXML
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
         if(event.getSource() == buttonAdd){
             HashMap<String,String> values = new HashMap<String,String>();

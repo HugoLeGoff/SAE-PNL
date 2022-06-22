@@ -23,7 +23,9 @@ import javafx.fxml.*;
 
 import java.util.*;
 
-
+/**
+ * This class is the controller of the Exportation page. It gets the page interactive.
+ */
 public class ExportationController {
 
     private String especeTMP;
@@ -70,6 +72,10 @@ public class ExportationController {
 
 
     @FXML
+    /**
+     * Initializes the data already created on the page.
+     * @throws SQLException SQLException
+     */
     private void initialize() throws SQLException {
     
         Compte compte = new Compte();
@@ -150,6 +156,12 @@ public class ExportationController {
 
 
     @FXML
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     * @throws SQLException SQLException
+     */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
 
         if(event.getSource() == exporter){

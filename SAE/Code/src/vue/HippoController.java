@@ -25,7 +25,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
-
+/**
+ * This class is the controller of the Hippocampe page. It gets the page interactive.
+ */
 public class HippoController {
     @FXML
     private ComboBox<String> choixAnnee;
@@ -86,6 +88,10 @@ public class HippoController {
     
 
     @FXML
+    /**
+     * Initializes the data already created on the page.
+     * @throws SQLException SQLException
+     */
     private void initialize() throws SQLException {
         idObs.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("obsH"));
         espece.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("espece"));
@@ -149,8 +155,18 @@ public class HippoController {
 
     @FXML
 
+<<<<<<< HEAD
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     * @throws SQLException SQLException
+     */
+    protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
+=======
     
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException, SQLException{
+>>>>>>> 4f3a334462a0a44d0f94a19bd2507b3b082316cf
 
         if(event.getSource() == retour){
             Scene scene = retour.getScene();

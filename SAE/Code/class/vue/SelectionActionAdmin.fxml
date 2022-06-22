@@ -132,7 +132,7 @@
                                           <Font name="System Bold" size="24.0" />
                                        </font>
                                     </Label>
-                                    <Button fx:id="gestionComptes" alignment="CENTER" layoutX="31.0" layoutY="163.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="62.0" prefWidth="246.0" style="-fx-background-color: #008967;" text="Gestion des comptes" textFill="WHITE">
+                                    <Button fx:id="gestionCompte" alignment="CENTER" layoutX="31.0" layoutY="163.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="62.0" prefWidth="246.0" style="-fx-background-color: #008967;" text="Gestion des comptes" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="16.0" />
                                        </font>

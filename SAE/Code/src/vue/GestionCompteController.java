@@ -53,8 +53,8 @@ public class GestionCompteController{
     private void initialize() throws SQLException {
 
         idUser.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("idUser"));
-        nom.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("login"));
-        prenom.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("passw"));
+        nom.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("nom"));
+        prenom.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("prenom"));
         login.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("login"));
         passw.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("passw"));
         statut.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("statut"));

@@ -45,38 +45,38 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.AddCompteController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.AddCompteController">
    <top>
       <VBox>
          <children>
             <AnchorPane prefHeight="67.0" prefWidth="600.0">
                <children>
-                  <Label layoutX="27.0" layoutY="19.0" prefHeight="35.0" prefWidth="319.0" text="Ajouter un tuple :" textFill="#008967">
+                  <Label layoutX="36.0" layoutY="38.0" prefHeight="35.0" prefWidth="319.0" text="Ajouter un tuple :" textFill="#008967">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <AnchorPane prefHeight="9.0" prefWidth="600.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" />
+                  <AnchorPane prefHeight="9.0" prefWidth="1800.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" />
                </children>
             </AnchorPane>
          </children>
       </VBox>
    </top>
    <left>
-      <AnchorPane prefHeight="197.0" prefWidth="35.0" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="197.0" prefWidth="150.0" BorderPane.alignment="CENTER" />
    </left>
    <right>
-      <AnchorPane prefHeight="197.0" prefWidth="35.0" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="197.0" prefWidth="150.0" BorderPane.alignment="CENTER" />
    </right>
    <center>
-      <AnchorPane prefHeight="262.0" prefWidth="567.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="360.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox prefHeight="258.0" prefWidth="567.0">
+            <HBox layoutY="67.0" prefHeight="326.0" prefWidth="600.0">
                <children>
-                  <GridPane prefHeight="248.0" prefWidth="305.0">
+                  <GridPane prefHeight="328.0" prefWidth="601.0">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.199951171875" minWidth="10.0" prefWidth="98.39998779296874" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="324.99998474121094" minWidth="10.0" prefWidth="184.8000122070313" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="487.2000244140625" minWidth="10.0" prefWidth="96.79999237060548" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="495.1999832153321" minWidth="10.0" prefWidth="437.6000076293946" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -88,34 +88,33 @@
                     </rowConstraints>
                      <children>
                         <Label text="idUser : " />
-                        <TextField fx:id="zoneIdUser" prefHeight="26.0" prefWidth="230.0" GridPane.columnIndex="1" />
-                        <TextField fx:id="zoneNom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="zoneIdUser" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" />
+                        <TextField fx:id="zoneNom" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label text="nom : " GridPane.rowIndex="1" />
                         <Label text="prenom : " GridPane.rowIndex="2" />
                         <Label text="login  : " GridPane.rowIndex="3" />
                         <Label text="mot de passe : " GridPane.rowIndex="4" />
-                        <TextField fx:id="zonePrenom" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField fx:id="zoneLogin" prefHeight="26.0" prefWidth="191.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextField fx:id="zonePassw" prefHeight="26.0" prefWidth="191.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="zonePrenom" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="zoneLogin" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="zonePassw" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <Label text="statut : " GridPane.rowIndex="5" />
-                        <ComboBox fx:id="zoneStatut" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <ComboBox fx:id="zoneStatut" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
-                  <AnchorPane prefHeight="248.0" prefWidth="50.0" />
                </children>
             </HBox>
          </children>
       </AnchorPane>
    </center>
    <bottom>
-      <AnchorPane prefHeight="97.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="186.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="buttonAdd" layoutX="434.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="37.0" prefWidth="151.0" text="Ajouter">
+            <Button fx:id="buttonAdd" layoutX="645.0" layoutY="100.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="37.0" prefWidth="151.0" text="Ajouter">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="buttonAnnuler" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="37.0" prefWidth="151.0" text="Annuler">
+            <Button fx:id="buttonAnnuler" layoutX="106.0" layoutY="100.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="37.0" prefWidth="151.0" text="Annuler">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

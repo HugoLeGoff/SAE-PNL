@@ -77,13 +77,13 @@
                         <AnchorPane layoutX="22.0" layoutY="3.0">
                            <children>
                               <Button fx:id="buttonAdmin" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="41.0" prefWidth="45.0" />
+                              <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="30.0" layoutY="4.0">
+                                 <image>
+                                    <Image url="@588a6aa3d06f6719692a2d23.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </AnchorPane>
-                        <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="28.0" layoutY="7.0">
-                           <image>
-                              <Image url="@588a6aa3d06f6719692a2d23.png" />
-                           </image>
-                        </ImageView>
                      </children>
                   </AnchorPane>
                   <AnchorPane>
@@ -93,18 +93,10 @@
                               <Image url="@32205.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="deconnexion" layoutX="4.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="48.0" prefWidth="34.0" text="Button" />
+                        <Button fx:id="deconnexion" layoutX="18.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="48.0" prefWidth="34.0" text="Button" />
                      </children>
                   </AnchorPane>
-                  <AnchorPane prefHeight="50.0" prefWidth="34.0">
-                     <children>
-                        <ImageView fitHeight="34.0" fitWidth="46.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="10.0">
-                           <image>
-                              <Image url="@58308.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </AnchorPane>
+                  <AnchorPane prefHeight="50.0" prefWidth="34.0" />
                </children>
             </HBox>
             <AnchorPane prefHeight="9.0" prefWidth="600.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" VBox.vgrow="ALWAYS" />

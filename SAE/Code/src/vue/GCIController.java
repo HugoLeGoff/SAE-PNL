@@ -7,7 +7,6 @@ import data.*;
 import java.util.*;
 
 import connexion.Compte;
-import donnee.AfficheObsHippocampes;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -16,6 +15,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
@@ -37,11 +38,20 @@ public class GCIController {
     @FXML
     private Button retour;
 
+    
+    @FXML
+    private Button carte;
+
     @FXML
     private Button buttonAdd;
 
     @FXML
     private TextField zoneObsH;
+
+    @FXML
+    private ComboBox<String> choixAnnee;
+
+
 
     @FXML
     private TextField zoneEspace;
@@ -56,10 +66,20 @@ public class GCIController {
     private TextField zoneTypeDePeche;
 
     @FXML
+    private Button recharger;
+
+
+    @FXML
     private TextField zoneTaille;
 
     @FXML
     private TextField zoneGestant;
+
+    ObservableList<String> liste;
+
+    AllData ad ;
+
+    ArrayList<AfficheObsGCI> obsGCI;
 
     @FXML private TableView<AfficheObsGCI> tableView;
     @FXML private TableColumn<AfficheObsGCI, String> obsG;
@@ -112,8 +132,8 @@ public class GCIController {
         nom.setCellValueFactory(new PropertyValueFactory<AfficheObsGCI, String>("nom"));
         prenom.setCellValueFactory(new PropertyValueFactory<AfficheObsGCI, String>("prenom"));
 
-        AllData ad = new AllData();
-        ArrayList<AfficheObsGCI> obsGCI = ad.gci();
+        ad = new AllData();
+        obsGCI = ad.gci();
         
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         tableView.getColumns().get(0).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));    //33% for id column size
@@ -136,6 +156,14 @@ public class GCIController {
  
 
         tableView.getItems().setAll(obsGCI);
+
+        ArrayList<Table> tables = ad.tableGCI();
+        liste = FXCollections.observableArrayList();
+        for(Table t :tables){
+            liste.add(t.getTable());
+        }
+        liste.add("toute");
+        choixAnnee.setItems(liste);
     }
 
 
@@ -162,11 +190,39 @@ public class GCIController {
         else if(event.getSource() == supprimer){
             Delete dl = new Delete("gci",id.getText());
             dl.deleteTuple();
+            Scene scene = buttonAdd.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("tablesGCI.fxml"));
+            scene.setRoot(root);
+        }
+
+        else if(event.getSource() == recharger){
+            if(choixAnnee.getValue()!=null){
+                if (choixAnnee.getValue().equals("toute")){
+                    try {
+                        obsGCI = ad.gci();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }else{
+                    
+                    try {
+                        obsGCI = ad.gciAnnee(choixAnnee.getValue());
+                    } catch (SQLException e) {
+                        
+                        e.printStackTrace();
+                    }
+                }
+                tableView.getItems().setAll(obsGCI);
+            }
+            
+            
+        }
+    
+
+        else if(event.getSource() == carte){
+            Scene scene = carte.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
+            scene.setRoot(root);
         }
     }
-
-
-
-
-
 } 

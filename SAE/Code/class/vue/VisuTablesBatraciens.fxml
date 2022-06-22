@@ -102,6 +102,12 @@
                   <Button fx:id="retour" layoutX="4.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="32.0" prefWidth="40.0" text="Button" />
                   <ComboBox fx:id="choixAnnee" layoutX="170.0" layoutY="42.0" onAction="#handleSubmitButtonAction" prefHeight="26.0" prefWidth="94.0" />
                   <Label layoutX="44.0" layoutY="46.0" text="Sélection de l'année :" />
+                  <Button fx:id="carte" layoutX="473.0" layoutY="39.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="30.0" prefWidth="86.0" style="-fx-background-color: #008967;" text="Accès carte" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="recharger" layoutX="274.0" layoutY="42.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" style="-fx-background-color: #008967;" text="Recharger" textFill="WHITE" />
                </children>
             </AnchorPane>
          </children>

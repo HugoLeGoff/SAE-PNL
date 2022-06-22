@@ -48,7 +48,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.HippoController">
    <top>
-      <VBox prefHeight="120.0" prefWidth="600.0">
+      <VBox>
          <children>
             <HBox prefHeight="48.0" prefWidth="586.0" VBox.vgrow="ALWAYS">
                <children>
@@ -128,7 +128,7 @@
             </AnchorPane>
             <Label layoutX="225.0" layoutY="9.0" text="Indiquez l'id d'un tuple à supprimer :" />
             <TextField fx:id="id" layoutX="427.0" layoutY="4.0" prefHeight="26.0" prefWidth="51.0" />
-            <Button fx:id="supprimer1" layoutX="490.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" style="-fx-background-color: #008967;" text="Supprimer" textFill="WHITE" />
+            <Button fx:id="supprimer" layoutX="490.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" style="-fx-background-color: #008967;" text="Supprimer" textFill="WHITE" />
          </children>
       </AnchorPane>
    </bottom>

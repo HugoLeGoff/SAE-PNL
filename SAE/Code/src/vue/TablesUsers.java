@@ -65,9 +65,10 @@ public class TablesUsers {
 
         
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        tableView.getColumns().get(0).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));    //33% for id column size
-        tableView.getColumns().get(1).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));   //33% for dt column size
-        tableView.getColumns().get(2).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));
+        tableView.getColumns().get(0).prefWidthProperty().bind(tableView.widthProperty().multiply(0.33));   //33% for dt column size
+        tableView.getColumns().get(1).prefWidthProperty().bind(tableView.widthProperty().multiply(0.33));
+        tableView.getColumns().get(2).prefWidthProperty().bind(tableView.widthProperty().multiply(0.33));
+
 
         tableView.getItems().setAll(users);
     }
@@ -81,12 +82,12 @@ public class TablesUsers {
         if(event.getSource() == retour){
             Scene scene = retour.getScene();
             Stage stage = new Stage(); 
-            Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("SelectionEspece.fxml"));
             scene.setRoot(root); 
         }
         else if(event.getSource() == buttonAdd){
             Scene scene = buttonAdd.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("addChouette.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("addObservateur.fxml"));
             scene.setRoot(root);
         }
     }

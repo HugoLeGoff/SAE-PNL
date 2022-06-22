@@ -26,12 +26,14 @@ public class GestionCompteController{
     private TableColumn<AfficheCompte, String> idUser;
 
     @FXML
+
     private TableColumn<AfficheCompte, String> nom;
 
     @FXML
     private TableColumn<AfficheCompte, String> prenom;
 
     @FXML
+
     private TableColumn<AfficheCompte, String> login;
 
     @FXML
@@ -51,8 +53,8 @@ public class GestionCompteController{
     private void initialize() throws SQLException {
 
         idUser.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("idUser"));
-        nom.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("login"));
-        prenom.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("passw"));
+        nom.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("nom"));
+        prenom.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("prenom"));
         login.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("login"));
         passw.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("passw"));
         statut.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("statut"));
@@ -62,12 +64,12 @@ public class GestionCompteController{
         
         
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        tableView.getColumns().get(0).prefWidthProperty().bind(tableView.widthProperty().multiply(0.2));
-        tableView.getColumns().get(1).prefWidthProperty().bind(tableView.widthProperty().multiply(0.2));
-        tableView.getColumns().get(2).prefWidthProperty().bind(tableView.widthProperty().multiply(0.2));
-        tableView.getColumns().get(3).prefWidthProperty().bind(tableView.widthProperty().multiply(0.2));
-        tableView.getColumns().get(4).prefWidthProperty().bind(tableView.widthProperty().multiply(0.2));
-        tableView.getColumns().get(5).prefWidthProperty().bind(tableView.widthProperty().multiply(0.2));
+        tableView.getColumns().get(0).prefWidthProperty().bind(tableView.widthProperty().multiply(0.16));
+        tableView.getColumns().get(1).prefWidthProperty().bind(tableView.widthProperty().multiply(0.16));
+        tableView.getColumns().get(2).prefWidthProperty().bind(tableView.widthProperty().multiply(0.16));
+        tableView.getColumns().get(3).prefWidthProperty().bind(tableView.widthProperty().multiply(0.16));
+        tableView.getColumns().get(4).prefWidthProperty().bind(tableView.widthProperty().multiply(0.16));
+        tableView.getColumns().get(5).prefWidthProperty().bind(tableView.widthProperty().multiply(0.16));
 
 
         tableView.getItems().setAll(comptes);

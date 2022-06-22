@@ -212,7 +212,7 @@ public class BatracienController {
             Parent root = FXMLLoader.load(getClass().getResource("TablesBatraciens.fxml"));
             scene.setRoot(root);
         }
-<<<<<<< HEAD
+
         else if(event.getSource() == recharger){
             if(choixAnnee.getValue()!=null){
                 if (choixAnnee.getValue().equals("toute")){
@@ -232,9 +232,8 @@ public class BatracienController {
                 }
                 tableView.getItems().setAll(obsBatracien);
             }
+        }
             
-            
-=======
         else if(event.getSource() == carte){
             Scene scene = carte.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
@@ -249,7 +248,7 @@ public class BatracienController {
             Scene scene = carte.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
             scene.setRoot(root);
->>>>>>> 8e2f24e339f7d28b02a0fdd74e784dbb1d60419b
+
         }
     }
 

@@ -61,27 +61,19 @@ public class TablesUsers {
         
 
         AllData ad = new AllData();
-        ArrayList<AfficheUsers> users = ad.GetAllCompte();
+<<<<<<< HEAD
+        ArrayList<AfficheUsers> users = ad.getAllObs();
+=======
+        //ArrayList<AfficheUsers> users = ad.getAllCompte();
+>>>>>>> 05d0fa5d01c9216e25ec3e63aa57d41502f2ec80
         
         
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         tableView.getColumns().get(0).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));    //33% for id column size
         tableView.getColumns().get(1).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));   //33% for dt column size
         tableView.getColumns().get(2).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));
-        tableView.getColumns().get(3).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));
-        tableView.getColumns().get(4).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));
-        tableView.getColumns().get(5).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));
-        tableView.getColumns().get(6).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));
-        tableView.getColumns().get(7).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));
-        tableView.getColumns().get(8).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07)); 
-        tableView.getColumns().get(9).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07)); 
-        tableView.getColumns().get(10).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));
 
-
-
- 
-
-        tableView.getItems().setAll(obsChouette);
+        //tableView.getItems().setAll(users);
     }
 
 
@@ -102,9 +94,4 @@ public class TablesUsers {
             scene.setRoot(root);
         }
     }
-
-
-
-
-
 } 

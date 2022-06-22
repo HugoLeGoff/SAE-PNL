@@ -272,12 +272,11 @@ public ArrayList<AfficheCompte> getAllCompte() {
   try {
       Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
       Statement stmt = c.createStatement();
-      ResultSet res = stmt.executeQuery("SELECT * FROM Connexion");
+      ResultSet res = stmt.executeQuery("SELECT * FROM User JOIN Connexion ON idUser = idU JOIN Statut ON idStatut = statut");
 
-      AfficheCompte ch = null;
       while (res.next()) {
         
-        ch = new AfficheCompte(res.getString(1),res.getString(2),res.getString(3));
+        AfficheCompte ch = new AfficheCompte(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(6),res.getString(7));
         ret.add(ch);
       }
 
@@ -292,5 +291,31 @@ public ArrayList<AfficheCompte> getAllCompte() {
 
 }
 
+public ArrayList<AfficheUsers> getAllObs() {
+    
+  ArrayList<AfficheUsers> ret = new ArrayList<AfficheUsers>();
+
+  try {
+      Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+      Statement stmt = c.createStatement();
+      ResultSet res = stmt.executeQuery("SELECT idU, prenom, nom FROM User JOIN Connexion ON idUser = idU JOIN Statut ON idStatut = statut");
+
+      AfficheUsers ch = null;
+      while (res.next()) {
+        
+        ch = new AfficheUsers(res.getString(1),res.getString(2),res.getString(3));
+        ret.add(ch);
+      }
+
+      c.close();
+
+  } catch (SQLException e) {
+
+      e.printStackTrace();
+  }
+
+  return ret;
+
+}
 
 }

@@ -1,7 +1,6 @@
 package vue;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Screen;
@@ -9,7 +8,6 @@ import javafx.stage.Stage;
 
 public class Accueil extends Application {
 
-    private Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
 @Override
     public void start(Stage stage)
     throws Exception {

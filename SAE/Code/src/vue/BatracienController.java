@@ -18,11 +18,17 @@ import javafx.scene.text.Text;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
-
+/**
+ * This class is the controller of the Batracien page. It gets the page interactive.
+ */
 public class BatracienController {
 
     @FXML
     private Label nomObservateur = new Label();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8c80260a09369cab0370480c56483a4e7e6ec0d3
     @FXML
     private Button retour;
 
@@ -72,9 +78,16 @@ public class BatracienController {
     
 
     @FXML
+    /**
+     * Initializes the data already on the page.
+     * @throws SQLException SQLException
+     */
     private void initialize() throws SQLException {
+<<<<<<< HEAD
 
         
+=======
+>>>>>>> 8c80260a09369cab0370480c56483a4e7e6ec0d3
         Compte compte = new Compte();
         String log = compte.getLogin();
         nomObservateur.setText(log);
@@ -154,7 +167,11 @@ public class BatracienController {
 
     @FXML
 
-
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
 
         if(event.getSource() == retour){

@@ -20,6 +20,9 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class is the controller of the SauvegardeBase page. It gets the page interactive.
+ */
 public class SauvegardeBaseController {
      @FXML Button deconnexion;
 
@@ -34,6 +37,10 @@ public class SauvegardeBaseController {
 
 
     @FXML
+    /**
+     * Initializes the data already created on the page.
+     * @throws SQLException SQLException
+     */
     private void initialize() {
 
         Compte compte = new Compte();
@@ -43,7 +50,11 @@ public class SauvegardeBaseController {
 
     @FXML
 
-
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
         if(event.getSource() == this.deconnexion){
             Scene scene = deconnexion.getScene();
@@ -52,8 +63,9 @@ public class SauvegardeBaseController {
         }
         else if(event.getSource() == this.retour){
             Scene scene = retour.getScene();
+            Stage stage = new Stage(); 
             Parent root = FXMLLoader.load(getClass().getResource("SelectionActionAdmin.fxml"));
-            scene.setRoot(root);
+            scene.setRoot(root); 
         }
         else if(event.getSource() == this.sauvegarder){
             ProcessBuilder processBuilder= new ProcessBuilder();

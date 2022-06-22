@@ -66,8 +66,9 @@ public class AddGCIController {
     @FXML
     /**
      * Initializes the action to execute when pressing a button.
-     * @param event the event
+     * @param event event
      * @throws IOException IOException
+     * @throws SQLIntegrityConstraintViolationException SQLIntegrityConstraintViolationException
      */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException, SQLIntegrityConstraintViolationException{
         if(event.getSource() == buttonAdd){

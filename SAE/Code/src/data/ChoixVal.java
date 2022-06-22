@@ -373,9 +373,9 @@ public class ChoixVal {
             
         }else if (espece.equals("Comptes")){
             columns=new ArrayList<String>();
-            columns.add("idStatut");
             columns.add("nomStatut");
             remplirValues();
+            columns.add("idStatut");
             insertData.setTable("Statut");
             insertData.setColumns(columns);
             insertData.setValues(values);
@@ -385,8 +385,8 @@ public class ChoixVal {
             columns.add("idU");
             columns.add("nom");
             columns.add("prenom");
-            columns.add("statut");
             remplirValues();
+            columns.add("statut");
             insertData.setTable("User");
             insertData.setColumns(columns);
             insertData.setValues(values);
@@ -396,8 +396,8 @@ public class ChoixVal {
             columns.add("idUser");
             columns.add("login");
             columns.add("passw");
-            columns.add("statut");
             remplirValues();
+            columns.add("statut");
             insertData.setTable("Connexion");
             insertData.setColumns(columns);
             insertData.setValues(values);

@@ -37,16 +37,16 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.HippoController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.BatracienController">
    <top>
       <VBox>
          <children>
@@ -69,7 +69,7 @@
                            </font></Label>
                      </children>
                   </AnchorPane>
-                  <Label prefHeight="48.0" prefWidth="432.0" text="Hippocampes">
+                  <Label prefHeight="48.0" prefWidth="432.0" text="Batraciens">
                      <font>
                         <Font size="14.0" />
                      </font></Label>
@@ -86,76 +86,69 @@
                   <AnchorPane prefHeight="50.0" prefWidth="34.0" />
                </children>
             </HBox>
-            <AnchorPane prefHeight="9.0" prefWidth="600.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" />
-            <AnchorPane prefHeight="62.0" prefWidth="600.0">
+            <AnchorPane prefHeight="9.0" prefWidth="600.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" VBox.vgrow="ALWAYS" />
+            <AnchorPane prefHeight="80.0" prefWidth="600.0">
                <children>
-                  <Label layoutX="46.0" layoutY="43.0" text="Sélection de l'année :" />
-                  <Label layoutX="156.0" layoutY="-1.0" prefHeight="42.0" prefWidth="319.0" text="Tables Hippocampes :" textFill="#008967">
+                  <Label layoutX="184.0" prefHeight="35.0" prefWidth="319.0" text="Tables Batraciens :" textFill="#008967">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <ImageView accessibleRole="BUTTON" fitHeight="46.0" fitWidth="40.0" layoutX="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView accessibleRole="BUTTON" fitHeight="46.0" fitWidth="40.0" layoutX="4.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@17319.png" />
                      </image>
                   </ImageView>
-                  <AnchorPane layoutY="1.0" prefHeight="38.0" prefWidth="44.0">
-                     <children>
-                        <Button fx:id="retour" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="34.0" prefWidth="52.0" text="Button" />
-                     </children>
-                  </AnchorPane>
-                  <ComboBox fx:id="choixAnnee" layoutX="170.0" layoutY="38.0" onAction="#handleSubmitButtonAction" prefHeight="26.0" prefWidth="91.0" />
-                  <AnchorPane layoutX="4.0" layoutY="69.0" prefHeight="7.0" prefWidth="422.0" />
+                  <Button fx:id="retour" layoutX="4.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="32.0" prefWidth="40.0" text="Button" />
+                  <ComboBox fx:id="choixAnnee" layoutX="170.0" layoutY="42.0" onAction="#handleSubmitButtonAction" prefHeight="26.0" prefWidth="94.0" />
+                  <Label layoutX="44.0" layoutY="46.0" text="Sélection de l'année :" />
                </children>
             </AnchorPane>
          </children>
       </VBox>
    </top>
-   <bottom>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="600.0">
-         <children>
-            <Label layoutX="24.0" layoutY="5.0" prefHeight="24.0" prefWidth="96.0" text="Ajouter un tuple " />
-            <ImageView accessibleRole="BUTTON" fitHeight="62.0" fitWidth="26.0" layoutX="127.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@+.png" />
-               </image>
-            </ImageView>
-            <AnchorPane layoutX="126.0" layoutY="4.0">
-               <children>
-                  <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="26.0" prefWidth="27.0" text="Button" />
-               </children>
-            </AnchorPane>
-            <Label layoutX="225.0" layoutY="9.0" text="Indiquez l'id d'un tuple à supprimer :" />
-            <TextField fx:id="id" layoutX="427.0" layoutY="4.0" prefHeight="26.0" prefWidth="51.0" />
-            <Button fx:id="supprimer1" layoutX="490.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" style="-fx-background-color: #008967;" text="Supprimer" textFill="WHITE" />
-         </children>
-      </AnchorPane>
-   </bottom>
+   <center>
+      <TableView fx:id="tableView" prefHeight="218.0" prefWidth="530.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="obsB" minWidth="4.800018489360809" prefWidth="39.19998091459274" text="obsB" />
+          <TableColumn fx:id="espece" minWidth="0.0" prefWidth="0.0" text="espece" />
+            <TableColumn fx:id="nombreAdultes" minWidth="0.0" prefWidth="0.0" text="nombreAdultes" />
+            <TableColumn fx:id="nombreAmplexus" minWidth="0.0" prefWidth="0.0" text="nombreAmplexus" />
+            <TableColumn fx:id="nombrePonte" minWidth="0.0" prefWidth="0.0" text="nombrePonte" />
+            <TableColumn fx:id="nombreTetard" minWidth="0.0" prefWidth="0.0" text="nombreTetard" />
+            <TableColumn fx:id="temperature" minWidth="0.0" prefWidth="0.0" text="temperature" />
+            <TableColumn fx:id="meteo_ciel" minWidth="0.0" prefWidth="0.0" text="meteo_ciel" />
+            <TableColumn fx:id="meteo_temp" minWidth="0.0" prefWidth="0.0" text="meteo_temp" />
+            <TableColumn fx:id="meteo_vent" minWidth="0.0" prefWidth="0.0" text="meteo_vent" />
+            <TableColumn fx:id="meteo_pluie" minWidth="0.0" prefWidth="31.20004653930664" text="meteo_pluie" />
+            <TableColumn fx:id="concerne_ZH" minWidth="0.0" prefWidth="0.0" text="concerne_ZH" />
+            <TableColumn fx:id="concerne_vege" minWidth="0.0" prefWidth="0.0" text="concernes_vege" />
+            <TableColumn fx:id="dateObs" minWidth="0.0" prefWidth="0.0" text="dateObs" />
+            <TableColumn fx:id="heureObs" minWidth="6.399993896484375" prefWidth="6.399993896484375" text="heureObs" />
+            <TableColumn fx:id="lieu_Lambert_X" minWidth="4.800018489360809" prefWidth="52.800018310546875" text="lieu_Lambert_X" />
+            <TableColumn fx:id="lieu_Lambert_Y" minWidth="0.0" prefWidth="0.0" text="lieu_Lambert_Y" />
+            <TableColumn fx:id="idObservateur" minWidth="5.59991455078125" prefWidth="13.5999755859375" text="idObservateur" />
+            <TableColumn fx:id="nom" minWidth="0.79998779296875" prefWidth="9.60003662109375" text="nom" />
+            <TableColumn fx:id="prenom" minWidth="0.0" prefWidth="0.0" text="prenom" />
+            <TableColumn fx:id="zh_temporaire" minWidth="3.20001220703125" prefWidth="8.0" text="zh_temporaire" />
+            <TableColumn fx:id="zh_profondeur" minWidth="2.4000244140625" prefWidth="7.20001220703125" text="zh_profondeur" />
+            <TableColumn fx:id="zh_surface" minWidth="0.0" prefWidth="13.59991455078125" text="zh_surface" />
+            <TableColumn fx:id="zh_typeMare" minWidth="5.59991455078125" prefWidth="13.60003662109375" text="zh_typeMare" />
+            <TableColumn fx:id="zh_pente" minWidth="6.39996337890625" prefWidth="13.60003662109375" text="zh_pente" />
+            <TableColumn fx:id="zh_ouverture" minWidth="0.0" prefWidth="13.60009765625" text="zh_ouverture" />
+            <TableColumn fx:id="natureVege" minWidth="0.0" prefWidth="12.79998779296875" text="natureVege" />
+            <TableColumn fx:id="vegetation" minWidth="0.0" prefWidth="13.5999755859375" text="vegetation" />
+            <TableColumn fx:id="decrit_LieuVege" minWidth="0.0" prefWidth="13.5999755859375" text="decrit_LieuVege" />
+        </columns>
+      </TableView>
+   </center>
    <left>
       <AnchorPane prefHeight="197.0" prefWidth="35.0" BorderPane.alignment="CENTER" />
    </left>
    <right>
       <AnchorPane prefHeight="197.0" prefWidth="35.0" BorderPane.alignment="CENTER" />
    </right>
-   <center>
-      <TableView fx:id="tableView" prefHeight="216.0" prefWidth="530.0" BorderPane.alignment="CENTER">
-        <columns>
-          <TableColumn fx:id="idObs" prefWidth="27.999999225139618" text="obsH" />
-          <TableColumn fx:id="espece" prefWidth="28.0" text="espece" />
-            <TableColumn fx:id="sexe" minWidth="0.0" prefWidth="48.000003814697266" text="sexe" />
-            <TableColumn fx:id="temp" prefWidth="53.5999755859375" text="temperatureEau" />
-            <TableColumn fx:id="type" minWidth="0.0" prefWidth="99.19999694824219" text="typePeche" />
-            <TableColumn fx:id="taille" prefWidth="31.20001220703125" text="taille" />
-            <TableColumn fx:id="gestant" minWidth="0.0" prefWidth="42.4000244140625" text="gestant" />
-            <TableColumn fx:id="dateObs" minWidth="0.0" prefWidth="37.60003662109375" text="dateObs" />
-            <TableColumn fx:id="heureObs" minWidth="0.0" prefWidth="45.5999755859375" text="heureObs" />
-            <TableColumn fx:id="CooX" minWidth="0.0" prefWidth="20.79998779296875" text="CooX" />
-            <TableColumn fx:id="CooY" minWidth="0.0" prefWidth="21.5999755859375" text="CooY" />
-            <TableColumn fx:id="idObservateur" minWidth="0.0" prefWidth="20.0" text="idObservateur" />
-            <TableColumn fx:id="nom" minWidth="0.0" prefWidth="20.0" text="nom" />
-            <TableColumn fx:id="prenom" minWidth="0.0" prefWidth="20.0" text="prenom" />
-        </columns>
-      </TableView>
-   </center>
+   <bottom>
+      <Pane prefHeight="20.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </bottom>
 </BorderPane>

@@ -21,7 +21,10 @@ import javafx.fxml.*;
 public class GCIController {
 
     @FXML
-    private Button pop;
+    private Button supprimer;
+
+    @FXML
+    private TextField id;
 
     @FXML
     private Button retour;
@@ -134,6 +137,10 @@ public class GCIController {
             Scene scene = buttonAdd.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("addGCI.fxml"));
             scene.setRoot(root);
+        }
+        else if(event.getSource() == supprimer){
+            Delete dl = new Delete("gci",id.getText());
+            dl.deleteTuple();
         }
     }
 

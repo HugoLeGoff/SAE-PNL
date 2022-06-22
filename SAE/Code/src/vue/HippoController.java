@@ -18,7 +18,11 @@ import javafx.fxml.*;
 
 
 public class HippoController {
+    @FXML
+    private Button supprimer;
 
+    @FXML
+    private TextField id;
 
     @FXML
     private Button retour;
@@ -124,6 +128,10 @@ public class HippoController {
             Scene scene = buttonAdd.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("addHippo.fxml"));
             scene.setRoot(root);
+        }
+        else if(event.getSource() == supprimer){
+            Delete dl = new Delete("Hippocampes",id.getText());
+            dl.deleteTuple();
         }
     }
 

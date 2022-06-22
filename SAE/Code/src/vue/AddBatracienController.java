@@ -35,13 +35,13 @@ public class AddBatracienController {
     @FXML
     private TextField zoneTemperature;
     @FXML
-    private TextField zoneMeteo_ciel;
+    private ComboBox<String> zoneMeteo_ciel;
     @FXML
-    private TextField zoneMeteo_temp;
+    private ComboBox<String> zoneMeteo_temp;
     @FXML
-    private TextField zoneMeteo_vent;
+    private ComboBox<String> zoneMeteo_vent;
     @FXML
-    private TextField zoneMeteo_pluie;
+    private ComboBox<String> zoneMeteo_pluie;
     @FXML
     private TextField zoneConcerne_ZH;
     @FXML
@@ -63,13 +63,13 @@ public class AddBatracienController {
     @FXML
     private TextField zoneZh_surface;
     @FXML
-    private TextField zoneZh_typeMare;
+    private ComboBox<String> zoneZh_typeMare;
     @FXML
-    private TextField zoneZh_pente;
+    private ComboBox<String> zoneZh_pente;
     @FXML
-    private TextField zoneZh_ouverture;
+    private ComboBox<String> zoneZh_ouverture;
     @FXML
-    private TextField zoneNatureVege;
+    private ComboBox<String> zoneNatureVege;
     @FXML
     private TextField zoneIdVegeLieu;
     @FXML
@@ -96,6 +96,30 @@ public class AddBatracienController {
         liste = FXCollections.observableArrayList("CALAMITE","PELODYTE");
         zoneEspece.setItems(liste);
 
+        liste = FXCollections.observableArrayList("dégagé", "semi-dégagé", "nuageux");
+        zoneMeteo_ciel.setItems(liste);
+
+        liste = FXCollections.observableArrayList("froid", "moyen", "chaud");
+        zoneMeteo_temp.setItems(liste);
+
+        liste = FXCollections.observableArrayList("non", "léger", "moyen", "fort");
+        zoneMeteo_vent.setItems(liste);
+
+        liste = FXCollections.observableArrayList("non", "légère", "moyenne", "forte");
+        zoneMeteo_pluie.setItems(liste);
+
+        liste = FXCollections.observableArrayList("Prairie", "Etang", "Marais", "Mare");
+        zoneZh_typeMare.setItems(liste);
+
+        liste = FXCollections.observableArrayList("Raide", "Abrupte", "Douce");
+        zoneZh_pente.setItems(liste);
+
+        liste = FXCollections.observableArrayList("Abritee", "Semi-Abritee", "Ouverte");
+        zoneZh_ouverture.setItems(liste);
+
+        liste = FXCollections.observableArrayList("environnement","bordure","ripisyle");
+        zoneNatureVege.setItems(liste);
+
         AllData ad = new AllData();
         zoneObsB.setText(ad.getID());
     }
@@ -116,10 +140,10 @@ public class AddBatracienController {
             values.put("nombrePonte",zoneNombrePonte.getText());
             values.put("nombreTetard",zoneNombreTetard.getText());
             values.put("temperature",zoneTemperature.getText());
-            values.put("meteo_ciel",zoneMeteo_ciel.getText());
-            values.put("meteo_temp",zoneMeteo_temp.getText());
-            values.put("meteo_vent",zoneMeteo_vent.getText());
-            values.put("meteo_pluie",zoneMeteo_pluie.getText());
+            values.put("meteo_ciel",zoneMeteo_ciel.getValue());
+            values.put("meteo_temp",zoneMeteo_temp.getValue());
+            values.put("meteo_vent",zoneMeteo_vent.getValue());
+            values.put("meteo_pluie",zoneMeteo_pluie.getValue());
             values.put("concerne_ZH",zoneConcerne_ZH.getText());
             values.put("concernes_vege",zoneConcernes_vege.getText());
             values.put("dateObs",zoneDateObs.getText());
@@ -130,11 +154,12 @@ public class AddBatracienController {
             values.put("zh_temporaire",zoneZh_temporaire.getText());
             values.put("zh_profondeur",zoneZh_profondeur.getText());
             values.put("zh_surface",zoneZh_surface.getText());
-            values.put("zh_typeMare",zoneZh_typeMare.getText());
-            values.put("zh_pente",zoneZh_pente.getText());
-            values.put("zh_ouverture",zoneZh_ouverture.getText());
-            values.put("natureVege",zoneIdVegeLieu.getText());
-            values.put("idVegeLieu",zoneVegetation.getText());
+            values.put("zh_typeMare",zoneZh_typeMare.getValue());
+            values.put("zh_pente",zoneZh_pente.getValue());
+            values.put("zh_ouverture",zoneZh_ouverture.getValue());
+            values.put("natureVege",zoneNatureVege.getValue());
+            values.put("vegetation",zoneVegetation.getText());
+            values.put("idVegeLieu",zoneIdVegeLieu.getText());
 
 
             ChoixVal val = new ChoixVal("Batraciens", values);

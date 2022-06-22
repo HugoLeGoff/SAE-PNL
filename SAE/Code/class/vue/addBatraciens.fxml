@@ -110,14 +110,10 @@
                         <TextField fx:id="zoneNombreTetard" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <TextField fx:id="zoneTemperature" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <Label text="meteo_ciel : " GridPane.rowIndex="7" />
-                        <TextField fx:id="zoneMeteo_ciel" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                        <TextField fx:id="zoneMeteo_temp" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                        <TextField fx:id="zoneMeteo_vent" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                         <Label text="meteo_temp :" GridPane.rowIndex="8" />
                         <Label text="meteo_vent :" GridPane.rowIndex="9" />
                         <Label text="meteo_pluie : " GridPane.rowIndex="10" />
                         <Label text="concerne_ZH :" GridPane.rowIndex="11" />
-                        <TextField fx:id="zoneMeteo_pluie" GridPane.columnIndex="1" GridPane.rowIndex="10" />
                         <TextField fx:id="zoneConcerne_ZH" GridPane.columnIndex="1" GridPane.rowIndex="11" />
                         <Label text="concernes_vege :" GridPane.rowIndex="12" />
                         <Label text="dateObs :" GridPane.rowIndex="13" />
@@ -126,6 +122,10 @@
                         <TextField fx:id="zoneHeureObs" text="HH:MM:SS" GridPane.columnIndex="1" GridPane.rowIndex="14" />
                         <Label text="heureObs" GridPane.rowIndex="14" />
                         <ComboBox fx:id="zoneEspece" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="zoneMeteo_pluie" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <ComboBox fx:id="zoneMeteo_vent" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <ComboBox fx:id="zoneMeteo_temp" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <ComboBox fx:id="zoneMeteo_ciel" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                      </children>
                   </GridPane>
                   <AnchorPane prefHeight="490.0" prefWidth="90.0" />
@@ -160,19 +160,19 @@
                         <Label text="zh_profondeur :" GridPane.rowIndex="4" />
                         <TextField fx:id="zoneZh_profondeur" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <TextField fx:id="zoneZh_surface" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <TextField fx:id="zoneZh_typeMare" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <Label text="zh_surface :" GridPane.rowIndex="5" />
                         <Label text="zh_typeMare :" GridPane.rowIndex="6" />
                         <Label text="zh_pente :" GridPane.rowIndex="7" />
                         <Label text="zh_ouverture :" GridPane.rowIndex="8" />
-                        <TextField fx:id="zoneZh_pente" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                        <TextField fx:id="zoneZh_ouverture" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                         <Label text="natureVege :" GridPane.rowIndex="9" />
-                        <TextField fx:id="zoneNatureVege" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                         <Label text="idVegeLieu :" GridPane.rowIndex="11" />
                         <Label layoutX="10.0" layoutY="558.0" text="vegetation :" GridPane.rowIndex="10" />
                         <TextField fx:id="zoneIdVegeLieu" GridPane.columnIndex="1" GridPane.rowIndex="11" />
                         <TextField fx:id="zoneVegetation" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <ComboBox fx:id="zoneZh_pente" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <ComboBox fx:id="zoneZh_ouverture" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <ComboBox fx:id="zoneZh_typeMare" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <ComboBox fx:id="zoneNatureVege" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                      </children>
                   </GridPane>
                </children>

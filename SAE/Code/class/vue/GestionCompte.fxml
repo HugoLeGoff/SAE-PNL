@@ -33,10 +33,10 @@
 -->
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -45,7 +45,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.GestionCompteController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.BatracienController">
    <top>
       <VBox>
          <children>
@@ -55,30 +55,38 @@
                      <children>
                         <ImageView fitHeight="41.0" fitWidth="36.0" layoutX="2.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="4.0">
                            <image>
-                              <Image url="@../../../SAE-PNL/SAE/Code/class/vue/Parc_naturel_régional_du_Golfe_du_Morbihan.svg.png" />
+                              <Image url="@Parc_naturel_régional_du_Golfe_du_Morbihan.svg.png" />
                            </image>
                         </ImageView>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="48.0" prefWidth="426.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <Label layoutX="14.0" layoutY="15.0" text="Administrateur - Hugo Le Goff">
+                        <Label layoutX="14.0" layoutY="15.0" text="Observateur - Hugo Le Goff">
                            <font>
                               <Font size="14.0" />
                            </font></Label>
                      </children>
                   </AnchorPane>
-                  <Label prefHeight="48.0" prefWidth="432.0" text="Hippocampes">
+                  <Label prefHeight="48.0" prefWidth="432.0" text="Gestion des comptes">
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <AnchorPane />
+                  <AnchorPane accessibleRole="BUTTON" />
                   <AnchorPane>
                      <children>
-                        <Button fx:id="deconnexion" layoutX="5.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="46.0" prefWidth="29.0" text="Button" />
-                        <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="6.0" layoutY="9.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="9.0">
+                        <ImageView accessibleRole="BUTTON" fitHeight="34.0" fitWidth="35.0" layoutX="6.0" layoutY="9.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="9.0">
                            <image>
                               <Image url="@32205.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="50.0" prefWidth="34.0">
+                     <children>
+                        <ImageView accessibleRole="BUTTON" fitHeight="34.0" fitWidth="46.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="10.0">
+                           <image>
+                              <Image url="@58308.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -86,48 +94,59 @@
                </children>
             </HBox>
             <AnchorPane prefHeight="9.0" prefWidth="600.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" VBox.vgrow="ALWAYS" />
+            <AnchorPane prefHeight="80.0" prefWidth="600.0">
+               <children>
+                  <Label layoutX="52.0" layoutY="23.0" prefHeight="35.0" prefWidth="319.0" text="Gestion Compte :" textFill="#008967">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView accessibleRole="BUTTON" fitHeight="46.0" fitWidth="40.0" layoutX="4.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@17319.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="retour" layoutX="4.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="32.0" prefWidth="40.0" text="Button" />
+               </children>
+            </AnchorPane>
          </children>
       </VBox>
    </top>
-   <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+   <bottom>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="600.0">
          <children>
-            <AnchorPane prefHeight="67.0" prefWidth="205.0" />
-            <AnchorPane prefHeight="139.0" prefWidth="600.0">
+            <Label layoutX="24.0" layoutY="5.0" prefHeight="24.0" prefWidth="106.0" text="Ajouter un compte " />
+            <ImageView accessibleRole="BUTTON" fitHeight="62.0" fitWidth="26.0" layoutX="127.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@+.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="126.0" layoutY="4.0">
                <children>
-                  <Label layoutX="50.0" layoutY="1.0" text="Gestion des comptes :" textFill="#008967">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="50.0" layoutY="41.0" text="Trier par : " />
-                  <ComboBox layoutX="104.0" layoutY="36.0" prefHeight="26.0" prefWidth="163.0" promptText="Par orde alphabétique" />
-                  <ImageView fitHeight="43.0" fitWidth="43.0" layoutY="-14.0">
-                     <image>
-                        <Image url="@../../../SAE-PNL/SAE/Code/class/vue/17319.png" />
-                     </image>
-                  </ImageView>
+                  <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="26.0" prefWidth="0.0" text="Button" />
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <TableView fx:id="table_compte" layoutX="42.0" layoutY="-8.0" prefHeight="200.0" prefWidth="423.0">
-                    <columns>
-                      <TableColumn fx:id="idUser" prefWidth="86.0" text="idUser" />
-                      <TableColumn fx:id="login" prefWidth="90.0" text="Login" />
-                        <TableColumn fx:id="passw" prefWidth="75.0" text="Mot de Passe" />
-                    </columns>
-                  </TableView>
-               </children>
-            </AnchorPane>
-            <AnchorPane prefHeight="123.0" prefWidth="500.0">
-               <children>
-                  <Button layoutX="38.0" layoutY="19.0" mnemonicParsing="false" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Ajouter" textFill="WHITE" />
-                  <Button layoutX="105.0" layoutY="19.0" mnemonicParsing="false" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Modifier" textFill="WHITE" />
-                  <Button layoutX="176.0" layoutY="19.0" mnemonicParsing="false" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Supprimer" textFill="WHITE" />
-               </children>
-            </AnchorPane>
+            <TextField layoutX="403.0" layoutY="5.0" prefHeight="25.0" prefWidth="79.0" />
+            <Label layoutX="185.0" layoutY="9.0" text="Indiquez l'id d'un compte à supprimer :" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="490.0" layoutY="6.0" prefHeight="23.0" prefWidth="77.0" style="-fx-background-color: #008967; -fx-font-weight: BOLD;" text="Supprimer" textFill="WHITE" />
          </children>
-      </VBox>
+      </AnchorPane>
+   </bottom>
+   <center>
+      <TableView fx:id="tableView" prefHeight="247.0" prefWidth="530.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="obsB" minWidth="4.800018489360809" prefWidth="57.0" text="idUser" />
+            <TableColumn fx:id="prenom" minWidth="0.0" prefWidth="60.0" text="login" />
+            <TableColumn prefWidth="102.0" text="mot de passe" />
+            <TableColumn prefWidth="48.0" text="nom" />
+            <TableColumn prefWidth="88.0" text="prenom" />
+        </columns>
+      </TableView>
    </center>
+   <left>
+      <AnchorPane prefHeight="197.0" prefWidth="35.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <AnchorPane prefHeight="197.0" prefWidth="35.0" BorderPane.alignment="CENTER" />
+   </right>
 </BorderPane>

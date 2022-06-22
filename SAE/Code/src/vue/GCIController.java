@@ -139,8 +139,8 @@ public class GCIController {
             scene.setRoot(root);
         }
         else if(event.getSource() == supprimer){
-            Delete dl = new Delete();
-            dl.deleteTuple("gci",id);
+            Delete dl = new Delete("gci",id.getText());
+            dl.deleteTuple();
         }
     }
 

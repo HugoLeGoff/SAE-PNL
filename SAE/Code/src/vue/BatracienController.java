@@ -7,6 +7,8 @@ import java.util.*;
 
 import connexion.Compte;
 import donnee.AfficheObsBatracien;
+import donnee.ObsBatracien;
+import donnee.Table;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -15,6 +17,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
@@ -34,6 +38,15 @@ public class BatracienController {
     private Button buttonAdd;
     @FXML
     private Button recharger;
+
+    @FXML
+    private ComboBox<String> choixAnnee;
+
+    ObservableList<String> liste;
+
+    AllData ad ;
+
+    ArrayList<AfficheObsBatracien> obsBatracien;
 
     @FXML
     private Button supprimer;
@@ -118,8 +131,8 @@ public class BatracienController {
         vegetation.setCellValueFactory(new PropertyValueFactory<AfficheObsBatracien, String>("vegetation"));
         decrit_LieuVege.setCellValueFactory(new PropertyValueFactory<AfficheObsBatracien, String>("decrit_LieuVege"));
 
-        AllData ad = new AllData();
-        ArrayList<AfficheObsBatracien> obsB = ad.Batracien();
+        ad = new AllData();
+        obsBatracien = ad.Batracien();
         
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         tableView.getColumns().get(0).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));    //33% for id column size
@@ -157,7 +170,15 @@ public class BatracienController {
 
  
 
-        tableView.getItems().setAll(obsB);
+        tableView.getItems().setAll(obsBatracien);
+
+        ArrayList<Table> tables = ad.tableBatraciens();
+        liste = FXCollections.observableArrayList();
+        for(Table t :tables){
+            liste.add(t.getTable());
+        }
+        liste.add("toute");
+        choixAnnee.setItems(liste);
     }
 
 
@@ -187,6 +208,28 @@ public class BatracienController {
             Scene scene = buttonAdd.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("TablesBatraciens.fxml"));
             scene.setRoot(root);
+        }
+        else if(event.getSource() == recharger){
+            if(choixAnnee.getValue()!=null){
+                if (choixAnnee.getValue().equals("toute")){
+                    try {
+                        obsBatracien= ad.Batracien();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }else{
+                    
+                    try {
+                        obsBatracien = ad.BatracienAnnee(choixAnnee.getValue());
+                    } catch (SQLException e) {
+                        
+                        e.printStackTrace();
+                    }
+                }
+                tableView.getItems().setAll(obsBatracien);
+            }
+            
+            
         }
     }
 

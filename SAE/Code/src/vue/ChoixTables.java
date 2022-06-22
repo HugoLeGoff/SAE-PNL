@@ -87,6 +87,7 @@ public class ChoixTables {
             for(Table t :tables){
                 liste.add(t.getTable());
             }
+            liste.add("toute");
             annee.setItems(liste);
             tableView.getItems().setAll(tables);
         }
@@ -98,9 +99,11 @@ public class ChoixTables {
             for(Table t :tables){
                 liste.add(t.getTable());
             }
+            liste.add("toute");
             annee.setItems(liste);
             tableView.getItems().setAll(tables);
         }
+        
         else if(nomEspece.equals("GCI")){
             tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
             AllData ad = new AllData();
@@ -109,6 +112,7 @@ public class ChoixTables {
             for(Table t :tables){
                 liste.add(t.getTable());
             }
+            liste.add("toute");
             annee.setItems(liste);
             tableView.getItems().setAll(tables);
         }
@@ -120,6 +124,7 @@ public class ChoixTables {
             for(Table t :tables){
                 liste.add(t.getTable());
             }
+            liste.add("toute");
             annee.setItems(liste);
             tableView.getItems().setAll(tables);
         }
@@ -131,6 +136,7 @@ public class ChoixTables {
             for(Table t :tables){
                 liste.add(t.getTable());
             }
+            liste.add("toute");
             annee.setItems(liste);
             tableView.getItems().setAll(tables);
             }

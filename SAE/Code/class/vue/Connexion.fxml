@@ -44,7 +44,7 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.AccueilController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.AccueilController">
    <top>
       <VBox>
          <children>
@@ -84,31 +84,31 @@
    <center>
       <VBox alignment="CENTER" prefHeight="329.0" prefWidth="573.0">
          <children>
-            <AnchorPane VBox.vgrow="ALWAYS">
+            <AnchorPane prefHeight="3.0" prefWidth="900.0" VBox.vgrow="ALWAYS">
                <children>
-                  <Label layoutX="104.0" layoutY="14.0" prefHeight="51.0" prefWidth="408.0" text="Parc naturel régional du Morbihan" textFill="#008967" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="88.0">
+                  <Label alignment="TOP_CENTER" layoutY="34.0" prefHeight="106.0" prefWidth="900.0" text="Parc naturel régional du Morbihan" textFill="#008967" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font name="System Bold" size="36.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane VBox.vgrow="ALWAYS">
+            <AnchorPane prefHeight="394.0" prefWidth="900.0" VBox.vgrow="ALWAYS">
                <children>
-                  <AnchorPane layoutX="127.0" layoutY="179.0" prefHeight="30.0" prefWidth="308.0">
+                  <AnchorPane layoutX="283.0" layoutY="249.0" prefHeight="44.0" prefWidth="333.0">
                      <children>
                         <Label fx:id="msgErr" prefHeight="18.0" prefWidth="286.0" text="" />
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="116.0" prefHeight="179.0" prefWidth="366.0" style="-fx-background-color: #008967; -fx-background-radius: 20;">
+                  <AnchorPane layoutX="235.0" prefHeight="242.0" prefWidth="430.0" style="-fx-background-color: #008967; -fx-background-radius: 20;">
                      <children>
-                        <VBox prefHeight="148.0" prefWidth="366.0">
+                        <VBox prefHeight="148.0" prefWidth="366.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
                            <children>
-                              <AnchorPane prefHeight="22.0" prefWidth="366.0" VBox.vgrow="ALWAYS">
+                              <AnchorPane prefHeight="27.0" prefWidth="409.0" VBox.vgrow="ALWAYS">
                                  <children>
-                                    <Label layoutX="142.0" layoutY="1.0" prefHeight="10.0" prefWidth="82.0" text="Connexion" textFill="WHITE">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="142.0" layoutY="1.0" prefHeight="10.0" prefWidth="82.0" text="Connexion" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <font>
-                                          <Font name="System Bold" size="16.0" />
+                                          <Font name="System Bold" size="24.0" />
                                        </font>
                                     </Label>
                                  </children>
@@ -117,28 +117,28 @@
                                  <children>
                                     <Label layoutX="14.0" layoutY="5.0" text="Identifiant" textFill="WHITE">
                                        <font>
-                                          <Font name="System Bold" size="16.0" />
+                                          <Font name="System Bold" size="20.0" />
                                        </font>
                                     </Label>
                                  </children>
                               </AnchorPane>
                               <AnchorPane prefHeight="38.0" prefWidth="366.0" VBox.vgrow="ALWAYS">
                                  <children>
-                                    <TextField fx:id="login" layoutX="14.0" layoutY="1.0" prefHeight="26.0" prefWidth="338.0" />
+                                    <TextField fx:id="login" layoutX="14.0" layoutY="1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane prefHeight="2.0" prefWidth="366.0" VBox.vgrow="ALWAYS">
                                  <children>
                                     <Label layoutX="14.0" layoutY="2.0" text="Mot de passe" textFill="WHITE">
                                        <font>
-                                          <Font name="System Bold" size="16.0" />
+                                          <Font name="System Bold" size="20.0" />
                                        </font>
                                     </Label>
                                  </children>
                               </AnchorPane>
                               <AnchorPane VBox.vgrow="ALWAYS">
                                  <children>
-                                    <PasswordField fx:id="pw" layoutX="17.0" prefHeight="26.0" prefWidth="338.0" />
+                                    <PasswordField fx:id="pw" layoutX="17.0" prefHeight="30.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
                                  </children>
                               </AnchorPane>
                            </children>
@@ -147,11 +147,11 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane VBox.vgrow="ALWAYS">
+            <AnchorPane prefHeight="241.0" prefWidth="900.0" VBox.vgrow="ALWAYS">
                <children>
-                  <Button layoutX="233.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="38.0" prefWidth="133.0" style="-fx-background-color: #008967;" text="Se connecter" textFill="WHITE">
+                  <Button layoutX="352.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #008967;" text="Se connecter" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold" size="20.0" />
                      </font>
                   </Button>
                </children>

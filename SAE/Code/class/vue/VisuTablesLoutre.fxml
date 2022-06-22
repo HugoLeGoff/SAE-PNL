@@ -107,6 +107,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
+                  <Button fx:id="recharger" layoutX="282.0" layoutY="43.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" style="-fx-background-color: #008967;" text="Recharger" textFill="WHITE" />
                </children>
             </AnchorPane>
          </children>

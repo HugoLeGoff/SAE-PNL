@@ -75,13 +75,9 @@ public class TablesUsers {
         tableView.getColumns().get(7).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));
         tableView.getColumns().get(8).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07)); 
         tableView.getColumns().get(9).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07)); 
-        tableView.getColumns().get(10).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));
+        tableView.getColumns().get(10).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07)); 
 
-
-
- 
-
-        tableView.getItems().setAll(obsChouette);
+        tableView.getItems().setAll(users);
     }
 
 

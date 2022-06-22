@@ -80,17 +80,21 @@ public class AddCompteController {
             values.put("passw",zonePrenom.getText());
             values.put("idStatut",zoneStatut.getValue());
 
-
-            ChoixVal val = new ChoixVal("Comptes", values);
-
-            ArrayList<String> message = val.getMsg();
-            msgLab.setText("");
-            for(int i=0; i<message.size(); i++){
-                msgLab.setText(msgLab.getText()+ " \n"+message.get(i));
+            try{
+                ChoixVal val = new ChoixVal("Comptes", values);
+                Scene scene = buttonAnnuler.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("GestionCompte.fxml"));
+                scene.setRoot(root);
+            }catch(Exception e){
+            }finally{
+                ChoixVal val = new ChoixVal("Comptes", values);
+                ArrayList<String> message = val.getMsg();
+                msgLab.setText("");
+                for(int i=0; i<message.size(); i++){
+                    msgLab.setText(msgLab.getText()+ " \n"+message.get(i));
+                }
             }
-            Scene scene = buttonAnnuler.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("GestionCompte.fxml"));
-            scene.setRoot(root);
+            
 
         }
         else if(event.getSource() == buttonAnnuler){

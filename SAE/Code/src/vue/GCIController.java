@@ -212,14 +212,6 @@ public class GCIController {
                 }
                 tableView.getItems().setAll(obsGCI);
             }
-
-        /*else if(event.getSource() == recharger){
-            if (choixAnnee.getValue().equals("toute")){
-                obsHippo = ad.hippocampe();
-            }else{
-                
-                obsHippo = ad.hippocampeAnnee(choixAnnee.getValue());
-            }*/
             
             
         }

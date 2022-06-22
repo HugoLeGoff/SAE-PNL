@@ -19,8 +19,6 @@ import javafx.fxml.*;
 
 public class HippoController {
 
-    @FXML
-    private Button pop;
 
     @FXML
     private Button retour;

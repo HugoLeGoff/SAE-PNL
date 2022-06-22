@@ -122,7 +122,7 @@ public class ChoixTables {
             }
             else if(especeTMP.equals("Batraciens")){
                 Scene scene = modifier.getScene();
-                Parent root = FXMLLoader.load(getClass().getResource("tablesBatraciens.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("TablesBatraciens.fxml"));
                 scene.setRoot(root);
             }
             else if(especeTMP.equals("Chouettes")){

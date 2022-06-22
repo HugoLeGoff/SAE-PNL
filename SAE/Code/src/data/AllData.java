@@ -226,17 +226,17 @@ public class AllData {
     return ret;
   }
 
-  public ArrayList<AfficheObsChouette> Batracien() throws SQLException{
+  public ArrayList<AfficheObsBatracien> Batracien() throws SQLException{
       
-    ArrayList<AfficheObsChouette> ret = new ArrayList<AfficheObsChouette>();
+    ArrayList<AfficheObsBatracien> ret = new ArrayList<AfficheObsBatracien>();
 
     Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
     Statement stmt = c.createStatement();
-    ResultSet res = stmt.executeQuery("SELECT * FROM obs_chouette JOIN Observation ON numObs = idObs LEFT JOIN Aobserve ON idObs = lobservation LEFT JOIN observateur ON lobservateur = idObservateur;");
+    ResultSet res = stmt.executeQuery("SELECT *  FROM Obs_Batracien  JOIN Observation ON obsB = idObs  JOIN Aobserve ON idObs = lobservation  JOIN observateur ON lobservateur = idObservateur JOIN ZoneHumide ON concerne_ZH = zh_id JOIN Vegetation ON concernes_vege = idVege JOIN Lieu_Vegetation ON idVegeLieu = decrit_LieuVege;");
 
       while(res.next()){
-        //AfficheObsChouette ch = new AfficheObsGCI(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getString(7),res.getString(8),res.getString(9),res.getString(10), res.getString(11),res.getString(12),res.getString(13),res.getString(15),res.getString(16),res.getString(17),res.getString(18),res.getString(21),res.getString(22),res.getString(23),res.getString(25),res.getString(26),res.getString(27),res.getString(28),res.getString(29),res.getString(30),res.getString(32),res.getString(33),res.getString(34));
-        //ret.add(ch);
+        AfficheObsBatracien ch = new AfficheObsBatracien(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getString(7),res.getString(8),res.getString(9),res.getString(10), res.getString(11),res.getString(12),res.getString(13),res.getString(15),res.getString(16),res.getString(17),res.getString(18),res.getString(21),res.getString(22),res.getString(23),res.getString(25),res.getString(26),res.getString(27),res.getString(28),res.getString(29),res.getString(30),res.getString(32),res.getString(33),res.getString(34));
+        ret.add(ch);
           
       }
     c.close();

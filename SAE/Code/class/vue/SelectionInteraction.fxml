@@ -37,7 +37,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -114,41 +113,23 @@
             </AnchorPane>
          </children>
       </VBox>
-      <BorderPane prefHeight="325.0" prefWidth="900.0">
-         <right>
-            <AnchorPane prefHeight="326.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
-         </right>
-         <left>
-            <AnchorPane prefHeight="326.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
-         </left>
-         <center>
-            <VBox prefHeight="265.0" prefWidth="700.0" style="-fx-border-color: #008967; -fx-border-width: 5;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="412.0" prefWidth="900.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox alignment="CENTER" layoutX="100.0" layoutY="-6.0" prefHeight="265.0" prefWidth="700.0" style="-fx-border-color: #008967; -fx-border-width: 5;">
                <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="256.0" prefWidth="703.0" VBox.vgrow="ALWAYS">
                      <children>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="467.0">
-                           <children>
-                            <Button fx:id="gestionDo" alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="40.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Gestion des données" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="478.0">
-                           <children>
-                            <Button fx:id="consultation" alignment="CENTER" layoutX="57.0" layoutY="40.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Consultation des données" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </HBox>
-                  <AnchorPane prefHeight="30.0" prefWidth="449.0">
-                     <children>
-                      <Button fx:id="exportation" alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="55.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Exportation des données" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+                      <Button fx:id="gestionDo" alignment="CENTER" contentDisplay="CENTER" layoutX="50.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Gestion des données" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                      <Button fx:id="consultation" alignment="CENTER" layoutX="404.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Visualisation des données" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                      <Button fx:id="exportation" alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="143.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Exportation des données" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
@@ -157,10 +138,7 @@
                   </AnchorPane>
                </children>
             </VBox>
-         </center>
-         <bottom>
-            <AnchorPane prefHeight="71.0" prefWidth="900.0" BorderPane.alignment="CENTER" />
-         </bottom>
-      </BorderPane>
+         </children>
+      </AnchorPane>
   </children>
 </VBox>

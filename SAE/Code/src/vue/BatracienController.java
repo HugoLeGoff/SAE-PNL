@@ -32,6 +32,8 @@ public class BatracienController {
 
     @FXML
     private Button buttonAdd;
+    @FXML
+    private Button recharger;
 
     @FXML
     private Button supprimer;
@@ -182,6 +184,9 @@ public class BatracienController {
         else if(event.getSource() == supprimer){
             Delete dl = new Delete("Batraciens",id.getText());
             dl.deleteTuple();
+            Scene scene = buttonAdd.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("TablesBatraciens.fxml"));
+            scene.setRoot(root);
         }
     }
 

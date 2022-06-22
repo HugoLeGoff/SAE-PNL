@@ -12,7 +12,6 @@ public class Delete {
     public Delete(String espece, String id){
         this.espece=espece;
         this.id= Integer.valueOf(id);
-        System.out.println(id+espece);
     }
     public ArrayList<String> requete(){
         ArrayList<String> ret = new ArrayList<String>();
@@ -56,9 +55,16 @@ public class Delete {
                 ret1="\nDELETE FROM Observation WHERE idObs="+id+";";
                 ret.add(ret1);
             }
+        }else if(espece.equals("Comptes")){
+            String ret1="DELETE FROM Connexion WHERE idUser="+id+";";
+            ret.add(ret1);
+            ret1="DELETE FROM User WHERE idU="+id+";";
+            ret.add(ret1);
+        }
             
 
-        }
+        
+    
         return ret;
     }
 
@@ -67,9 +73,9 @@ public class Delete {
             Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
             Statement stmt = c.createStatement();
             ArrayList<String> query = requete();
-            stmt.executeUpdate(query.get(0));
-            stmt.executeUpdate(query.get(1));
-            stmt.executeUpdate(query.get(2));
+            for(String s : query){
+                stmt.executeUpdate(s);
+            }
         }catch(Exception e){
             System.out.println(e);
         }

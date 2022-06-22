@@ -137,7 +137,7 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Label fx:id="msg" layoutX="432.0" layoutY="5.0" prefHeight="18.0" prefWidth="148.0" />
+            <Label fx:id="msgLab" layoutX="206.0" layoutY="-101.0" prefHeight="137.0" prefWidth="390.0" />
          </children>
       </AnchorPane>
    </bottom>

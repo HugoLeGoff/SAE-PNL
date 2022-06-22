@@ -26,25 +26,19 @@ public class GestionCompteController{
     private TableColumn<AfficheCompte, String> idUser;
 
     @FXML
-<<<<<<< HEAD
-=======
+
     private TableColumn<AfficheCompte, String> nom;
 
     @FXML
     private TableColumn<AfficheCompte, String> prenom;
 
     @FXML
->>>>>>> 0c65fecea4b527b92818c8ec37fe6053a5e0cbe1
+
     private TableColumn<AfficheCompte, String> login;
 
     @FXML
     private TableColumn<AfficheCompte, String> passw;
 
-    @FXML
-    private TableColumn<AfficheCompte, String> nom;
-
-    @FXML
-    private TableColumn<AfficheCompte, String> prenom;
 
     @FXML
     private TableColumn<AfficheCompte, String> statut;

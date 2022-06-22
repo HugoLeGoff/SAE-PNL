@@ -55,12 +55,12 @@ public class AddCompteController {
 
         if(event.getSource() == buttonAdd){
             HashMap<String,String> values = new HashMap<String,String>();
-            values.put("protocole",zoneIdUser.getText());
-            values.put("typeObs",zoneLogin.getText());
-            values.put("leNumIndividu",zonePassw.getText());
-            values.put("numObs",zoneNom.getText());
-            values.put("espece",zonePrenom.getText());
-            values.put("espece",zoneStatut.getText());
+            values.put("idUser",zoneIdUser.getText());
+            values.put("login",zoneLogin.getText());
+            values.put("passw",zonePassw.getText());
+            values.put("nom",zoneNom.getText());
+            values.put("prenom",zonePrenom.getText());
+            values.put("statut",zoneStatut.getText());
 
 
             ChoixVal val = new ChoixVal("Comptes", values);
@@ -68,7 +68,7 @@ public class AddCompteController {
         }
         else if(event.getSource() == buttonAnnuler){
             Scene scene = buttonAnnuler.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("tablesChouette.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("tablesCompte.fxml"));
             scene.setRoot(root);
         }
     }

@@ -272,6 +272,7 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
+
             columns=new ArrayList<String>();
             columns.add("obsB");
             columns.add("espece");
@@ -284,8 +285,8 @@ public class ChoixVal {
             columns.add("meteo_temp");
             columns.add("meteo_vent");
             columns.add("meteo_pluie");
-            columns.add("concernce_zh");
-            columns.add("concernce_vege");
+            columns.add("concerne_zh");
+            columns.add("concerne_vege");
             remplirValues();
             insertData.setTable("Obs_Batracien");
             insertData.setColumns(columns);

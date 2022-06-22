@@ -31,6 +31,10 @@ public class ChouetteController {
     @FXML
     private Label nomObservateur = new Label();
 
+    
+    @FXML
+    private Button carte;
+
     @FXML
     private TableView<AfficheObsChouette> tableView;
 
@@ -183,6 +187,7 @@ public class ChouetteController {
             Parent root = FXMLLoader.load(getClass().getResource("tableschouette.fxml"));
             scene.setRoot(root);
         }
+<<<<<<< HEAD
         else if(event.getSource() == recharger){
             if(choixAnnee.getValue()!=null){
                 if (choixAnnee.getValue().equals("toute")){
@@ -204,6 +209,12 @@ public class ChouetteController {
             }
             
             
+=======
+        else if(event.getSource() == carte){
+            Scene scene = carte.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
+            scene.setRoot(root);
+>>>>>>> 8e2f24e339f7d28b02a0fdd74e784dbb1d60419b
         }
     }
 

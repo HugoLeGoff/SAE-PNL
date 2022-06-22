@@ -209,20 +209,12 @@ public class ChouetteController {
             }
         }
             
-<<<<<<< HEAD
-            
-        }
-=======
 
->>>>>>> 6738c876e76a3378389c48433daa24429f822c03
         else if(event.getSource() == carte){
             Scene scene = carte.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
             scene.setRoot(root);
-<<<<<<< HEAD
 
-=======
->>>>>>> 6738c876e76a3378389c48433daa24429f822c03
         }
     }
 

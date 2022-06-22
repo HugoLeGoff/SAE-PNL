@@ -17,6 +17,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+
+/**
+ * This class is the controller of the GestionCompte page. It gets the page interactive.
+ */
 public class GestionCompteController{
 
     @FXML
@@ -50,6 +54,10 @@ public class GestionCompteController{
     private Button buttonAdd;
 
     @FXML
+    /**
+     * Initializes the data already created on the page.
+     * @throws SQLException SQLException
+     */
     private void initialize() throws SQLException {
 
         idUser.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("idUser"));
@@ -77,6 +85,11 @@ public class GestionCompteController{
 
 
     @FXML
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
 
         if(event.getSource() == retour){

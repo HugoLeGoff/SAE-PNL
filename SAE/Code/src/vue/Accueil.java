@@ -11,12 +11,11 @@ import javafx.stage.Stage;
  */
 public class Accueil extends Application {
 
-@Override
+    @Override
     /**
      * Starts the application and displays the Accueil page.
      */
-    public void start(Stage stage)
-    throws Exception {
+    public void start(Stage stage)throws Exception {
         
         Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
         stage.setTitle("PNR");

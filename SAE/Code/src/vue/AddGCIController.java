@@ -20,7 +20,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
 
-
+/**
+ * This class is the controller of the AddGCI page. It gets the page interactive.
+ */
 public class AddGCIController {
 
     @FXML
@@ -46,6 +48,10 @@ public class AddGCIController {
     ObservableList<String> liste;
 
     @FXML
+     /**
+     * Initializes the data already on the page.
+     * @throws SQLException SQLException
+     */
     private void initialize() throws SQLException {
         liste = FXCollections.observableArrayList("Oeuf","Poussin","Nid");
         zoneNature.setItems(liste);
@@ -58,6 +64,12 @@ public class AddGCIController {
     }
 
     @FXML
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event event
+     * @throws IOException IOException
+     * @throws SQLIntegrityConstraintViolationException SQLIntegrityConstraintViolationException
+     */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException, SQLIntegrityConstraintViolationException{
         if(event.getSource() == buttonAdd){
             HashMap<String,String> values = new HashMap<String,String>();

@@ -1,9 +1,15 @@
 package vue;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import data.*;
 import java.util.*;
+
+
+import connexion.Compte;
 import donnee.AfficheObsHippocampes;
 import donnee.Table;
 import javafx.scene.Parent;
@@ -19,7 +25,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
-
+/**
+ * This class is the controller of the Hippocampe page. It gets the page interactive.
+ */
 public class HippoController {
     @FXML
     private ComboBox<String> choixAnnee;
@@ -34,6 +42,9 @@ public class HippoController {
 
     @FXML
     private Button buttonAdd;
+
+    @FXML
+    private Button recharger;
 
     @FXML
     private TextField zoneObsH;
@@ -77,6 +88,10 @@ public class HippoController {
     
 
     @FXML
+    /**
+     * Initializes the data already created on the page.
+     * @throws SQLException SQLException
+     */
     private void initialize() throws SQLException {
         idObs.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("obsH"));
         espece.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("espece"));
@@ -140,8 +155,13 @@ public class HippoController {
 
     @FXML
 
-    
-    protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     * @throws SQLException SQLException
+     */   
+    protected void handleSubmitButtonAction(ActionEvent event) throws IOException, SQLException{
 
         if(event.getSource() == retour){
             Scene scene = retour.getScene();
@@ -157,6 +177,14 @@ public class HippoController {
         else if(event.getSource() == supprimer){
             Delete dl = new Delete("Hippocampes",id.getText());
             dl.deleteTuple();
+        }
+        else if(event.getSource() == recharger){
+            try{
+                Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+            }
+            catch(Exception e){
+                System.out.println(e);
+            }
         }
     }
 

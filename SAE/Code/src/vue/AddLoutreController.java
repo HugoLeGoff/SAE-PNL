@@ -18,7 +18,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
-
+/**
+ * This class is the controller of the AddHippo page. It gets the page interactive.
+ */
 public class AddLoutreController {
 
     @FXML
@@ -58,6 +60,10 @@ public class AddLoutreController {
 
     
     @FXML
+    /**
+     * Initializes the data already on the page.
+     * @throws SQLException SQLException
+     */
     private void initialize() throws SQLException {
         liste = FXCollections.observableArrayList("Positif","Negatif","Non prospection");
         zoneIndice.setItems(liste);
@@ -73,7 +79,11 @@ public class AddLoutreController {
 
     @FXML
 
-
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
         if(event.getSource() == buttonAdd){
             HashMap<String,String> values = new HashMap<String,String>();

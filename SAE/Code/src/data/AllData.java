@@ -407,5 +407,22 @@ public ArrayList<AfficheUsers> getAllObs() {
   return ret;
 
 }
+public String getIDUser() throws SQLException{
+      
+  String ret = "";
+
+  Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+  Statement stmt = c.createStatement();
+  ResultSet res = stmt.executeQuery("SELECT MAX(idU) FROM User ;");
+
+    while(res.next()){
+      ret = Integer.toString(res.getInt(1)+1);
+      
+        
+    }
+  c.close();
+
+  return ret;
+}
 
 }

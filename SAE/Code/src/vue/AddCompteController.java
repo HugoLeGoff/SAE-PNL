@@ -34,7 +34,7 @@ public class AddCompteController {
     @FXML
     private TextField zonePrenom;
     @FXML
-    private TextField zoneStatut;
+    private ComboBox<String> zoneStatut;
     @FXML
     private Button buttonAdd;
 
@@ -45,6 +45,9 @@ public class AddCompteController {
     
     @FXML
     private void initialize() throws SQLException {
+
+        liste = FXCollections.observableArrayList("OBSERVATEUR","ADMINISTRATEUR");
+        zoneStatut.setItems(liste);
 
         AllData ad = new AllData();
         zoneIdUser.setText(ad.getID());
@@ -68,7 +71,7 @@ public class AddCompteController {
         }
         else if(event.getSource() == buttonAnnuler){
             Scene scene = buttonAnnuler.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("tablesCompte.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("GestionCompte.fxml"));
             scene.setRoot(root);
         }
     }

@@ -376,17 +376,20 @@ public class ChoixVal {
             columns.add("nomStatut");
             remplirValues();
             columns.add("idStatut");
+            values.add(valuesTotal.get("idStatut"));
             insertData.setTable("Statut");
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
 
             columns=new ArrayList<String>();
-            columns.add("idU");
             columns.add("nom");
             columns.add("prenom");
             remplirValues();
+            columns.add("idU");
+            values.add(valuesTotal.get("idUser"));
             columns.add("statut");
+            values.add(valuesTotal.get("idStatut"));
             insertData.setTable("User");
             insertData.setColumns(columns);
             insertData.setValues(values);
@@ -397,7 +400,6 @@ public class ChoixVal {
             columns.add("login");
             columns.add("passw");
             remplirValues();
-            columns.add("statut");
             insertData.setTable("Connexion");
             insertData.setColumns(columns);
             insertData.setValues(values);

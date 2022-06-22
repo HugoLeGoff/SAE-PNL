@@ -1,6 +1,7 @@
 package vue;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 
 import data.*;
 import java.util.*;
@@ -55,7 +56,7 @@ public class AddGCIController {
     }
 
     @FXML
-    protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
+    protected void handleSubmitButtonAction(ActionEvent event) throws IOException, SQLIntegrityConstraintViolationException{
         if(event.getSource() == buttonAdd){
             HashMap<String,String> values = new HashMap<String,String>();
             values.put("obsH",zoneObsG.getText());
@@ -74,8 +75,8 @@ public class AddGCIController {
             values.put("prenom",zoneLieu_Lambert_Y.getText());
             values.put("prenom",zoneIdObservateur.getText());
 
-
             ChoixVal val = new ChoixVal("GCI", values);
+
 
         }
         if(event.getSource() == buttonAnnuler){

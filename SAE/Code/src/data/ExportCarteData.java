@@ -88,13 +88,14 @@ public class ExportCarteData {
             writer.print(printColonnes());
             writer.print("\n");
             while(res2.next()) {
-                for(int i = 1; i <= nbColonnes-2; i++) {
-                    writer.print(res2.getString(i) + ";");
-                }
                 Lambert93 coo = new Lambert93();
                 ArrayList<Double> coord = coo.toLatLon(res2.getDouble("lieu_Lambert_X"), res2.getDouble("lieu_Lambert_Y"));
                 writer.print(String.valueOf(coord.get(0)) + ";" + String.valueOf(coord.get(1)) + ";");
+                for(int i = 1; i <= nbColonnes-2; i++) {
+                    writer.print(res2.getString(i) + ";");
+                }
                 writer.print("\n");
+
 
             }
             writer.close();

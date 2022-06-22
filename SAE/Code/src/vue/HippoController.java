@@ -1,12 +1,20 @@
 package vue;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import data.*;
 import java.util.*;
+<<<<<<< HEAD
+
 
 import connexion.Compte;
+=======
+>>>>>>> 6bcda495d6c57d4ccaa8c58c3912b72e771da7d0
 import donnee.AfficheObsHippocampes;
+import donnee.Table;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -15,6 +23,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
@@ -23,8 +33,7 @@ import javafx.fxml.*;
  */
 public class HippoController {
     @FXML
-    private Label nomObservateur = new Label();
-    
+    private ComboBox<String> choixAnnee;
     @FXML
     private Button supprimer;
 
@@ -36,6 +45,9 @@ public class HippoController {
 
     @FXML
     private Button buttonAdd;
+
+    @FXML
+    private Button recharger;
 
     @FXML
     private TextField zoneObsH;
@@ -57,6 +69,8 @@ public class HippoController {
 
     @FXML
     private TextField zoneGestant;
+
+    ObservableList<String> liste;
 
     @FXML private TableView<AfficheObsHippocampes> tableView;
     @FXML private TableColumn<AfficheObsHippocampes, String> idObs;
@@ -82,10 +96,6 @@ public class HippoController {
      * @throws SQLException SQLException
      */
     private void initialize() throws SQLException {
-        Compte compte = new Compte();
-        String log = compte.getLogin();
-        nomObservateur.setText(log);
-        
         idObs.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("obsH"));
         espece.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("espece"));
         sexe.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("sexe"));
@@ -103,6 +113,15 @@ public class HippoController {
 
         AllData ad = new AllData();
         ArrayList<AfficheObsHippocampes> obsHippo = ad.hippocampe();
+        try{
+            if (choixAnnee.getValue()=="toute"){
+                obsHippo = ad.hippocampe();
+            }else{
+                
+                obsHippo = ad.hippocampeAnnee(choixAnnee.getValue());
+            }
+        }catch(Exception e){
+        }
         
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         tableView.getColumns().get(0).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));    //33% for id column size
@@ -125,11 +144,21 @@ public class HippoController {
  
 
         tableView.getItems().setAll(obsHippo);
+        
+        
+        ArrayList<Table> tables = ad.tableHippo();
+        liste = FXCollections.observableArrayList();
+        for(Table t :tables){
+            liste.add(t.getTable());
+        }
+        liste.add("toute");
+        choixAnnee.setItems(liste);
     }
 
 
     @FXML
 
+<<<<<<< HEAD
     /**
      * Initializes the action to execute when pressing a button.
      * @param event the event
@@ -137,6 +166,10 @@ public class HippoController {
      * @throws SQLException SQLException
      */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
+=======
+    
+    protected void handleSubmitButtonAction(ActionEvent event) throws IOException, SQLException{
+>>>>>>> 4f3a334462a0a44d0f94a19bd2507b3b082316cf
 
         if(event.getSource() == retour){
             Scene scene = retour.getScene();
@@ -153,10 +186,18 @@ public class HippoController {
             Delete dl = new Delete("Hippocampes",id.getText());
             dl.deleteTuple();
         }
+        else if(event.getSource() == recharger){
+            try{
+                Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+            }
+            catch(Exception e){
+                System.out.println(e);
+            }
+        }
     }
 
 
 
 
 
-} 
+}

@@ -53,7 +53,7 @@ public class AddCompteController {
      */
     private void initialize() throws SQLException {
 
-        liste = FXCollections.observableArrayList("OBSERVATEUR","ADMINISTRATEUR");
+        liste = FXCollections.observableArrayList("1","2");
         zoneStatut.setItems(liste);
 
         AllData ad = new AllData();
@@ -75,7 +75,7 @@ public class AddCompteController {
             values.put("prenom",zonePassw.getText());
             values.put("login",zoneNom.getText());
             values.put("passw",zonePrenom.getText());
-            values.put("nomStatut",zoneStatut.getValue());
+            values.put("idStatut",zoneStatut.getValue());
 
 
             ChoixVal val = new ChoixVal("Comptes", values);

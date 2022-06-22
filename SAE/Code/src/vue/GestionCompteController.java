@@ -26,16 +26,19 @@ public class GestionCompteController{
     private TableColumn<AfficheCompte, String> idUser;
 
     @FXML
+
+    private TableColumn<AfficheCompte, String> nom;
+
+    @FXML
+    private TableColumn<AfficheCompte, String> prenom;
+
+    @FXML
+
     private TableColumn<AfficheCompte, String> login;
 
     @FXML
     private TableColumn<AfficheCompte, String> passw;
 
-    @FXML
-    private TableColumn<AfficheCompte, String> nom;
-
-    @FXML
-    private TableColumn<AfficheCompte, String> prenom;
 
     @FXML
     private TableColumn<AfficheCompte, String> statut;
@@ -50,10 +53,11 @@ public class GestionCompteController{
     private void initialize() throws SQLException {
 
         idUser.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("idUser"));
+        nom.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("nom"));
+        prenom.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("prenom"));
         login.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("login"));
         passw.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("passw"));
-        nom.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("login"));
-        prenom.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("passw"));
+        statut.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("statut"));
 
         AllData ad = new AllData();
         ArrayList<AfficheCompte> comptes = ad.getAllCompte();
@@ -83,7 +87,7 @@ public class GestionCompteController{
         }
         else if(event.getSource() == buttonAdd){
             Scene scene = buttonAdd.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("addChouette.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("addCompte.fxml"));
             scene.setRoot(root);
         }
     }

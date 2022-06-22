@@ -99,7 +99,7 @@ public class SelectionEspeceAdminController {
         else if(event.getSource() == this.observateur){
 
             Scene scene = observateur.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("TableObservateur.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("tablesObservateur.fxml"));
             scene.setRoot(root);   
         }
     }

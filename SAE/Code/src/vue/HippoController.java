@@ -8,7 +8,10 @@ import java.sql.Statement;
 import data.*;
 import java.util.*;
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 8c80260a09369cab0370480c56483a4e7e6ec0d3
 import connexion.Compte;
 import donnee.AfficheObsHippocampes;
 import donnee.Table;
@@ -29,6 +32,9 @@ import javafx.fxml.*;
  * This class is the controller of the Hippocampe page. It gets the page interactive.
  */
 public class HippoController {
+    
+    @FXML
+    private Label nomObservateur = new Label();
     @FXML
     private ComboBox<String> choixAnnee;
     @FXML
@@ -93,6 +99,12 @@ public class HippoController {
      * @throws SQLException SQLException
      */
     private void initialize() throws SQLException {
+
+        
+        Compte compte = new Compte();
+        String log = compte.getLogin();
+        nomObservateur.setText(log);
+        
         idObs.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("obsH"));
         espece.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("espece"));
         sexe.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("sexe"));

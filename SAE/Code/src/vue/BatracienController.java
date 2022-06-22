@@ -25,14 +25,19 @@ public class BatracienController {
 
     @FXML
     private Label nomObservateur = new Label();
+<<<<<<< HEAD
+=======
 
+>>>>>>> 8c80260a09369cab0370480c56483a4e7e6ec0d3
     @FXML
     private Button retour;
 
     @FXML
     private Button buttonAdd;
 
-
+    @FXML
+    private Button supprimer;
+    @FXML private TextField id;
 
     @FXML private TableView<AfficheObsBatracien> tableView;
     @FXML private TableColumn<AfficheObsBatracien, String> obsB;
@@ -78,6 +83,11 @@ public class BatracienController {
      * @throws SQLException SQLException
      */
     private void initialize() throws SQLException {
+<<<<<<< HEAD
+
+        
+=======
+>>>>>>> 8c80260a09369cab0370480c56483a4e7e6ec0d3
         Compte compte = new Compte();
         String log = compte.getLogin();
         nomObservateur.setText(log);
@@ -174,6 +184,10 @@ public class BatracienController {
             Scene scene = buttonAdd.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("addHippo.fxml"));
             scene.setRoot(root);
+        }
+        else if(event.getSource() == supprimer){
+            Delete dl = new Delete("Batraciens",id.getText());
+            dl.deleteTuple();
         }
     }
 

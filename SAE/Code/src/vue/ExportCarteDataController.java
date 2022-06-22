@@ -45,7 +45,7 @@ public class ExportCarteDataController {
     @FXML
     private Label espece = new Label();
 
-
+    @FXML private Button deconnexion;
 
     @FXML private Button test1;
 
@@ -103,11 +103,11 @@ public class ExportCarteDataController {
             
         }
 
-        /*else if(event.getSource() == this.deconnexion){
+        else if(event.getSource() == this.deconnexion){
             Scene scene = deconnexion.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("connexion.fxml"));
             scene.setRoot(root);
-        }*/
+        }
 
         else if(event.getSource() == this.retour){
             Scene scene = retour.getScene();

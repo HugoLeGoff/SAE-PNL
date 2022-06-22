@@ -162,6 +162,9 @@ public class GCIController {
         else if(event.getSource() == supprimer){
             Delete dl = new Delete("gci",id.getText());
             dl.deleteTuple();
+            Scene scene = buttonAdd.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("tablesGCI.fxml"));
+            scene.setRoot(root);
         }
     }
 

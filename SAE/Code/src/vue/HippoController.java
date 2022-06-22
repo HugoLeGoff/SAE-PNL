@@ -185,6 +185,9 @@ public class HippoController {
         else if(event.getSource() == supprimer){
             Delete dl = new Delete("Hippocampes",id.getText());
             dl.deleteTuple();
+            Scene scene = buttonAdd.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
+            scene.setRoot(root);
         }
         else if(event.getSource() == recharger){
             try{

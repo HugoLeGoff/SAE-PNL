@@ -24,9 +24,10 @@ import javafx.fxml.*;
  */
 public class GCIController {
     
+
+
     @FXML
     private Label nomObservateur = new Label();
-
     @FXML
     private Button supprimer;
 
@@ -88,6 +89,7 @@ public class GCIController {
      * @throws SQLException SQLException
      */
     private void initialize() throws SQLException {
+
         Compte compte = new Compte();
         String log = compte.getLogin();
         nomObservateur.setText(log);

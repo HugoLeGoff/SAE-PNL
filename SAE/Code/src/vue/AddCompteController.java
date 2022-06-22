@@ -40,9 +40,14 @@ public class AddCompteController {
     private ComboBox<String> zoneStatut;
     @FXML
     private Button buttonAdd;
+    @FXML
+    private Label id;
 
     @FXML
     private Button buttonAnnuler;
+
+    @FXML
+    private Button supprimer;
 
     ObservableList<String> liste;
     
@@ -57,7 +62,7 @@ public class AddCompteController {
         zoneStatut.setItems(liste);
 
         AllData ad = new AllData();
-        zoneIdUser.setText(ad.getID());
+        zoneIdUser.setText(ad.getIDUser());
     }
 
     @FXML
@@ -91,6 +96,10 @@ public class AddCompteController {
             Scene scene = buttonAnnuler.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("GestionCompte.fxml"));
             scene.setRoot(root);
+        }
+        else if(event.getSource() == supprimer){
+            Delete dl = new Delete("Comptes",id.getText());
+            dl.deleteTuple();
         }
     }
 

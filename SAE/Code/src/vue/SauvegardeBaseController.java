@@ -24,12 +24,13 @@ import java.util.List;
  * This class is the controller of the SauvegardeBase page. It gets the page interactive.
  */
 public class SauvegardeBaseController {
-     @FXML Button deconnexion;
+    @FXML Button deconnexion;
 
     @FXML Button sauvegarder;
 
-    @FXML
-    private Button retour;
+    @FXML Button admin;
+
+    @FXML private Button retour;
 
     @FXML Label nom = new Label(" ");
     
@@ -55,19 +56,22 @@ public class SauvegardeBaseController {
      * @param event the event
      * @throws IOException IOException
      */
-    protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
+    protected void handleSubmitButtonAction(ActionEvent event) throws IOException, InterruptedException{
         if(event.getSource() == this.deconnexion){
             Scene scene = deconnexion.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
             scene.setRoot(root);
-        }
-        else if(event.getSource() == this.retour){
+        } else if(event.getSource() == this.admin){
+            Scene scene = admin.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("SelectionActionAdmin.fxml"));
+            scene.setRoot(root);
+        } else if(event.getSource() == this.retour){
             Scene scene = retour.getScene();
-            Stage stage = new Stage(); 
             Parent root = FXMLLoader.load(getClass().getResource("SelectionActionAdmin.fxml"));
             scene.setRoot(root); 
-        }
-        else if(event.getSource() == this.sauvegarder){
+        } else if(event.getSource() == this.sauvegarder){
+            saves();
+            /*
             ProcessBuilder processBuilder= new ProcessBuilder();
   
             List<String> builderList = new ArrayList<>();
@@ -99,7 +103,25 @@ public class SauvegardeBaseController {
             }
             catch (InterruptedException e) {
                 e.printStackTrace();
-            }
+            }*/
         }
+    }
+    
+    private void saves() throws IOException, InterruptedException {
+                    //"mysqldump -u <your login> --password=<your password> <database name to clone> | mysql -u root --password=<your password> <new database name>";
+                    //mysqldump -u login_mysql -p password_mysql --databases nom_bdd > dump_bdd.sql
+                    //"mysqldump -u 'admin'@'localhost' -p mdp_admin --databases bd_pnr > BackUp.sql"
+                    //"mysqldump -u admin@localhost --password=mdp_admin bd_pnr | mysql -u admin@localhost --password=mdp_admin backup"
+        //String command = "mysqldump -u admin@localhost --password=mdp_admin bd_pnr | mysql -u admin@localhost --password=mdp_admin backup";
+
+        //Process p = Runtime.getRuntime().exec(new String[]{"bash","-c",command});
+        //p.waitFor();
+
+        ProcessBuilder processBuilder = new ProcessBuilder();
+
+	    // -- Linux --
+
+	    // Run a shell command
+	    processBuilder.command("sql", "-c", "touch ./cat ");
     }
 }

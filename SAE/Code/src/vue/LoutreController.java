@@ -69,6 +69,9 @@ public class LoutreController {
     private Button retour;
 
     @FXML
+    private Button recharger;
+
+    @FXML
     private Button buttonAdd;
 
     

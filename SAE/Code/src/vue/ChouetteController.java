@@ -72,6 +72,9 @@ public class ChouetteController {
     @FXML
     private Button buttonAdd;
 
+    @FXML
+    private Button recharger;
+
     
     @FXML
     private TableColumn<AfficheObsChouette, String> typeObs;

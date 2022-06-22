@@ -56,10 +56,17 @@ public class GCIController {
     private TextField zoneTypeDePeche;
 
     @FXML
+    private Button recharger;
+
+    @FXML
     private TextField zoneTaille;
 
     @FXML
     private TextField zoneGestant;
+
+    AllData ad ;
+
+    ArrayList<AfficheObsHippocampes> obsHippo;
 
     @FXML private TableView<AfficheObsGCI> tableView;
     @FXML private TableColumn<AfficheObsGCI, String> obsG;
@@ -165,6 +172,17 @@ public class GCIController {
             Scene scene = buttonAdd.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("tablesGCI.fxml"));
             scene.setRoot(root);
+        }
+        else if(event.getSource() == recharger){
+            if (choixAnnee.getValue().equals("toute")){
+                obsHippo = ad.hippocampe();
+            }else{
+                
+                obsHippo = ad.hippocampeAnnee(choixAnnee.getValue());
+            }
+            tableView.getItems().setAll(obsHippo);
+            
+            
         }
     }
 

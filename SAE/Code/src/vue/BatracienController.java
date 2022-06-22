@@ -32,6 +32,8 @@ public class BatracienController {
 
     @FXML
     private Button buttonAdd;
+    @FXML
+    private Button recharger;
 
     @FXML
     private Button supprimer;

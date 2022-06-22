@@ -71,6 +71,10 @@ public class HippoController {
 
     ObservableList<String> liste;
 
+    AllData ad ;
+
+    ArrayList<AfficheObsHippocampes> obsHippo;
+
     @FXML private TableView<AfficheObsHippocampes> tableView;
     @FXML private TableColumn<AfficheObsHippocampes, String> idObs;
     @FXML private TableColumn<AfficheObsHippocampes, String> espece;
@@ -116,17 +120,9 @@ public class HippoController {
         nom.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("nom"));
         prenom.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("prenom"));
 
-        AllData ad = new AllData();
-        ArrayList<AfficheObsHippocampes> obsHippo = ad.hippocampe();
-        try{
-            if (choixAnnee.getValue()=="toute"){
-                obsHippo = ad.hippocampe();
-            }else{
-                
-                obsHippo = ad.hippocampeAnnee(choixAnnee.getValue());
-            }
-        }catch(Exception e){
-        }
+        ad = new AllData();
+        obsHippo = ad.hippocampe();
+        
         
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         tableView.getColumns().get(0).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));    //33% for id column size
@@ -190,12 +186,15 @@ public class HippoController {
             scene.setRoot(root);
         }
         else if(event.getSource() == recharger){
-            try{
-                Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+            if (choixAnnee.getValue().equals("toute")){
+                obsHippo = ad.hippocampe();
+            }else{
+                
+                obsHippo = ad.hippocampeAnnee(choixAnnee.getValue());
             }
-            catch(Exception e){
-                System.out.println(e);
-            }
+            tableView.getItems().setAll(obsHippo);
+            
+            
         }
     }
 

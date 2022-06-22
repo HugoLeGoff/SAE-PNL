@@ -57,7 +57,7 @@ public class AddChouetteController {
     
     @FXML
     private void initialize() throws SQLException {
-        liste = FXCollections.observableArrayList("SONORE","VISUELLE","SONORE_VISUELLE");
+        liste = FXCollections.observableArrayList("SONORE","VISUEL","SONORE_VISUELLE");
         zoneTypeObs.setItems(liste);
 
         liste = FXCollections.observableArrayList("EFFRAIE","HULOTTE","CHEVECHE");

@@ -146,6 +146,9 @@ public class ChouetteController {
         else if(event.getSource() == supprimer){
             Delete dl = new Delete("Chouettes",id.getText());
             dl.deleteTuple();
+            Scene scene = buttonAdd.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("tableschouette.fxml"));
+            scene.setRoot(root);
         }
     }
 

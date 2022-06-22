@@ -25,25 +25,36 @@ public class Delete {
             ret.add(ret1);
         }else if(espece.equals("GCI")){
             String ret1="DELETE FROM obs_GCI WHERE obsG="+id+";";
+            ret.add(ret1);
             ret1="\nDELETE FROM AObserve WHERE lObservation="+id+";";
+            ret.add(ret1);
             ret1="\nDELETE FROM Observation WHERE idObs="+id+";";
+            ret.add(ret1);
         }else if(espece.equals("Loutres")){
             String ret1="DELETE FROM obs_Loutre WHERE obsL="+id+";";
+            ret.add(ret1);
             ret1="DELETE FROM AObserve WHERE lObservation="+id+";";
+            ret.add(ret1);
             ret1="DELETE FROM Observation WHERE idObs="+id+";";
+            ret.add(ret1);
         }else if(espece.equals("Batraciens")){
             String ret1="DELETE FROM obs_Batracien WHERE obsB="+id+";";
-
+            ret.add(ret1);
             ret1="DELETE FROM AObserve WHERE lObservation="+id+";";
+            ret.add(ret1);
             ret1="DELETE FROM Observation WHERE idObs="+id+";";
+            ret.add(ret1);
         }else if(espece.equals("Chouettes")){
             String ret1="DELETE FROM obs_Chouette WHERE numObs="+id+";";
+            ret.add(ret1);
             try{
-                ret1+="\nDELETE FROM AObserve WHERE lObservation="+id+";";
+                ret1="\nDELETE FROM AObserve WHERE lObservation="+id+";";
+                ret.add(ret1);
             }catch(Exception e){
                 e.printStackTrace();
             }finally{
-                ret1+="\nDELETE FROM Observation WHERE idObs="+id+";";
+                ret1="\nDELETE FROM Observation WHERE idObs="+id+";";
+                ret.add(ret1);
             }
             
 

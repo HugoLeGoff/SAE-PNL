@@ -64,17 +64,34 @@ public class SelectionInteraction {
             scene.setRoot(root);
         }
         
-        else if(event.getSource() == this.gestionDo){
-            if(this.especeTMP.equals("Chouettes") ){
+        else if(event.getSource() == gestionDo){
+            if(especeTMP.equals("Hippocampes")){
                 Scene scene = gestionDo.getScene();
-                Parent root = FXMLLoader.load(getClass().getResource("tablesChouette.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
                 scene.setRoot(root);
-            }else{
+            }
+            else if(especeTMP.equals("Batraciens")){
                 Scene scene = gestionDo.getScene();
-                Parent root = FXMLLoader.load(getClass().getResource("Lucas.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("TablesBatraciens.fxml"));
+                scene.setRoot(root);
+            }
+            else if(especeTMP.equals("Chouettes")){
+                Scene scene = gestionDo.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("tableschouette.fxml"));
+                scene.setRoot(root);
+            }
+            else if(especeTMP.equals("GCI")){
+                Scene scene = gestionDo.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("tablesGCI.fxml"));
+                scene.setRoot(root);
+            }
+            else if(especeTMP.equals("Loutres")){
+                Scene scene = gestionDo.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("tablesLoutre.fxml"));
                 scene.setRoot(root);
             }
         }
+        
         
 
         else if(event.getSource() == this.consultation){

@@ -14,7 +14,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
 
-
+/**
+ * This class is the controller of the AddBatracien page. It gets the page interactive.
+ */
 public class AddBatracienController {
 
     
@@ -86,6 +88,10 @@ public class AddBatracienController {
     ObservableList<String> liste;
     
     @FXML
+    /**
+     * Initializes the data already on the page.
+     * @throws SQLException SQLException
+     */
     private void initialize() throws SQLException {
         liste = FXCollections.observableArrayList("CALAMITE","PELODYTE");
         zoneEspece.setItems(liste);
@@ -95,6 +101,11 @@ public class AddBatracienController {
     }
 
     @FXML
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
         if(event.getSource() == buttonAdd){
             HashMap<String,String> values = new HashMap<String,String>();

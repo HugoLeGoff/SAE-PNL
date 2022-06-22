@@ -11,46 +11,39 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
 import javafx.fxml.*;
 
 
 
-
+/**
+ * This class is the controller of the Accueil page. It gets the page interactive.
+ */
 public class AccueilController {
 
     public Compte compteCo;
 
-@FXML 
-private TextField login ;
+    @FXML 
+    private TextField login ;
 
-@FXML
-private PasswordField pw ;
-
-@FXML
-private Label msgErr ;
-
-
-
-@FXML
-    protected void handleSubmitButtonAction(ActionEvent event) throws IOException, SQLException{
-        connect();
-    }
-
-    
     @FXML
-    public void handle(KeyEvent e) throws SQLException, IOException {
-        System.out.println("test");
-		if (e.getCode() == KeyCode.ENTER) {
-			connect();
-		}
-    }
+    private PasswordField pw ;
 
-    public void connect() throws SQLException, IOException{
-        
+    @FXML
+    private Label msgErr ;
+
+
+
+    @FXML
+
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     * @throws SQLException SQLException
+     */
+    protected void handleSubmitButtonAction(ActionEvent event) throws IOException, SQLException{
         if(login != null && pw != null){
             AccTest test = new AccTest();
             boolean testLog = test.testMDP(this.login.getText(), this.pw.getText());
@@ -67,19 +60,30 @@ private Label msgErr ;
                     Scene scene = login.getScene();
                     Parent root = FXMLLoader.load(getClass().getResource("Selection.fxml"));
                     scene.setRoot(root);
+
                 }
-            } else{
+                
+                
+            }
+            else{
                 msgErr.setText("Identifiant ou mot de passe incorrect");
             }
         }
-
     }
+    
 
-
+    /**
+     * Sets the current account.
+     */
     public void setCompteCo(){
         this.compteCo = new Compte(this.login.getText(),  this.pw.getText());
     }
 
+    /**
+     * Gets the login of the current account.
+     * @return the login of the current account
+     * @throws SQLException SQLException
+     */
     public int getStatut() throws SQLException {
         AllData ad = new AllData();
         int ret = ad.getStatut(this.login.getText());

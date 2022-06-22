@@ -298,7 +298,7 @@ public ArrayList<AfficheUsers> getAllObs() {
   try {
       Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
       Statement stmt = c.createStatement();
-      ResultSet res = stmt.executeQuery("SELECT idU, prenom, nom FROM User JOIN Connexion ON idUser = idU JOIN Statut ON idStatut = statut");
+      ResultSet res = stmt.executeQuery("SELECT * FROM Observateur");
 
       AfficheUsers ch = null;
       while (res.next()) {

@@ -56,9 +56,16 @@ public class Delete {
                 ret1="\nDELETE FROM Observation WHERE idObs="+id+";";
                 ret.add(ret1);
             }
+        }else if(espece.equals("Comtes")){
+            String ret1="DELETE FROM Connexion WHERE obsB="+id+";";
+            ret.add(ret1);
+            ret1="DELETE FROM User WHERE lObservation="+id+";";
+            ret.add(ret1);
+        }
             
 
-        }
+        
+    
         return ret;
     }
 

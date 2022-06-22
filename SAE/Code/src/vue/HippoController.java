@@ -7,12 +7,9 @@ import java.sql.Statement;
 
 import data.*;
 import java.util.*;
-<<<<<<< HEAD
 
 
 import connexion.Compte;
-=======
->>>>>>> 6bcda495d6c57d4ccaa8c58c3912b72e771da7d0
 import donnee.AfficheObsHippocampes;
 import donnee.Table;
 import javafx.scene.Parent;

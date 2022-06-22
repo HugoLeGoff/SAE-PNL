@@ -240,17 +240,6 @@ public class BatracienController {
             Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
             scene.setRoot(root);
         }
-        else if(event.getSource() == carte){
-            Scene scene = carte.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
-            scene.setRoot(root);
-        }   
-        else if(event.getSource() == carte){
-            Scene scene = carte.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
-            scene.setRoot(root);
-
-        }
     }
 
 

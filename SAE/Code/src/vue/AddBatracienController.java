@@ -137,7 +137,7 @@ public class AddBatracienController {
             values.put("idVegeLieu",zoneVegetation.getText());
 
 
-            ChoixVal val = new ChoixVal("Chouettes", values);
+            ChoixVal val = new ChoixVal("Batraciens", values);
 
             ArrayList<String> message = val.getMsg();
             msgLab.setText("");

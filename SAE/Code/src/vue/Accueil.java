@@ -16,8 +16,7 @@ public class Accueil extends Application {
         
         Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
         stage.setTitle("PNR");
-        stage.setScene(new Scene(root, screenBounds.getWidth(),screenBounds.getHeight()));
-        System.out.println("width : " + screenBounds.getWidth() + " height : " +  screenBounds.getHeight());
+        stage.setScene(new Scene(root, 900,650));
         stage.show();
     }
 

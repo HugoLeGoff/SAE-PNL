@@ -22,7 +22,8 @@ import javafx.fxml.*;
 public class SelectionActionAdminController {
 
    
-    
+    @FXML Button admin;
+
     @FXML Button deconnexion;
 
     @FXML Button gestionSauvegarde;
@@ -68,6 +69,12 @@ public class SelectionActionAdminController {
 
             Scene scene = gestionCompte.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("GestionCompte.fxml"));
+            scene.setRoot(root);   
+        }
+        else if(event.getSource() == this.admin){
+
+            Scene scene = admin.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("SelectionEspeceAdmin.fxml"));
             scene.setRoot(root);   
         }
     }

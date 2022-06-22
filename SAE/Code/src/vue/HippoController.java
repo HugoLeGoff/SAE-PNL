@@ -43,6 +43,9 @@ public class HippoController {
     private Button retour;
 
     @FXML
+    private Button carte;
+
+    @FXML
     private Button buttonAdd;
 
     @FXML
@@ -186,15 +189,31 @@ public class HippoController {
             scene.setRoot(root);
         }
         else if(event.getSource() == recharger){
-            if (choixAnnee.getValue().equals("toute")){
-                obsHippo = ad.hippocampe();
-            }else{
-                
-                obsHippo = ad.hippocampeAnnee(choixAnnee.getValue());
+            if(choixAnnee.getValue()!=null){
+                if (choixAnnee.getValue().equals("toute")){
+                    try {
+                        obsHippo = ad.hippocampe();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }else{
+                    
+                    try {
+                        obsHippo = ad.hippocampeAnnee(choixAnnee.getValue());
+                    } catch (SQLException e) {
+                        
+                        e.printStackTrace();
+                    }
+                }
+                tableView.getItems().setAll(obsHippo);
             }
-            tableView.getItems().setAll(obsHippo);
             
             
+        }
+        else if(event.getSource() == carte){
+            Scene scene = carte.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
+            scene.setRoot(root);
         }
     }
 

@@ -51,27 +51,6 @@ public class HippoController {
     @FXML
     private Button recharger;
 
-    @FXML
-    private TextField zoneObsH;
-
-    @FXML
-    private TextField zoneEspace;
-
-    @FXML
-    private TextField zoneSexe;
-
-    @FXML
-    private TextField zoneTemperatureEau;
-
-    @FXML
-    private TextField zoneTypeDePeche;
-
-    @FXML
-    private TextField zoneTaille;
-
-    @FXML
-    private TextField zoneGestant;
-
     ObservableList<String> liste;
 
     AllData ad ;
@@ -108,7 +87,7 @@ public class HippoController {
         String log = compte.getLogin();
         nomObservateur.setText(log);
         
-        idObs.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("obsH"));
+        idObs.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("idObs"));
         espece.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("espece"));
         sexe.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("sexe"));
         temp.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("temperatureEau"));

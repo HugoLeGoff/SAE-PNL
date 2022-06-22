@@ -32,7 +32,14 @@ public class Delete {
             ret+="DELETE FROM Observation WHERE idObs="+id+";";
         }else if(espece.equals("Chouettes")){
             ret="DELETE FROM obs_Chouette WHERE numObs="+id+";";
-            ret+="DELETE FROM Observation WHERE idObs="+id+";";
+            try{
+                ret+="DELETE FROM AObserve WHERE lObservation="+id+";";
+            }catch(Exception e){
+                e.printStackTrace();
+            }finally{
+                ret+="DELETE FROM Observation WHERE idObs="+id+";";
+            }
+            
 
         }
 

@@ -6,10 +6,10 @@ import java.sql.Time;
 public class AfficheCompte {
     
     private String idUser;
-    private String nom;
-    private String prenom;
     private String login;
     private String passw;
+    private String nom;
+    private String prenom;
     private String statut;
 
 

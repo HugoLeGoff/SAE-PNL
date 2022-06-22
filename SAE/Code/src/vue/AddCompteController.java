@@ -60,10 +60,10 @@ public class AddCompteController {
         if(event.getSource() == buttonAdd){
             HashMap<String,String> values = new HashMap<String,String>();
             values.put("idUser",zoneIdUser.getText());
-            values.put("login",zoneLogin.getText());
-            values.put("passw",zonePassw.getText());
-            values.put("nom",zoneNom.getText());
-            values.put("prenom",zonePrenom.getText());
+            values.put("nom",zoneLogin.getText());
+            values.put("prenom",zonePassw.getText());
+            values.put("login",zoneNom.getText());
+            values.put("passw",zonePrenom.getText());
             values.put("statut",zoneStatut.getValue());
 
 

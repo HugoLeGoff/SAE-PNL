@@ -371,6 +371,7 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
             
+        }else if (espece.equals("Comptes")){
         }
     }
     public ArrayList<String> getMsg() {

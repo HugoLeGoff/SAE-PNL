@@ -202,7 +202,7 @@ public class BatracienController {
         
         else if(event.getSource() == buttonAdd){
             Scene scene = buttonAdd.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("addHippo.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("addBatraciens.fxml"));
             scene.setRoot(root);
         }
         else if(event.getSource() == supprimer){

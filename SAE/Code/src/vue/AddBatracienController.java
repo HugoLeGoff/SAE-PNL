@@ -149,7 +149,7 @@ public class AddBatracienController {
         }
         else if(event.getSource() == buttonAnnuler){
             Scene scene = buttonAnnuler.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("tablesChouette.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("TablesBatraciens.fxml"));
             scene.setRoot(root);
         }
     }

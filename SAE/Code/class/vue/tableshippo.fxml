@@ -107,6 +107,7 @@
                   </AnchorPane>
                   <ComboBox fx:id="choixAnnee" layoutX="170.0" layoutY="38.0" onAction="#handleSubmitButtonAction" prefHeight="26.0" prefWidth="91.0" />
                   <AnchorPane layoutX="4.0" layoutY="69.0" prefHeight="7.0" prefWidth="422.0" />
+                  <Button fx:id="recharger" layoutX="280.0" layoutY="39.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" style="-fx-background-color: #008967;" text="Recharger" textFill="WHITE" />
                </children>
             </AnchorPane>
          </children>

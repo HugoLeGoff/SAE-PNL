@@ -1,9 +1,13 @@
 package vue;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import data.*;
 import java.util.*;
+
 
 import connexion.Compte;
 import donnee.AfficheObsHippocampes;
@@ -34,6 +38,9 @@ public class HippoController {
 
     @FXML
     private Button buttonAdd;
+
+    @FXML
+    private Button recharger;
 
     @FXML
     private TextField zoneObsH;
@@ -125,7 +132,7 @@ public class HippoController {
     @FXML
 
     
-    protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
+    protected void handleSubmitButtonAction(ActionEvent event) throws IOException, SQLException{
 
         if(event.getSource() == retour){
             Scene scene = retour.getScene();
@@ -141,6 +148,14 @@ public class HippoController {
         else if(event.getSource() == supprimer){
             Delete dl = new Delete("Hippocampes",id.getText());
             dl.deleteTuple();
+        }
+        else if(event.getSource() == recharger){
+            try{
+                Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+            }
+            catch(Exception e){
+                System.out.println(e);
+            }
         }
     }
 

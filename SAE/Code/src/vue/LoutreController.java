@@ -73,6 +73,9 @@ public class LoutreController {
     private Button retour;
 
     @FXML
+    private Button recharger;
+
+    @FXML
     private Button buttonAdd;
 
     
@@ -158,6 +161,9 @@ public class LoutreController {
         else if(event.getSource() == supprimer){
             Delete dl = new Delete("Loutres",id.getText());
             dl.deleteTuple();
+            Scene scene = buttonAdd.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("tablesLoutre.fxml"));
+            scene.setRoot(root);
         }
         else if(event.getSource() == carte){
             Scene scene = carte.getScene();

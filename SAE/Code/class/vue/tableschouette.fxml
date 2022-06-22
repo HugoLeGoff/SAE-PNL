@@ -102,6 +102,7 @@
                   <Button fx:id="retour" layoutX="4.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="32.0" prefWidth="40.0" text="Button" />
                   <ComboBox fx:id="choixAnnee" layoutX="183.0" layoutY="40.0" onAction="#handleSubmitButtonAction" prefHeight="26.0" prefWidth="91.0" />
                   <Label layoutX="54.0" layoutY="45.0" text="Sélection de l'année :" />
+                  <Button fx:id="recharger" layoutX="281.0" layoutY="41.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" style="-fx-background-color: #008967;" text="Recharger" textFill="WHITE" />
                </children>
             </AnchorPane>
          </children>

@@ -61,7 +61,11 @@ public class TablesUsers {
         
 
         AllData ad = new AllData();
+<<<<<<< HEAD
         ArrayList<AfficheUsers> users = ad.getAllObs();
+=======
+        //ArrayList<AfficheUsers> users = ad.getAllCompte();
+>>>>>>> 05d0fa5d01c9216e25ec3e63aa57d41502f2ec80
         
         
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
@@ -69,7 +73,7 @@ public class TablesUsers {
         tableView.getColumns().get(1).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));   //33% for dt column size
         tableView.getColumns().get(2).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));
 
-        tableView.getItems().setAll(users);
+        //tableView.getItems().setAll(users);
     }
 
 

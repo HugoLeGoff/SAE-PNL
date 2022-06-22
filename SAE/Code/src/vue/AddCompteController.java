@@ -63,7 +63,7 @@ public class AddCompteController {
             values.put("espece",zoneStatut.getText());
 
 
-            ChoixVal val = new ChoixVal("Chouettes", values);
+            ChoixVal val = new ChoixVal("Comptes", values);
 
         }
         else if(event.getSource() == buttonAnnuler){

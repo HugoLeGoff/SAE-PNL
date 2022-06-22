@@ -22,6 +22,8 @@ public class SelectionEspeceController {
     
     @FXML Button deconnexion;
 
+    @FXML Button observateur;
+
     @FXML Button hippo;
 
     @FXML Button gci;
@@ -86,6 +88,13 @@ public class SelectionEspeceController {
 
             Scene scene = deconnexion.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
+            scene.setRoot(root);   
+        }
+
+        else if(event.getSource() == this.observateur){
+
+            Scene scene = observateur.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("TableObservateur.fxml"));
             scene.setRoot(root);   
         }
     }

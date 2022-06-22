@@ -140,6 +140,7 @@
             <TableColumn fx:id="passw" prefWidth="102.0" text="mot de passe" />
             <TableColumn fx:id="nom" prefWidth="48.0" text="nom" />
             <TableColumn fx:id="prenom" prefWidth="88.0" text="prenom" />
+            <TableColumn fx:id="statut" prefWidth="88.0" text="statut" />
         </columns>
       </TableView>
    </center>

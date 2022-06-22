@@ -274,10 +274,9 @@ public ArrayList<AfficheCompte> getAllCompte() {
       Statement stmt = c.createStatement();
       ResultSet res = stmt.executeQuery("SELECT * FROM User JOIN Connexion ON idUser = idU JOIN Statut ON idStatut = statut");
 
-      AfficheCompte ch = null;
       while (res.next()) {
         
-        ch = new AfficheCompte(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(6),res.getString(7));
+        AfficheCompte ch = new AfficheCompte(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(6),res.getString(7));
         ret.add(ch);
       }
 

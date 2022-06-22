@@ -93,6 +93,7 @@ public class ExportationController {
             for(Table t :tables){
                 liste.add(t.getTable());
             }
+            liste.add("toute");
             annee.setItems(liste);
             tableView.getItems().setAll(tables);
         }
@@ -104,6 +105,7 @@ public class ExportationController {
             for(Table t :tables){
                 liste.add(t.getTable());
             }
+            liste.add("toute");
             annee.setItems(liste);
             tableView.getItems().setAll(tables);
         }
@@ -115,6 +117,7 @@ public class ExportationController {
             for(Table t :tables){
                 liste.add(t.getTable());
             }
+            liste.add("toute");
             annee.setItems(liste);
             tableView.getItems().setAll(tables);
         }
@@ -126,6 +129,7 @@ public class ExportationController {
             for(Table t :tables){
                 liste.add(t.getTable());
             }
+            liste.add("toute");
             annee.setItems(liste);
             tableView.getItems().setAll(tables);
         }
@@ -137,6 +141,7 @@ public class ExportationController {
             for(Table t :tables){
                 liste.add(t.getTable());
             }
+            liste.add("toute");
             annee.setItems(liste);
             tableView.getItems().setAll(tables);
             }
@@ -152,9 +157,13 @@ public class ExportationController {
                 ChoixEspece especeChoix = new ChoixEspece();
                 String nomEspece = especeChoix.getEspece();
 
-
-                ExportData fichier = new ExportData(this.nomFichier.getText(), this.annee.getValue(), nomEspece);
-                fichier.exportData();
+                if(this.annee.getValue().equals("toute")){
+                    ExportData fichier = new ExportData(this.nomFichier.getText(), nomEspece);
+                    fichier.exportData();
+                }else{
+                    ExportData fichier = new ExportData(this.nomFichier.getText(),this.annee.getValue(), nomEspece);
+                    fichier.exportData();
+                }
 
                 msgImport.setText("Le fichier à été exporter à l'adresse \n C:/Users/Public/Downloads");
             

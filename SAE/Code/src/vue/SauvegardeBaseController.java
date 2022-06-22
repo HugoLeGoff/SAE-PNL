@@ -52,8 +52,9 @@ public class SauvegardeBaseController {
         }
         else if(event.getSource() == this.retour){
             Scene scene = retour.getScene();
+            Stage stage = new Stage(); 
             Parent root = FXMLLoader.load(getClass().getResource("SelectionActionAdmin.fxml"));
-            scene.setRoot(root);
+            scene.setRoot(root); 
         }
         else if(event.getSource() == this.sauvegarder){
             ProcessBuilder processBuilder= new ProcessBuilder();

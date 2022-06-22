@@ -5,6 +5,9 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * This class tests the traitement package.
+ */
 public class ScenarioTraitement {
 
     public static void main(String[] args) {

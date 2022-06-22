@@ -108,7 +108,7 @@
                </children>
             </HBox>
             <AnchorPane prefHeight="9.0" prefWidth="600.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" VBox.vgrow="ALWAYS" />
-            <AnchorPane prefHeight="53.0" prefWidth="900.0" />
+            <AnchorPane prefHeight="55.0" prefWidth="900.0" />
          </children>
       </VBox>
       <HBox prefHeight="446.0" prefWidth="900.0" VBox.vgrow="ALWAYS">
@@ -127,32 +127,32 @@
                            <children>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="293.0" prefWidth="692.0">
                                  <children>
-                                  <Button fx:id="chouettes" alignment="CENTER" layoutX="44.0" layoutY="184.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="62.0" prefWidth="246.0" style="-fx-background-color: #008967;" text="Chouettes" textFill="WHITE">
+                                  <Button fx:id="chouettes" alignment="CENTER" layoutX="43.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="62.0" prefWidth="246.0" style="-fx-background-color: #008967;" text="Chouettes" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="16.0" />
                                        </font>
                                     </Button>
-                                    <Label alignment="CENTER" layoutX="209.0" prefHeight="46.0" prefWidth="274.0" text="Sélection d'espèce" textFill="#008967">
+                                    <Label alignment="CENTER" prefHeight="50.0" prefWidth="690.0" text="Sélection d'espèce" textFill="#008967">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
                                     </Label>
-                                  <Button fx:id="loutres" alignment="CENTER" contentDisplay="CENTER" layoutX="411.0" layoutY="56.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Loutres" textFill="WHITE">
+                                  <Button fx:id="batraciens" alignment="CENTER" layoutX="402.0" layoutY="174.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="62.0" prefWidth="246.0" style="-fx-background-color: #008967;" text="Batraciens" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="16.0" />
                                        </font>
                                     </Button>
-                                  <Button fx:id="batraciens" alignment="CENTER" layoutX="413.0" layoutY="183.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="62.0" prefWidth="246.0" style="-fx-background-color: #008967;" text="Batraciens" textFill="WHITE">
+                                  <Button fx:id="hippo" alignment="CENTER" contentDisplay="CENTER" layoutX="221.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Hippocampes" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
                                        <font>
                                           <Font name="System Bold" size="16.0" />
                                        </font>
                                     </Button>
-                                  <Button fx:id="hippo" alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="288.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="Hippocampes" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+                                    <Button fx:id="gci" alignment="CENTER" contentDisplay="CENTER" layoutX="402.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="62.0" prefWidth="246.0" style="-fx-background-color: #008967;" text="GCI" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="16.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="gci" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="55.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: #008967;" text="GCI" textFill="WHITE">
+                                    <Button fx:id="loutres" alignment="CENTER" contentDisplay="CENTER" layoutX="43.0" layoutY="175.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="60.0" prefWidth="246.0" style="-fx-background-color: #008967;" text="Loutres" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="16.0" />
                                        </font>
@@ -165,7 +165,7 @@
                   </VBox>
                </center>
                <bottom>
-                  <AnchorPane prefHeight="90.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="106.0" prefWidth="900.0" BorderPane.alignment="CENTER">
                      <children>
                         <AnchorPane layoutX="98.0" layoutY="12.0" prefHeight="62.0" prefWidth="703.0" style="-fx-border-color: #008967; -fx-border-width: 5;">
                            <children>
@@ -174,7 +174,7 @@
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="batraciens1" alignment="CENTER" layoutX="543.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="41.0" prefWidth="145.0" style="-fx-background-color: #008967;" text="Observateurs" textFill="WHITE">
+                              <Button fx:id="observateur" alignment="CENTER" layoutX="543.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="41.0" prefWidth="145.0" style="-fx-background-color: #008967;" text="Observateurs" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>

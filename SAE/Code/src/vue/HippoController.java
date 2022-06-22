@@ -159,15 +159,8 @@ public class HippoController {
      * Initializes the action to execute when pressing a button.
      * @param event the event
      * @throws IOException IOException
-<<<<<<< HEAD
-     */
-    protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
-=======
-    
-=======
      * @throws SQLException SQLException
      */   
->>>>>>> 8606ec42af8c6aa7bf0142d59c70ed8cfa21fa25
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException, SQLException{
 
         if(event.getSource() == retour){

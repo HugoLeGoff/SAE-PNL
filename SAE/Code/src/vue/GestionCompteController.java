@@ -30,7 +30,7 @@ public class GestionCompteController{
 
     @FXML
     private TableColumn<AfficheCompte, String> prenom;
-    
+
     @FXML
     private TableColumn<AfficheCompte, String> login;
 
@@ -51,10 +51,11 @@ public class GestionCompteController{
     private void initialize() throws SQLException {
 
         idUser.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("idUser"));
-        login.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("login"));
-        passw.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("passw"));
         nom.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("login"));
         prenom.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("passw"));
+        login.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("login"));
+        passw.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("passw"));
+        statut.setCellValueFactory(new PropertyValueFactory<AfficheCompte, String>("statut"));
 
         AllData ad = new AllData();
         ArrayList<AfficheCompte> comptes = ad.getAllCompte();
@@ -84,7 +85,7 @@ public class GestionCompteController{
         }
         else if(event.getSource() == buttonAdd){
             Scene scene = buttonAdd.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("addChouette.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("addCompte.fxml"));
             scene.setRoot(root);
         }
     }

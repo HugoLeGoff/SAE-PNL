@@ -61,7 +61,7 @@ public class TablesUsers {
         
 
         AllData ad = new AllData();
-        ArrayList<AfficheUsers> users = ad.GetAllCompte();
+        //ArrayList<AfficheUsers> users = ad.getAllCompte();
         
         
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
@@ -77,7 +77,7 @@ public class TablesUsers {
         tableView.getColumns().get(9).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07)); 
         tableView.getColumns().get(10).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07)); 
 
-        tableView.getItems().setAll(users);
+        //tableView.getItems().setAll(users);
     }
 
 

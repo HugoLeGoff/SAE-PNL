@@ -3,6 +3,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class Accueil extends Application {
@@ -12,8 +13,8 @@ public class Accueil extends Application {
     throws Exception {
         
         Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
-        stage.setTitle("FXML Welcome");
-        stage.setScene(new Scene(root, 600, 600));
+        stage.setTitle("PNR");
+        stage.setScene(new Scene(root, 900,650));
         stage.show();
     }
 

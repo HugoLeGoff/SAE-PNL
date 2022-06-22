@@ -372,6 +372,38 @@ public class ChoixVal {
             msg.add(insertData.getMsg());
             
         }else if (espece.equals("Comptes")){
+            columns=new ArrayList<String>();
+            columns.add("idStatut");
+            columns.add("nomStatut");
+            remplirValues();
+            insertData.setTable("Statut");
+            insertData.setColumns(columns);
+            insertData.setValues(values);
+            insertData.insert();
+
+            columns=new ArrayList<String>();
+            columns.add("idU");
+            columns.add("nom");
+            columns.add("prenom");
+            columns.add("statut");
+            remplirValues();
+            insertData.setTable("User");
+            insertData.setColumns(columns);
+            insertData.setValues(values);
+            insertData.insert();
+
+            columns=new ArrayList<String>();
+            columns.add("idUser");
+            columns.add("login");
+            columns.add("passw");
+            columns.add("statut");
+            remplirValues();
+            insertData.setTable("Connexion");
+            insertData.setColumns(columns);
+            insertData.setValues(values);
+            insertData.insert();
+
+
         }
     }
     public ArrayList<String> getMsg() {

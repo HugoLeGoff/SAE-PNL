@@ -26,6 +26,9 @@ public class BatracienController {
     @FXML
     private Label nomObservateur = new Label();
 
+    
+    @FXML
+    private Button carte;
 
     @FXML
     private Button retour;
@@ -182,6 +185,21 @@ public class BatracienController {
         else if(event.getSource() == supprimer){
             Delete dl = new Delete("Batraciens",id.getText());
             dl.deleteTuple();
+        }
+        else if(event.getSource() == carte){
+            Scene scene = carte.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
+            scene.setRoot(root);
+        }
+        else if(event.getSource() == carte){
+            Scene scene = carte.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
+            scene.setRoot(root);
+        }   
+        else if(event.getSource() == carte){
+            Scene scene = carte.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
+            scene.setRoot(root);
         }
     }
 

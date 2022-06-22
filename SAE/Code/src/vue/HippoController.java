@@ -43,6 +43,9 @@ public class HippoController {
     private Button retour;
 
     @FXML
+    private Button carte;
+
+    @FXML
     private Button buttonAdd;
 
     @FXML
@@ -193,6 +196,11 @@ public class HippoController {
             catch(Exception e){
                 System.out.println(e);
             }
+        }
+        else if(event.getSource() == carte){
+            Scene scene = carte.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
+            scene.setRoot(root);
         }
     }
 

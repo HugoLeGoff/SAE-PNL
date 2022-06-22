@@ -28,6 +28,10 @@ public class ChouetteController {
     @FXML
     private Label nomObservateur = new Label();
 
+    
+    @FXML
+    private Button carte;
+
     @FXML
     private TableView<AfficheObsChouette> tableView;
 
@@ -158,6 +162,11 @@ public class ChouetteController {
             dl.deleteTuple();
             Scene scene = buttonAdd.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("tableschouette.fxml"));
+            scene.setRoot(root);
+        }
+        else if(event.getSource() == carte){
+            Scene scene = carte.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
             scene.setRoot(root);
         }
     }

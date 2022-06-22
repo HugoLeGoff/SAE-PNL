@@ -37,6 +37,10 @@ public class GCIController {
     @FXML
     private Button retour;
 
+    
+    @FXML
+    private Button carte;
+
     @FXML
     private Button buttonAdd;
 
@@ -163,10 +167,10 @@ public class GCIController {
             Delete dl = new Delete("gci",id.getText());
             dl.deleteTuple();
         }
+        else if(event.getSource() == carte){
+            Scene scene = carte.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
+            scene.setRoot(root);
+        }
     }
-
-
-
-
-
 } 

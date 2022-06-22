@@ -52,7 +52,7 @@ public class SelectionActionAdminController {
         }
         else if(event.getSource() == this.gestionSauvegarde){
             Scene scene = gestionSauvegarde.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("SelectionActionAdmin.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("sauvegardeBase.fxml"));
             scene.setRoot(root);
         }
         else if(event.getSource() == this.gestionCompte){

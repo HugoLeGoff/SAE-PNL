@@ -10,6 +10,7 @@ public class ChoixVal {
     private ArrayList<String> columns;
     private String espece;
     private InsertData insertData;
+    private ArrayList<String> msg = new ArrayList<String>();
 
     public ChoixVal(String espece, HashMap<String,String> values) {
         this.valuesTotal = values;
@@ -18,6 +19,8 @@ public class ChoixVal {
         this.columns=new ArrayList<String>();
         insertData=new InsertData(espece);
         insertEspece();
+        
+        
 
     }
     public void remplirValues(){
@@ -38,6 +41,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
             columns=new ArrayList<String>();
             columns.add("dateObs");
@@ -51,6 +55,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
             columns=new ArrayList<String>();
             columns.add("obsH");
@@ -65,6 +70,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
             columns=new ArrayList<String>();
             values=new ArrayList<String>();
@@ -76,6 +82,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
         }
         else if(espece.equals("GCI")){
             insertData.setTable("Lieu");
@@ -87,6 +94,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
             columns=new ArrayList<String>();
             columns.add("dateObs");
@@ -100,6 +108,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
             columns=new ArrayList<String>();
             columns.add("idNid");
@@ -114,6 +123,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
             columns=new ArrayList<String>();
             columns.add("obsG");
@@ -127,6 +137,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
             columns=new ArrayList<String>();
             values=new ArrayList<String>();
@@ -138,6 +149,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
 
 
@@ -153,6 +165,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
             columns=new ArrayList<String>();
             columns.add("dateObs");
@@ -166,6 +179,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
             columns=new ArrayList<String>();
             columns.add("obsL");
@@ -177,6 +191,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
 
             columns=new ArrayList<String>();
@@ -189,6 +204,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
             
         }
         else if(espece.equals("Batraciens")){
@@ -201,6 +217,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
             columns=new ArrayList<String>();
             columns.add("dateObs");
@@ -214,6 +231,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
             columns=new ArrayList<String>();
             columns.add("idVegeLieu");
@@ -222,6 +240,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
             columns=new ArrayList<String>();
             columns.add("natureVege");
@@ -235,6 +254,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
             columns=new ArrayList<String>();
             columns.add("zh_temporaire");
@@ -250,6 +270,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
             columns=new ArrayList<String>();
             columns.add("obsB");
@@ -270,6 +291,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
 
             columns=new ArrayList<String>();
@@ -282,6 +304,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
             
         }
         else if(espece.equals("Chouettes")){
@@ -294,6 +317,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
 
             columns=new ArrayList<String>();
@@ -308,6 +332,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
             columns=new ArrayList<String>();
             columns.add("espece");
@@ -319,6 +344,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
             columns=new ArrayList<String>();
             columns.add("protocole");
@@ -330,6 +356,7 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
 
 
             columns=new ArrayList<String>();
@@ -342,7 +369,11 @@ public class ChoixVal {
             insertData.setColumns(columns);
             insertData.setValues(values);
             insertData.insert();
+            msg.add(insertData.getMsg());
             
         }
+    }
+    public ArrayList<String> getMsg() {
+        return msg;
     }
 }

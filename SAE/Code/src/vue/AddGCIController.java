@@ -23,7 +23,9 @@ import javafx.fxml.*;
 
 public class AddGCIController {
 
-    
+    @FXML
+    private Label msgLab = new Label(" ");
+
     @FXML private TextField zoneObsG;
     @FXML private TextField zoneNombre;
     @FXML private TextField zonePresentMaisNonObs;
@@ -77,6 +79,11 @@ public class AddGCIController {
 
             ChoixVal val = new ChoixVal("GCI", values);
 
+            ArrayList<String> message = val.getMsg();
+            msgLab.setText("");
+            for(int i=0; i<message.size(); i++){
+                msgLab.setText(msgLab.getText()+ " \n"+message.get(i));
+            }
 
         }
         if(event.getSource() == buttonAnnuler){

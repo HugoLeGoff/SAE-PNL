@@ -77,7 +77,11 @@ public class AddBatracienController {
     private Button buttonAdd;
 
     @FXML
-    private Button annuler;
+    private Button buttonAnnuler;
+
+    @FXML
+    private Label msgLab = new Label(" ");
+
 
     ObservableList<String> liste;
     
@@ -124,6 +128,18 @@ public class AddBatracienController {
 
             ChoixVal val = new ChoixVal("Chouettes", values);
 
+            ArrayList<String> message = val.getMsg();
+            msgLab.setText("");
+            for(int i=0; i<message.size(); i++){
+                msgLab.setText(msgLab.getText()+ " \n"+message.get(i));
+            }
+        
+
+        }
+        else if(event.getSource() == buttonAnnuler){
+            Scene scene = buttonAnnuler.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("tablesChouette.fxml"));
+            scene.setRoot(root);
         }
     }
 

@@ -272,7 +272,7 @@ public ArrayList<AfficheCompte> getAllCompte() {
   try {
       Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
       Statement stmt = c.createStatement();
-      ResultSet res = stmt.executeQuery("SELECT idU, nom, prenom, login, passw, statut FROM User JOIN Connexion ON idUser = idU JOIN Statut ON idStatut = statut");
+      ResultSet res = stmt.executeQuery("SELECT idU, nom, prenom, login, passw, nomStatut FROM User JOIN Connexion ON idUser = idU JOIN Statut ON idStatut = statut");
 
       while (res.next()) {
         

@@ -20,22 +20,18 @@ import javafx.fxml.*;
 
 
 
-public class AddCompteController {
+public class AddObservateurController {
 
+    
     @FXML
-    private Label msgLab = new Label(" ");
-    @FXML
-    private TextField zoneIdUser;
-    @FXML
-    private TextField zoneLogin;
-    @FXML
-    private TextField zonePassw;
+    private TextField zoneIdObservateur;
+   
     @FXML
     private TextField zoneNom;
+
     @FXML
     private TextField zonePrenom;
-    @FXML
-    private ComboBox<String> zoneStatut;
+
     @FXML
     private Button buttonAdd;
 
@@ -47,38 +43,24 @@ public class AddCompteController {
     @FXML
     private void initialize() throws SQLException {
 
-        liste = FXCollections.observableArrayList("OBSERVATEUR","ADMINISTRATEUR");
-        zoneStatut.setItems(liste);
-
         AllData ad = new AllData();
-        zoneIdUser.setText(ad.getID());
+        zoneIdObservateur.setText(ad.getID());
     }
 
     @FXML
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
-
         if(event.getSource() == buttonAdd){
             HashMap<String,String> values = new HashMap<String,String>();
-            values.put("idUser",zoneIdUser.getText());
-            values.put("login",zoneLogin.getText());
-            values.put("passw",zonePassw.getText());
+            values.put("idObservateur",zoneIdObservateur.getText());
             values.put("nom",zoneNom.getText());
             values.put("prenom",zonePrenom.getText());
-            values.put("statut",zoneStatut.getValue());
 
-
-            ChoixVal val = new ChoixVal("Comptes", values);
-
-            ArrayList<String> message = val.getMsg();
-            msgLab.setText("");
-            for(int i=0; i<message.size(); i++){
-                msgLab.setText(msgLab.getText()+ " \n"+message.get(i));
-            }
+            ChoixVal val = new ChoixVal("Observateur", values);
 
         }
         else if(event.getSource() == buttonAnnuler){
             Scene scene = buttonAnnuler.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("GestionCompte.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("tablesObservateur.fxml"));
             scene.setRoot(root);
         }
     }

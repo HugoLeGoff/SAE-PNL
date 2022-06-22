@@ -185,7 +185,7 @@ public class LoutreController {
             Parent root = FXMLLoader.load(getClass().getResource("tablesLoutre.fxml"));
             scene.setRoot(root);
         }
-<<<<<<< HEAD
+
         else if(event.getSource() == recharger){
             if(choixAnnee.getValue()!=null){
                 if (choixAnnee.getValue().equals("toute")){
@@ -207,12 +207,12 @@ public class LoutreController {
             }
             
             
-=======
+        }
         else if(event.getSource() == carte){
             Scene scene = carte.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
             scene.setRoot(root);
->>>>>>> 8e2f24e339f7d28b02a0fdd74e784dbb1d60419b
+
         }
     }
     

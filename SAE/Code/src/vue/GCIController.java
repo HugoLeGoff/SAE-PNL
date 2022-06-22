@@ -66,7 +66,6 @@ public class GCIController {
     @FXML
     private Button recharger;
 
-    @FXML ComboBox<String> choixAnnee;
 
     @FXML
     private TextField zoneTaille;
@@ -193,7 +192,7 @@ public class GCIController {
             Parent root = FXMLLoader.load(getClass().getResource("tablesGCI.fxml"));
             scene.setRoot(root);
         }
-<<<<<<< HEAD
+
         else if(event.getSource() == recharger){
             if(choixAnnee.getValue()!=null){
                 if (choixAnnee.getValue().equals("toute")){
@@ -212,18 +211,19 @@ public class GCIController {
                     }
                 }
                 tableView.getItems().setAll(obsGCI);
-=======
+            }
+
         /*else if(event.getSource() == recharger){
             if (choixAnnee.getValue().equals("toute")){
                 obsHippo = ad.hippocampe();
             }else{
                 
                 obsHippo = ad.hippocampeAnnee(choixAnnee.getValue());
->>>>>>> 8e2f24e339f7d28b02a0fdd74e784dbb1d60419b
-            }
+            }*/
             
             
-        }*/
+        }
+    
         else if(event.getSource() == carte){
             Scene scene = carte.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));

@@ -95,9 +95,31 @@ public class SelectionInteraction {
         
 
         else if(event.getSource() == this.consultation){
-            Scene scene = gestionDo.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("tableshippo.fxml"));
-            scene.setRoot(root);
+            if(especeTMP.equals("Hippocampes")){
+                Scene scene = gestionDo.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("VisuTablesHippo.fxml"));
+                scene.setRoot(root);
+            }
+            else if(especeTMP.equals("Batraciens")){
+                Scene scene = gestionDo.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("VisuTablesBatraciens.fxml"));
+                scene.setRoot(root);
+            }
+            else if(especeTMP.equals("Chouettes")){
+                Scene scene = gestionDo.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("VisuTablesChouette.fxml"));
+                scene.setRoot(root);
+            }
+            else if(especeTMP.equals("GCI")){
+                Scene scene = gestionDo.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("VisuTablesGCI.fxml"));
+                scene.setRoot(root);
+            }
+            else if(especeTMP.equals("Loutres")){
+                Scene scene = gestionDo.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("VisuTablesLoutre.fxml"));
+                scene.setRoot(root);
+            }
         }
 
         else if(event.getSource() == this.exportation){

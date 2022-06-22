@@ -106,6 +106,7 @@
                      </children>
                   </AnchorPane>
                   <ComboBox fx:id="choixAnnee" layoutX="170.0" layoutY="38.0" onAction="#handleSubmitButtonAction" prefHeight="26.0" prefWidth="91.0" />
+                  <AnchorPane layoutX="4.0" layoutY="69.0" prefHeight="7.0" prefWidth="422.0" />
                </children>
             </AnchorPane>
          </children>
@@ -131,34 +132,30 @@
          </children>
       </AnchorPane>
    </bottom>
-   <center>
-      <AnchorPane prefHeight="180.0" prefWidth="530.0" BorderPane.alignment="CENTER">
-         <children>
-            <TableView fx:id="tableView" layoutY="12.0" prefHeight="234.0" prefWidth="530.0">
-              <columns>
-                <TableColumn fx:id="idObs" prefWidth="27.999999225139618" text="obsH" />
-                <TableColumn fx:id="espece" prefWidth="28.0" text="espece" />
-                  <TableColumn fx:id="sexe" minWidth="0.0" prefWidth="48.000003814697266" text="sexe" />
-                  <TableColumn fx:id="temp" prefWidth="53.5999755859375" text="temperatureEau" />
-                  <TableColumn fx:id="type" minWidth="0.0" prefWidth="99.19999694824219" text="typePeche" />
-                  <TableColumn fx:id="taille" prefWidth="31.20001220703125" text="taille" />
-                  <TableColumn fx:id="gestant" minWidth="0.0" prefWidth="42.4000244140625" text="gestant" />
-                  <TableColumn fx:id="dateObs" minWidth="0.0" prefWidth="37.60003662109375" text="dateObs" />
-                  <TableColumn fx:id="heureObs" minWidth="0.0" prefWidth="45.5999755859375" text="heureObs" />
-                  <TableColumn fx:id="CooX" minWidth="0.0" prefWidth="20.79998779296875" text="CooX" />
-                  <TableColumn fx:id="CooY" minWidth="0.0" prefWidth="21.5999755859375" text="CooY" />
-                  <TableColumn fx:id="idObservateur" minWidth="0.0" prefWidth="20.0" text="idObservateur" />
-                  <TableColumn fx:id="nom" minWidth="0.0" prefWidth="20.0" text="nom" />
-                  <TableColumn fx:id="prenom" minWidth="0.0" prefWidth="20.0" text="prenom" />
-              </columns>
-            </TableView>
-         </children>
-      </AnchorPane>
-   </center>
    <left>
       <AnchorPane prefHeight="197.0" prefWidth="35.0" BorderPane.alignment="CENTER" />
    </left>
    <right>
       <AnchorPane prefHeight="197.0" prefWidth="35.0" BorderPane.alignment="CENTER" />
    </right>
+   <center>
+      <TableView fx:id="tableView" prefHeight="216.0" prefWidth="530.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="idObs" prefWidth="27.999999225139618" text="obsH" />
+          <TableColumn fx:id="espece" prefWidth="28.0" text="espece" />
+            <TableColumn fx:id="sexe" minWidth="0.0" prefWidth="48.000003814697266" text="sexe" />
+            <TableColumn fx:id="temp" prefWidth="53.5999755859375" text="temperatureEau" />
+            <TableColumn fx:id="type" minWidth="0.0" prefWidth="99.19999694824219" text="typePeche" />
+            <TableColumn fx:id="taille" prefWidth="31.20001220703125" text="taille" />
+            <TableColumn fx:id="gestant" minWidth="0.0" prefWidth="42.4000244140625" text="gestant" />
+            <TableColumn fx:id="dateObs" minWidth="0.0" prefWidth="37.60003662109375" text="dateObs" />
+            <TableColumn fx:id="heureObs" minWidth="0.0" prefWidth="45.5999755859375" text="heureObs" />
+            <TableColumn fx:id="CooX" minWidth="0.0" prefWidth="20.79998779296875" text="CooX" />
+            <TableColumn fx:id="CooY" minWidth="0.0" prefWidth="21.5999755859375" text="CooY" />
+            <TableColumn fx:id="idObservateur" minWidth="0.0" prefWidth="20.0" text="idObservateur" />
+            <TableColumn fx:id="nom" minWidth="0.0" prefWidth="20.0" text="nom" />
+            <TableColumn fx:id="prenom" minWidth="0.0" prefWidth="20.0" text="prenom" />
+        </columns>
+      </TableView>
+   </center>
 </BorderPane>

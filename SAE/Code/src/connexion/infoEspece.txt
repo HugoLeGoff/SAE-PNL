@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-Batraciens
-=======
 Hippocampes
->>>>>>> 29583349cde96136b4708137a364791b93f8c8ba

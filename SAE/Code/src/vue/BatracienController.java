@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import data.*;
 import java.util.*;
 
+import connexion.Compte;
 import donnee.AfficheObsBatracien;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,7 +21,9 @@ import javafx.fxml.*;
 
 public class BatracienController {
 
-    
+    @FXML
+    private Label nomObservateur = new Label();
+
     @FXML
     private Button retour;
 
@@ -69,6 +72,10 @@ public class BatracienController {
 
     @FXML
     private void initialize() throws SQLException {
+        Compte compte = new Compte();
+        String log = compte.getLogin();
+        nomObservateur.setText(log);
+
         obsB.setCellValueFactory(new PropertyValueFactory<AfficheObsBatracien, String>("obsB"));
         espece.setCellValueFactory(new PropertyValueFactory<AfficheObsBatracien, String>("espece"));
         nombreAdultes.setCellValueFactory(new PropertyValueFactory<AfficheObsBatracien, String>("nombreAdultes"));

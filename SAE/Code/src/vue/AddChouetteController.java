@@ -19,7 +19,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
 
-
+/**
+ * This class is the controller of the AddChouette page. It gets the page interactive.
+ */
 public class AddChouetteController {
 
     @FXML
@@ -56,6 +58,10 @@ public class AddChouetteController {
     ObservableList<String> liste;
     
     @FXML
+    /**
+     * Initializes the data already on the page.
+     * @throws SQLException SQLException
+     */
     private void initialize() throws SQLException {
         liste = FXCollections.observableArrayList("SONORE","VISUELLE","SONORE_VISUELLE");
         zoneTypeObs.setItems(liste);
@@ -71,6 +77,11 @@ public class AddChouetteController {
     }
 
     @FXML
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
         if(event.getSource() == buttonAdd){
             HashMap<String,String> values = new HashMap<String,String>();

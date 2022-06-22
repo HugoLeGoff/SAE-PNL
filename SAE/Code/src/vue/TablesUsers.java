@@ -18,7 +18,9 @@ import javafx.scene.text.Text;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
-
+/**
+ * This class is the controller of the TableObservateurs page. It gets the page interactive.
+ */
 public class TablesUsers {
 
 
@@ -46,6 +48,9 @@ public class TablesUsers {
     
 
     @FXML
+    /**
+     * Initializes the data already here on the page.
+     */
     private void initialize() throws SQLException {
 
         Compte compte = new Compte();
@@ -69,6 +74,11 @@ public class TablesUsers {
 
 
     @FXML
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
 
         if(event.getSource() == retour){

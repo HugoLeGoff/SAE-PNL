@@ -19,7 +19,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
 
-
+/**
+ * This class is the controller of the AddHippo page. It gets the page interactive.
+ */
 public class AddHippoController {
 
     @FXML
@@ -61,6 +63,10 @@ public class AddHippoController {
 
     
     @FXML
+    /**
+     * Initializes the data already on the page.
+     * @throws SQLException SQLException
+     */
     private void initialize() throws SQLException {
         liste = FXCollections.observableArrayList("MALE","FEMELLE","INCONNU");
         zoneSexe.setItems(liste);
@@ -83,7 +89,11 @@ public class AddHippoController {
 
     @FXML
 
-
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
         if(event.getSource() == buttonAdd){
             HashMap<String,String> values = new HashMap<String,String>();

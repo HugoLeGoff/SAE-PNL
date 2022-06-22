@@ -17,7 +17,9 @@ import javafx.scene.text.Text;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
-
+/**
+ * This class is the controller of the Loutre page. It gets the page interactive.
+ */
 public class LoutreController {
 
 
@@ -75,8 +77,11 @@ public class LoutreController {
     
 
     @FXML
+    /**
+     * Initializes the data already created on the page.
+     * @throws SQLException SQLException
+     */
     private void initialize() throws SQLException {
-
 
         Compte compte = new Compte();
         String log = compte.getLogin();
@@ -126,7 +131,12 @@ public class LoutreController {
 
     @FXML
 
-
+    /**
+     * Initializes the action to execute when pressing a button.
+     * @param event the event
+     * @throws IOException IOException
+     * @throws SQLException SQLException
+     */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
 
         if(event.getSource() == retour){

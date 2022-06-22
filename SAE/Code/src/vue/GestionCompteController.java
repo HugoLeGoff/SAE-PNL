@@ -64,12 +64,12 @@ public class GestionCompteController{
         
         
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        tableView.getColumns().get(0).prefWidthProperty().bind(tableView.widthProperty().multiply(0.2));
-        tableView.getColumns().get(1).prefWidthProperty().bind(tableView.widthProperty().multiply(0.2));
-        tableView.getColumns().get(2).prefWidthProperty().bind(tableView.widthProperty().multiply(0.2));
-        tableView.getColumns().get(3).prefWidthProperty().bind(tableView.widthProperty().multiply(0.2));
-        tableView.getColumns().get(4).prefWidthProperty().bind(tableView.widthProperty().multiply(0.2));
-        tableView.getColumns().get(5).prefWidthProperty().bind(tableView.widthProperty().multiply(0.2));
+        tableView.getColumns().get(0).prefWidthProperty().bind(tableView.widthProperty().multiply(0.16));
+        tableView.getColumns().get(1).prefWidthProperty().bind(tableView.widthProperty().multiply(0.16));
+        tableView.getColumns().get(2).prefWidthProperty().bind(tableView.widthProperty().multiply(0.16));
+        tableView.getColumns().get(3).prefWidthProperty().bind(tableView.widthProperty().multiply(0.16));
+        tableView.getColumns().get(4).prefWidthProperty().bind(tableView.widthProperty().multiply(0.16));
+        tableView.getColumns().get(5).prefWidthProperty().bind(tableView.widthProperty().multiply(0.16));
 
 
         tableView.getItems().setAll(comptes);

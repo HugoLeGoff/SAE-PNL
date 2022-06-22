@@ -108,7 +108,7 @@
                </children>
             </HBox>
             <AnchorPane prefHeight="9.0" prefWidth="600.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" VBox.vgrow="ALWAYS" />
-            <AnchorPane prefHeight="53.0" prefWidth="900.0" />
+            <AnchorPane prefHeight="55.0" prefWidth="900.0" />
          </children>
       </VBox>
       <HBox prefHeight="446.0" prefWidth="900.0" VBox.vgrow="ALWAYS">
@@ -132,7 +132,7 @@
                                           <Font name="System Bold" size="16.0" />
                                        </font>
                                     </Button>
-                                    <Label alignment="CENTER" layoutX="209.0" prefHeight="46.0" prefWidth="274.0" text="Sélection d'espèce" textFill="#008967">
+                                    <Label alignment="CENTER" prefHeight="50.0" prefWidth="690.0" text="Sélection d'espèce" textFill="#008967">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
@@ -165,7 +165,7 @@
                   </VBox>
                </center>
                <bottom>
-                  <AnchorPane prefHeight="90.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="106.0" prefWidth="900.0" BorderPane.alignment="CENTER">
                      <children>
                         <AnchorPane layoutX="98.0" layoutY="12.0" prefHeight="62.0" prefWidth="703.0" style="-fx-border-color: #008967; -fx-border-width: 5;">
                            <children>

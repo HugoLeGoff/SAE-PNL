@@ -24,8 +24,7 @@ import javafx.fxml.*;
  */
 public class GCIController {
     
-    @FXML
-    private Label nomObservateur = new Label();
+
 
     @FXML
     private Label nomObservateur = new Label();
@@ -90,11 +89,7 @@ public class GCIController {
      * @throws SQLException SQLException
      */
     private void initialize() throws SQLException {
-<<<<<<< HEAD
 
-        
-=======
->>>>>>> 8c80260a09369cab0370480c56483a4e7e6ec0d3
         Compte compte = new Compte();
         String log = compte.getLogin();
         nomObservateur.setText(log);

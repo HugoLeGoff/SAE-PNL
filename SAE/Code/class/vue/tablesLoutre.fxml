@@ -44,7 +44,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.HippoController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.LoutreController">
    <top>
       <VBox>
          <children>
@@ -128,12 +128,16 @@
                   <Image url="@+.png" />
                </image>
             </ImageView>
-            <Button fx:id="pop" layoutX="126.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="26.0" prefWidth="27.0" text="Button" />
+            <AnchorPane layoutX="126.0" layoutY="4.0">
+               <children>
+                  <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="26.0" prefWidth="27.0" text="Button" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </bottom>
    <center>
-      <TableView prefHeight="269.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="tableView" prefHeight="269.0" prefWidth="600.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="obsL" minWidth="0.0" prefWidth="38.40003126859665" text="ObsL" />
           <TableColumn fx:id="commune" minWidth="0.0" prefWidth="67.19995498657227" text="commune" />
@@ -142,8 +146,8 @@
             <TableColumn fx:id="idObs" minWidth="0.0" prefWidth="37.59996032714844" text="idObs" />
             <TableColumn fx:id="dateObs" prefWidth="52.80003356933594" text="dateObs" />
             <TableColumn fx:id="heureObs" minWidth="0.0" prefWidth="63.199951171875" text="heureObs" />
-            <TableColumn fx:id="lieu_Lambert_X" minWidth="0.0" prefWidth="90.4000244140625" text="lieu_Lambert_X" />
-            <TableColumn fx:id="lieu_Lambert_Y" minWidth="0.0" prefWidth="40.0" text="lieu_Lambert_Y" />
+            <TableColumn fx:id="lieu_Lambert_X" minWidth="0.0" prefWidth="51.99993896484375" text="lieu_Lambert_X" />
+            <TableColumn fx:id="lieu_Lambert_Y" minWidth="0.0" prefWidth="79.20001220703125" text="lieu_Lambert_Y" />
             <TableColumn fx:id="idObservateur" minWidth="0.0" prefWidth="18.4000244140625" text="idObservateur" />
             <TableColumn fx:id="nom" minWidth="0.0" prefWidth="21.5999755859375" text="nom" />
             <TableColumn fx:id="prenom" minWidth="0.0" prefWidth="19.20001220703125" text="prenom" />

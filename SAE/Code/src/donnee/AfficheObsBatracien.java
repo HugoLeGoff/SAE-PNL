@@ -7,7 +7,7 @@ public class AfficheObsBatracien {
     private String obsB;
     private String espece;
     private String nombreAdultes;
-    private String nombresAmplexus;
+    private String nombreAmplexus;
     private String nombrePonte;
     private String nombreTetard;
     private String temperature;
@@ -40,7 +40,7 @@ public class AfficheObsBatracien {
         this.obsB = obsB;
         this.espece = espece;
         this.nombreAdultes = nombreAdultes;
-        this.nombresAmplexus = nombresAmplexus;
+        this.nombreAmplexus = nombresAmplexus;
         this.nombrePonte = nombrePonte;
         this.nombreTetard = nombreTetard;
         this.temperature = temperature;
@@ -81,8 +81,8 @@ public class AfficheObsBatracien {
         return nombreAdultes;
     }
 
-    public String getNombresAmplexus() {
-        return nombresAmplexus;
+    public String getNombreAmplexus() {
+        return nombreAmplexus;
     }
 
     public String getNombrePonte() {

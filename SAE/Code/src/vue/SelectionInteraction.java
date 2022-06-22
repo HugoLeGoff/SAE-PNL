@@ -18,7 +18,8 @@ import javafx.fxml.*;
 
 public class SelectionInteraction {
 
-   
+    private String especeTMP;
+
     
     @FXML Button gestionDo;
 
@@ -48,6 +49,7 @@ public class SelectionInteraction {
         ChoixEspece especeChoix = new ChoixEspece();
         String nomEspece = especeChoix.getEspece();
         espece.setText(nomEspece);
+        especeTMP = nomEspece;
 
 
     }
@@ -61,10 +63,17 @@ public class SelectionInteraction {
             Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
             scene.setRoot(root);
         }
+        
         else if(event.getSource() == this.gestionDo){
-            Scene scene = gestionDo.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("Lucas.fxml"));
-            scene.setRoot(root);
+            if(this.especeTMP.equals("Chouettes") ){
+                Scene scene = gestionDo.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("tablesChouette.fxml"));
+                scene.setRoot(root);
+            }else{
+                Scene scene = gestionDo.getScene();
+                Parent root = FXMLLoader.load(getClass().getResource("Lucas.fxml"));
+                scene.setRoot(root);
+            }
         }
         
 

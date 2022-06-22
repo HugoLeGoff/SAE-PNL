@@ -44,7 +44,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.GCIController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.HippoController">
    <top>
       <VBox>
          <children>
@@ -67,7 +67,7 @@
                            </font></Label>
                      </children>
                   </AnchorPane>
-                  <Label prefHeight="48.0" prefWidth="432.0" text="GCI">
+                  <Label prefHeight="48.0" prefWidth="432.0" text="Hippocampes">
                      <font>
                         <Font size="14.0" />
                      </font></Label>
@@ -92,20 +92,24 @@
                   </AnchorPane>
                </children>
             </HBox>
-            <AnchorPane prefHeight="9.0" prefWidth="600.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" VBox.vgrow="ALWAYS" />
-            <AnchorPane prefHeight="66.0" prefWidth="600.0">
+            <AnchorPane prefHeight="9.0" prefWidth="600.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" />
+            <AnchorPane prefHeight="42.0" prefWidth="600.0">
                <children>
-                  <Label layoutX="54.0" layoutY="37.0" prefHeight="35.0" prefWidth="319.0" text="Tables GCI :" textFill="#008967">
+                  <Label layoutX="54.0" layoutY="37.0" prefHeight="42.0" prefWidth="319.0" text="Tables Hippocampes :" textFill="#008967">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <ImageView accessibleRole="BUTTON" fitHeight="46.0" fitWidth="40.0" layoutX="4.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView accessibleRole="BUTTON" fitHeight="46.0" fitWidth="40.0" layoutX="6.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@17319.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="retour" layoutX="4.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="32.0" prefWidth="40.0" text="Button" />
+                  <AnchorPane layoutY="1.0" prefHeight="38.0" prefWidth="44.0">
+                     <children>
+                        <Button fx:id="retour" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="34.0" prefWidth="52.0" text="Button" />
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
          </children>
@@ -114,7 +118,7 @@
    <bottom>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="600.0">
          <children>
-            <Label layoutX="24.0" layoutY="5.0" prefHeight="24.0" prefWidth="96.0" text="Ajouter une table " />
+            <Label layoutX="24.0" layoutY="5.0" prefHeight="24.0" prefWidth="96.0" text="Ajouter un tuple " />
             <ImageView accessibleRole="BUTTON" fitHeight="62.0" fitWidth="26.0" layoutX="127.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@+.png" />
@@ -131,24 +135,20 @@
    <center>
       <TableView fx:id="tableView" prefHeight="269.0" prefWidth="600.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn fx:id="obsG" prefWidth="40.79992979764938" text="obsG" />
-          <TableColumn fx:id="nature" minWidth="4.0" prefWidth="46.399967193603516" text="nature" />
-            <TableColumn fx:id="nombre" minWidth="0.0" prefWidth="53.5999755859375" text="nombre" />
-            <TableColumn fx:id="presentMaisNonObs" minWidth="0.0" prefWidth="0.0" text="presentMaisNonObs" />
-            <TableColumn fx:id="idNid" minWidth="0.0" prefWidth="0.0" text="idNid" />
-            <TableColumn fx:id="nomPlage" minWidth="0.0" prefWidth="0.0" text="nomPlage" />
-            <TableColumn fx:id="raisonArretObservation" minWidth="0.0" prefWidth="0.0" text="raisonArretObservation" />
-            <TableColumn fx:id="nbEnvol" minWidth="0.0" prefWidth="0.0" text="nbEnvol" />
-            <TableColumn fx:id="protection" minWidth="0.0" prefWidth="0.0" text="protection" />
-            <TableColumn fx:id="bagueMale" minWidth="0.0" prefWidth="0.0" text="bagueMale" />
-            <TableColumn fx:id="bagueFemelle" minWidth="0.0" prefWidth="12.79998779296875" text="bagueFemelle" />
-            <TableColumn fx:id="dateObs" minWidth="0.0" prefWidth="51.20001220703125" text="dateObs" />
-            <TableColumn fx:id="heureObs" minWidth="0.0" prefWidth="65.60000610351562" text="heureObs" />
-            <TableColumn fx:id="lieu_Lambert_X" minWidth="0.0" prefWidth="0.0" text="lieu_Lambert_X" />
-            <TableColumn fx:id="lieu_Lambert_Y" minWidth="0.0" prefWidth="0.0" text="lieu_Lambert_Y" />
-            <TableColumn fx:id="idObservateur" minWidth="0.0" prefWidth="145.5999755859375" text="idObservateur" />
-            <TableColumn fx:id="nom" minWidth="0.0" prefWidth="0.0" text="nom" />
-            <TableColumn fx:id="prenom" minWidth="0.0" prefWidth="16.79998779296875" text="prenom" />
+          <TableColumn fx:id="idObs" prefWidth="27.999999225139618" text="obsH" />
+          <TableColumn fx:id="espece" prefWidth="28.0" text="espece" />
+            <TableColumn fx:id="sexe" minWidth="0.0" prefWidth="48.000003814697266" text="sexe" />
+            <TableColumn fx:id="temp" prefWidth="53.5999755859375" text="temperatureEau" />
+            <TableColumn fx:id="type" minWidth="0.0" prefWidth="99.19999694824219" text="typePeche" />
+            <TableColumn fx:id="taille" prefWidth="31.20001220703125" text="taille" />
+            <TableColumn fx:id="gestant" minWidth="0.0" prefWidth="42.4000244140625" text="gestant" />
+            <TableColumn fx:id="dateObs" minWidth="0.0" prefWidth="37.60003662109375" text="dateObs" />
+            <TableColumn fx:id="heureObs" minWidth="0.0" prefWidth="45.5999755859375" text="heureObs" />
+            <TableColumn fx:id="CooX" minWidth="0.0" prefWidth="20.79998779296875" text="CooX" />
+            <TableColumn fx:id="CooY" minWidth="0.0" prefWidth="21.5999755859375" text="CooY" />
+            <TableColumn fx:id="idObservateur" minWidth="0.0" prefWidth="20.0" text="idObservateur" />
+            <TableColumn fx:id="nom" minWidth="0.0" prefWidth="20.0" text="nom" />
+            <TableColumn fx:id="prenom" minWidth="0.0" prefWidth="20.0" text="prenom" />
         </columns>
       </TableView>
    </center>

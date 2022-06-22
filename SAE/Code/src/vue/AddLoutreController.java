@@ -47,7 +47,7 @@ public class AddLoutreController {
     private Button buttonAdd;
 
     @FXML
-    private Button annuler;
+    private Button buttonAnnuler;
 
     ObservableList<String> liste;
     
@@ -84,8 +84,13 @@ public class AddLoutreController {
 
 
 
-            ChoixVal val = new ChoixVal("Hippocampes", values);
+            ChoixVal val = new ChoixVal("Loutres", values);
 
+        }
+        if(event.getSource() == buttonAnnuler){
+            Scene scene = buttonAnnuler.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("tablesGCI.fxml"));
+            scene.setRoot(root);
         }
     }
 

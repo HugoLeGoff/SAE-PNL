@@ -19,8 +19,6 @@ import javafx.fxml.*;
 
 public class HippoController {
 
-    @FXML
-    private Button pop;
 
     @FXML
     private Button retour;
@@ -124,7 +122,6 @@ public class HippoController {
         
         else if(event.getSource() == buttonAdd){
             Scene scene = buttonAdd.getScene();
-            Stage stage = new Stage(); 
             Parent root = FXMLLoader.load(getClass().getResource("addHippo.fxml"));
             scene.setRoot(root);
         }

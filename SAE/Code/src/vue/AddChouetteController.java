@@ -49,7 +49,7 @@ public class AddChouetteController {
     private Button buttonAdd;
 
     @FXML
-    private Button annuler;
+    private Button buttonAnnuler;
 
     ObservableList<String> liste;
     
@@ -82,11 +82,16 @@ public class AddChouetteController {
             values.put("heureObs",zoneHeureObs.getText());
             values.put("lieu_Lambert_X",zoneLieu_Lambert_X.getText());
             values.put("lieu_Lambert_Y",zoneLieu_Lambert_Y.getText());
-            values.put("idObservation",zoneIdObservation.getText());
+            values.put("lObservateur",zoneIdObservation.getText());
 
 
             ChoixVal val = new ChoixVal("Chouettes", values);
 
+        }
+        else if(event.getSource() == buttonAnnuler){
+            Scene scene = buttonAnnuler.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("tablesChouette.fxml"));
+            scene.setRoot(root);
         }
     }
 

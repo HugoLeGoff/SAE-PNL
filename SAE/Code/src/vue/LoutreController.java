@@ -2,10 +2,10 @@ package vue;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import donnee.*;
 import connexion.*;
 import data.*;
 import java.util.*;
-import donnee.AfficheObsChouette;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -18,49 +18,48 @@ import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
 
-public class ChouetteController {
+public class LoutreController {
 
 
     @FXML
     private Label nomObservateur = new Label();
 
     @FXML
-    private TableView<AfficheObsChouette> tableView;
+    private TableView<AfficheObsLoutre> tableView;
 
     @FXML
-    private TableColumn<AfficheObsChouette, String> dateObs;
+    private TableColumn<AfficheObsLoutre, String> obsL;
 
     
     @FXML
-    private TableColumn<AfficheObsChouette, String> heureObs;
-
+    private TableColumn<AfficheObsLoutre, String> commune;
+    
+    @FXML
+    private TableColumn<AfficheObsLoutre, String> lieuDit;
 
     @FXML
-    private TableColumn<AfficheObsChouette, String> idObservateur;
+    private TableColumn<AfficheObsLoutre, String> indice;
 
     @FXML
-    private TableColumn<AfficheObsChouette, String> leNumIndividu;
+    private TableColumn<AfficheObsLoutre, String> dateObs;
 
     @FXML
-    private TableColumn<AfficheObsChouette, String> lieu_Lambert_X;
+    private TableColumn<AfficheObsLoutre, String> heureObs;
 
     @FXML
-    private TableColumn<AfficheObsChouette, String> lieu_Lambert_Y;
+    private TableColumn<AfficheObsLoutre, String> lieu_Lambert_X;
 
     @FXML
-    private TableColumn<AfficheObsChouette, String> nom;
+    private TableColumn<AfficheObsLoutre, String> lieu_Lambert_Y;
 
     @FXML
-    private TableColumn<AfficheObsChouette, String> numObs;
+    private TableColumn<AfficheObsLoutre, String> nom;
 
     @FXML
-    private Button pop;
+    private TableColumn<AfficheObsLoutre, String> prenom;
 
     @FXML
-    private TableColumn<AfficheObsChouette, String> prenom;
-
-    @FXML
-    private TableColumn<AfficheObsChouette, String> protocole;
+    private TableColumn<AfficheObsLoutre, String> idObservateur;
 
     @FXML
     private Button retour;
@@ -70,7 +69,7 @@ public class ChouetteController {
 
     
     @FXML
-    private TableColumn<AfficheObsChouette, String> typeObs;
+    private TableColumn<AfficheObsLoutre, String> typeObs;
 
 
     
@@ -85,23 +84,23 @@ public class ChouetteController {
 
 
 
-        dateObs.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("dateObs"));
-        heureObs.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("heureObs"));
-        idObservateur.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("idObservateur"));
-        leNumIndividu.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("leNumIndividu"));
-        lieu_Lambert_X.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("lieu_Lambert_X"));
-        lieu_Lambert_Y.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("lieu_Lambert_Y"));
-        nom.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("nom"));
-        numObs.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("numObs"));
-        prenom.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("prenom"));
-        protocole.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("protocole"));
-        typeObs.setCellValueFactory(new PropertyValueFactory<AfficheObsChouette, String>("typeObs"));
+        obsL.setCellValueFactory(new PropertyValueFactory<AfficheObsLoutre, String>("obsL"));
+        commune.setCellValueFactory(new PropertyValueFactory<AfficheObsLoutre, String>("commune"));
+        lieuDit.setCellValueFactory(new PropertyValueFactory<AfficheObsLoutre, String>("lieuDit"));
+        indice.setCellValueFactory(new PropertyValueFactory<AfficheObsLoutre, String>("indice"));
+        dateObs.setCellValueFactory(new PropertyValueFactory<AfficheObsLoutre, String>("dateObs"));
+        heureObs.setCellValueFactory(new PropertyValueFactory<AfficheObsLoutre, String>("heureObs"));
+        lieu_Lambert_X.setCellValueFactory(new PropertyValueFactory<AfficheObsLoutre, String>("lieu_Lambert_X"));
+        lieu_Lambert_Y.setCellValueFactory(new PropertyValueFactory<AfficheObsLoutre, String>("lieu_Lambert_Y"));
+        idObservateur.setCellValueFactory(new PropertyValueFactory<AfficheObsLoutre, String>("idObservateur"));
+        nom.setCellValueFactory(new PropertyValueFactory<AfficheObsLoutre, String>("nom"));
+        prenom.setCellValueFactory(new PropertyValueFactory<AfficheObsLoutre, String>("prenom"));
 
 
         
 
         AllData ad = new AllData();
-        ArrayList<AfficheObsChouette> obsChouette = ad.chouette();
+        ArrayList<AfficheObsLoutre> obsLoutre = ad.loutre();
         
         
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
@@ -121,7 +120,7 @@ public class ChouetteController {
 
  
 
-        tableView.getItems().setAll(obsChouette);
+        tableView.getItems().setAll(obsLoutre);
     }
 
 
@@ -138,7 +137,7 @@ public class ChouetteController {
         }
         else if(event.getSource() == buttonAdd){
             Scene scene = buttonAdd.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("addChouette.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("addLoutre.fxml"));
             scene.setRoot(root);
         }
     }

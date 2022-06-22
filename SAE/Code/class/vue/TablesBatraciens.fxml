@@ -44,7 +44,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.HippoController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.BatracienController">
    <top>
       <VBox>
          <children>
@@ -120,31 +120,34 @@
                   <Image url="@+.png" />
                </image>
             </ImageView>
-            <Button fx:id="pop" layoutX="126.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="26.0" prefWidth="27.0" text="Button" />
+            <AnchorPane layoutX="126.0" layoutY="4.0">
+               <children>
+                  <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="26.0" prefWidth="27.0" text="Button" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </bottom>
    <center>
-      <TableView prefHeight="218.0" prefWidth="530.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="tableView" prefHeight="218.0" prefWidth="530.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="obsB" minWidth="4.800018489360809" prefWidth="39.19998091459274" text="obsB" />
-          <TableColumn fx:id="espece" minWidth="4.000030517578125" prefWidth="49.599918365478516" text="espece" />
-            <TableColumn fx:id="nombreAdultes" minWidth="1.5999746322631836" prefWidth="68.800048828125" text="nombreAdultes" />
-            <TableColumn fx:id="nombreAmplexus" minWidth="0.0" prefWidth="16.800048828125" text="nombreAmplexus" />
-            <TableColumn fx:id="nombrePonte" minWidth="5.59991455078125" prefWidth="16.0" text="nombrePonte" />
-            <TableColumn fx:id="nombreTetard" minWidth="3.20001220703125" prefWidth="17.5999755859375" text="nombreTetard" />
-            <TableColumn fx:id="temperature" minWidth="0.0" prefWidth="16.800048828125" text="temperature" />
-            <TableColumn fx:id="meteo_ciel" minWidth="4.00006103515625" prefWidth="16.79998779296875" text="meteo_ciel" />
-            <TableColumn fx:id="meteo_temp" minWidth="6.39996337890625" prefWidth="15.199996948242188" text="meteo_temp" />
-            <TableColumn fx:id="meteo_vent" minWidth="4.79998779296875" prefWidth="14.400009155273438" text="meteo_vent" />
-            <TableColumn fx:id="meteo_pluie" minWidth="0.0" prefWidth="18.39996337890625" text="meteo_pluie" />
-            <TableColumn fx:id="concerne_ZH" minWidth="5.59991455078125" prefWidth="12.0" text="concerne_ZH" />
-            <TableColumn fx:id="concernes_vege" minWidth="7.99993896484375" prefWidth="9.5999755859375" text="concernes_vege" />
-            <TableColumn fx:id="dateObs" minWidth="0.0" prefWidth="12.00006103515625" text="dateObs" />
-            <TableColumn fx:id="heureObs" minWidth="7.199951171875" prefWidth="11.2000732421875" text="heureObs" />
-            <TableColumn fx:id="lieu_Lambert_X" minWidth="4.800018489360809" prefWidth="10.4000244140625" text="lieu_Lambert_X" />
-            <TableColumn fx:id="lieu_Lambert_Y" minWidth="4.000030517578125" prefWidth="13.5999755859375" text="lieu_Lambert_Y" />
-            <TableColumn fx:id="lobservateur" minWidth="0.0" prefWidth="11.20001220703125" text="lobservateur" />
+          <TableColumn fx:id="espece" minWidth="0.0" prefWidth="0.0" text="espece" />
+            <TableColumn fx:id="nombreAdultes" minWidth="0.0" prefWidth="0.0" text="nombreAdultes" />
+            <TableColumn fx:id="nombreAmplexus" minWidth="0.0" prefWidth="0.0" text="nombreAmplexus" />
+            <TableColumn fx:id="nombrePonte" minWidth="0.0" prefWidth="0.0" text="nombrePonte" />
+            <TableColumn fx:id="nombreTetard" minWidth="0.0" prefWidth="0.0" text="nombreTetard" />
+            <TableColumn fx:id="temperature" minWidth="0.0" prefWidth="0.0" text="temperature" />
+            <TableColumn fx:id="meteo_ciel" minWidth="0.0" prefWidth="0.0" text="meteo_ciel" />
+            <TableColumn fx:id="meteo_temp" minWidth="0.0" prefWidth="0.0" text="meteo_temp" />
+            <TableColumn fx:id="meteo_vent" minWidth="0.0" prefWidth="0.0" text="meteo_vent" />
+            <TableColumn fx:id="meteo_pluie" minWidth="0.0" prefWidth="31.20004653930664" text="meteo_pluie" />
+            <TableColumn fx:id="concerne_ZH" minWidth="0.0" prefWidth="0.0" text="concerne_ZH" />
+            <TableColumn fx:id="concerne_vege" minWidth="0.0" prefWidth="0.0" text="concernes_vege" />
+            <TableColumn fx:id="dateObs" minWidth="0.0" prefWidth="0.0" text="dateObs" />
+            <TableColumn fx:id="heureObs" minWidth="6.399993896484375" prefWidth="6.399993896484375" text="heureObs" />
+            <TableColumn fx:id="lieu_Lambert_X" minWidth="4.800018489360809" prefWidth="52.800018310546875" text="lieu_Lambert_X" />
+            <TableColumn fx:id="lieu_Lambert_Y" minWidth="0.0" prefWidth="0.0" text="lieu_Lambert_Y" />
             <TableColumn fx:id="idObservateur" minWidth="5.59991455078125" prefWidth="13.5999755859375" text="idObservateur" />
             <TableColumn fx:id="nom" minWidth="0.79998779296875" prefWidth="9.60003662109375" text="nom" />
             <TableColumn fx:id="prenom" minWidth="0.0" prefWidth="0.0" text="prenom" />
@@ -157,7 +160,6 @@
             <TableColumn fx:id="natureVege" minWidth="0.0" prefWidth="12.79998779296875" text="natureVege" />
             <TableColumn fx:id="vegetation" minWidth="0.0" prefWidth="13.5999755859375" text="vegetation" />
             <TableColumn fx:id="decrit_LieuVege" minWidth="0.0" prefWidth="13.5999755859375" text="decrit_LieuVege" />
-            <TableColumn fx:id="idVegeLieu" minWidth="0.0" prefWidth="12.79998779296875" text="idVegeLieu" />
         </columns>
       </TableView>
    </center>

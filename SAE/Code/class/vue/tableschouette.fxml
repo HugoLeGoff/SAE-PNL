@@ -120,7 +120,11 @@
                   <Image url="@+.png" />
                </image>
             </ImageView>
-            <Button fx:id="pop" layoutX="126.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="26.0" prefWidth="27.0" text="Button" />
+            <AnchorPane layoutX="126.0" layoutY="4.0">
+               <children>
+                  <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="26.0" prefWidth="27.0" text="Button" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </bottom>

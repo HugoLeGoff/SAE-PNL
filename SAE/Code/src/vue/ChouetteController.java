@@ -6,6 +6,7 @@ import connexion.*;
 import data.*;
 import java.util.*;
 import donnee.AfficheObsChouette;
+import donnee.Table;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -14,6 +15,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
@@ -83,6 +86,15 @@ public class ChouetteController {
     @FXML
     private TableColumn<AfficheObsChouette, String> typeObs;
 
+    @FXML
+    private ComboBox<String> choixAnnee;
+
+    ObservableList<String> liste;
+
+    AllData ad ;
+
+    ArrayList<AfficheObsChouette> obsChouette;
+
 
     
 
@@ -115,8 +127,8 @@ public class ChouetteController {
 
         
 
-        AllData ad = new AllData();
-        ArrayList<AfficheObsChouette> obsChouette = ad.chouette();
+        ad = new AllData();
+        obsChouette = ad.chouette();
         
         
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
@@ -137,6 +149,14 @@ public class ChouetteController {
  
 
         tableView.getItems().setAll(obsChouette);
+
+        ArrayList<Table> tables = ad.tableChouette();
+        liste = FXCollections.observableArrayList();
+        for(Table t :tables){
+            liste.add(t.getTable());
+        }
+        liste.add("toute");
+        choixAnnee.setItems(liste);
     }
 
 
@@ -167,10 +187,34 @@ public class ChouetteController {
             Parent root = FXMLLoader.load(getClass().getResource("tableschouette.fxml"));
             scene.setRoot(root);
         }
+<<<<<<< HEAD
+        else if(event.getSource() == recharger){
+            if(choixAnnee.getValue()!=null){
+                if (choixAnnee.getValue().equals("toute")){
+                    try {
+                        obsChouette= ad.chouette();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }else{
+                    
+                    try {
+                        obsChouette = ad.chouetteAnnee(choixAnnee.getValue());
+                    } catch (SQLException e) {
+                        
+                        e.printStackTrace();
+                    }
+                }
+                tableView.getItems().setAll(obsChouette);
+            }
+            
+            
+=======
         else if(event.getSource() == carte){
             Scene scene = carte.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
             scene.setRoot(root);
+>>>>>>> 8e2f24e339f7d28b02a0fdd74e784dbb1d60419b
         }
     }
 

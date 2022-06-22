@@ -13,7 +13,7 @@ public class Accueil extends Application {
 
     @Override
     /**
-     * Starts the application and displays the Accueil page.
+     * Starts the application and displays the Accueil page..
      */
     public void start(Stage stage)throws Exception {
         

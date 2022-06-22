@@ -22,7 +22,9 @@ import javafx.fxml.*;
 
 public class AddChouetteController {
 
-    
+    @FXML
+    private Label msgLab = new Label(" ");
+
     @FXML
     private TextField zoneProtocole;
     @FXML
@@ -86,6 +88,12 @@ public class AddChouetteController {
 
 
             ChoixVal val = new ChoixVal("Chouettes", values);
+
+            ArrayList<String> message = val.getMsg();
+            msgLab.setText("");
+            for(int i=0; i<message.size(); i++){
+                msgLab.setText(msgLab.getText()+ " \n"+message.get(i));
+            }
 
         }
         else if(event.getSource() == buttonAnnuler){

@@ -22,7 +22,8 @@ import javafx.fxml.*;
 
 public class AddCompteController {
 
-    
+    @FXML
+    private Label msgLab = new Label(" ");
     @FXML
     private TextField zoneIdUser;
     @FXML
@@ -67,6 +68,12 @@ public class AddCompteController {
 
 
             ChoixVal val = new ChoixVal("Comptes", values);
+
+            ArrayList<String> message = val.getMsg();
+            msgLab.setText("");
+            for(int i=0; i<message.size(); i++){
+                msgLab.setText(msgLab.getText()+ " \n"+message.get(i));
+            }
 
         }
         else if(event.getSource() == buttonAnnuler){

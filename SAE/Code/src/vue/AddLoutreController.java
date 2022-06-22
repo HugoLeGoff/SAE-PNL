@@ -21,7 +21,8 @@ import javafx.fxml.*;
 
 public class AddLoutreController {
 
-    
+    @FXML
+    private Label msg;
     @FXML
     private TextField zoneObsL;
     @FXML
@@ -48,6 +49,9 @@ public class AddLoutreController {
 
     @FXML
     private Button buttonAnnuler;
+    @FXML
+    private Label msgLab = new Label(" ");
+
 
     ObservableList<String> liste;
     
@@ -86,10 +90,19 @@ public class AddLoutreController {
 
             ChoixVal val = new ChoixVal("Loutres", values);
 
+            ArrayList<String> message = val.getMsg();
+            msgLab.setText("");
+            for(int i=0; i<message.size(); i++){
+                msgLab.setText(msgLab.getText()+ " \n"+message.get(i));
+            }
+
+
+
+
         }
         if(event.getSource() == buttonAnnuler){
             Scene scene = buttonAnnuler.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("tablesGCI.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("tablesLoutre.fxml"));
             scene.setRoot(root);
         }
     }

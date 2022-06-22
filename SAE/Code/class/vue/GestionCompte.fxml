@@ -45,7 +45,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.BatracienController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.GestionCompteController">
    <top>
       <VBox>
          <children>
@@ -135,11 +135,11 @@
    <center>
       <TableView fx:id="tableView" prefHeight="247.0" prefWidth="530.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn fx:id="obsB" minWidth="4.800018489360809" prefWidth="57.0" text="idUser" />
-            <TableColumn fx:id="prenom" minWidth="0.0" prefWidth="60.0" text="login" />
-            <TableColumn prefWidth="102.0" text="mot de passe" />
-            <TableColumn prefWidth="48.0" text="nom" />
-            <TableColumn prefWidth="88.0" text="prenom" />
+          <TableColumn fx:id="idUser" minWidth="4.800018489360809" prefWidth="57.0" text="idUser" />
+            <TableColumn fx:id="login" minWidth="0.0" prefWidth="60.0" text="login" />
+            <TableColumn fx:id="passw" prefWidth="102.0" text="mot de passe" />
+            <TableColumn fx:id="nom" prefWidth="48.0" text="nom" />
+            <TableColumn fx:id="prenom" prefWidth="88.0" text="prenom" />
         </columns>
       </TableView>
    </center>

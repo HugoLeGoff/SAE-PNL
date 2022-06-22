@@ -110,7 +110,7 @@
    <bottom>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="42.0" prefWidth="600.0">
          <children>
-            <Label layoutX="24.0" layoutY="5.0" prefHeight="24.0" prefWidth="96.0" text="Ajouter une table " />
+            <Label layoutX="24.0" layoutY="5.0" prefHeight="24.0" prefWidth="96.0" text="Ajouter un tuple " />
             <ImageView accessibleRole="BUTTON" fitHeight="62.0" fitWidth="26.0" layoutX="127.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@+.png" />

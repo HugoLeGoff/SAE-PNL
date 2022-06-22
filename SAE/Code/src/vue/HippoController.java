@@ -8,10 +8,6 @@ import java.sql.Statement;
 import data.*;
 import java.util.*;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 8c80260a09369cab0370480c56483a4e7e6ec0d3
 import connexion.Compte;
 import donnee.AfficheObsHippocampes;
 import donnee.Table;

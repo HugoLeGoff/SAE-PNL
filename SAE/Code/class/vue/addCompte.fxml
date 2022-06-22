@@ -89,14 +89,14 @@
                      <children>
                         <Label text="idUser : " />
                         <TextField fx:id="zoneIdUser" prefHeight="26.0" prefWidth="230.0" GridPane.columnIndex="1" />
-                        <TextField fx:id="zoneLogin" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label text="login : " GridPane.rowIndex="1" />
-                        <Label text="mot de passe : " GridPane.rowIndex="2" />
-                        <Label text="nom  : " GridPane.rowIndex="3" />
-                        <Label text="prenom : " GridPane.rowIndex="4" />
-                        <TextField fx:id="zonePassw" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField fx:id="zoneNom" prefHeight="26.0" prefWidth="191.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextField fx:id="zonePrenom" prefHeight="26.0" prefWidth="191.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="zoneNom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="nom : " GridPane.rowIndex="1" />
+                        <Label text="prenom : " GridPane.rowIndex="2" />
+                        <Label text="login  : " GridPane.rowIndex="3" />
+                        <Label text="mot de passe : " GridPane.rowIndex="4" />
+                        <TextField fx:id="zonePrenom" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="zoneLogin" prefHeight="26.0" prefWidth="191.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="zonePassw" prefHeight="26.0" prefWidth="191.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <Label text="statut : " GridPane.rowIndex="4" />
                         <ComboBox fx:id="zoneStatut" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>

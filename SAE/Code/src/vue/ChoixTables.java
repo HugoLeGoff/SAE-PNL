@@ -7,6 +7,8 @@ import connexion.*;
 import donnee.*;
 import data.*;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -42,6 +44,9 @@ public class ChoixTables {
     @FXML
     private Button modifier;
 
+    @FXML
+    private ComboBox<String> annee;
+
 
     @FXML
     private Button retour;
@@ -53,6 +58,8 @@ public class ChoixTables {
 
     @FXML private TableView<Table> tableView;
     @FXML private TableColumn<Table, String> tabColumn;
+
+    ObservableList<String> liste;
 
 
 
@@ -76,35 +83,55 @@ public class ChoixTables {
             tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
             AllData ad = new AllData();
             ArrayList<Table> tables = ad.tableHippo();
-            
+            liste = FXCollections.observableArrayList();
+            for(Table t :tables){
+                liste.add(t.getTable());
+            }
+            annee.setItems(liste);
             tableView.getItems().setAll(tables);
         }
         else if(nomEspece.equals("Batraciens")){
             tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
             AllData ad = new AllData();
             ArrayList<Table> tables = ad.tableBatraciens();
-            
+            liste = FXCollections.observableArrayList();
+            for(Table t :tables){
+                liste.add(t.getTable());
+            }
+            annee.setItems(liste);
             tableView.getItems().setAll(tables);
         }
         else if(nomEspece.equals("GCI")){
             tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
             AllData ad = new AllData();
             ArrayList<Table> tables = ad.tableGCI();
-            
+            liste = FXCollections.observableArrayList();
+            for(Table t :tables){
+                liste.add(t.getTable());
+            }
+            annee.setItems(liste);
             tableView.getItems().setAll(tables);
         }
         else if(nomEspece.equals("Chouettes")){
             tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
             AllData ad = new AllData();
             ArrayList<Table> tables = ad.tableChouettes();
-            
+            liste = FXCollections.observableArrayList();
+            for(Table t :tables){
+                liste.add(t.getTable());
+            }
+            annee.setItems(liste);
             tableView.getItems().setAll(tables);
         }
         else if(nomEspece.equals("Loutres")){
             tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
             AllData ad = new AllData();
             ArrayList<Table> tables = ad.tableLoutres();
-            
+            liste = FXCollections.observableArrayList();
+            for(Table t :tables){
+                liste.add(t.getTable());
+            }
+            annee.setItems(liste);
             tableView.getItems().setAll(tables);
             }
         

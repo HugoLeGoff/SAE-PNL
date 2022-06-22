@@ -33,7 +33,6 @@
 -->
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -45,13 +44,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.AddCompteController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.AddObservateurController">
    <top>
       <VBox>
          <children>
             <AnchorPane prefHeight="67.0" prefWidth="600.0">
                <children>
-                  <Label layoutX="27.0" layoutY="19.0" prefHeight="35.0" prefWidth="319.0" text="Ajouter un tuple :" textFill="#008967">
+                  <Label layoutX="27.0" layoutY="19.0" prefHeight="35.0" prefWidth="319.0" text="Ajouter un observateur :" textFill="#008967">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -82,39 +81,17 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label text="idUser : " />
-                        <TextField fx:id="zoneIdUser" prefHeight="26.0" prefWidth="230.0" GridPane.columnIndex="1" />
-                        <TextField fx:id="zoneNom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label text="nom : " GridPane.rowIndex="1" />
-                        <Label text="prenom : " GridPane.rowIndex="2" />
-                        <Label text="login  : " GridPane.rowIndex="3" />
-                        <Label text="mot de passe : " GridPane.rowIndex="4" />
+                        <Label text="idObservateur" />
+                        <TextField fx:id="zoneIdObservateur" prefHeight="26.0" prefWidth="230.0" GridPane.columnIndex="1" />
                         <TextField fx:id="zonePrenom" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField fx:id="zoneLogin" prefHeight="26.0" prefWidth="191.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextField fx:id="zonePassw" prefHeight="26.0" prefWidth="191.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label text="statut : " GridPane.rowIndex="5" />
-                        <ComboBox fx:id="zoneStatut" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label text="nom" GridPane.rowIndex="1" />
+                        <Label text="prenom" GridPane.rowIndex="2" />
+                        <TextField fx:id="zoneNom" prefHeight="26.0" prefWidth="230.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                   <AnchorPane prefHeight="248.0" prefWidth="50.0" />
-                  <GridPane prefHeight="248.0" prefWidth="305.0">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.199951171875" minWidth="10.0" prefWidth="100.0000244140625" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="324.99998474121094" minWidth="10.0" prefWidth="183.19997558593755" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                  </GridPane>
                </children>
             </HBox>
          </children>

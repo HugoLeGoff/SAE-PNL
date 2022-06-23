@@ -1,18 +1,13 @@
 package vue;
+import data.*;
+
 import java.io.IOException;
 import java.sql.SQLException;
 
-import data.*;
 import java.util.*;
-import donnee.AfficheObsHippocampes;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
-import javafx.scene.text.Text;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -24,36 +19,20 @@ import javafx.fxml.*;
  */
 public class AddChouetteController {
 
-    @FXML
-    private Label msgLab = new Label(" ");
-
-    @FXML
-    private TextField zoneProtocole;
-    @FXML
-    private ComboBox<String> zoneTypeObs;
-    @FXML
-    private TextField zoneLeNumIndividu;
-    @FXML
-    private TextField zoneNumObs;
-    @FXML
-    private ComboBox<String> zoneEspece;
-    @FXML
-    private ComboBox<String> zoneSexe;
-    @FXML
-    private TextField zoneDateObs;
-    @FXML
-    private TextField zoneHeureObs;
-    @FXML
-    private TextField zoneLieu_Lambert_X;
-    @FXML
-    private TextField zoneLieu_Lambert_Y;
-    @FXML
-    private TextField zoneIdObservation;
-    @FXML
-    private Button buttonAdd;
-
-    @FXML
-    private Button buttonAnnuler;
+    @FXML private Label msgLab = new Label(" ");
+    @FXML private TextField zoneProtocole;
+    @FXML private ComboBox<String> zoneTypeObs;
+    @FXML private TextField zoneLeNumIndividu;
+    @FXML private TextField zoneNumObs;
+    @FXML private ComboBox<String> zoneEspece;
+    @FXML private ComboBox<String> zoneSexe;
+    @FXML private TextField zoneDateObs;
+    @FXML private TextField zoneHeureObs;
+    @FXML private TextField zoneLieu_Lambert_X;
+    @FXML private TextField zoneLieu_Lambert_Y;
+    @FXML private TextField zoneIdObservation;
+    @FXML private Button buttonAdd;
+    @FXML private Button buttonAnnuler;
 
     ObservableList<String> liste;
     
@@ -97,15 +76,14 @@ public class AddChouetteController {
             values.put("lieu_Lambert_Y",zoneLieu_Lambert_Y.getText());
             values.put("lObservateur",zoneIdObservation.getText());
 
-
             ChoixVal val = new ChoixVal("Chouettes", values);
 
             ArrayList<String> message = val.getMsg();
             msgLab.setText("");
+            
             for(int i=0; i<message.size(); i++){
                 msgLab.setText(msgLab.getText()+ " \n"+message.get(i));
             }
-
         }
         else if(event.getSource() == buttonAnnuler){
             Scene scene = buttonAnnuler.getScene();
@@ -113,5 +91,4 @@ public class AddChouetteController {
             scene.setRoot(root);
         }
     }
-
 }

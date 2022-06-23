@@ -3,17 +3,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import data.*;
-import java.util.*;
-import donnee.AfficheObsHippocampes;
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
-import javafx.scene.text.Text;
-import javafx.collections.FXCollections;
+
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
@@ -24,6 +18,8 @@ import javafx.fxml.*;
  */
 public class AddObservateurController {
 
+    @FXML
+    private Label msgLab = new Label();
     
     @FXML
     private TextField zoneIdObservateur;
@@ -36,6 +32,9 @@ public class AddObservateurController {
 
     @FXML
     private Button buttonAdd;
+    
+    @FXML
+    private Button retour;
 
     @FXML
     private Button buttonAnnuler;
@@ -59,18 +58,25 @@ public class AddObservateurController {
      * @param event the event
      * @throws IOException IOException
      */
-    protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
+    protected void handleSubmitButtonAction(ActionEvent event) throws IOException, NumberFormatException, SQLException{
         if(event.getSource() == buttonAdd){
-            HashMap<String,String> values = new HashMap<String,String>();
-            values.put("idObservateur",zoneIdObservateur.getText());
-            values.put("nom",zoneNom.getText());
-            values.put("prenom",zonePrenom.getText());
 
-            ChoixVal val = new ChoixVal("Observateur", values);
+            AllData ad = new AllData();
+            ad.addObservateur(Integer.valueOf(zoneIdObservateur.getText()),zoneNom.getText(), zonePrenom.getText());
+
+
+            String message = ad.getMsg();
+            msgLab.setText(message);
+            
 
         }
         else if(event.getSource() == buttonAnnuler){
             Scene scene = buttonAnnuler.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("tablesObservateur.fxml"));
+            scene.setRoot(root);
+        }
+        else if(event.getSource() == retour){
+            Scene scene = retour.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("tablesObservateur.fxml"));
             scene.setRoot(root);
         }

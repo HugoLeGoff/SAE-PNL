@@ -1,51 +1,31 @@
 package vue;
+import data.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import data.*;
 import java.util.*;
-import donnee.AfficheObsHippocampes;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
-import javafx.scene.text.Text;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
-
 
 /**
  * This class is the controller of the AddChouette page. It gets the page interactive.
  */
 public class AddCompteController {
 
-    @FXML
-    private Label msgLab = new Label(" ");
-    @FXML
-    private TextField zoneIdUser;
-    @FXML
-    private TextField zoneLogin;
-    @FXML
-    private TextField zonePassw;
-    @FXML
-    private TextField zoneNom;
-    @FXML
-    private TextField zonePrenom;
-    @FXML
-    private ComboBox<String> zoneStatut;
-    @FXML
-    private Button buttonAdd;
-    
-
-    @FXML
-    private Button buttonAnnuler;
-
-    
+    @FXML private Label msgLab = new Label(" ");
+    @FXML private TextField zoneIdUser;
+    @FXML private TextField zoneLogin;
+    @FXML private TextField zonePassw;
+    @FXML private TextField zoneNom;
+    @FXML private TextField zonePrenom;
+    @FXML private ComboBox<String> zoneStatut;
+    @FXML private Button buttonAdd;
+    @FXML private Button buttonAnnuler;
 
     ObservableList<String> liste;
     
@@ -55,7 +35,6 @@ public class AddCompteController {
      * @throws SQLException SQLException
      */
     private void initialize() throws SQLException {
-
         liste = FXCollections.observableArrayList("1","2");
         zoneStatut.setItems(liste);
 
@@ -70,7 +49,6 @@ public class AddCompteController {
      * @throws IOException IOException
      */
     protected void handleSubmitButtonAction(ActionEvent event) throws IOException{
-
         if(event.getSource() == buttonAdd){
             HashMap<String,String> values = new HashMap<String,String>();
             values.put("idU",zoneIdUser.getText());
@@ -81,7 +59,7 @@ public class AddCompteController {
             values.put("idStatut",zoneStatut.getValue());
 
             try{
-                ChoixVal val = new ChoixVal("Comptes", values);
+                new ChoixVal("Comptes", values);
                 Scene scene = buttonAnnuler.getScene();
                 Parent root = FXMLLoader.load(getClass().getResource("GestionCompte.fxml"));
                 scene.setRoot(root);
@@ -94,15 +72,10 @@ public class AddCompteController {
                     msgLab.setText(msgLab.getText()+ " \n"+message.get(i));
                 }
             }
-            
-
-        }
-        else if(event.getSource() == buttonAnnuler){
+        } else if(event.getSource() == buttonAnnuler){
             Scene scene = buttonAnnuler.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("GestionCompte.fxml"));
             scene.setRoot(root);
         }
-        
     }
-
 }

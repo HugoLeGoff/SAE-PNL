@@ -1,10 +1,10 @@
 package vue;
+import data.*;
+
 import java.io.IOException;
 import java.sql.SQLException;
 
-import data.*;
 import java.util.*;
-import donnee.AfficheObsHippocampes;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -13,77 +13,41 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
-
 /**
  * This class is the controller of the AddBatracien page. It gets the page interactive.
  */
 public class AddBatracienController {
 
-    
-    @FXML
-    private TextField zoneObsB;
-    @FXML
-    private ComboBox<String> zoneEspece;
-    @FXML
-    private TextField zoneNombreAdultes;
-    @FXML
-    private TextField zoneNombreAmplexus;
-    @FXML
-    private TextField zoneNombrePonte;
-    @FXML
-    private TextField zoneNombreTetard;
-    @FXML
-    private TextField zoneTemperature;
-    @FXML
-    private ComboBox<String> zoneMeteo_ciel;
-    @FXML
-    private ComboBox<String> zoneMeteo_temp;
-    @FXML
-    private ComboBox<String> zoneMeteo_vent;
-    @FXML
-    private ComboBox<String> zoneMeteo_pluie;
-    @FXML
-    private TextField zoneConcerne_ZH;
-    @FXML
-    private TextField zoneConcernes_vege;
-    @FXML
-    private TextField zoneDateObs;
-    @FXML
-    private TextField zoneHeureObs;
-    @FXML
-    private TextField zoneLieu_Lambert_X;
-    @FXML
-    private TextField zoneLieu_Lambert_Y;
-    @FXML
-    private TextField zoneLobservateur;
-    @FXML
-    private TextField zoneZh_temporaire;
-    @FXML
-    private TextField zoneZh_profondeur;
-    @FXML
-    private TextField zoneZh_surface;
-    @FXML
-    private ComboBox<String> zoneZh_typeMare;
-    @FXML
-    private ComboBox<String> zoneZh_pente;
-    @FXML
-    private ComboBox<String> zoneZh_ouverture;
-    @FXML
-    private ComboBox<String> zoneNatureVege;
-    @FXML
-    private TextField zoneIdVegeLieu;
-    @FXML
-    private TextField zoneVegetation;
-
-    @FXML
-    private Button buttonAdd;
-
-    @FXML
-    private Button buttonAnnuler;
-
-    @FXML
-    private Label msgLab = new Label(" ");
-
+    @FXML private TextField zoneObsB;
+    @FXML private ComboBox<String> zoneEspece;
+    @FXML private TextField zoneNombreAdultes;
+    @FXML private TextField zoneNombreAmplexus;
+    @FXML private TextField zoneNombrePonte;
+    @FXML private TextField zoneNombreTetard;
+    @FXML private TextField zoneTemperature;
+    @FXML private ComboBox<String> zoneMeteo_ciel;
+    @FXML private ComboBox<String> zoneMeteo_temp;
+    @FXML private ComboBox<String> zoneMeteo_vent;
+    @FXML private ComboBox<String> zoneMeteo_pluie;
+    @FXML private TextField zoneConcerne_ZH;
+    @FXML private TextField zoneConcernes_vege;
+    @FXML private TextField zoneDateObs;
+    @FXML private TextField zoneHeureObs;
+    @FXML private TextField zoneLieu_Lambert_X;
+    @FXML private TextField zoneLieu_Lambert_Y;
+    @FXML private TextField zoneLobservateur;
+    @FXML private TextField zoneZh_temporaire;
+    @FXML private TextField zoneZh_profondeur;
+    @FXML private TextField zoneZh_surface;
+    @FXML private ComboBox<String> zoneZh_typeMare;
+    @FXML private ComboBox<String> zoneZh_pente;
+    @FXML private ComboBox<String> zoneZh_ouverture;
+    @FXML private ComboBox<String> zoneNatureVege;
+    @FXML private TextField zoneIdVegeLieu;
+    @FXML private TextField zoneVegetation;
+    @FXML private Button buttonAdd;
+    @FXML private Button buttonAnnuler;
+    @FXML private Label msgLab = new Label();
 
     ObservableList<String> liste;
     
@@ -161,7 +125,6 @@ public class AddBatracienController {
             values.put("vegetation",zoneVegetation.getText());
             values.put("idVegeLieu",zoneIdVegeLieu.getText());
 
-
             ChoixVal val = new ChoixVal("Batraciens", values);
 
             ArrayList<String> message = val.getMsg();
@@ -169,8 +132,6 @@ public class AddBatracienController {
             for(int i=0; i<message.size(); i++){
                 msgLab.setText(msgLab.getText()+ " \n"+message.get(i));
             }
-        
-
         }
         else if(event.getSource() == buttonAnnuler){
             Scene scene = buttonAnnuler.getScene();
@@ -178,5 +139,4 @@ public class AddBatracienController {
             scene.setRoot(root);
         }
     }
-
 }

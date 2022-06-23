@@ -8,7 +8,9 @@ import java.sql.Statement;
 import java.io.File;
 import java.io.PrintWriter;
 
-
+/**
+ * Exports the data
+ */
 public class ExportData {
 
     private String fileName;
@@ -18,7 +20,11 @@ public class ExportData {
     private int nbColonnes;
 
 
-
+    /**
+     * Builder that creates the object
+     * @param name name
+     * @param espece espece
+     */
     public ExportData(String name, String espece) {
         this.annee=0;
         this.espece=espece;
@@ -27,6 +33,13 @@ public class ExportData {
 
         
     }
+
+    /**
+     * Exports the data
+     * @param name name
+     * @param annee annee
+     * @param espece espece
+     */
     public ExportData(String name, String annee, String espece) {
 
         this.annee=Integer.valueOf(annee);
@@ -37,6 +50,10 @@ public class ExportData {
         
     }
     
+    /**
+     * Creates a query
+     * @return a query
+     */
     public String requete(){
         String ret="";
         if(annee==0){
@@ -66,6 +83,11 @@ public class ExportData {
         }
         return ret;
     }
+
+    /**
+     * Return a column
+     * @return the column
+     */
     public String printColonnes(){
         String ret="";
         if(espece.equals("Hippocampes")){
@@ -86,6 +108,10 @@ public class ExportData {
         }
         return ret;
     }
+
+    /**
+     * Export the data
+     */
     public void exportData() {
         try {
             Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");

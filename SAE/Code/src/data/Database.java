@@ -11,8 +11,14 @@ import connexion.Compte;
 //import javafx.collections.ObservableList;
 //import javafx.collections.ObservableList;
 
-
+/**
+ * This class is the database.
+ */
 public class Database {
+  /**
+   * main.
+   * @param args args
+   */
     public static void main(String args[]){
     try
     {

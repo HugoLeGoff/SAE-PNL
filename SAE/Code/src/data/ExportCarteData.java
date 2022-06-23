@@ -11,7 +11,9 @@ import carte.Lambert93;
 import java.io.File;
 import java.io.PrintWriter;
 
-
+/**
+ * Export the map data.
+ */
 public class ExportCarteData {
 
     private String fileName;
@@ -22,6 +24,11 @@ public class ExportCarteData {
 
 
 
+    /**
+     * builder that creates the object
+     * @param name name
+     * @param espece espece
+     */
     public ExportCarteData(String name, String espece) {
         this.annee=0;
         this.espece=espece;
@@ -30,6 +37,13 @@ public class ExportCarteData {
 
         
     }
+
+    /**
+     * Exports the data
+     * @param name name
+     * @param annee annee
+     * @param espece espece
+     */
     public ExportCarteData(String name, String annee, String espece) {
 
         this.annee=Integer.valueOf(annee);
@@ -40,6 +54,10 @@ public class ExportCarteData {
         
     }
     
+    /**
+     * Creates a query
+     * @return a query
+     */
     public String requete(){
         String ret="";
         if(annee==0){
@@ -58,6 +76,11 @@ public class ExportCarteData {
         }
         return ret;
     }
+
+    /**
+     * return column
+     * @return column 
+     */
     public String printColonnes(){
         String ret="";
         if(espece.equals("Hippocampes")){
@@ -78,6 +101,10 @@ public class ExportCarteData {
         }
         return ret;
     }
+
+    /**
+     * Exports the data
+     */
     public void exportData() {
         try {
             Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");

@@ -2,9 +2,18 @@ package data;
 import java.sql.*;
 import donnee.*;
 
+/**
+ * This class tests the accounts.
+ */
 public class AccTest {
 
-
+  /**
+   * Tests the password of the login.
+   * @param login login
+   * @param pw password
+   * @return true or false
+   * @throws SQLException SQLException
+   */
   public boolean testMDP(String login, String pw) throws SQLException{
     boolean ret = false;
 

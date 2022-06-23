@@ -60,6 +60,7 @@ public class InsertData {
             Statement stmt = c.createStatement();
             String query = requete();
             stmt.executeUpdate(query);
+            c.close();
         }catch(Exception e){
             System.out.println(e);
             this.message = e.getMessage();

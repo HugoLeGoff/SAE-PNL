@@ -51,12 +51,14 @@
          <children>
             <AnchorPane prefHeight="67.0" prefWidth="600.0">
                <children>
-                  <Label layoutX="33.0" layoutY="24.0" prefHeight="35.0" prefWidth="319.0" text="Ajouter un tuple :" textFill="#008967">
+                  <Label layoutX="350.0" layoutY="16.0" prefHeight="35.0" prefWidth="319.0" text="Ajouter un tuple :" textFill="#008967">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
                   <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="9.0" prefWidth="1800.0" style="-fx-max-width: 999999; -fx-background-color: #008967;" />
+                  <Button fx:id="retour" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="32.0" prefWidth="40.0" text="Button" />
+                  <Button fx:id="retour1" layoutX="37.0" layoutY="19.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="32.0" prefWidth="40.0" text="Button" />
                </children>
             </AnchorPane>
          </children>
@@ -188,7 +190,7 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="buttonAnnuler" layoutX="101.0" layoutY="54.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="37.0" prefWidth="151.0" text="Annuler">
+            <Button fx:id="buttonAnnuler" layoutX="101.0" layoutY="54.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="37.0" prefWidth="151.0" text="Retour">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

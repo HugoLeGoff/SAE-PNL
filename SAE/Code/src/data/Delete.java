@@ -76,6 +76,7 @@ public class Delete {
             for(String s : query){
                 stmt.executeUpdate(s);
             }
+            c.close();
         }catch(Exception e){
             System.out.println(e);
         }

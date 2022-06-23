@@ -1,20 +1,14 @@
 package vue;
-import java.io.IOException;
-import java.sql.SQLException;
-
 import connexion.*;
-import data.AccTest;
-import javafx.application.Application;
+
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
-import javafx.scene.text.Text;
 import javafx.fxml.*;
-
 
 /**
  * This class is the controller of the SelectionInteraction page. It gets the page interactive.
@@ -22,26 +16,13 @@ import javafx.fxml.*;
 public class SelectionInteraction {
 
     private String especeTMP;
-
-    
-    @FXML Button gestionDo;
-
-    @FXML Button deconnexion;
-
-    @FXML Button consultation;
-
-    @FXML Button exportation;
-
-    @FXML Button retour;
-
-    @FXML Label espece = new Label();
-
-
-
-    @FXML Label nom = new Label();
-
-
-
+    @FXML private Button gestionDo;
+    @FXML private Button deconnexion;
+    @FXML private Button consultation;
+    @FXML private Button exportation;
+    @FXML private Button retour;
+    @FXML private Label espece = new Label();
+    @FXML private Label nom = new Label();
 
     @FXML
     /**
@@ -56,12 +37,9 @@ public class SelectionInteraction {
         String nomEspece = especeChoix.getEspece();
         espece.setText(nomEspece);
         especeTMP = nomEspece;
-
-
     }
 
     @FXML
-
     /**
      * Initializes the action to execute when pressing a button.
      * @param event the event
@@ -102,8 +80,6 @@ public class SelectionInteraction {
             }
         }
         
-        
-
         else if(event.getSource() == this.consultation){
             if(especeTMP.equals("Hippocampes")){
                 Scene scene = gestionDo.getScene();
@@ -144,9 +120,4 @@ public class SelectionInteraction {
             scene.setRoot(root);
         }
     }
-
-
-
-
-
 }

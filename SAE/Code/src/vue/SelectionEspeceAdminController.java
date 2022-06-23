@@ -1,20 +1,14 @@
 package vue;
-import java.io.IOException;
-import java.sql.SQLException;
-
 import connexion.*;
-import data.AccTest;
-import javafx.application.Application;
+
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
-import javafx.scene.text.Text;
 import javafx.fxml.*;
-
 
 /**
  * This class is the controller of the SelectionEspeceAdmin page. It gets the page interactive.
@@ -22,25 +16,15 @@ import javafx.fxml.*;
 public class SelectionEspeceAdminController {
 
     @FXML Button observateur;
-    
     @FXML Button deconnexion;
-
     @FXML Button buttonAdmin;
-
     @FXML Button hippo;
-
     @FXML Button gci;
-
     @FXML Button loutres;
-
     @FXML Button chouettes;
-
     @FXML Button batraciens;
-
     @FXML Label nom = new Label(" ");
     
-
-
 
     @FXML
     /**
@@ -53,7 +37,6 @@ public class SelectionEspeceAdminController {
     }
 
     @FXML
-
     /**
      * Initializes the action to execute when pressing a button.
      * @param event the event
@@ -66,7 +49,7 @@ public class SelectionEspeceAdminController {
             scene.setRoot(root);
         }
         else if(event.getSource() == this.hippo){
-            ChoixEspece espece = new ChoixEspece("Hippocampes");
+            new ChoixEspece("Hippocampes");
 
             Scene scene = deconnexion.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
@@ -78,28 +61,28 @@ public class SelectionEspeceAdminController {
             scene.setRoot(root);
         }
         else if(event.getSource() == this.batraciens){
-            ChoixEspece espece = new ChoixEspece("Batraciens");
+            new ChoixEspece("Batraciens");
 
             Scene scene = deconnexion.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
             scene.setRoot(root);   
         }
         else if(event.getSource() == this.loutres){
-            ChoixEspece espece = new ChoixEspece("Loutres");
+            new ChoixEspece("Loutres");
 
             Scene scene = deconnexion.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
             scene.setRoot(root);   
         }
         else if(event.getSource() == this.gci){
-            ChoixEspece espece = new ChoixEspece("GCI");
+            new ChoixEspece("GCI");
 
             Scene scene = deconnexion.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
             scene.setRoot(root);   
         }
         else if(event.getSource() == this.chouettes){
-            ChoixEspece espece = new ChoixEspece("Chouettes");
+            new ChoixEspece("Chouettes");
 
             Scene scene = deconnexion.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
@@ -112,9 +95,4 @@ public class SelectionEspeceAdminController {
             scene.setRoot(root);   
         }
     }
-
-
-
-
-
 }

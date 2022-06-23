@@ -23,6 +23,7 @@ public class TablesUsers {
     private Button supprimer;
 
     @FXML private TextField idU;
+    @FXML private Button deconnexion;
 
     @FXML private Label nomObservateur = new Label();
     @FXML private TableView<AfficheUsers> tableView;
@@ -81,6 +82,12 @@ public class TablesUsers {
             scene.setRoot(root);
 
 
+        }
+        else if(event.getSource() == deconnexion){
+
+            Scene scene = deconnexion.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
+            scene.setRoot(root);
         }
     }
     

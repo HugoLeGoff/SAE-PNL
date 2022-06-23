@@ -1,22 +1,17 @@
 package vue;
+import data.*;
+import connexion.Compte;
+import donnee.AfficheObsBatracien;
+import donnee.Table;
+
 import java.io.IOException;
 import java.sql.SQLException;
 
-import data.*;
 import java.util.*;
-
-import connexion.Compte;
-import donnee.AfficheObsBatracien;
-import donnee.ObsBatracien;
-import donnee.Table;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
-import javafx.scene.text.Text;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,34 +22,18 @@ import javafx.fxml.*;
  */
 public class BatracienController {
 
-    @FXML
-    private Label nomObservateur = new Label();
-
-    
-    @FXML
-    private Button carte;
-
-    @FXML
-    private Button retour;
-
-    @FXML
-    private Button buttonAdd;
-    @FXML
-    private Button recharger;
-
-    @FXML
-    private ComboBox<String> choixAnnee;
-
+    @FXML private Label nomObservateur = new Label();
+    @FXML private Button carte;
+    @FXML private Button retour;
+    @FXML private Button deconnexion;
+    @FXML private Button buttonAdd;
+    @FXML private Button recharger;
+    @FXML private ComboBox<String> choixAnnee;
     ObservableList<String> liste;
-
-    AllData ad ;
-
+    AllData ad;
     ArrayList<AfficheObsBatracien> obsBatracien;
-
-    @FXML
-    private Button supprimer;
+    @FXML private Button supprimer;
     @FXML private TextField id;
-
     @FXML private TableView<AfficheObsBatracien> tableView;
     @FXML private TableColumn<AfficheObsBatracien, String> obsB;
     @FXML private TableColumn<AfficheObsBatracien, String> espece;
@@ -86,12 +65,6 @@ public class BatracienController {
     @FXML private TableColumn<AfficheObsBatracien, String> natureVege;
     @FXML private TableColumn<AfficheObsBatracien, String> vegetation;
     @FXML private TableColumn<AfficheObsBatracien, String> decrit_LieuVege;
-
-
-
-
-
-    
 
     @FXML
     /**
@@ -168,25 +141,20 @@ public class BatracienController {
         tableView.getColumns().get(27).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07)); 
         tableView.getColumns().get(28).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07)); 
 
-
-
-
- 
-
         tableView.getItems().setAll(obsBatracien);
 
         ArrayList<Table> tables = ad.tableBatraciens();
         liste = FXCollections.observableArrayList();
+
         for(Table t :tables){
             liste.add(t.getTable());
         }
-        liste.add("toute");
+
+        liste.add("toutes");
         choixAnnee.setItems(liste);
     }
 
-
     @FXML
-
     /**
      * Initializes the action to execute when pressing a button.
      * @param event the event
@@ -198,31 +166,25 @@ public class BatracienController {
             Scene scene = retour.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
             scene.setRoot(root);
-        }
-        
-        else if(event.getSource() == buttonAdd){
+        } else if(event.getSource() == buttonAdd){
             Scene scene = buttonAdd.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("addBatraciens.fxml"));
             scene.setRoot(root);
-        }
-        else if(event.getSource() == supprimer){
+        } else if(event.getSource() == supprimer){
             Delete dl = new Delete("Batraciens",id.getText());
             dl.deleteTuple();
             Scene scene = buttonAdd.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("TablesBatraciens.fxml"));
             scene.setRoot(root);
-        }
-
-        else if(event.getSource() == recharger){
+        } else if(event.getSource() == recharger){
             if(choixAnnee.getValue()!=null){
-                if (choixAnnee.getValue().equals("toute")){
+                if (choixAnnee.getValue().equals("toutes")){
                     try {
                         obsBatracien= ad.Batracien();
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
-                }else{
-                    
+                } else {
                     try {
                         obsBatracien = ad.BatracienAnnee(choixAnnee.getValue());
                     } catch (SQLException e) {
@@ -232,18 +194,16 @@ public class BatracienController {
                 }
                 tableView.getItems().setAll(obsBatracien);
             }
-        }
-            
-
-        else if(event.getSource() == carte){
+        } else if(event.getSource() == carte){
             Scene scene = carte.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
             scene.setRoot(root);
         }
+        else if(event.getSource() == deconnexion){
+
+            Scene scene = deconnexion.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
+            scene.setRoot(root);
+        }
     }
-
-
-
-
-
 } 

@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import connexion.Compte;
 //import javafx.collections.FXCollections;
 //import javafx.collections.FXCollections;
 //import javafx.collections.ObservableList;

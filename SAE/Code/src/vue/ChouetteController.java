@@ -23,6 +23,8 @@ import javafx.fxml.*;
  */
 public class ChouetteController {
 
+    @FXML private Button deconnexion;
+
     @FXML private Button supprimer;
     @FXML private TextField id;
     @FXML private Label nomObservateur = new Label();
@@ -93,7 +95,7 @@ public class ChouetteController {
         for(Table t :tables){
             liste.add(t.getTable());
         }
-        liste.add("toute");
+        liste.add("toutes");
         choixAnnee.setItems(liste);
     }
 
@@ -121,7 +123,7 @@ public class ChouetteController {
             scene.setRoot(root);
         } else if(event.getSource() == recharger){
             if(choixAnnee.getValue()!=null){
-                if (choixAnnee.getValue().equals("toute")){
+                if (choixAnnee.getValue().equals("toutes")){
                     try {
                         obsChouette= ad.chouette();
                     } catch (SQLException e) {
@@ -140,6 +142,12 @@ public class ChouetteController {
         } else if(event.getSource() == carte){
             Scene scene = carte.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
+            scene.setRoot(root);
+        }
+        else if(event.getSource() == deconnexion){
+
+            Scene scene = deconnexion.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
             scene.setRoot(root);
         }
     }

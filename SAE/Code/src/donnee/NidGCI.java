@@ -1,6 +1,5 @@
 package donnee;
 import java.util.*;
-import java.sql.Time;
 
 /**
  * crée un NidGCI

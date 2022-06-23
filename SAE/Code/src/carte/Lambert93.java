@@ -7,7 +7,6 @@ import static java.lang.Math.pow;
 import static java.lang.Math.sin;
 import static java.lang.Math.sqrt;
 
-import java.awt.geom.Point2D;
 import java.util.ArrayList;
 
 /**

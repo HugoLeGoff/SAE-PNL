@@ -1,25 +1,23 @@
 package vue;
-
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
-
 import data.AllData;
 import data.Delete;
 import donnee.AfficheCompte;
+
+import java.io.IOException;
+import java.sql.SQLException;
+
+import java.util.ArrayList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldListCell;
 import javafx.stage.Stage;
 
 /**
@@ -27,41 +25,18 @@ import javafx.stage.Stage;
  */
 public class GestionCompteController{
 
-    @FXML
-    private TableView<AfficheCompte> tableView;
-
-    @FXML
-    private TableColumn<AfficheCompte, String> idUser;
-
-    @FXML
-
-    private TableColumn<AfficheCompte, String> nom;
-
-    @FXML
-    private TableColumn<AfficheCompte, String> prenom;
-
-    @FXML
-
-    private TableColumn<AfficheCompte, String> login;
-
-    @FXML
-    private TableColumn<AfficheCompte, String> passw;
-
-
-    @FXML
-    private TableColumn<AfficheCompte, String> statut;
-
-    @FXML
-    private Button retour;
-
-    @FXML
-    private Button buttonAdd;
-
-    @FXML
-    private Button supprimer;
-
-    @FXML
-    private TextField id;
+    @FXML private TableView<AfficheCompte> tableView;
+    @FXML private TableColumn<AfficheCompte, String> idUser;
+    @FXML private TableColumn<AfficheCompte, String> nom;
+    @FXML private TableColumn<AfficheCompte, String> prenom;
+    @FXML private TableColumn<AfficheCompte, String> login;
+    @FXML private TableColumn<AfficheCompte, String> passw;
+    @FXML private TableColumn<AfficheCompte, String> statut;
+    @FXML private Button retour;
+    @FXML private Button buttonAdd;
+    @FXML private Button supprimer;
+    @FXML private Button deconnexion;
+    @FXML private TextField id;
 
     @FXML
     /**
@@ -80,7 +55,6 @@ public class GestionCompteController{
         AllData ad = new AllData();
         ArrayList<AfficheCompte> comptes = ad.getAllCompte();
         
-        
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         tableView.getColumns().get(0).prefWidthProperty().bind(tableView.widthProperty().multiply(0.16));
         tableView.getColumns().get(1).prefWidthProperty().bind(tableView.widthProperty().multiply(0.16));
@@ -89,10 +63,8 @@ public class GestionCompteController{
         tableView.getColumns().get(4).prefWidthProperty().bind(tableView.widthProperty().multiply(0.16));
         tableView.getColumns().get(5).prefWidthProperty().bind(tableView.widthProperty().multiply(0.16));
 
-
         tableView.getItems().setAll(comptes);
     }
-
 
     @FXML
     /**
@@ -104,7 +76,7 @@ public class GestionCompteController{
 
         if(event.getSource() == retour){
             Scene scene = retour.getScene();
-            Stage stage = new Stage(); 
+            new Stage(); 
             Parent root = FXMLLoader.load(getClass().getResource("SelectionActionAdmin.fxml"));
             scene.setRoot(root); 
         }
@@ -120,7 +92,11 @@ public class GestionCompteController{
             Parent root = FXMLLoader.load(getClass().getResource("GestionCompte.fxml"));
             scene.setRoot(root);
         }
+        else if(event.getSource() == deconnexion){
+
+            Scene scene = deconnexion.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
+            scene.setRoot(root);
+        }
     }
-
-
 }

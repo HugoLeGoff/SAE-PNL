@@ -149,7 +149,7 @@ public class BatracienController {
             liste.add(t.getTable());
         }
 
-        liste.add("toute");
+        liste.add("toutes");
         choixAnnee.setItems(liste);
     }
 
@@ -177,7 +177,7 @@ public class BatracienController {
             scene.setRoot(root);
         } else if(event.getSource() == recharger){
             if(choixAnnee.getValue()!=null){
-                if (choixAnnee.getValue().equals("toute")){
+                if (choixAnnee.getValue().equals("toutes")){
                     try {
                         obsBatracien= ad.Batracien();
                     } catch (SQLException e) {

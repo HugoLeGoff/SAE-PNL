@@ -59,7 +59,7 @@ public class ExportationController {
             for(Table t :tables){
                 liste.add(t.getTable());
             }
-            liste.add("toute");
+            liste.add("toutes");
             annee.setItems(liste);
             tableView.getItems().setAll(tables);
         }
@@ -71,7 +71,7 @@ public class ExportationController {
             for(Table t :tables){
                 liste.add(t.getTable());
             }
-            liste.add("toute");
+            liste.add("toutes");
             annee.setItems(liste);
             tableView.getItems().setAll(tables);
         }
@@ -83,7 +83,7 @@ public class ExportationController {
             for(Table t :tables){
                 liste.add(t.getTable());
             }
-            liste.add("toute");
+            liste.add("toutes");
             annee.setItems(liste);
             tableView.getItems().setAll(tables);
         }
@@ -95,7 +95,7 @@ public class ExportationController {
             for(Table t :tables){
                 liste.add(t.getTable());
             }
-            liste.add("toute");
+            liste.add("toutes");
             annee.setItems(liste);
             tableView.getItems().setAll(tables);
         }
@@ -107,7 +107,7 @@ public class ExportationController {
             for(Table t :tables){
                 liste.add(t.getTable());
             }
-            liste.add("toute");
+            liste.add("toutes");
             annee.setItems(liste);
             tableView.getItems().setAll(tables);
             }
@@ -126,7 +126,7 @@ public class ExportationController {
                 ChoixEspece especeChoix = new ChoixEspece();
                 String nomEspece = especeChoix.getEspece();
 
-                if(this.annee.getValue().equals("toute")){
+                if(this.annee.getValue().equals("toutes")){
                     ExportData fichier = new ExportData(this.nomFichier.getText(), nomEspece);
                     fichier.exportData();
                 } else {

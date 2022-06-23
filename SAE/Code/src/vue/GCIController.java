@@ -115,7 +115,7 @@ public class GCIController {
             liste.add(t.getTable());
         }
 
-        liste.add("toute");
+        liste.add("toutes");
         choixAnnee.setItems(liste);
     }
 
@@ -149,7 +149,7 @@ public class GCIController {
 
         else if(event.getSource() == recharger){
             if(choixAnnee.getValue()!=null){
-                if (choixAnnee.getValue().equals("toute")){
+                if (choixAnnee.getValue().equals("toutes")){
                     try {
                         obsGCI = ad.gci();
                     } catch (SQLException e) {

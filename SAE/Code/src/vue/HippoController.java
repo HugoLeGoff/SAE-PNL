@@ -103,7 +103,7 @@ public class HippoController {
             liste.add(t.getTable());
         }
 
-        liste.add("toute");
+        liste.add("toutes");
         choixAnnee.setItems(liste);
     }
 
@@ -135,7 +135,7 @@ public class HippoController {
         }
         else if(event.getSource() == recharger){
             if(choixAnnee.getValue()!=null){
-                if (choixAnnee.getValue().equals("toute")){
+                if (choixAnnee.getValue().equals("toutes")){
                     try {
                         obsHippo = ad.hippocampe();
                     } catch (SQLException e) {

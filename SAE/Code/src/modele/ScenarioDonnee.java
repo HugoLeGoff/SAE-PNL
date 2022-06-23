@@ -1,11 +1,9 @@
 package modele;
 import donnee.*;
+
 import java.util.*;
-
-import javax.naming.directory.NoSuchAttributeException;
-
-import java.sql.Time;
 import java.sql.Date;
+import java.sql.Time;
 
 /**
  * This class tests the package donnee.
@@ -15,7 +13,7 @@ public class ScenarioDonnee {
         testConstructeur();
 
         java.sql.Date d = new java.sql.Date(0);
-        d = d.valueOf("2015-05-03");
+        d = Date.valueOf("2015-05-03");
         java.sql.Time t = new Time(3000);
         Lieu l = new Lieu(50, 50);
         Observateur obsBen1 = new Observateur(1, "Hugo", "Le Goff");
@@ -43,7 +41,7 @@ public class ScenarioDonnee {
     public static void testConstructeur(){
 
         java.sql.Date d = new java.sql.Date(0);
-        d = d.valueOf("2015-05-03");
+        d = Date.valueOf("2015-05-03");
         java.sql.Time t = new Time(3000);
         Lieu l = new Lieu(50, 50);
         Observateur obsBen1 = new Observateur(1, "Hugo", "Le Goff");
@@ -57,7 +55,7 @@ public class ScenarioDonnee {
         System.out.println("*** Test des cas normaux du constructeur");
 
         try{
-            ObsBatracien batracien = new ObsBatracien(5, d, t, l, listeObs, tab, EspeceBatracien.PELODYTE);
+            new ObsBatracien(5, d, t, l, listeObs, tab, EspeceBatracien.PELODYTE);
             System.out.println("Constructeur ObsBatracien : OK");
         }
         catch(Exception e){
@@ -65,7 +63,7 @@ public class ScenarioDonnee {
         }
 
         try{
-            ObsChouette chouette = new ObsChouette(5, d, t, l, listeObs, TypeObservation.VISUELLE);
+            new ObsChouette(5, d, t, l, listeObs, TypeObservation.VISUELLE);
             System.out.println("Constructeur ObsChouette : OK");
         }
         catch(Exception e){
@@ -73,7 +71,7 @@ public class ScenarioDonnee {
         }
 
         try{
-            ObsLoutre loutre = new ObsLoutre(5, d, t, l, listeObs, IndiceLoutre.POSITIF);
+            new ObsLoutre(5, d, t, l, listeObs, IndiceLoutre.POSITIF);
             System.out.println("Constructeur ObsLoutre : OK");
 
         }
@@ -82,7 +80,7 @@ public class ScenarioDonnee {
         }
 
         try{
-            ObsGCI gci = new ObsGCI(5, d, t, l, listeObs, ContenuNid.POUSSIN, 5);
+            new ObsGCI(5, d, t, l, listeObs, ContenuNid.POUSSIN, 5);
             System.out.println("Constructeur ObsGCI : OK");
 
         }
@@ -91,7 +89,7 @@ public class ScenarioDonnee {
         }
 
         try{
-            ObsHippocampes hippocampes = new ObsHippocampes(5, d, t, l, listeObs, 5.0, Peche.CASIER_CREVETTES, EspeceHippocampes.SYNGNATHUS_ACTUS, Sexe.MALE, true);
+            new ObsHippocampes(5, d, t, l, listeObs, 5.0, Peche.CASIER_CREVETTES, EspeceHippocampes.SYNGNATHUS_ACTUS, Sexe.MALE, true);
             System.out.println("Constructeur ObsHippocampe : OK");
 
         }
@@ -100,7 +98,7 @@ public class ScenarioDonnee {
         }
         
         try{
-            Lieu lieu = new Lieu(5.0, 6.0);
+            new Lieu(5.0, 6.0);
             System.out.println("Constructeur Lieu : OK");
 
         }
@@ -109,7 +107,7 @@ public class ScenarioDonnee {
         }
 
         try{
-            Observateur observateur = new Observateur(1, "LE GOFF", "Hugo");
+            new Observateur(1, "LE GOFF", "Hugo");
             System.out.println("Constructeur Observateur : OK");
 
         }
@@ -118,7 +116,7 @@ public class ScenarioDonnee {
         }
 
         try{
-            NidGCI nid = new NidGCI(1, "Kerbilouet");
+            new NidGCI(1, "Kerbilouet");
             System.out.println("Constructeur NidGCI : OK");
 
         }
@@ -127,7 +125,7 @@ public class ScenarioDonnee {
         }
 
         try{
-            NidGCI nid = new NidGCI(1, "Kerbilouet");
+            new NidGCI(1, "Kerbilouet");
             System.out.println("Constructeur NidGCI : OK");
 
         }
@@ -136,7 +134,7 @@ public class ScenarioDonnee {
         }
 
         try{
-            Chouette chouette = new Chouette("1", Sexe.MALE, EspeceChouette.EFFRAIE);
+            new Chouette("1", Sexe.MALE, EspeceChouette.EFFRAIE);
             System.out.println("Constructeur Chouette : OK");
 
         }
@@ -160,7 +158,7 @@ public class ScenarioDonnee {
         ObsLoutre loutre = new ObsLoutre(5, d, t, l, obs, lIndice);      
         
         
-        d = d.valueOf("2016-05-03");
+        d = Date.valueOf("2016-05-03");
         loutre.setDateObs(d);
         System.out.print (loutre.getDateObs());
         if(loutre.getDateObs().equals(d)){
@@ -215,9 +213,6 @@ public class ScenarioDonnee {
         System.out.println();
         System.out.println("*** Test de la classe Chouette");
 
-        java.sql.Date d2 = new java.sql.Date(0);
-        d2 = d2.valueOf("2016-05-03");
-        
         ObsChouette obsChouette = new ObsChouette(5, d, t, l, obs, TypeObservation.VISUELLE);
         ObsChouette obsChouette1 = new ObsChouette(6, d, t, l, obs, TypeObservation.VISUELLE);
         ObsChouette obsChouette2 = new ObsChouette(7, d, t, l, obs, TypeObservation.VISUELLE);
@@ -325,7 +320,7 @@ public class ScenarioDonnee {
         System.out.println("*** Test de la classe NidGCI");
 
         java.sql.Date d2 = new java.sql.Date(0);
-        d2 = d2.valueOf("2016-05-03");
+        d2 = Date.valueOf("2016-05-03");
         
         ObsGCI gci = new ObsGCI(5, d, t, l, obs, nature, nb);
         ObsGCI gci1 = new ObsGCI(6, d, t, l, obs, nature, nb);

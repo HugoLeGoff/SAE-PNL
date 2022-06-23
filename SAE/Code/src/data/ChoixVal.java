@@ -47,6 +47,7 @@ public class ChoixVal {
      */
     public void insertEspece(){
         if(espece.equals("Hippocampes")){
+            //inserer les lieux
             insertData.setTable("Lieu");
             columns=new ArrayList<String>();
             columns.add("coord_Lambert_X");
@@ -58,6 +59,7 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
+            // inserer l'observation
             columns=new ArrayList<String>();
             columns.add("dateObs");
             columns.add("heureObs");
@@ -72,6 +74,7 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
+            //inserer l'obs_hippocampe
             columns=new ArrayList<String>();
             columns.add("obsH");
             columns.add("espece");
@@ -87,6 +90,8 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
+
+            // inserer les valeurs dans AObserve 
             columns=new ArrayList<String>();
             values=new ArrayList<String>();
             columns.add("lObservation");
@@ -100,6 +105,7 @@ public class ChoixVal {
             msg.add(insertData.getMsg());
         }
         else if(espece.equals("GCI")){
+            //inserer les lieux
             insertData.setTable("Lieu");
             columns=new ArrayList<String>();
             columns.add("coord_Lambert_X");
@@ -111,6 +117,7 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
+            //inserer une observation
             columns=new ArrayList<String>();
             columns.add("dateObs");
             columns.add("heureObs");
@@ -125,6 +132,7 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
+            //inserer un Nid_GCI
             columns=new ArrayList<String>();
             columns.add("idNid");
             columns.add("nomPlage");
@@ -140,6 +148,7 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
+            //inserer une obs_GCI
             columns=new ArrayList<String>();
             columns.add("obsG");
             columns.add("nature");
@@ -154,6 +163,7 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
+            // inserer les valeurs dans AObserve
             columns=new ArrayList<String>();
             values=new ArrayList<String>();
             columns.add("lObservation");
@@ -171,6 +181,7 @@ public class ChoixVal {
             
         }
         else if(espece.equals("Loutres")){
+            //inserer les lieux
             insertData.setTable("Lieu");
             columns=new ArrayList<String>();
             columns.add("coord_Lambert_X");
@@ -181,6 +192,8 @@ public class ChoixVal {
             insertData.setValues(values);
             insertData.insert();
             msg.add(insertData.getMsg());
+
+            //inserer une observation
 
             columns=new ArrayList<String>();
             columns.add("dateObs");
@@ -196,6 +209,7 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
+            //inserer une obs_Loutre
             columns=new ArrayList<String>();
             columns.add("obsL");
             columns.add("commune");
@@ -208,7 +222,7 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
-
+            // inserer les valeurs dans AObserve
             columns=new ArrayList<String>();
             values=new ArrayList<String>();
             columns.add("lObservation");
@@ -223,6 +237,7 @@ public class ChoixVal {
             
         }
         else if(espece.equals("Batraciens")){
+            //inserer les lieux
             insertData.setTable("Lieu");
             columns=new ArrayList<String>();
             columns.add("coord_Lambert_X");
@@ -234,6 +249,8 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
+
+            //inserer une observation
             columns=new ArrayList<String>();
             columns.add("dateObs");
             columns.add("heureObs");
@@ -248,6 +265,8 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
+
+            //inserer un lieu Vegetation
             columns=new ArrayList<String>();
             columns.add("idVegeLieu");
             remplirValues();
@@ -257,6 +276,8 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
+
+            //inserer une vegetation
             columns=new ArrayList<String>();
             columns.add("natureVege");
             columns.add("vegetation");
@@ -271,6 +292,7 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
+            //inserer une zone humide
             columns=new ArrayList<String>();
             columns.add("zh_temporaire");
             columns.add("zh_profondeur");
@@ -287,7 +309,7 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
-
+            //inserer une obs_batracien
             columns=new ArrayList<String>();
             columns.add("obsB");
             columns.add("espece");
@@ -309,7 +331,7 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
-
+            // inserer les valeurs dans AObserve
             columns=new ArrayList<String>();
             values=new ArrayList<String>();
             columns.add("lObservation");
@@ -324,6 +346,7 @@ public class ChoixVal {
             
         }
         else if(espece.equals("Chouettes")){
+            //inserer les lieux
             insertData.setTable("Lieu");
             columns=new ArrayList<String>();
             columns.add("coord_Lambert_X");
@@ -335,7 +358,7 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
-
+            //inserer une observation
             columns=new ArrayList<String>();
             columns.add("dateObs");
             columns.add("heureObs");
@@ -350,6 +373,8 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
+
+            //inserer une chouette
             columns=new ArrayList<String>();
             columns.add("espece");
             columns.add("sexe");
@@ -362,6 +387,7 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
+            //inserer les valeurs à obs_Chouette
             columns=new ArrayList<String>();
             columns.add("protocole");
             columns.add("typeObs");
@@ -374,6 +400,7 @@ public class ChoixVal {
             insertData.insert();
             msg.add(insertData.getMsg());
 
+            //inserer les valeurs dans AObserve
 
             columns=new ArrayList<String>();
             values=new ArrayList<String>();
@@ -388,12 +415,12 @@ public class ChoixVal {
             msg.add(insertData.getMsg());
             
         }else if (espece.equals("Comptes")){
+            //inserer l'utilisateur et ses valeurs
             columns=new ArrayList<String>();
             columns.add("idU");
             columns.add("nom");
             columns.add("prenom");
             remplirValues();
-
             columns.add("statut");
             values.add(valuesTotal.get("idStatut"));
             insertData.setTable("User");
@@ -401,6 +428,7 @@ public class ChoixVal {
             insertData.setValues(values);
             insertData.insert();
 
+            //inserer les login/passwd
             columns=new ArrayList<String>();
             values=new ArrayList<String>();
             columns.add("login");

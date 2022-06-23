@@ -19,6 +19,11 @@ import javafx.fxml.*;
  */
 public class TablesUsers {
 
+    @FXML
+    private Button supprimer;
+
+    @FXML private TextField idU;
+
     @FXML private Label nomObservateur = new Label();
     @FXML private TableView<AfficheUsers> tableView;
     @FXML private TableColumn<AfficheUsers, String> nom;
@@ -68,5 +73,13 @@ public class TablesUsers {
             Parent root = FXMLLoader.load(getClass().getResource("addObservateur.fxml"));
             scene.setRoot(root);
         }
+        else if(event.getSource() == supprimer){
+            Delete dl = new Delete(id.getText());
+            dl.deleteTuple();
+            Scene scene = buttonAdd.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("tablesLoutre.fxml"));
+            scene.setRoot(root);
+        }
     }
+    
 } 

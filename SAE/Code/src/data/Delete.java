@@ -5,14 +5,27 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * This class delete.
+ */
 public class Delete {
     private String espece;
     private int id;
 
+    /**
+     * builder that creates the object
+     * @param espece espece
+     * @param id id
+     */
     public Delete(String espece, String id){
         this.espece=espece;
         this.id= Integer.valueOf(id);
     }
+
+    /**
+     * Creates a query
+     * @return a query
+     */
     public ArrayList<String> requete(){
         ArrayList<String> ret = new ArrayList<String>();
         if(espece.equals("Hippocampes")){
@@ -68,6 +81,9 @@ public class Delete {
         return ret;
     }
 
+    /**
+     * Deletes a tuple.
+     */
     public void deleteTuple(){
         try{
             Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
@@ -76,6 +92,7 @@ public class Delete {
             for(String s : query){
                 stmt.executeUpdate(s);
             }
+            c.close();
         }catch(Exception e){
             System.out.println(e);
         }

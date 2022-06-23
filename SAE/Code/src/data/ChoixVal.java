@@ -3,7 +3,9 @@ package data;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
+/**
+ * This class choose a value.
+ */
 public class ChoixVal {
     private HashMap<String,String> valuesTotal;
     private ArrayList<String> values;
@@ -12,6 +14,11 @@ public class ChoixVal {
     private InsertData insertData;
     private ArrayList<String> msg = new ArrayList<String>();
 
+    /**
+     * builder that creates the object. 
+     * @param espece espece
+     * @param values values
+     */
     public ChoixVal(String espece, HashMap<String,String> values) {
         this.valuesTotal = values;
         this.espece = espece;
@@ -23,6 +30,10 @@ public class ChoixVal {
         
 
     }
+
+    /**
+     * Fills the values.
+     */
     public void remplirValues(){
         values=new ArrayList<String>();
         for(String s : columns){
@@ -30,6 +41,10 @@ public class ChoixVal {
         }
         
     }
+
+    /**
+     * Insert the espece.
+     */
     public void insertEspece(){
         if(espece.equals("Hippocampes")){
             insertData.setTable("Lieu");

@@ -51,7 +51,7 @@
          <children>
             <AnchorPane prefHeight="67.0" prefWidth="600.0">
                <children>
-                  <Label layoutX="35.0" layoutY="39.0" prefHeight="35.0" prefWidth="319.0" text="Ajouter un tuple :" textFill="#008967">
+                  <Label layoutX="324.0" layoutY="41.0" prefHeight="35.0" prefWidth="319.0" text="Ajouter un tuple :" textFill="#008967">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
@@ -140,7 +140,7 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="buttonAnnuler" layoutX="93.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="37.0" prefWidth="151.0" text="Annuler">
+            <Button fx:id="buttonAnnuler" layoutX="93.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="37.0" prefWidth="151.0" text="Retour">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

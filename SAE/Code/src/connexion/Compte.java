@@ -7,11 +7,6 @@ import java.util.*;
  */
 public class Compte {
 
-    private String login;
-    private String pw;
-
-    private Outils outil = new Outils();
-
     /**
      * Empty builder
      */
@@ -23,8 +18,6 @@ public class Compte {
      * @param pw pw
      */
     public Compte(String login, String pw){
-        this.login = login;
-        this.pw = pw;
         writeLogin(login);
     }
 
@@ -33,7 +26,7 @@ public class Compte {
      * @return the login
      */
     public String getLogin() {
-        ArrayList<String> data = outil.readFile("../src/connexion/infoConnexion.txt");
+        ArrayList<String> data = Outils.readFile("../src/connexion/infoConnexion.txt");
         String ret = data.get(0);
         return ret;
     }
@@ -48,7 +41,7 @@ public class Compte {
         loginList.add(login);
     
         
-        outil.writeFile(loginList, "../src/connexion/infoConnexion.txt") ;
+        Outils.writeFile(loginList, "../src/connexion/infoConnexion.txt") ;
     
     }
 }

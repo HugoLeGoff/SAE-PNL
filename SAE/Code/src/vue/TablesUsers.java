@@ -74,11 +74,13 @@ public class TablesUsers {
             scene.setRoot(root);
         }
         else if(event.getSource() == supprimer){
-            Delete dl = new Delete(id.getText());
-            dl.deleteTuple();
+            AllData ad = new AllData();
+            ad.deleteObservateur(Integer.valueOf(idU.getText()));
             Scene scene = buttonAdd.getScene();
-            Parent root = FXMLLoader.load(getClass().getResource("tablesLoutre.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("tablesObservateur.fxml"));
             scene.setRoot(root);
+
+
         }
     }
     

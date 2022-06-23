@@ -60,70 +60,138 @@ public class AfficheObsHippocampes {
 		
 	}
 
+    /**
+     * Gets the espece.
+     * @return the espece
+     */
     public String getEspece() {
         return this.espece;
     }
 
+    /**
+     * Gets the sexe.
+     * @return the sexe
+     */
     public String getSexe() {
         return this.sexe;
     }
 
+    /**
+     * Gets the tempeau.
+     * @return the tempeau
+     */
     public String getTemperatureEau() {
         return this.temperatureEau;
     }
 
+    /**
+     * Gets the typepeche.
+     * @return the typepeche
+     */
     public String getTypePeche() {
         return this.typePeche;
     }
 
+    /**
+     * Gets the taille.
+     * @return the taille
+     */
     public String getTaille() {
         return this.taille;
     }
 
+    /**
+     * Gets the gestant.
+     * @return the gestant
+     */
     public String getGestant() {
         return this.gestant;
     }
 
+    /**
+     * Gets the idObs.
+     * @return the idObs
+     */
     public String getIdObs() {
         return this.idObs;
     }
 
+    /**
+     * Gets the dateObs.
+     * @return the dateObs
+     */
     public String getDateObs() {
         return this.dateObs;
     }
 
+    /**
+     * Gets the heureObs.
+     * @return the heureObs
+     */
     public String getHeureObs() {
         return this.heureObs;
     }
 
+    /**
+     * Gets the lambertX.
+     * @return the lambertX
+     */
     public String getLieu_Lambert_X() {
         return this.lieu_Lambert_X;
     }
 
+    /**
+     * Gets the lambertY.
+     * @return the lambertY
+     */
     public String getLieu_Lambert_Y() {
         return this.lieu_Lambert_Y;
     }
 
+    /**
+     * Gets the observateur.
+     * @return the observateur
+     */
     public String getLobservateur() {
         return this.lobservateur;
     }
 
+    /**
+     * Gets the observation.
+     * @return the observation
+     */
     public String getLobservation() {
         return this.lobservation;
     }
 
+    /**
+     * Gets the idObs.
+     * @return the idObs
+     */
     public String getIdObservateur() {
         return this.idObservateur;
     }
 
+    /**
+     * Gets the nom.
+     * @return the nom
+     */
     public String getNom() {
         return this.nom;
     }
 
+    /**
+     * Gets the prenom.
+     * @return the prenom
+     */
     public String getPrenom() {
         return this.prenom;
     }
 
+    /**
+     * Gets the obsH.
+     * @return the obsH
+     */
     public String getObsH() {
         return this.obsH;
     }

@@ -14,7 +14,7 @@ public class AllData {
 
     Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
     Statement stmt = c.createStatement();
-    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_hippocampe JOIN Observation ON obsH = idObs;");
+    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_hippocampe JOIN Observation ON obsH = idObs;");//selectionne les années disponibles
 
     while(res.next()){
         Table t = new Table(res.getString(1));
@@ -34,7 +34,7 @@ public class AllData {
 
     Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
     Statement stmt = c.createStatement();
-    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_chouette JOIN Observation ON numObs = idObs;");
+    ResultSet res = stmt.executeQuery(" SELECT DISTINCT YEAR (dateObs) FROM Obs_chouette JOIN Observation ON numObs = idObs;");//selectionne les années disponibles
 
       while(res.next()){
         Table t = new Table(res.getString(1));

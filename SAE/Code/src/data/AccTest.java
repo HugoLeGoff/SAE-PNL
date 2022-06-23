@@ -1,6 +1,5 @@
 package data;
 import java.sql.*;
-import donnee.*;
 
 /**
  * This class tests the accounts.

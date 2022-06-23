@@ -70,7 +70,6 @@ public class ExportCarteDataController {
         espece.setText(nomEspece);
 
         webView.getEngine().load("https://umap.openstreetmap.fr/fr/map/new/");
-        System.out.println(webView.toString());
         
         
     }

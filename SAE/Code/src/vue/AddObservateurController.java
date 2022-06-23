@@ -49,7 +49,7 @@ public class AddObservateurController {
     private void initialize() throws SQLException {
 
         AllData ad = new AllData();
-        zoneIdObservateur.setText(ad.getID());
+        zoneIdObservateur.setText(ad.getIDObservateur());
     }
 
     @FXML

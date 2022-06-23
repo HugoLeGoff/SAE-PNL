@@ -357,90 +357,109 @@ public class AllData {
 
 
   
-public ArrayList<AfficheCompte> getAllCompte() {
-    
-  ArrayList<AfficheCompte> ret = new ArrayList<AfficheCompte>();
-
-  try {
-      Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
-      Statement stmt = c.createStatement();
-      ResultSet res = stmt.executeQuery("SELECT idU, nom, prenom, login, passw, nomStatut FROM User JOIN Connexion ON idUser = idU JOIN Statut ON idStatut = statut");
-
-      while (res.next()) {
-        
-        AfficheCompte ch = new AfficheCompte(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6));
-        ret.add(ch);
-      }
-
-      c.close();
-
-  } catch (SQLException e) {
-
-      e.printStackTrace();
-  }
-
-  return ret;
-
-}
-
-public ArrayList<AfficheUsers> getAllObs() {
-    
-  ArrayList<AfficheUsers> ret = new ArrayList<AfficheUsers>();
-
-  try {
-      Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
-      Statement stmt = c.createStatement();
-      ResultSet res = stmt.executeQuery("SELECT * FROM Observateur");
-
-      AfficheUsers ch = null;
-      while (res.next()) {
-        
-        ch = new AfficheUsers(res.getString(1),res.getString(2),res.getString(3));
-        ret.add(ch);
-      }
-
-      c.close();
-
-  } catch (SQLException e) {
-
-      e.printStackTrace();
-  }
-
-  return ret;
-
-}
-public String getIDUser() throws SQLException{
+  public ArrayList<AfficheCompte> getAllCompte() {
       
-  String ret = "";
+    ArrayList<AfficheCompte> ret = new ArrayList<AfficheCompte>();
 
-  Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
-  Statement stmt = c.createStatement();
-  ResultSet res = stmt.executeQuery("SELECT MAX(idU) FROM User ;");
-
-    while(res.next()){
-      ret = Integer.toString(res.getInt(1)+1);
-      
-        
-    }
-  c.close();
-
-  return ret;
-}
-
-public void addObservateur(int id, String nom, String prenom) throws SQLException{
-  
-    String query = "INSERT INTO Observateur VALUES("+id+",'"+nom+"','"+prenom+"');";
-
-    try{
+    try {
         Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
         Statement stmt = c.createStatement();
-        
-        stmt.executeUpdate(query);
-    }catch(Exception e){
-        System.out.println(e);
-        this.message = e.getMessage();
+        ResultSet res = stmt.executeQuery("SELECT idU, nom, prenom, login, passw, nomStatut FROM User JOIN Connexion ON idUser = idU JOIN Statut ON idStatut = statut");
+
+        while (res.next()) {
+          
+          AfficheCompte ch = new AfficheCompte(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6));
+          ret.add(ch);
+        }
+
+        c.close();
+
+    } catch (SQLException e) {
+
+        e.printStackTrace();
     }
-  } 
+
+    return ret;
+
+  }
+
+  public ArrayList<AfficheUsers> getAllObs() {
+      
+    ArrayList<AfficheUsers> ret = new ArrayList<AfficheUsers>();
+
+    try {
+        Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+        Statement stmt = c.createStatement();
+        ResultSet res = stmt.executeQuery("SELECT * FROM Observateur");
+
+        AfficheUsers ch = null;
+        while (res.next()) {
+          
+          ch = new AfficheUsers(res.getString(1),res.getString(2),res.getString(3));
+          ret.add(ch);
+        }
+
+        c.close();
+
+    } catch (SQLException e) {
+
+        e.printStackTrace();
+    }
+
+    return ret;
+
+  }
+  public String getIDUser() throws SQLException{
+        
+    String ret = "";
+
+    Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+    Statement stmt = c.createStatement();
+    ResultSet res = stmt.executeQuery("SELECT MAX(idU) FROM User ;");
+
+      while(res.next()){
+        ret = Integer.toString(res.getInt(1)+1);
+        
+          
+      }
+    c.close();
+
+    return ret;
+  }
+
+  public String getIDObservateur() throws SQLException{
+        
+    String ret = "";
+
+    Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+    Statement stmt = c.createStatement();
+    ResultSet res = stmt.executeQuery("SELECT MAX(idObservateur) FROM observateur ;");
+
+      while(res.next()){
+        ret = Integer.toString(res.getInt(1)+1);
+          
+      }
+    c.close();
+
+    return ret;
+  }
+
+
+  public void addObservateur(int id, String nom, String prenom) throws SQLException{
+    
+      String query = "INSERT INTO Observateur VALUES("+id+",'"+nom+"','"+prenom+"');";
+
+      try{
+          Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+          Statement stmt = c.createStatement();
+          
+          stmt.executeUpdate(query);
+      }catch(Exception e){
+          System.out.println(e);
+          this.message = e.getMessage();
+      }
+    } 
+  
   public String getMsg() {
     return message;
   }

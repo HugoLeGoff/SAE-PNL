@@ -1,6 +1,4 @@
 package donnee;
-import java.util.*;
-import java.sql.Time;
 
 /**
 * crée une observation de loutres

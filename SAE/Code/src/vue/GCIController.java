@@ -1,20 +1,16 @@
 package vue;
+import connexion.Compte;
+import donnee.*;
+import data.*;
+
 import java.io.IOException;
 import java.sql.SQLException;
 
-import donnee.*;
-import data.*;
 import java.util.*;
-
-import connexion.Compte;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
-import javafx.scene.text.Text;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -24,63 +20,25 @@ import javafx.fxml.*;
  * This class is the controller of the GCI page. It gets the page interactive.
  */
 public class GCIController {
-    
 
-
-    @FXML
-    private Label nomObservateur = new Label();
-    @FXML
-    private Button supprimer;
-
-    @FXML
-    private TextField id;
-
-    @FXML
-    private Button retour;
-
-    
-    @FXML
-    private Button carte;
-
-    @FXML
-    private Button buttonAdd;
-
-    @FXML
-    private TextField zoneObsH;
-
-    @FXML
-    private ComboBox<String> choixAnnee;
-
-
-
-    @FXML
-    private TextField zoneEspace;
-
-    @FXML
-    private TextField zoneSexe;
-
-    @FXML
-    private TextField zoneTemperatureEau;
-
-    @FXML
-    private TextField zoneTypeDePeche;
-
-    @FXML
-    private Button recharger;
-
-
-    @FXML
-    private TextField zoneTaille;
-
-    @FXML
-    private TextField zoneGestant;
-
+    @FXML private Label nomObservateur = new Label();
+    @FXML private Button supprimer;
+    @FXML private TextField id;
+    @FXML private Button retour;
+    @FXML private Button carte;
+    @FXML private Button buttonAdd;
+    @FXML private TextField zoneObsH;
+    @FXML private ComboBox<String> choixAnnee;
+    @FXML private TextField zoneEspace;
+    @FXML private TextField zoneSexe;
+    @FXML private TextField zoneTemperatureEau;
+    @FXML private TextField zoneTypeDePeche;
+    @FXML private Button recharger;
+    @FXML private TextField zoneTaille;
+    @FXML private TextField zoneGestant;
     ObservableList<String> liste;
-
     AllData ad ;
-
     ArrayList<AfficheObsGCI> obsGCI;
-
     @FXML private TableView<AfficheObsGCI> tableView;
     @FXML private TableColumn<AfficheObsGCI, String> obsG;
     @FXML private TableColumn<AfficheObsGCI, String> nature;
@@ -99,9 +57,6 @@ public class GCIController {
     @FXML private TableColumn<AfficheObsGCI, String> idObservateur;
     @FXML private TableColumn<AfficheObsGCI, String> nom;
     @FXML private TableColumn<AfficheObsGCI, String> prenom;
-
-
-    
 
     @FXML
     /**
@@ -151,24 +106,21 @@ public class GCIController {
         tableView.getColumns().get(12).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07)); 
         tableView.getColumns().get(13).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07)); 
 
-
-
- 
-
         tableView.getItems().setAll(obsGCI);
 
         ArrayList<Table> tables = ad.tableGCI();
         liste = FXCollections.observableArrayList();
+
         for(Table t :tables){
             liste.add(t.getTable());
         }
+
         liste.add("toute");
         choixAnnee.setItems(liste);
     }
 
 
     @FXML
-
     /**
      * Initializes the action to execute when pressing a button.
      * @param event the event
@@ -204,22 +156,15 @@ public class GCIController {
                         e.printStackTrace();
                     }
                 }else{
-                    
                     try {
                         obsGCI = ad.gciAnnee(choixAnnee.getValue());
                     } catch (SQLException e) {
-                        
                         e.printStackTrace();
                     }
                 }
                 tableView.getItems().setAll(obsGCI);
             }
-            
-            
-        }
-    
-
-        else if(event.getSource() == carte){
+        } else if(event.getSource() == carte){
             Scene scene = carte.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
             scene.setRoot(root);

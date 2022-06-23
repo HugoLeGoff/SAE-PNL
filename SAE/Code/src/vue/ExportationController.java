@@ -1,12 +1,11 @@
 package vue;
+import connexion.*;
+import donnee.*;
+import data.*;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
-import connexion.*;
-import donnee.*;
-import data.*;
-import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,12 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
-import javafx.scene.text.Text;
 import javafx.fxml.*;
-
 import java.util.*;
 
 /**
@@ -28,48 +22,18 @@ import java.util.*;
  */
 public class ExportationController {
 
-    private String especeTMP;
-
-    public void setEspece(String espece) {
-        this.especeTMP = espece;
-    }
-
-
-    @FXML
-    private Label nom = new Label();
-
-    
-    @FXML
-    private Label espece = new Label();
-
-    @FXML
-    private Label tables = new Label();
-
-
-
-    @FXML
-    private Button exporter;
-
-
-    @FXML
-    private Button retour;
-
-    @FXML
-    private Button deconnexion;
-    
-    @FXML 
-    private ComboBox<String> annee;
-
-    @FXML 
-    private TextField nomFichier;
-
+    @FXML private Label nom = new Label();
+    @FXML private Label espece = new Label();
+    @FXML private Label tables = new Label();
+    @FXML private Button exporter;
+    @FXML private Button retour;
+    @FXML private Button deconnexion;
+    @FXML private ComboBox<String> annee;
+    @FXML private TextField nomFichier;
     @FXML private TableView<Table> tableView;
     @FXML private TableColumn<Table, String> tabColumn;
-
     @FXML private Label msgImport;
-
     ObservableList<String> liste;
-
 
     @FXML
     /**
@@ -86,10 +50,6 @@ public class ExportationController {
         String nomEspece = especeChoix.getEspece();
         espece.setText(nomEspece);
         tables.setText("Tables "+nomEspece+" : ");
-        
-        
-        
-
         
         if(nomEspece.equals("Hippocampes")){
             tabColumn.setCellValueFactory(new PropertyValueFactory<Table, String>("table"));
@@ -151,9 +111,7 @@ public class ExportationController {
             annee.setItems(liste);
             tableView.getItems().setAll(tables);
             }
-        
     }
-
 
     @FXML
     /**
@@ -171,31 +129,25 @@ public class ExportationController {
                 if(this.annee.getValue().equals("toute")){
                     ExportData fichier = new ExportData(this.nomFichier.getText(), nomEspece);
                     fichier.exportData();
-                }else{
+                } else {
                     ExportData fichier = new ExportData(this.nomFichier.getText(),this.annee.getValue(), nomEspece);
                     fichier.exportData();
                 }
-
                 msgImport.setText("Le fichier à été exporter à l'adresse \n C:/Users/Public/Downloads");
             
             }catch(NumberFormatException nfe){
                 msgImport.setText("Le numéro de l'année doit être valide");
             } 
-            
         }
-
         else if(event.getSource() == this.deconnexion){
             Scene scene = deconnexion.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("connexion.fxml"));
             scene.setRoot(root);
         }
-
         else if(event.getSource() == this.retour){
             Scene scene = retour.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
             scene.setRoot(root);
         }
-
-
     }
 }

@@ -4,9 +4,16 @@ import java.sql.*;
 import donnee.*;
 import java.util.*;
 
+/**
+ * This class own all the data methods.
+ */
 public class AllData {
 
-
+  /**
+   * Gets tableHippo
+   * @return table Hippo
+   * @throws SQLException SQLException
+   */
   public ArrayList<Table> tableHippo() throws SQLException{
 
     ArrayList<Table> ret = new ArrayList<Table>();
@@ -27,6 +34,11 @@ public class AllData {
     return ret;
   }
 
+  /**
+   * Gets tableChouettes
+   * @return table chouettes
+   * @throws SQLException SQLException
+   */
   public ArrayList<Table> tableChouettes() throws SQLException{
 
     ArrayList<Table> ret = new ArrayList<Table>();
@@ -48,6 +60,11 @@ public class AllData {
 
   }
 
+  /**
+   * Gets tablesLoutres
+   * @return table loutres
+   * @throws SQLException SQLException
+   */
   public ArrayList<Table> tableLoutres() throws SQLException{
 
     ArrayList<Table> ret = new ArrayList<Table>();
@@ -68,6 +85,11 @@ public class AllData {
     return ret;
   }
 
+  /**
+   * Gets tableGCI
+   * @return table GCI
+   * @throws SQLException SQLException
+   */
   public ArrayList<Table> tableGCI() throws SQLException{
 
     ArrayList<Table> ret = new ArrayList<Table>();
@@ -88,6 +110,11 @@ public class AllData {
     return ret;
   }
 
+  /**
+   * Gets tableBatraciens
+   * @return table batraciens
+   * @throws SQLException SQLException
+   */
   public ArrayList<Table> tableBatraciens() throws SQLException{
 
     ArrayList<Table> ret = new ArrayList<Table>();
@@ -108,6 +135,12 @@ public class AllData {
     return ret;
   }
 
+  /**
+   * Gets the statut
+   * @param login login
+   * @return the statut
+   * @throws SQLException SQLException
+   */
   public int getStatut(String login) throws SQLException{
 
     int ret = 0;
@@ -126,6 +159,11 @@ public class AllData {
     return ret;
   }
 
+  /**
+   * Gets tablesChouettes
+   * @return the tables chouettes
+   * @throws SQLException SQLException
+   */
   public ArrayList<Table> tableChouette() throws SQLException{
 
     ArrayList<Table> ret = new ArrayList<Table>();
@@ -148,6 +186,13 @@ public class AllData {
     return ret;
 
   }
+
+  /**
+   * Gets the hippo year
+   * @param annee year
+   * @return the hippo year
+   * @throws SQLException SQLException
+   */
   public ArrayList<AfficheObsHippocampes> hippocampeAnnee(String annee) throws SQLException{
     ArrayList<AfficheObsHippocampes> ret = new ArrayList<AfficheObsHippocampes>();
 
@@ -167,6 +212,12 @@ public class AllData {
     return ret;
   }
 
+  /**
+   * Gets the chouette année
+   * @param annee annee
+   * @return the chouette annee
+   * @throws SQLException SQLException
+   */
   public ArrayList<AfficheObsChouette> chouetteAnnee(String annee) throws SQLException{
       
     ArrayList<AfficheObsChouette> ret = new ArrayList<AfficheObsChouette>();
@@ -185,6 +236,12 @@ public class AllData {
     return ret;
   }
 
+  /**
+   * Gets loutre Annee
+   * @param annee annee
+   * @return the loutre annee
+   * @throws SQLException SQLException
+   */
   public ArrayList<AfficheObsLoutre> loutreAnnee(String annee) throws SQLException{
       
     ArrayList<AfficheObsLoutre> ret = new ArrayList<AfficheObsLoutre>();
@@ -203,6 +260,12 @@ public class AllData {
     return ret;
   }
 
+  /**
+   * Gets the gci annee
+   * @param annee annee
+   * @return the gci annee
+   * @throws SQLException SQLException
+   */
   public ArrayList<AfficheObsGCI> gciAnnee(String annee) throws SQLException{
       
     ArrayList<AfficheObsGCI> ret = new ArrayList<AfficheObsGCI>();
@@ -221,6 +284,12 @@ public class AllData {
     return ret;
   }
 
+  /**
+   * Gets batracien annee
+   * @param annee annee
+   * @return the batracien annee
+   * @throws SQLException SQLException
+   */
   public ArrayList<AfficheObsBatracien> BatracienAnnee(String annee) throws SQLException{
       
     ArrayList<AfficheObsBatracien> ret = new ArrayList<AfficheObsBatracien>();
@@ -242,7 +311,11 @@ public class AllData {
 
 
   
-
+  /**
+   * Gets the hippocampe
+   * @return the cippocampe
+   * @throws SQLException SQLException
+   */
   public ArrayList<AfficheObsHippocampes> hippocampe() throws SQLException{
 
     ArrayList<AfficheObsHippocampes> ret = new ArrayList<AfficheObsHippocampes>();
@@ -263,6 +336,11 @@ public class AllData {
     return ret;
   }
 
+  /**
+   * Gets the chouette
+   * @return the chouette
+   * @throws SQLException SQLException
+   */
   public ArrayList<AfficheObsChouette> chouette() throws SQLException{
       
     ArrayList<AfficheObsChouette> ret = new ArrayList<AfficheObsChouette>();
@@ -281,6 +359,11 @@ public class AllData {
     return ret;
   }
 
+  /**
+   * Gets the loutre
+   * @return the loutre
+   * @throws SQLException SQLException
+   */
   public ArrayList<AfficheObsLoutre> loutre() throws SQLException{
       
     ArrayList<AfficheObsLoutre> ret = new ArrayList<AfficheObsLoutre>();
@@ -299,6 +382,11 @@ public class AllData {
     return ret;
   }
 
+  /**
+   * Gets the gci
+   * @return the gci
+   * @throws SQLException SQLException
+   */
   public ArrayList<AfficheObsGCI> gci() throws SQLException{
       
     ArrayList<AfficheObsGCI> ret = new ArrayList<AfficheObsGCI>();
@@ -317,6 +405,11 @@ public class AllData {
     return ret;
   }
 
+  /**
+   * Gets the batracien
+   * @return the batracien
+   * @throws SQLException SQLException
+   */
   public ArrayList<AfficheObsBatracien> Batracien() throws SQLException{
       
     ArrayList<AfficheObsBatracien> ret = new ArrayList<AfficheObsBatracien>();
@@ -335,6 +428,11 @@ public class AllData {
     return ret;
   }
 
+  /**
+   * Gets the id
+   * @return the id
+   * @throws SQLException SQLException
+   */
   public String getID() throws SQLException{
       
     String ret = "";
@@ -355,7 +453,10 @@ public class AllData {
 
 
 
-  
+/**
+ * Gets the comptes
+ * @return the comptes
+ */
 public ArrayList<AfficheCompte> getAllCompte() {
     
   ArrayList<AfficheCompte> ret = new ArrayList<AfficheCompte>();
@@ -382,6 +483,10 @@ public ArrayList<AfficheCompte> getAllCompte() {
 
 }
 
+/**
+ * Gets all the obs
+ * @return all the obs
+ */
 public ArrayList<AfficheUsers> getAllObs() {
     
   ArrayList<AfficheUsers> ret = new ArrayList<AfficheUsers>();
@@ -408,6 +513,12 @@ public ArrayList<AfficheUsers> getAllObs() {
   return ret;
 
 }
+
+/**
+ * Gets the iduser
+ * @return the iduser
+ * @throws SQLException SQLException
+ */
 public String getIDUser() throws SQLException{
       
   String ret = "";

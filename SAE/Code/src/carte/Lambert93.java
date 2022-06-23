@@ -10,6 +10,9 @@ import static java.lang.Math.sqrt;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 
+/**
+ * This class uses the lambert93 system.
+ */
 public class Lambert93 {
 
    private final static double M_PI_2         = Math.PI / 2.0;
@@ -22,6 +25,11 @@ public class Lambert93 {
    private final static double XS             =    700_000.000;
    private final static double YS             = 12_655_612.050;
 
+   /**
+    * convert latitude
+    * @param latISo latiso
+    * @return latitudefromiso
+    */
    private static double latitudeFromLatitudeISO( final double latISo ) {
       double phi0 = 2 * atan( exp( latISo ) ) - M_PI_2;
       double phiI = 2
@@ -41,6 +49,12 @@ public class Lambert93 {
       return phiI;
    }
 
+   /**
+    * convert latitude
+    * @param x latiso
+    * @param y latiso
+    * @return latitudefromiso
+    */
    public  ArrayList<Double> toLatLon( double x, double y ) {
       final double dX     = x - XS;
       final double dY     = y - YS;

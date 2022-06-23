@@ -5,8 +5,16 @@ import java.io.File;
 
 import java.util.*;
 
+/**
+ * This class creates the tools.
+ */
 public class Outils {
 
+    /**
+     * Writes in a file
+     * @param dataList dataList
+     * @param nameFile nameFile
+     */
     public static void writeFile(ArrayList<String> dataList, String nameFile){
         try {
             File suppfile = new File(nameFile);
@@ -31,6 +39,11 @@ public class Outils {
         }
     }
 
+    /**
+     * Reads the file
+     * @param nameFile nameFile
+     * @return the file
+     */
     public static ArrayList<String> readFile(String nameFile){
         ArrayList<String> data = new ArrayList<String>();
         try {

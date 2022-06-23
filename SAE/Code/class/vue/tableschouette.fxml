@@ -81,6 +81,11 @@
                               <Image url="@32205.png" />
                            </image>
                         </ImageView>
+                        <AnchorPane layoutX="2.0" layoutY="7.0">
+                           <children>
+                              <Button fx:id="deconnexion" layoutX="-3.0" layoutY="-6.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" opacity="0.0" prefHeight="40.0" prefWidth="34.0" text="Button" />
+                           </children>
+                        </AnchorPane>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="50.0" prefWidth="34.0" />

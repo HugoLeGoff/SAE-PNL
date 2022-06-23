@@ -25,6 +25,7 @@ public class BatracienController {
     @FXML private Label nomObservateur = new Label();
     @FXML private Button carte;
     @FXML private Button retour;
+    @FXML private Button deconnexion;
     @FXML private Button buttonAdd;
     @FXML private Button recharger;
     @FXML private ComboBox<String> choixAnnee;
@@ -196,6 +197,12 @@ public class BatracienController {
         } else if(event.getSource() == carte){
             Scene scene = carte.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
+            scene.setRoot(root);
+        }
+        else if(event.getSource() == deconnexion){
+
+            Scene scene = deconnexion.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
             scene.setRoot(root);
         }
     }

@@ -22,6 +22,8 @@ import javafx.fxml.*;
  */
 public class LoutreController {
 
+    @FXML private Button deconnexion;
+
     @FXML private Button supprimer;
     @FXML private TextField id;  
     @FXML private Label nomObservateur = new Label();  
@@ -145,6 +147,12 @@ public class LoutreController {
         } else if(event.getSource() == carte){
             Scene scene = carte.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
+            scene.setRoot(root);
+        }
+        else if(event.getSource() == deconnexion){
+
+            Scene scene = deconnexion.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
             scene.setRoot(root);
         }
     }

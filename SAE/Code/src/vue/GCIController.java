@@ -21,6 +21,8 @@ import javafx.fxml.*;
  */
 public class GCIController {
 
+    @FXML private Button deconnexion;
+
     @FXML private Label nomObservateur = new Label();
     @FXML private Button supprimer;
     @FXML private TextField id;
@@ -167,6 +169,12 @@ public class GCIController {
         } else if(event.getSource() == carte){
             Scene scene = carte.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
+            scene.setRoot(root);
+        }
+        else if(event.getSource() == deconnexion){
+
+            Scene scene = deconnexion.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
             scene.setRoot(root);
         }
     }

@@ -22,6 +22,8 @@ import javafx.fxml.*;
  */
 public class HippoController {
     
+    @FXML private Button deconnexion;
+
     @FXML private Label nomObservateur = new Label();
     @FXML private ComboBox<String> choixAnnee;
     @FXML private Button supprimer;
@@ -157,5 +159,12 @@ public class HippoController {
             Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
             scene.setRoot(root);
         }
+        else if(event.getSource() == deconnexion){
+
+            Scene scene = deconnexion.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
+            scene.setRoot(root);
+        }
+        
     }
 }

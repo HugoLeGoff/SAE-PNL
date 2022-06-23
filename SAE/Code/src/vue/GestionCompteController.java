@@ -35,6 +35,7 @@ public class GestionCompteController{
     @FXML private Button retour;
     @FXML private Button buttonAdd;
     @FXML private Button supprimer;
+    @FXML private Button deconnexion;
     @FXML private TextField id;
 
     @FXML
@@ -89,6 +90,12 @@ public class GestionCompteController{
             dl.deleteTuple();
             Scene scene = buttonAdd.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("GestionCompte.fxml"));
+            scene.setRoot(root);
+        }
+        else if(event.getSource() == deconnexion){
+
+            Scene scene = deconnexion.getScene();
+            Parent root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
             scene.setRoot(root);
         }
     }

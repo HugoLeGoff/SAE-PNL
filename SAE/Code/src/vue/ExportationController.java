@@ -22,6 +22,7 @@ import java.util.*;
  */
 public class ExportationController {
 
+
     @FXML private Label nom = new Label();
     @FXML private Label espece = new Label();
     @FXML private Label tables = new Label();
@@ -149,5 +150,6 @@ public class ExportationController {
             Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
             scene.setRoot(root);
         }
+
     }
 }

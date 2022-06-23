@@ -89,7 +89,7 @@ public class Delete {
             Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
             Statement stmt = c.createStatement();
             ArrayList<String> query = requete();
-            for(String s : query){
+            for(String s : query){//execute toutes les requetes de la liste
                 stmt.executeUpdate(s);
             }
             c.close();

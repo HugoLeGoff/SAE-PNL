@@ -57,7 +57,7 @@ public class InsertData {
      */
     public String requete() {
         int i=0;
-        String query = "INSERT INTO " + table + " (";
+        String query = "INSERT INTO " + table + " (";//creation de la requete au niveau des attributs
         for (String s : columns) {
             query += s;
             if (i < columns.size() - 1) {
@@ -66,7 +66,7 @@ public class InsertData {
             i++;
         }
         i=0;
-        query += ") VALUES (";
+        query += ") VALUES (";// partie valeurs des attributs
         for (String s : values) {
             query += "'" + s + "'";
             if (i < values.size() - 1) {
@@ -100,6 +100,6 @@ public class InsertData {
      * @return the message
      */
     public String getMsg() {
-        return message;
+        return message;//retourner le message pour l'afficher dans l'application
     }
 }

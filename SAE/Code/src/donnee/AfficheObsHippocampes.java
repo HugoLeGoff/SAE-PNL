@@ -28,18 +28,22 @@ public class AfficheObsHippocampes {
 
 
 	/**
-	 * Constructeur de ObsHippocampes.
-	 * @param id numéro d'identification de la chouette
-	 * @param date Date de l'observation 
-	 * @param heure Heure de l'observation
-	 * @param lieu Lieu de l'observation
-	 * @param observateurs Liste des observateurs
-	 * @param laTaille Taille de l'individu
-	 * @param leTypePeche Type de peche
-	 * @param lEspece Espece observée
-	 * @param leSexe Sexe de l'individu
-	 * @param estGestant Indique si l'individu est gestant
-	 */
+     * Builder of obsHippocampee
+     * @param obsH obsH
+     * @param espece espece
+     * @param sexe sexe
+     * @param temperatureEau tempeau
+     * @param typePeche typepeche
+     * @param taille taille
+     * @param gestant gestant
+     * @param dateObs dateObs
+     * @param heureObs heureObs
+     * @param lieu_Lambert_X lambX
+     * @param lieu_Lambert_Y lambY
+     * @param idObservateur idObs
+     * @param nom nom
+     * @param prenom prenom
+     */
 	public AfficheObsHippocampes(String obsH, String espece, String sexe, String temperatureEau, String typePeche, String taille, String gestant, String dateObs, String heureObs, String lieu_Lambert_X, String lieu_Lambert_Y, String idObservateur, String nom, String prenom) {
         
         this.obsH = obsH;

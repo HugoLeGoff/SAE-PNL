@@ -36,7 +36,7 @@ public class HippoController {
     AllData ad ;
     ArrayList<AfficheObsHippocampes> obsHippo;
     @FXML private TableView<AfficheObsHippocampes> tableView;
-    @FXML private TableColumn<AfficheObsHippocampes, String> idObs;
+    @FXML private TableColumn<AfficheObsHippocampes, String> ObsH;
     @FXML private TableColumn<AfficheObsHippocampes, String> espece;
     @FXML private TableColumn<AfficheObsHippocampes, String> sexe;
     @FXML private TableColumn<AfficheObsHippocampes, String> temp;
@@ -62,7 +62,7 @@ public class HippoController {
         String log = compte.getLogin();
         nomObservateur.setText(log);
         
-        idObs.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("idObs"));
+        ObsH.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("ObsH"));
         espece.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("espece"));
         sexe.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("sexe"));
         temp.setCellValueFactory(new PropertyValueFactory<AfficheObsHippocampes, String>("temperatureEau"));

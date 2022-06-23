@@ -26,7 +26,9 @@ public class LoutreController {
 
     @FXML
     private Button supprimer;
+
     @FXML private TextField id;
+    
     @FXML
     private Label nomObservateur = new Label();
 
@@ -216,9 +218,4 @@ public class LoutreController {
         }
     }
     
-
-
-
-
-
 } 

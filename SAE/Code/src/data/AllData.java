@@ -463,6 +463,19 @@ public class AllData {
   public String getMsg() {
     return message;
   }
+
+  public void deleteObservateur(int idObservateur){
+    try{
+        Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_pnr", "admin", "mdp_admin");
+        Statement stmt = c.createStatement();
+        String query = "DELETE FROM Observateur WHERE idObservateur = "+idObservateur+";";
+        stmt.executeUpdate(query);
+        
+        c.close();
+    }catch(Exception e){
+        System.out.println(e);
+    }
+}
 }
 
 

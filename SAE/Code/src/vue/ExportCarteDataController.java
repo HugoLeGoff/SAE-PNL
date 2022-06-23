@@ -1,58 +1,30 @@
 package vue;
+import connexion.*;
+import data.*;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
-import connexion.*;
-import donnee.*;
-import data.*;
-
-import java.util.*;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
-import javafx.scene.text.Text;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.web.*;
-
-import java.util.*;
 
 /**
  * This class is the controller of the Exportation page. It gets the page interactive.
  */
 public class ExportCarteDataController {
 
-    @FXML
-    private WebView webView = new WebView();
-
-    private String especeTMP;
-
-    public void setEspece(String espece) {
-        this.especeTMP = espece;
-    }
-
-
-    @FXML
-    private Label nom = new Label();
-
-    
-    @FXML
-    private Label espece = new Label();
-
+    @FXML private WebView webView = new WebView();
+    @FXML private Label nom = new Label();
+    @FXML private Label espece = new Label();
     @FXML private Button deconnexion;
-
     @FXML private Button test1;
-
     @FXML private Button retour;
-
     ObservableList<String> liste;
-
 
     @FXML
     /**
@@ -70,13 +42,7 @@ public class ExportCarteDataController {
         espece.setText(nomEspece);
 
         webView.getEngine().load("https://umap.openstreetmap.fr/fr/map/new/");
-        
-        
     }
-
-        
- 
-
 
     @FXML
     /**
@@ -93,13 +59,10 @@ public class ExportCarteDataController {
 
                     ExportCarteData fichier = new ExportCarteData(nomEspece+"carte.csv", nomEspece);
                     fichier.exportData();
-                
-
             
             }catch(NumberFormatException nfe){
                 System.out.println(nfe);
             } 
-            
         }
 
         else if(event.getSource() == this.deconnexion){
@@ -113,7 +76,5 @@ public class ExportCarteDataController {
             Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
             scene.setRoot(root);
         }
-
-
     }
 }

@@ -1,19 +1,17 @@
 package vue;
-import java.io.IOException;
-import java.sql.SQLException;
-
 import donnee.*;
 import connexion.*;
 import data.*;
+
+import java.io.IOException;
+import java.sql.SQLException;
+
 import java.util.*;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import javafx.scene.text.Text;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -24,79 +22,30 @@ import javafx.fxml.*;
  */
 public class LoutreController {
 
-    @FXML
-    private Button supprimer;
-
-    @FXML private TextField id;
-    
-    @FXML
-    private Label nomObservateur = new Label();
-
-    
-    @FXML
-    private Button carte;
-
-    @FXML  
-    private TableView<AfficheObsLoutre> tableView;
-
-    @FXML
-    private TableColumn<AfficheObsLoutre, String> obsL;
-
-    
-    @FXML
-    private TableColumn<AfficheObsLoutre, String> commune;
-    
-    @FXML
-    private TableColumn<AfficheObsLoutre, String> lieuDit;
-
-    @FXML
-    private TableColumn<AfficheObsLoutre, String> indice;
-
-    @FXML
-    private TableColumn<AfficheObsLoutre, String> dateObs;
-
-    @FXML
-    private TableColumn<AfficheObsLoutre, String> heureObs;
-
-    @FXML
-    private TableColumn<AfficheObsLoutre, String> lieu_Lambert_X;
-
-    @FXML
-    private TableColumn<AfficheObsLoutre, String> lieu_Lambert_Y;
-
-    @FXML
-    private TableColumn<AfficheObsLoutre, String> nom;
-
-    @FXML
-    private TableColumn<AfficheObsLoutre, String> prenom;
-
-    @FXML
-    private TableColumn<AfficheObsLoutre, String> idObservateur;
-
-    @FXML
-    private Button retour;
-
-    @FXML
-    private Button recharger;
-
-    @FXML
-    private Button buttonAdd;
-
-    
-    @FXML
-    private TableColumn<AfficheObsLoutre, String> typeObs;
-
-    @FXML
-    private ComboBox<String> choixAnnee;
-
+    @FXML private Button supprimer;
+    @FXML private TextField id;  
+    @FXML private Label nomObservateur = new Label();  
+    @FXML private Button carte;
+    @FXML private TableView<AfficheObsLoutre> tableView;
+    @FXML private TableColumn<AfficheObsLoutre, String> obsL;   
+    @FXML private TableColumn<AfficheObsLoutre, String> commune;   
+    @FXML private TableColumn<AfficheObsLoutre, String> lieuDit;
+    @FXML private TableColumn<AfficheObsLoutre, String> indice;
+    @FXML private TableColumn<AfficheObsLoutre, String> dateObs;
+    @FXML private TableColumn<AfficheObsLoutre, String> heureObs;
+    @FXML private TableColumn<AfficheObsLoutre, String> lieu_Lambert_X;
+    @FXML private TableColumn<AfficheObsLoutre, String> lieu_Lambert_Y;
+    @FXML private TableColumn<AfficheObsLoutre, String> nom;
+    @FXML private TableColumn<AfficheObsLoutre, String> prenom;
+    @FXML private TableColumn<AfficheObsLoutre, String> idObservateur;
+    @FXML private Button retour;
+    @FXML private Button recharger;
+    @FXML private Button buttonAdd;
+    @FXML private TableColumn<AfficheObsLoutre, String> typeObs;
+    @FXML private ComboBox<String> choixAnnee;
     ObservableList<String> liste;
-
     AllData ad ;
-
     ArrayList<AfficheObsLoutre> obsLoutre;
-
-
-    
 
     @FXML
     /**
@@ -108,8 +57,6 @@ public class LoutreController {
         Compte compte = new Compte();
         String log = compte.getLogin();
         nomObservateur.setText(log);
-
-
 
         obsL.setCellValueFactory(new PropertyValueFactory<AfficheObsLoutre, String>("obsL"));
         commune.setCellValueFactory(new PropertyValueFactory<AfficheObsLoutre, String>("commune"));
@@ -123,12 +70,8 @@ public class LoutreController {
         nom.setCellValueFactory(new PropertyValueFactory<AfficheObsLoutre, String>("nom"));
         prenom.setCellValueFactory(new PropertyValueFactory<AfficheObsLoutre, String>("prenom"));
 
-
-        
-
         ad = new AllData();
         obsLoutre = ad.loutre();
-        
         
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         tableView.getColumns().get(0).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));    //33% for id column size
@@ -143,12 +86,7 @@ public class LoutreController {
         tableView.getColumns().get(9).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07)); 
         tableView.getColumns().get(10).prefWidthProperty().bind(tableView.widthProperty().multiply(0.07));
 
-
-
- 
-
         tableView.getItems().setAll(obsLoutre);
-
 
         ArrayList<Table> tables = ad.tableLoutres();
         liste = FXCollections.observableArrayList();
@@ -159,9 +97,7 @@ public class LoutreController {
         choixAnnee.setItems(liste);
     }
 
-
     @FXML
-
     /**
      * Initializes the action to execute when pressing a button.
      * @param event the event
@@ -171,7 +107,7 @@ public class LoutreController {
 
         if(event.getSource() == retour){
             Scene scene = retour.getScene();
-            Stage stage = new Stage(); 
+            new Stage(); 
             Parent root = FXMLLoader.load(getClass().getResource("SelectionInteraction.fxml"));
             scene.setRoot(root); 
         }
@@ -197,7 +133,6 @@ public class LoutreController {
                         e.printStackTrace();
                     }
                 }else{
-                    
                     try {
                         obsLoutre = ad.loutreAnnee(choixAnnee.getValue());
                     } catch (SQLException e) {
@@ -207,15 +142,10 @@ public class LoutreController {
                 }
                 tableView.getItems().setAll(obsLoutre);
             }
-            
-
-
-        }else if(event.getSource() == carte){
+        } else if(event.getSource() == carte){
             Scene scene = carte.getScene();
             Parent root = FXMLLoader.load(getClass().getResource("carte.fxml"));
             scene.setRoot(root);
-
         }
     }
-    
 } 

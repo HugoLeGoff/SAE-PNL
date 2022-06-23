@@ -58,8 +58,7 @@ public class AddCompteController {
             values.put("passw",zonePrenom.getText());
             values.put("idStatut",zoneStatut.getValue());
 
-            
-            new ChoixVal("Comptes", values);           
+                       
             ChoixVal val = new ChoixVal("Comptes", values);
             ArrayList<String> message = val.getMsg();
             msgLab.setText("");

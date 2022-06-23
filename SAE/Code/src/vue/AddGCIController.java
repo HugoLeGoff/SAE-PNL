@@ -1,33 +1,24 @@
 package vue;
+import data.*;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 
-import data.*;
 import java.util.*;
-import donnee.AfficheObsHippocampes;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
-import javafx.scene.text.Text;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 
-
 /**
  * This class is the controller of the AddGCI page. It gets the page interactive.
  */
 public class AddGCIController {
-
-    @FXML
-    private Label msgLab = new Label(" ");
-
+    @FXML private Label msgLab = new Label();
     @FXML private TextField zoneObsG;
     @FXML private TextField zoneNombre;
     @FXML private TextField zonePresentMaisNonObs;
@@ -104,6 +95,4 @@ public class AddGCIController {
             scene.setRoot(root);
         }
     }
-    
-
 }
